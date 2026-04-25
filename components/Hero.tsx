@@ -1,8 +1,19 @@
+'use client';
 import { ArrowRight, Play, PoundSterling } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DashboardMockup from "./DashboardMockup";
+import Link from "next/link";
 
 const Hero = () => {
+  const scrollToPricing = () => {
+    const pricingElement = document.getElementById("pricing");
+    if (pricingElement) {
+        pricingElement.scrollIntoView({ 
+            behavior: "smooth",
+            block: "nearest"
+        });
+    }
+};
   return (
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden px-6 md:px-0">
       <div className="absolute inset-0 bg-gradient-hero" />
@@ -20,10 +31,13 @@ const Hero = () => {
             Nexus is the all-in-one platform for modern property managers. Track leases, automate rent collection, and delight tenants — all from one beautiful dashboard.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button size="xl">
-              Signin <ArrowRight className="w-4 h-4" />
+            <Button size="xl" className="flex items-center">
+              <Link href={"https://propertymanagement-zeta.vercel.app/"}>
+                Signin 
+              </Link>
+                <ArrowRight className="w-4 h-4 mt-1" />
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" onClick={scrollToPricing}>
               <PoundSterling className="w-4 h-4" /> Pricing
             </Button>
           </div>
