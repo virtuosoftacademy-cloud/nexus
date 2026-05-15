@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {  Ancizar_Sans, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// Inter → --font-sans  (matches globals.css @theme: --font-sans: var(--font-sans))
+const inter = Inter({
+  variable: "--font-inter-sans",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Ancizar Sans → --font-mono  (matches globals.css @theme: --font-mono: var(--font-geist-mono))
+const ancizarSans = Ancizar_Sans({
+  variable: "--font-ancizar-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Nexus",
+  title: "Nexus | Advisory and Services",
   description: "Advisory and Services",
 };
 
@@ -25,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${ancizarSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

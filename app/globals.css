@@ -59,10 +59,10 @@
   --popover-foreground: oklch(0.145 0 0);
   --primary: oklch(0.5492 0.0881 195.9);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(1 0 0);
+  --secondary: oklch(77.03% 0.128 80.97);
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(84.52% 0.000 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -136,7 +136,7 @@
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.473 0.137 46.201);
   --primary-foreground: oklch(0.987 0.022 95.277);
-  --secondary: oklch(0.274 0.006 286.033);
+  --secondary: oklch(77.03% 0.128 80.97);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
@@ -174,4 +174,24 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px currentColor;
+  }
+  .text-stroke-2 {
+    -webkit-text-stroke: 2px currentColor;
+  }
+  /* with a specific color */
+  .text-stroke-primary {
+    -webkit-text-stroke: 1px var(--primary);
+  }
+}
+
+body{
+  font-family: var(--font-inter-sans),sans-serif;
+}
+h1,h2,h3{
+  font-family: var(--font-ancizar-sans),serif;
 }
