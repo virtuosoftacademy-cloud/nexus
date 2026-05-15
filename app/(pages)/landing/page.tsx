@@ -1,26 +1,27 @@
 import Benefits from "@/components/Benefits";
-import CTA from "@/components/CTA";
+// import CTA from "@/components/CTA";
 import DashboardPreview from "@/components/DashboardPreview";
 import Features from "@/components/Features";
 import Footer from "@/components/common/Footer";
-import Hero from "@/components/Hero";
+// import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import Navbar from "@/components/common/Navbar";
 import Pricing from "@/components/Pricing";
 import ReactLenis from "lenis/react";
+import { CtaSplitSection } from "@/components/common/CTA";
 
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <ReactLenis root>
         <main>
-          <Hero />
+          {/* <Hero /> */}
           <Features />
           <HowItWorks />
           <DashboardPreview />
           <Pricing />
           <Benefits />
-          <CTA />
+          <CtaSplitSection />
         </main>
       </ReactLenis>
     </div>

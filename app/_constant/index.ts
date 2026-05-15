@@ -1,9 +1,6 @@
 
 
 //Status Bar
-
-// data/stats.data.ts
-
 export interface Stat {
   id: string;
   value: string;
