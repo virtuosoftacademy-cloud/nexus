@@ -24,7 +24,7 @@ const SERVICES = [
 ];
 
 export default function CtaForm() {
-  const [email, setEmail]     = useState("");
+  const [email, setEmail] = useState("");
   const [service, setService] = useState("");
 
   const handleSubmit = () => {
@@ -34,33 +34,33 @@ export default function CtaForm() {
 
   return (
     <section className="py-20 px-6 sm:px-12 border my-20">
-      <div className="mx-auto max-w-[212.5rem]">
+      <div className="mx-auto max-w-850">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
           {/* ── Left ── */}
           <div className="flex flex-col gap-10">
 
             {/* Heading */}
-            <h4 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
+            <h4 className="text-2xl md:text-[2rem] text-foreground leading-tight">
               Ready to{" "}
               <span className="text-primary">talk?</span>
             </h4>
 
             {/* Service selector */}
-            <div className="flex flex-col gap-3">
-              <p className="text-xl md:text-2xl text-foreground">
+            <div className="flex flex-col gap-4">
+              <p className="text-xl md:text-[2rem] text-foreground">
                 I want to talk to your experts in:
               </p>
 
               <Select onValueChange={setService}>
                 <SelectTrigger
-                  className="w-full rounded-none border-0 border-b border-foreground/25 bg-transparent text-foreground/35 text-lg md:text-xl py-3 px-0 focus:ring-0 focus:border-primary"
+                  className="w-lg rounded-none px-0 border-0 border-b border-primary bg-transparent text-2xl md:text-[2rem] pt-5 pb-5 focus:ring-0 focus:border-primary font-semibold"
                 >
-                  <SelectValue placeholder="Select a service" />
+                  <SelectValue placeholder="Select a service"/>
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="space-y-10 ml-3">
                   {SERVICES.map((s) => (
-                    <SelectItem key={s} value={s}>
+                    <SelectItem key={s} value={s} className="text-[1.50rem] font-semibold text-accent-foreground/70">
                       {s}
                     </SelectItem>
                   ))}
@@ -73,7 +73,7 @@ export default function CtaForm() {
           <div className="flex flex-col gap-6">
 
             {/* Body copy */}
-            <p className="text-sm md:text-base text-foreground/60 font-serif leading-relaxed">
+            <p className="text-sm md:text-base text-foreground/80 font-serif leading-relaxed">
               Not every enquiry becomes an engagement — and that&apos;s
               intentional. We review each submission carefully to ensure the
               relationship would be focused, proportionate, and genuinely
@@ -94,7 +94,7 @@ export default function CtaForm() {
             <div>
               <Button
                 onClick={handleSubmit}
-                className="px-10 py-6 font-medium text-sm rounded-none"
+                className="px-10 py-6 font-medium text-sm rounded-none hover:bg-secondary hover:text-foreground"
               >
                 Contact Us
               </Button>

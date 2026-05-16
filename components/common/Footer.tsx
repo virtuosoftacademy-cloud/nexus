@@ -17,24 +17,24 @@ import { label } from "framer-motion/client";
 
 const links = [
   {
-    label:"Contact Us",
-    href:"/contact"
-  }, 
+    label: "Contact Us",
+    href: "/contact"
+  },
   {
-    label:"Our Services",
-    href:"#"
-  }, 
+    label: "Our Services",
+    href: "#"
+  },
   {
-    label:"Property Management",
-    href:"#"
-}, 
+    label: "Property Management",
+    href: "#"
+  },
   {
-    label:"Blog",
-    href:"#"
-  }, 
+    label: "Blog",
+    href: "#"
+  },
   {
-    label:"About Us",
-    href:"#",
+    label: "About Us",
+    href: "#",
   }
 ]
 
@@ -53,9 +53,9 @@ const Footer = () => {
               </Link>
             </div>
             <div className="flex justify-center md:justify-start gap-4">
-              {Object.entries(links).map(([title, items]) => (
-                <div key={title}>
-                  <h4 className="text-xs md:text-base mb-4 text-background">{title}</h4>
+              {links.map((link) => (
+                <div key={link.label}>
+                  <Link href={link.href} className="text-xs md:text-base mb-4 text-background">{link.label}</Link>
                 </div>
               ))}
             </div>
@@ -109,38 +109,6 @@ const Footer = () => {
       </div>
 
     </footer>
-    // <footer className="border-t border-border bg-muted/30 ">
-    //   <div className="max-w-7xl mx-auto py-16">
-    //     <div className="grid md:grid-cols-6 gap-10">
-    //       <div className="md:col-span-2 space-y-4">
-    //         <Link href="#">
-    //           <Image src="assets/logo.svg" alt="Nexus Logo" width={40} height={10} className="w-38 h-auto py-2" />
-    //         </Link>
-    //         <p className="text-sm text-muted-foreground max-w-2xs leading-relaxed">
-    //           The modern property management platform built for growing portfolios.
-    //         </p>
-    //       </div>
-
-    //       {Object.entries(links).map(([title, items]) => (
-    //         <div key={title}>
-    //           <h4 className="font-semibold text-sm mb-4">{title}</h4>
-    //           <ul className="space-y-3">
-    //             {items.map(i => (
-    //               <li key={i}>
-    //                 <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{i}</a>
-    //               </li>
-    //             ))}
-    //           </ul>
-    //         </div>
-    //       ))}
-    //     </div>
-
-    //     <div className="mt-14 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-    //       <p>© 2026 Nexus, Inc. All rights reserved.</p>
-    //       <p>Made for modern property managers.</p>
-    //     </div>
-    //   </div>
-    // </footer>
   );
 };
 

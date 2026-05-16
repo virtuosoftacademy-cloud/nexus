@@ -2,7 +2,7 @@
 
 export default function Hero() {
   return (
-    <section className="bg-background py-16 px-6 sm:px-6" id="hero">
+    <section className="bg-background py-16 px-4" id="hero">
       <div>
         <div className="flex flex-col gap-8">
 
