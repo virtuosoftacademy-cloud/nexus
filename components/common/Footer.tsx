@@ -67,7 +67,7 @@ const Footer = () => {
               <div className="bg-accent-foreground p-2 w-2xl">
                 <Input id="email" type="email" placeholder="Your email address" className="rounded-none border-0 placeholder:text-sm md:placeholder:text-base" />
               </div>
-              <Button className="p-6 text-sm md:text-base">Contact Us</Button>
+              <Button className="p-6 text-sm md:text-base hover:text-foreground transition hover:bg-secondary">Subscribe</Button>
             </div>
             <FieldDescription className="flex gap-2 pt-2 text-background items-center">
               <Checkbox id="terms" className="bg-background rounded-none text-sm md:text-base" />

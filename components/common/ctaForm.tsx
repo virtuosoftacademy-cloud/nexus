@@ -54,13 +54,13 @@ export default function CtaForm() {
 
               <Select onValueChange={setService}>
                 <SelectTrigger
-                  className="w-lg rounded-none px-0 border-0 border-b border-primary bg-transparent text-2xl md:text-[2rem] pt-5 pb-5 focus:ring-0 focus:border-primary font-semibold"
+                  className="w-3xs md:w-lg rounded-none px-0 border-0 border-b border-primary bg-transparent text-2xl md:text-[2rem] pt-5 pb-5 focus:ring-0 focus:border-primary font-semibold"
                 >
                   <SelectValue placeholder="Select a service"/>
                 </SelectTrigger>
-                <SelectContent className="space-y-10 ml-3">
+                <SelectContent className="space-y-10 md:ml-3">
                   {SERVICES.map((s) => (
-                    <SelectItem key={s} value={s} className="text-[1.50rem] font-semibold text-accent-foreground/70">
+                    <SelectItem key={s} value={s} className="text-base md:text-[1.50rem] font-semibold text-accent-foreground/70">
                       {s}
                     </SelectItem>
                   ))}

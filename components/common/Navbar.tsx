@@ -100,7 +100,7 @@ export default function Navbar() {
     : "bg-transparent shadow-none";
   const pathname = usePathname()
   let color;
-  if (pathname === "/contact") {
+  if (pathname !== "/") {
     color = "text-foreground"
   }
   return (
@@ -115,7 +115,7 @@ export default function Navbar() {
 
         {/* Logo — white version on transparent bg, green/dark version on white bg */}
         <Link href="/">
-          {color?
+          {color ?
             <Image
               src={"/assets/logo.svg"}
               alt="Nexus Logo"
@@ -139,7 +139,7 @@ export default function Navbar() {
               )}
               priority
             />
-            
+
           }
 
         </Link>
@@ -152,7 +152,7 @@ export default function Navbar() {
               <NavigationMenuItem>
                 <NavigationMenuLink
                   className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
-                  href="#"
+                  href="/"
                 >
                   Home
                 </NavigationMenuLink>
@@ -199,7 +199,7 @@ export default function Navbar() {
               <NavigationMenuItem>
                 <NavigationMenuLink
                   className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
-                  href="#"
+                  href="/about"
                 >
                   About Us
                 </NavigationMenuLink>
@@ -213,120 +213,122 @@ export default function Navbar() {
         <div className="items-center gap-4 hidden md:flex">
           <div className="flex gap-2 text-sm text-primary">
             English
-            <span className="text-accent">| Arabic</span>
-          </div>
-          <Button size="lg" className="text-sm md:text-base font-normal p-6">
-            <Link href={"/contact"}>
-              Contact Us
-            </Link>
-          </Button>
+            <span className={`text-accent ${color}`}>| Arabic</span>
         </div>
-
-        {/* Mobile toggle */}
-        <div className="md:hidden">
-          <button onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
-            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
+        <Button size="lg" className="text-sm md:text-base font-normal p-6">
+          <Link href={"/contact"}>
+            Contact Us
+          </Link>
+        </Button>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="md:hidden mt-4 px-4 bg-foreground text-accent overflow-hidden max-h-[80vh] overflow-y-auto">
-          <div className="flex flex-col py-8 px-8 gap-6 text-xl font-medium">
+      {/* Mobile toggle */}
+      <div className="md:hidden">
+        <button onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
+          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+    </div>
 
-            <Link href="#" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
-              Home
-            </Link>
+      {/* Mobile Menu */ }
+  {
+    mobileOpen && (
+      <div className="md:hidden mt-4 px-4 bg-foreground text-accent overflow-hidden max-h-[80vh] overflow-y-auto">
+        <div className="flex flex-col py-8 px-8 gap-6 text-xl font-medium">
 
-            <div>
-              <div
-                className="font-semibold flex items-center justify-between cursor-pointer transition-colors hover:text-primary"
-                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-              >
-                <Link href="/services" onClick={(e) => { e.stopPropagation(); setMobileOpen(false); }}>
-                  Consulting Services
-                </Link>
-                <span className={cn("text-2xl leading-none transition-transform duration-300", mobileServicesOpen && "rotate-180")}>
-                  <ChevronUp />
-                </span>
-              </div>
+          <Link href="/" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
+            Home
+          </Link>
 
-              <div
-                className={cn(
-                  "grid transition-all duration-400 ease-out",
-                  mobileServicesOpen ? "grid-rows-[1fr] opacity-100 pt-3" : "grid-rows-[0fr] opacity-0"
-                )}
-              >
-                <div className="overflow-hidden">
-                  <div className="flex flex-col gap-5 pl-4 border-l border-white/30 pt-3 pb-2">
-                    {consultingServicesItems.map((service, index) => (
-                      <div key={service.title} className="space-y-3">
-                        <div
-                          className="flex items-center justify-between cursor-pointer text-lg transition-colors hover:text-primary"
-                          onClick={() => setOpenSubMobile(openSubMobile === index ? null : index)}
-                        >
-                          <Link href={service.href || "/services"} className="transition-colors">
-                            {service.title}
-                          </Link>
-                          {service.subPages?.length > 0 && (
-                            <span className={cn("text-xl transition-transform duration-300", openSubMobile === index && "rotate-180")}>
-                              <ChevronUp />
-                            </span>
-                          )}
-                        </div>
+          <div>
+            <div
+              className="font-semibold flex items-center justify-between cursor-pointer transition-colors hover:text-primary"
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+            >
+              <Link href="#" onClick={(e) => { e.stopPropagation(); setMobileOpen(false); }}>
+                Our Services
+              </Link>
+              <span className={cn("text-2xl leading-none transition-transform duration-300", mobileServicesOpen && "rotate-180")}>
+                <ChevronUp />
+              </span>
+            </div>
 
-                        {service.subPages && (
-                          <div
-                            className={cn(
-                              "grid transition-all duration-300 ease-out",
-                              openSubMobile === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                            )}
-                          >
-                            <div className="overflow-hidden">
-                              <div className="flex flex-col gap-3 pl-6 border-l border-white/20 pt-2 pb-1">
-                                {service.subPages.map((sub, i) => (
-                                  <Link
-                                    key={i}
-                                    href={sub.href}
-                                    className="text-base text-accent hover:decoration-primary hover:underline underline-offset-4 capitalize transition-colors"
-                                    onClick={() => setMobileOpen(false)}
-                                  >
-                                    {sub.label}
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
+            <div
+              className={cn(
+                "grid transition-all duration-400 ease-out",
+                mobileServicesOpen ? "grid-rows-[1fr] opacity-100 pt-3" : "grid-rows-[0fr] opacity-0"
+              )}
+            >
+              <div className="overflow-hidden">
+                <div className="flex flex-col gap-5 pl-4 border-l border-white/30 pt-3 pb-2">
+                  {consultingServicesItems.map((service, index) => (
+                    <div key={service.title} className="space-y-3">
+                      <div
+                        className="flex items-center justify-between cursor-pointer text-lg transition-colors hover:text-primary"
+                        onClick={() => setOpenSubMobile(openSubMobile === index ? null : index)}
+                      >
+                        <Link href={service.href || "/services"} className="transition-colors">
+                          {service.title}
+                        </Link>
+                        {service.subPages?.length > 0 && (
+                          <span className={cn("text-xl transition-transform duration-300", openSubMobile === index && "rotate-180")}>
+                            <ChevronUp />
+                          </span>
                         )}
                       </div>
-                    ))}
-                  </div>
+
+                      {service.subPages && (
+                        <div
+                          className={cn(
+                            "grid transition-all duration-300 ease-out",
+                            openSubMobile === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                          )}
+                        >
+                          <div className="overflow-hidden">
+                            <div className="flex flex-col gap-3 pl-6 border-l border-white/20 pt-2 pb-1">
+                              {service.subPages.map((sub, i) => (
+                                <Link
+                                  key={i}
+                                  href={sub.href}
+                                  className="text-base text-accent hover:decoration-primary hover:underline underline-offset-4 capitalize transition-colors"
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  {sub.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-
-            <Link href="#" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
-              Property Management
-            </Link>
-            <Link href="#" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
-              About Us
-            </Link>
-            <Link href="#" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
-              Blog
-            </Link>
-
-            <div className="flex gap-2 text-sm pt-4">
-              English
-              <span className="text-primary">| Arabic</span>
-            </div>
-
-            <Button className="py-6 text-lg font-normal">
-              <Link href="#">Contact Us</Link>
-            </Button>
           </div>
+
+          <Link href="#" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
+            Property Management
+          </Link>
+          <Link href="/about" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
+            About Us
+          </Link>
+          <Link href="#" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
+            Blog
+          </Link>
+
+          <div className="flex gap-2 text-sm pt-4">
+            English
+            <span className="text-primary">| Arabic</span>
+          </div>
+
+          <Button className="py-6 text-lg font-normal">
+            <Link href="/contact">Contact Us</Link>
+          </Button>
         </div>
-      )}
-    </nav>
+      </div>
+    )
+  }
+    </nav >
   );
 }

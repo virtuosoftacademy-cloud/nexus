@@ -25,7 +25,7 @@ export function CtaSplitSection() {
             that scales.
           </p> */}
           <Button variant={"secondary"}
-            className="p-5"
+            className="p-5 hover:bg-accent hover:text-foreground"
           >
             Book a Discovery Call
           </Button>
@@ -53,7 +53,7 @@ export function CtaSplitSection() {
             that scales.
           </p> */}
           <Button variant={"secondary"}
-            className="p-5"
+            className="p-5 hover:bg-accent hover:text-foreground"
           >
               Explore Opportunities
           </Button>
