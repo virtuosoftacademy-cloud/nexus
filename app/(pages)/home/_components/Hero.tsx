@@ -1,71 +1,12 @@
 "use client";
 
+import { TABS } from "@/app/_constant";
 import { ScrollToSection } from "@/components/scrolltosection";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
-interface TabLink {
-  label: string;
-  href: string;
-}
-
-interface TabConfig {
-  label: string;
-  image: string;
-  tag: string;
-  heading: string;
-  subtitle: string;
-  cta: TabLink;
-}
-
-// ─── Tab data ─────────────────────────────────────────────────────────────────
-
-const TABS: TabConfig[] = [
-  {
-    label: "Financial Advisory · UK & UAE",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&auto=format&fit=crop",
-    tag: "Financial Advisory · UK & UAE",
-    heading: "Your Business Is Growing.\nYour Financial Structure\nIsn't Keeping Up.",
-    subtitle:
-      "Full-spectrum compliance across UK & UAE — VAT returns, year-end accounts, and corporate tax readiness built for founders who need clarity, not confusion.",
-    cta: { label: "UK Accounting & Tax", href: "#" },
-  },
-  {
-    label: "Advisory Services",
-    image:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80&auto=format&fit=crop",
-    tag: "Advisory Services",
-    heading: "CFO Thinking,\nWithout the CFO Salary.",
-    subtitle:
-      "CFO-level advisory, governance frameworks, and creditor services built for scale. Timely decisions — not rear-view reports.",
-    cta: { label: "Advisory Services", href: "#" },
-  },
-  {
-    label: "Digital Solutions",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop",
-    tag: "Digital Solutions",
-    heading: "Automate the Back Office.\nOwn the Strategy.",
-    subtitle:
-      "Platform integration, workflow automation, and tech-enabled finance operations — so your team spends time on decisions, not data entry.",
-    cta: { label: "Technology & Solutions", href: "#" },
-  },
-  {
-    label: "Property & Construction",
-    image:
-      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80&auto=format&fit=crop",
-    tag: "Property & Construction",
-    heading: "From SPV to Exit,\nWe Know the Lifecycle.",
-    subtitle:
-      "SDLT planning, SPV structures, CIS obligations, and construction accounting — specialist support for every stage of your property or build project.",
-    cta: { label: "Property Accounting & Tax", href: "#" },
-  },
-];
 
 const AUTOPLAY_INTERVAL = 5000;
 
@@ -154,7 +95,7 @@ export function HeroSection() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
-                className="max-w-2xl text-white"
+                className="max-w-4xl text-white"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
@@ -169,17 +110,17 @@ export function HeroSection() {
                 </motion.p>
 
                 {/* Heading */}
-                <motion.h1
+                <motion.h4
                   variants={itemVariants}
-                  className="font-heading text-5xl md:text-[3.6rem] font-bold leading-[1.1] mb-5 whitespace-pre-line"
+                  className="font-heading text-5xl md:text-[3.6rem] font-medium leading-[1.1] mb-5 whitespace-pre-line"
                 >
                   {current.heading}
-                </motion.h1>
+                </motion.h4>
 
                 {/* Subtitle */}
                 <motion.p
                   variants={itemVariants}
-                  className="font-serif text-base leading-relaxed max-w-lg mb-8 text-white/75"
+                  className="font-serif text-base leading-relaxed mb-8 text-white/75"
                 >
                   {current.subtitle}
                 </motion.p>

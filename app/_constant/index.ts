@@ -1,5 +1,68 @@
 
 
+
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+interface TabLink {
+  label: string;
+  href: string;
+}
+
+interface TabConfig {
+  label: string;
+  image: string;
+  tag: string;
+  heading: string;
+  subtitle: string;
+  cta: TabLink;
+}
+
+// ─── Tab data ─────────────────────────────────────────────────────────────────
+
+export const TABS: TabConfig[] = [
+  {
+    label: "Financial Advisory",
+    image:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&auto=format&fit=crop",
+    tag: "Financial Advisory",
+    heading: "Your Business Is Growing.\nYour Financial Structure\nIsn't Keeping Up.",
+    subtitle:
+      "Structured accounting, defensible tax positions, and financial discipline — for owner-managed businesses, property groups, and construction enterprises that need more than routine compliance.",
+    cta: { label: "UK Accounting & Tax", href: "#" },
+  },
+  {
+    label: "Strategic Financial Advisory",
+    image:
+      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80&auto=format&fit=crop",
+    tag: "Strategic Financial Advisory",
+    heading: "Compliance Tells You What Happened. Advisory Tells You What to Do Next.",
+    subtitle:
+      "CFO-level financial interpretation, governance design, and cashflow planning — for founders and directors who need structured oversight without the full-time overhead.",
+    cta: { label: "EXPLORE ADVISORY SERVICES", href: "#" },
+  },
+  {
+    label: "Digital Solutions",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop",
+    tag: "Digital Solutions",
+    heading: "Technology Doesn’t Fix \nPoor Financial Governance.",
+    subtitle:
+      "Governance-led oversight for ERP implementation, platform migration, and reporting automation — ensuring every system decision is driven by financial requirements, not vendor preference.",
+    cta: { label: "EXPLORE DIGITAL SOLUTIONS", href: "#" },
+  },
+  {
+    label: "Property & Construction Advisory",
+    image:
+      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80&auto=format&fit=crop",
+    tag: "Property & Construction Advisory",
+    heading: "Your Margins Are Under Pressure. Your Reporting Should Tell You Exactly Where.",
+    subtitle:
+      "Specialist accounting for SPV structures, project cost tracking, CIS compliance, VAT on construction activities, and working capital discipline — built for the full financial complexity of property and construction businesses.",
+    cta: { label: "EXPLORE PROPERTY & CONSTRUCTION", href: "#" },
+  },
+];
+
 //Status Bar
 export interface Stat {
   id: string;
