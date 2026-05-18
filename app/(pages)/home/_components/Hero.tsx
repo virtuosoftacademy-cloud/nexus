@@ -115,7 +115,7 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative overflow-hidden min-h-screen flex flex-col -z-40 -mt-25" id="hero">
+      <section className="relative overflow-hidden min-h-screen flex flex-col -z-40 -mt-25">
 
         {/* ── Background image crossfade ── */}
         <AnimatePresence initial={false}>

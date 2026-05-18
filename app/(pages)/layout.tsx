@@ -1,7 +1,7 @@
 
 import Footer from "@/components/common/Footer"
 import Navbar from "@/components/common/Navbar";
-import BackToTop from "@/components/ui/backtotop"
+
 export const metadata = {
     title: "Nexus | Home",
     description: "Created By Virtuosoft Limited",

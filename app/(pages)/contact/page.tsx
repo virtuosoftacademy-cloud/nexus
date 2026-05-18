@@ -12,7 +12,7 @@ function Contact() {
     return (
         <div>
             <ReactLenis root>
-                <div className='mx-auto max-w-360'>
+                <div className='mx-auto max-w-360 px-10 md:px-0'>
                     <Hero />
                     <ContactDetails />
                     <ContactFollow />

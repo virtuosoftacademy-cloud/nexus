@@ -26,15 +26,15 @@ const links = [
   },
   {
     label: "Property Management",
-    href: "#"
+    href: "/landing"
   },
   {
     label: "Blog",
-    href: "#"
+    href: "/blogs"
   },
   {
     label: "About Us",
-    href: "#",
+    href: "/about",
   }
 ]
 
@@ -47,15 +47,15 @@ const Footer = () => {
             <p className="text-base md:text-[1.2rem] text-muted-foreground md:max-w-lg leading-relaxed font-serif">
               Stay ahead in a rapidly changing world. Subscribe to Nexus Insights — our monthly look at the critical issues facing global businesses.
             </p>
-            <div>
+            <div className="flex justify-center">
               <Link href="/">
                 <Image src="assets/logo.svg" alt="Nexus Logo" width={40} height={10} className="w-38 h-auto md:py-2" />
               </Link>
             </div>
-            <div className="flex justify-center md:justify-start gap-4">
+            <div className="flex justify-center flex-wrap md:justify-start gap-4">
               {links.map((link) => (
                 <div key={link.label}>
-                  <Link href={link.href} className="text-xs md:text-base mb-4 text-background">{link.label}</Link>
+                  <Link href={link.href} className="text-base mb-4 text-accent">{link.label}</Link>
                 </div>
               ))}
             </div>
@@ -71,7 +71,7 @@ const Footer = () => {
             </div>
             <FieldDescription className="flex gap-2 pt-2 text-background items-center">
               <Checkbox id="terms" className="bg-background rounded-none text-sm md:text-base" />
-              <Label htmlFor="terms" className="font-normal text-sm md:text-base">*I have read and understand<Link href="#" className="underline underline-offset-4 decoration-primary">Nexus Privacy Notice.</Link>
+              <Label htmlFor="terms" className="font-normal text-xs md:text-base">* I have read and understand<Link href="#" className="underline underline-offset-4 decoration-primary">Nexus Privacy Notice.</Link>
               </Label>
             </FieldDescription>
 
@@ -101,7 +101,7 @@ const Footer = () => {
           <p>© 2026 Nexus Advisory & Services | All rights reserved.</p>
           {/* <p>Made for modern property managers.</p> */}
           <ScrollToSection sections={[
-            { sectionId: "footer", targetId: "hero", variant: "up" },
+            { sectionId: "footer", targetId: "nav", variant: "up" },
           ]} />
 
         </div>

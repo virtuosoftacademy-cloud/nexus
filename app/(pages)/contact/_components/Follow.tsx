@@ -6,18 +6,18 @@ import Link from "next/link";
 
 export default function ContactFollow() {
     return (
-        <section className="bg-background py-20 px-6 sm:px-12">
+        <section className="bg-background py-20">
             <div className="mx-auto max-w-171 text-center md:text-left">
 
                 {/* Eyebrow */}
                 <p
-                    className="text-sm md:text-base text-primary font-semibold tracking-widest text-center"
+                    className="py-2 md:py-0 text-base text-primary font-semibold tracking-widest text-center"
                 >
                     Follow
                 </p>
 
                 {/* Body */}
-                <p className="text-xl md:text-[1.9rem] text-foreground leading-relaxed hover:text-primary transition">
+                <p className="text-sm md:text-[1.9rem] text-foreground leading-relaxed hover:text-primary transition">
                     Follow Nexus on LinkedIn for regular insights on UK and UAE
                     accounting, tax, and governance. We publish briefings on regulatory
                     changes, sector-specific advisory, and financial discipline for

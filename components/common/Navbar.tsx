@@ -100,18 +100,19 @@ export default function Navbar() {
     : "bg-transparent shadow-none";
   const pathname = usePathname()
   let color;
-  if (pathname !== "/") {
+  if (pathname !== "/" && pathname !== "/landing" && pathname !== "/services") {
     color = "text-foreground"
   }
   return (
     <nav
       className={cn(
-        "z-50 w-full mx-auto py-8 text-accent border-b border-muted-foreground/40",
+        "w-full mx-auto py-8 text-accent border-b border-muted-foreground/40",
         navBg,
         color
       )}
+      id="nav"
     >
-      <div className="flex items-center justify-between px-6 lg:px-4 xl:px-0 -my-2 max-w-360 mx-auto">
+      <div className="z-auto flex items-center justify-between px-6 md:px-0 -my-2 max-w-360 mx-auto">
 
         {/* Logo — white version on transparent bg, green/dark version on white bg */}
         <Link href="/">
@@ -190,7 +191,7 @@ export default function Navbar() {
               <NavigationMenuItem>
                 <NavigationMenuLink
                   className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
-                  href="#"
+                  href="/blogs"
                 >
                   Blog
                 </NavigationMenuLink>
@@ -313,7 +314,7 @@ export default function Navbar() {
           <Link href="/about" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
             About Us
           </Link>
-          <Link href="#" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
+          <Link href="/blogs" className="transition-colors hover:text-primary" onClick={() => setMobileOpen(false)}>
             Blog
           </Link>
 

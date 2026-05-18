@@ -88,7 +88,7 @@ const cards: ContactCard[] = [
 
 export default function ContactDetails() {
   return (
-    <section className="py-10 px-6">
+    <section className="py-10">
       <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
 
         {/* Row 1 — 3 cards */}

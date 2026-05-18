@@ -5,14 +5,14 @@ export interface Stat {
   id: string;
   value: string;
   label: string;
-  iconPlus:string;
+  iconPlus: string;
 }
 
 export const statusBar: Stat[] = [
-  { id: "s-1", value: "UK & UAE",iconPlus:"",  label: "Cross-Border Coverage" },
-  { id: "s-2", value: "15",      iconPlus:"+", label: "Years of Sector Experience" },
-  { id: "s-3", value: "100",     iconPlus:"+", label: "Partner-Led Engagements" },
-  { id: "s-4", value: "4",       iconPlus:"",  label: "Core Practice Areas" },
+  { id: "s-1", value: "UK & UAE", iconPlus: "", label: "Cross-Border Coverage" },
+  { id: "s-2", value: "15", iconPlus: "+", label: "Years of Sector Experience" },
+  { id: "s-3", value: "100", iconPlus: "+", label: "Partner-Led Engagements" },
+  { id: "s-4", value: "4", iconPlus: "", label: "Core Practice Areas" },
 ];
 //Core Services
 
@@ -109,7 +109,7 @@ export interface Industry {
   title: string;
   description: string;
   image: string;
-  width:string;
+  width: string;
 }
 
 export const Industries: Industry[] = [
@@ -118,8 +118,8 @@ export const Industries: Industry[] = [
     title: "Property & SPVs",
     description:
       "Portfolio landlords, SPV structures, temporary accommodation operators, and council-linked property businesses across the UK.",
-    width:"max-w-60",
-      image:
+    width: "max-w-60",
+    image:
       "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&auto=format&fit=crop",
   },
   {
@@ -127,7 +127,7 @@ export const Industries: Industry[] = [
     title: "Construction & Contracting",
     description:
       "Main contractors, subcontractors, and refurbishment-led operators managing CIS, domestic reverse charge, and project margin complexity.",
-    width:"",
+    width: "",
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop",
   },
@@ -136,7 +136,7 @@ export const Industries: Industry[] = [
     title: "Founder-Led Businesses",
     description:
       "Owner-managed SMEs scaling through new markets, entity growth, or operational expansion — without the financial structure to match.",
-    width:"",
+    width: "",
     image:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop",
   },
@@ -145,7 +145,7 @@ export const Industries: Industry[] = [
     title: "UK–UAE Cross-Border",
     description:
       "Businesses operating across both jurisdictions requiring structural alignment, VAT clarity, and consistent reporting from both ends.",
-    width:"",
+    width: "",
     image:
       "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80&auto=format&fit=crop",
   },
@@ -345,5 +345,192 @@ export const faqsHome: FaqItem[] = [
     question: "How do we get started?",
     answer:
       "Submit an enquiry through our Contact page. All enquiries are reviewed by senior advisory personnel to assess fit before a conversation is booked. From there: a short introductory discussion, a diagnostic review, and a clearly defined proposal. We operate with intention — not every enquiry becomes an engagement, and that’s by design.",
+  },
+];
+
+
+// Blogs
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  timeAgo: string;
+  category: string;
+  href: string;
+}
+
+export interface BlogCategory {
+  label: string;
+  accent: string; // the teal word in the heading
+  posts: BlogPost[];
+}
+
+// ── Featured (Latest) ──────────────────────────────────────────────────────────
+export const FeaturedPosts: BlogPost = {
+  id: "f-1",
+  title: "The VAT Trap Most Property Businesses Don't See Coming — And How to Avoid It",
+  excerpt:
+    "Partial exemption, temporary accommodation, and the 28-day rule are three areas where VAT misapplication accumulates quietly — until HMRC asks a question you can't answer cleanly. Here's what to look for and what to document before scrutiny arrives.",
+  image:
+    "assets/vatblog.png",
+  timeAgo: "23hrs ago",
+  category: "Property & VAT",
+  href: "#",
+};
+
+// ── Category sections ──────────────────────────────────────────────────────────
+export const BlogCategories: BlogCategory[] = [
+  {
+    label: "Property &",
+    accent: "Tax",
+    posts: [
+      {
+        id: "pt-1",
+        title: "How Capital vs Revenue Misclassification Quietly Damages Your Balance Sheet",
+        excerpt: "Most refurbishment-led businesses misclassify expenditure without realising it — until a lender review or tax enquiry makes the cost visible.",
+        image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=70&auto=format&fit=crop",
+        timeAgo: "23hrs ago",
+        category: "Property & Tax",
+        href: "#",
+      },
+      {
+        id: "pt-2",
+        title: "Partial Exemption: The Calculation Most Mixed-Use Property Groups Are Getting Wrong",
+        excerpt: "Recovery ratios applied without proper methodology create exposure that compounds year on year. Here’s what a defensible calculation looks like.",
+        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=70&auto=format&fit=crop",
+        timeAgo: "23hrs ago",
+        category: "Property VAT",
+        href: "#",
+      },
+      {
+        id: "pt-3",
+        title: "Why Council Leasing VAT Treatment Is More Complex Than Most Operators Realise",
+        excerpt: "The 28-day rule, service level agreements, and supply classification all interact in ways that generic accounting rarely addresses. Here’s the framework.",
+        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&q=70&auto=format&fit=crop",
+        timeAgo: "23hrs ago",
+        category: "Temporary Accomodation",
+        href: "#",
+      },
+    ],
+  },
+  {
+    label: "Construction &",
+    accent: "Accounting",
+    posts: [
+      {
+        id: "ca-1",
+        title: "Why Turnover Growth in Construction Can Mask a Margin Crisis Nobody Sees Coming",
+        excerpt: "Revenue increasing while net margins quietly decline is one of the most common — and most avoidable — problems in project-led businesses. Here’s how cost-to-complete discipline changes that.",
+        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=70&auto=format&fit=crop",
+        timeAgo: "23hrs ago",
+        category: "Construction Accounting",
+        href: "#",
+      },
+      {
+        id: "ca-2",
+        title: "CIS Verification: The Compliance Step Most Contractors Skip Until It’s Too Late",
+        excerpt: "Failing to correctly verify subcontractors before payment doesn’t just risk penalties — it creates a paper trail that HMRC can follow directly to enforcement action.",
+        image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=70&auto=format&fit=crop",
+        timeAgo: "23hrs ago",
+        category: "CIS Compliance",
+        href: "#",
+      },
+      {
+        id: "ca-3",
+        title: "Domestic Reverse Charge: A Plain-English Guide for Subcontractors Who Keep Getting It Wrong",
+        excerpt: "The domestic reverse charge rules remain one of the most misapplied areas of construction VAT. This is what you need to know — and what to document.",
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=70&auto=format&fit=crop",
+        timeAgo: "23hrs ago",
+        category: "VAT & DRC",
+        href: "#",
+      },
+    ],
+  },
+];
+
+// ── Sidebar posts ──────────────────────────────────────────────────────────────
+export const SidebarPosts: BlogPost[] = [
+  {
+    id: "s-1",
+    title: "Why the UAE Corporate Tax Window for Structuring Is Closing Fast",
+    image: "https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?w=200&q=60&auto=format&fit=crop",
+    excerpt: "",
+    timeAgo: "05 hrs ago",
+    category: "UAE Tax",
+    href: "#",
+  },
+  {
+    id: "s-2",
+    title: "What Growing Construction Businesses Get Wrong About Domestic Reverse Charge",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=200&q=60&auto=format&fit=crop",
+    excerpt: "",
+    timeAgo: "05 hrs ago",
+    category: "Construction & VAT",
+    href: "#",
+  },
+  {
+    id: "s-3",
+    title: "How to Know If Your ERP Implementation Is Being Driven by Vendors Instead of Finance",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&q=60&auto=format&fit=crop",
+    excerpt: "",
+    timeAgo: "05 hrs ago",
+    category: "Technology & Systems",
+    href: "#",
+  },
+  {
+    id: "s-4",
+    title: "The Hidden Cost of Informal Governance in Founder-Led Businesses",
+    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=200&q=60&auto=format&fit=crop",
+    excerpt: "",
+    timeAgo: "05 hrs ago",
+    category: "Advisory",
+    href: "#",
+  },
+  {
+    id: "s-5",
+    title: "SPV Structures: Why Intercompany Mismatches Create Lender Problems at the Worst Time",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=200&q=60&auto=format&fit=crop",
+    excerpt: "",
+    timeAgo: "05 hrs ago",
+    category: "Property Accounting",
+    href: "#",
+  },
+  {
+    id: "s-6",
+    title: "Cashflow Forecasting for Contractors: Why Milestone Timing Changes Everything",
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=200&q=60&auto=format&fit=crop",
+    excerpt: "",
+    timeAgo: "05 hrs ago",
+    category: "Construction Accounting",
+    href: "#",
+  },
+  {
+    id: "s-7",
+    title: "What HMRC Is Looking for in a VAT Compliance Check — and How to Respond",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=200&q=60&auto=format&fit=crop",
+    excerpt: "",
+    timeAgo: "05 hrs ago",
+    category: "Tax Authority Support",
+    href: "#",
+  },
+  {
+    id: "s-8",
+    title: "Free Zone or Mainland UAE: What the Corporate Tax Rules Actually Mean for Your Structure",
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=200&q=60&auto=format&fit=crop",
+    excerpt: "",
+    timeAgo: "05 hrs ago",
+    category: "UAE Advisory",
+    href: "#",
+  },
+  {
+    id: "s-9",
+    title: "Why Your Management Accounts Are Describing the Past Instead of Supporting the Future",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=60&auto=format&fit=crop",
+    excerpt: "",
+    timeAgo: "05 hrs ago",
+    category: "Advisory Services",
+    href: "#",
   },
 ];

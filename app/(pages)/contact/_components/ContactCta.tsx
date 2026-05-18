@@ -40,7 +40,7 @@ export default function ContactCta() {
           </h4>
           {/* Arrow moves right on section hover */}
           <motion.span
-            className="absolute bottom-16 left-[625]"
+            className="absolute bottom-14 left-[190] md:bottom-16 md:left-[625]"
             animate={{ x: hovered ? 8 : 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
