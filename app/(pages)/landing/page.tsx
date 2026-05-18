@@ -9,16 +9,24 @@ import { CtaSplitSection } from "@/components/common/CTA";
 import Hero from "./_components/Hero";
 import LandingWorks from "./_components/Works";
 import LandingExperience from "./_components/Experience";
+import CtaForm from "@/components/common/ctaForm";
+import LandingDashboard from "./_components/DashboardScreen";
+import TestimonialsSection from "@/components/common/Testimonials";
+import LandingPricing from "./_components/Pricing";
 
 const LandingPage = () => {
   return (
     <div className="min-h-screen text-foreground">
       <ReactLenis root>
         <Hero />
-        <main className="mx-auto max-w-350">
-          <LandingWorks />
-        </main>
-          <LandingExperience />
+        <LandingWorks />
+        <LandingExperience />
+        <LandingDashboard />
+        <TestimonialsSection />
+        <LandingPricing />
+        <div className="mx-auto max-w-350 px-6 md:px-0">
+          <CtaForm />
+        </div>
         <CtaSplitSection />
       </ReactLenis>
     </div>

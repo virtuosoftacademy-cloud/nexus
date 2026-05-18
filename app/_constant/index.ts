@@ -534,3 +534,69 @@ export const SidebarPosts: BlogPost[] = [
     href: "#",
   },
 ];
+
+
+
+// data/pricing.data.ts
+
+export interface PricingPlan {
+  id: string;
+  name: string;
+  price: string | null;   // null = custom
+  period: string | null;
+  features: string[];
+  cta: string;
+  popular?: boolean;
+  custom?: boolean;
+  note?: string;
+}
+
+export const PricingPlans: PricingPlan[] = [
+  {
+    id: "free",
+    name: "Free",
+    price: "0",
+    period: "/mo",
+    features: [
+      "We offers a free month of service for new customers.",
+    ],
+    cta: "Free Demo",
+  },
+  {
+    id: "single",
+    name: "Single",
+    price: "9",
+    period: "/mo",
+    features: [
+      "We offers a free 7 days of service for new customers.",
+      "Our Talented & Experienced Marketing Agency.",
+    ],
+    cta: "Subscribe Now",
+  },
+  {
+    id: "professional",
+    name: "Professional",
+    price: "49",
+    period: "/mo",
+    popular: true,
+    features: [
+      "We offers a free 14 days of service for new customers.",
+      "Full Access",
+      "Source Files",
+      "Free Appointments",
+      "Enhanced Security",
+      "Free Installment",
+    ],
+    cta: "Buy Now",
+    note: "*T&C Apply",
+  },
+  {
+    id: "custom",
+    name: "Custom",
+    price: null,
+    period: null,
+    custom: true,
+    features: ["Custom Pricing"],
+    cta: "Talk To Us",
+  },
+];

@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/50 pointer-events-none" />
 
       {/* Content — left-aligned, bottom half */}
-      <div className="relative w-full px-6 sm:px-14 pb-24 pt-60 max-w-6xl">
+      <div className="relative w-full px-6 sm:px-14 pb-24 pt-30 md:pt-60 max-w-6xl">
         <div className="flex flex-col gap-6 text-center md:text-left">
 
           {/* Heading */}

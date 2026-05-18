@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function LandingWorks() {
   return (
-    <section className="py-10 md:py-20">
+    <section className="mx-auto max-w-360 sm:px-6 py-10 md:py-20">
       <div className="grid grid-cols-1 md:grid-cols-2">
 
         {/* Left: image */}
@@ -17,10 +17,10 @@ export default function LandingWorks() {
         </div>
 
         {/* Right: text */}
-        <div className="flex flex-col justify-center gap-6 px-10 md:px-16 py-16">
+        <div className="flex flex-col justify-center gap-6 px-6 sm:px-14 md:text-left text-center py-16">
 
           {/* Heading */}
-          <h4 className="text-3xl md:text-4xl font-bold text-foreground leading-snug">
+          <h4 className="text-2xl md:text-4xl font-bold text-foreground leading-snug">
             Built for the Way Property
             <br />
             Management Actually{" "}

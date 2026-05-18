@@ -47,7 +47,7 @@ const Footer = () => {
             <p className="text-base md:text-[1.2rem] text-muted-foreground md:max-w-lg leading-relaxed font-serif">
               Stay ahead in a rapidly changing world. Subscribe to Nexus Insights — our monthly look at the critical issues facing global businesses.
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-center md:justify-start">
               <Link href="/">
                 <Image src="assets/logo.svg" alt="Nexus Logo" width={40} height={10} className="w-38 h-auto md:py-2" />
               </Link>
