@@ -33,7 +33,7 @@ export default function CtaForm() {
   };
 
   return (
-    <section className="py-20 px-6 sm:px-12 border my-20">
+    <section className="py-20 px-6 sm:px-12 border my-10 md:my-20">
       <div className="mx-auto max-w-850">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 

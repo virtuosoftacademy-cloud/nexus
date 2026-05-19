@@ -49,7 +49,7 @@ const Footer = () => {
             </p>
             <div className="flex justify-center md:justify-start">
               <Link href="/">
-                <Image src="assets/logo.svg" alt="Nexus Logo" width={40} height={10} className="w-38 h-auto md:py-2" />
+                <Image src="/assets/logo.svg" alt="Nexus Logo" width={40} height={10} className="w-38 h-auto md:py-2" />
               </Link>
             </div>
             <div className="flex justify-center flex-wrap md:justify-start gap-4">
