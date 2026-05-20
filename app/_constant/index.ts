@@ -22,19 +22,19 @@ interface TabConfig {
 
 export const TABS: TabConfig[] = [
   {
-    label: "Financial Advisory",
+    label: "Accounting & Tax",
     image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80&auto=format&fit=crop",
+      "/assets/financialadvisory.png",
     tag: "Financial Advisory",
     heading: "Your Business Is Growing.\nYour Financial Structure\nIsn't Keeping Up.",
     subtitle:
       "Structured accounting, defensible tax positions, and financial discipline — for owner-managed businesses, property groups, and construction enterprises that need more than routine compliance.",
-    cta: { label: "UK Accounting & Tax", href: "#" },
+    cta: { label: "SPEAK TO AN ADVISOR", href: "#" },
   },
   {
-    label: "Strategic Financial Advisory",
+    label: "Advisory Services",
     image:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1600&q=80&auto=format&fit=crop",
+      "/assets/advisoryandservices.png",
     tag: "Strategic Financial Advisory",
     heading: "Compliance Tells You What Happened. Advisory Tells You What to Do Next.",
     subtitle:
@@ -44,7 +44,7 @@ export const TABS: TabConfig[] = [
   {
     label: "Digital Solutions",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&auto=format&fit=crop",
+      "/assets/digitalsolutions.png",
     tag: "Digital Solutions",
     heading: "Technology Doesn’t Fix \nPoor Financial Governance.",
     subtitle:
@@ -52,9 +52,9 @@ export const TABS: TabConfig[] = [
     cta: { label: "EXPLORE DIGITAL SOLUTIONS", href: "#" },
   },
   {
-    label: "Property & Construction Advisory",
+    label: "Property & Construction",
     image:
-      "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80&auto=format&fit=crop",
+      "/assets/propertyandconstruction.png",
     tag: "Property & Construction Advisory",
     heading: "Your Margins Are Under Pressure. Your Reporting Should Tell You Exactly Where.",
     subtitle:
