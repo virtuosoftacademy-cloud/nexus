@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { Clock } from "lucide-react";
-import { BlogCategories, FeaturedPosts, SidebarPosts } from "@/app/_constant";
 import BlogCard from "@/components/ui/BlogCard";
 import SidebarPost from "@/components/ui/SidebarPost";
+import { BlogCategories, FeaturedPosts, SidebarPosts } from "../constant";
 
 export default function Posts() {
   return (
@@ -33,7 +33,7 @@ export default function Posts() {
 
               {/* Title */}
               <h4 className="text-lg md:text-[1.75rem] font-semibold text-foreground leading-snug">
-                {FeaturedPosts.title}
+                {FeaturedPosts.title}{" "}<span>{FeaturedPosts.accent}</span>
               </h4>
 
               {/* Excerpt */}

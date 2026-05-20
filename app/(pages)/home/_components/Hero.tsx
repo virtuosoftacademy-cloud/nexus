@@ -7,41 +7,24 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-
 const AUTOPLAY_INTERVAL = 5000;
-
-// ─── Animation variants ───────────────────────────────────────────────────────
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.09, delayChildren: 0.1 },
-  },
-  exit: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 as const },
-  },
+  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
+  exit:    { transition: { staggerChildren: 0.05, staggerDirection: -1 as const } },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
-  },
-  exit: {
-    opacity: 0,
-    y: -12,
-    transition: { duration: 0.28, ease: [0.55, 0, 1, 0.45] },
-  },
+  hidden:   { opacity: 0, y: 24 },
+  visible:  { opacity: 1, y: 0,  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  exit:     { opacity: 0, y: -12, transition: { duration: 0.28, ease: [0.55, 0, 1, 0.45] } },
 };
 
-// ─── Component ────────────────────────────────────────────────────────────────
-
 export function HeroSection() {
-  const [activeTab, setActiveTab] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [hovered, setHovered] = useState(false);
+  const [activeTab, setActiveTab]   = useState(0);
+  const [isPaused, setIsPaused]     = useState(false);
+  const [hovered, setHovered]       = useState(false);
 
   useEffect(() => {
     if (isPaused) return;
@@ -56,7 +39,7 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative overflow-hidden min-h-screen flex flex-col -z-40 -mt-25">
+      <section className="relative overflow-hidden min-h-screen flex flex-col -z-40 -mt-25 px-8 md:px-0">
 
         {/* ── Background image crossfade ── */}
         <AnimatePresence initial={false}>
@@ -71,10 +54,7 @@ export function HeroSection() {
           />
         </AnimatePresence>
 
-        {/* ── Dark overlay — always present so text is readable ── */}
         <div className="absolute inset-0 bg-black/55 pointer-events-none" />
-
-        {/* ── Persistent overlays ── */}
         <div className="absolute inset-0 bg-gradient-hero pointer-events-none" />
         <div
           className="absolute inset-0 opacity-[0.035] pointer-events-none"
@@ -84,7 +64,6 @@ export function HeroSection() {
             backgroundSize: "48px 48px",
           }}
         />
-        {/* Bottom vignette */}
         <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none bg-gradient-to-t from-black/70 to-transparent" />
 
         {/* ── Content ── */}
@@ -101,31 +80,18 @@ export function HeroSection() {
                 animate="visible"
                 exit="exit"
               >
-                {/* Service tag */}
-                <motion.p
-                  variants={itemVariants}
-                  className="text-base font-serif capitalize tracking-widest mb-3 text-accent"
-                >
+                <motion.p variants={itemVariants} className="text-base font-serif capitalize tracking-widest mb-3 text-accent">
                   {current.tag}
                 </motion.p>
 
-                {/* Heading */}
-                <motion.h4
-                  variants={itemVariants}
-                  className="font-heading text-5xl md:text-[3.6rem] font-medium leading-[1.1] mb-5 whitespace-pre-line"
-                >
+                <motion.h4 variants={itemVariants} className="font-heading text-3xl md:text-[3.6rem] font-medium leading-[1.1] mb-5 md:whitespace-pre-line">
                   {current.heading}
                 </motion.h4>
 
-                {/* Subtitle */}
-                <motion.p
-                  variants={itemVariants}
-                  className="font-serif text-base leading-relaxed mb-8 text-white/75"
-                >
+                <motion.p variants={itemVariants} className="font-serif text-base leading-relaxed mb-8 text-white/75">
                   {current.subtitle}
                 </motion.p>
 
-                {/* CTA button */}
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
                   <a
                     href={current.cta.href}
@@ -147,9 +113,34 @@ export function HeroSection() {
             </AnimatePresence>
           </div>
 
-          {/* ── SERVICE TABS ── */}
-          <div className="mt-10">
-            <div className="flex max-w-360">
+          {/* ── TABS ── */}
+          <div className="md:mt-10">
+
+            {/* ── MOBILE: active label only ── */}
+            <div className="md:hidden ml-0">
+              <div className="relative inline-flex px-6 py-4">
+                <motion.span
+                  layoutId="tab-underline-mobile"
+                  className="absolute top-0 left-6 right-0 max-w-50 h-0.5 bg-gradient-primary rounded-full"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={activeTab}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.25 }}
+                    className="text-sm font-semibold text-white"
+                  >
+                    {current.label}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* ── DESKTOP: all tabs ── */}
+            <div className="hidden md:flex max-w-360">
               {TABS.map((tab, i) => (
                 <button
                   key={tab.label}
@@ -158,16 +149,13 @@ export function HeroSection() {
                     setIsPaused(true);
                   }}
                   className={cn(
-                    "relative mx-auto px-6 py-4 text-sm md:text-xl font-semibold transition-colors duration-300 text-center",
-                    activeTab === i
-                      ? "text-white"
-                      : "text-white/45 hover:text-white/75"
+                    "relative mx-auto px-6 py-4 text-xl font-semibold transition-colors duration-300 text-center",
+                    activeTab === i ? "text-white" : "text-white/45 hover:text-white/75"
                   )}
                 >
-                  {/* Top border indicator */}
                   {activeTab === i && (
                     <motion.span
-                      layoutId="tab-underline"
+                      layoutId="tab-underline-desktop"
                       className="absolute top-0 left-6 right-0 max-w-50 h-0.5 bg-gradient-primary rounded-full"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
@@ -176,13 +164,13 @@ export function HeroSection() {
                 </button>
               ))}
             </div>
+
           </div>
         </div>
-
       </section>
 
       <ScrollToSection sections={[
-        { sectionId: "hero", targetId: "coreservices", variant: "down" },
+        { sectionId: "nav", targetId: "coreservices", variant: "down" },
       ]} />
     </>
   );

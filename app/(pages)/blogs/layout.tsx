@@ -1,3 +1,4 @@
+import ReactLenis from 'lenis/react';
 import React from 'react'
 
 export const metadata = {
@@ -12,7 +13,9 @@ export default function BlogsLayout({
 } >) {
     return (
         <div>
+            <ReactLenis root>
             {children}
+            </ReactLenis>
         </div>
     )
 }

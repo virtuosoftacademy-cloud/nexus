@@ -654,7 +654,7 @@ export const statusTax: StatsData[] = [
 ];
 
 export const TaxAbout: AboutServiceData = {
-    introParagraph:` Engagement with HMRC can be disruptive — particularly where documentation is incomplete, reporting lacks structure, or responses are reactive and inconsistent. Most enquiries do not escalate because of deliberate error. They escalate because responses are poorly presented, technically imprecise, or emotionally framed. The way you respond to HMRC matters as much as the underlying position itself.\n
+    introParagraph:`Engagement with HMRC can be disruptive — particularly where documentation is incomplete, reporting lacks structure, or responses are reactive and inconsistent. Most enquiries do not escalate because of deliberate error. They escalate because responses are poorly presented, technically imprecise, or emotionally framed. The way you respond to HMRC matters as much as the underlying position itself.\n
     Nexus provides disciplined, technically grounded support for managing HMRC and authority correspondence. Our approach is structured, proportionate, and documentation-led. We assess the scope of enquiry, review the underlying accounting and tax treatment, prepare reconciliations and supporting schedules, and draft responses that are calm, professional, and technically accurate. Our focus is resolution — not confrontation.`,
 listIntro: "We support end-to-end delivery across the following core service areas:",
     serviceAreas: [

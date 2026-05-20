@@ -17,7 +17,6 @@ import LandingPricing from "./_components/Pricing";
 const LandingPage = () => {
   return (
     <div className="min-h-screen text-foreground">
-      <ReactLenis root>
         <Hero />
         <LandingWorks />
         <LandingExperience />
@@ -28,7 +27,6 @@ const LandingPage = () => {
           <CtaForm />
         </div>
         <CtaSplitSection />
-      </ReactLenis>
     </div>
   );
 };

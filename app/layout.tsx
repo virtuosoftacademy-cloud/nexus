@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {  Ancizar_Sans, Inter } from "next/font/google";
+import {  Ancizar_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
 // Inter → --font-sans  (matches globals.css @theme: --font-sans: var(--font-sans))
@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 // Ancizar Sans → --font-mono  (matches globals.css @theme: --font-mono: var(--font-geist-mono))
-const ancizarSans = Ancizar_Sans({
+const ancizarSans = Ancizar_Serif({
   variable: "--font-ancizar-sans",
   display: "swap",
 });

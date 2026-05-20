@@ -13,7 +13,6 @@ import Aboutcta from './_components/aboutcta'
 function About() {
     return (
         <div>
-            <ReactLenis root>
                 <Hero />
                 <AboutParagraph />
                 <AboutStats />
@@ -25,7 +24,6 @@ function About() {
                 </div>
                 <CtaSplitSection />
                 {/* <ContactForm /> */}
-            </ReactLenis>
         </div>
     )
 }

@@ -8,14 +8,12 @@ import CtaForm from "@/components/common/ctaForm"
 function Blogs() {
     return (
         <div>
-            <ReactLenis root>
                 <div className="px-7 md:px-12">
                     <Hero />
                     <Posts />
                     <CtaForm />
                 </div>
                 <CtaSplitSection />
-            </ReactLenis>
         </div>
     )
 }

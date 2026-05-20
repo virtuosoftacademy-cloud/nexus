@@ -7,11 +7,11 @@ export default function StatsBar() {
   return (
     <section className="bg-muted py-8 px-6 sm:px-12">
       <div className="mx-auto max-w-350">
-        <div className="flex flex-wrap items-center divide-x divide-border gap-6">
+        <div className="flex flex-wrap items-center justify-center md:justify-start divide-y md:divide-y-0 md:divide-x divide-border gap-2 md:gap-6">
           {statusBar.map((stat) => (
             <div
               key={stat.id}
-              className="flex items-center gap-3 px-8 first:pl-0 last:pr-0 py-2"
+              className="flex items-center gap-3 md:px-8 first:pl-0 last:pr-0 py-2"
             >
               {/* Value */}
               <span

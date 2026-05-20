@@ -3,11 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Bookmark, Save } from "lucide-react";
+import Image from "next/image";
 
 interface InsightCard {
   tag: string;
   title: string;
   description: string;
+  src: string;
   gradientFrom: string;
   gradientTo: string;
   newsFrom: string;
@@ -19,6 +21,7 @@ const insights: InsightCard[] = [
     title: "The VAT Trap Most Property Businesses Don't See Coming",
     description:
       "Partial exemption, the option to tax, and mixed-use developments create VAT liabilities that are avoidable — if you know they're coming. Most don't.",
+    src: "assets/vat.png",
     gradientFrom: "hsl(174 82% 10%)",
     gradientTo: "hsl(174 82% 22%)",
     newsFrom: "Brief",
@@ -29,6 +32,7 @@ const insights: InsightCard[] = [
     title: "Why Expanding Into the UAE Without Structured Reporting Is…",
     description:
       "As the UAE approaches its first year of corporate tax, the gap between compliant and non-compliant businesses widens by the day.",
+    src: "assets/advisory.png",
     gradientFrom: "hsl(210 60% 10%)",
     gradientTo: "hsl(210 60% 20%)",
     newsFrom: "Brief",
@@ -52,11 +56,12 @@ export function InsightsSection() {
             >
               {/* Thumbnail */}
               <div
-                className="h-44 flex items-end p-5 relative overflow-hidden"
+                className="flex items-end relative overflow-hidden"
                 style={{
                   background: `linear-gradient(135deg, ${ins.gradientFrom}, ${ins.gradientTo})`,
                 }}
               >
+                <Image src={ins.src} alt={ins.title} width={400} height={400} className="object-cover w-full"/>
                 {/* <span
                   className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                   style={{
@@ -79,10 +84,10 @@ export function InsightsSection() {
                   {ins.title}
                 </h4>
                 <p className="text-base leading-relaxed font-serif">{ins.description}</p>
-              <div className="flex justify-between pt-2 text-foreground/50 text-sm">
-                <span>{ins.newsFrom}</span>
-                <span><Bookmark size={18}/> </span>
-              </div>
+                <div className="flex justify-between pt-2 text-foreground/50 text-sm">
+                  <span>{ins.newsFrom}</span>
+                  <span><Bookmark size={18} /> </span>
+                </div>
               </div>
             </div>
           ))}

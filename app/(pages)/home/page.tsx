@@ -50,9 +50,8 @@ import ReactLenis from "lenis/react";
 export default function NexusHomepage() {
 
   return (
-    <div className="min-h-screen font-sans">
-      <ReactLenis root>
-        <HeroSection />
+    <div className="min-h-screen">
+      <HeroSection />
         {/* ── STATS BAR ── */}
         <StatsBar />
         {/* ── CORE SERVICES ── */}
@@ -64,7 +63,7 @@ export default function NexusHomepage() {
         {/* ── RESULTS ── */}
         <CaseStudiesSection />
         {/* Video Section */}
-        <VideoSection />
+        {/* <VideoSection /> */}
         {/* ── INSIGHTS ── */}
         <InsightsSection />
         {/* ── CLIENT REVIEWS ── */}
@@ -73,7 +72,6 @@ export default function NexusHomepage() {
         <Faq items={faqsHome} />
         {/* ── CTA SPLIT ── */}
         <CtaSplitSection />
-      </ReactLenis>
     </div>
   );
 }

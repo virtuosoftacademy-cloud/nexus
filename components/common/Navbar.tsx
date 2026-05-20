@@ -52,13 +52,13 @@ const ListItem = React.forwardRef<
       <a
         ref={ref}
         className={cn(
-          "block select-none px-4 py-3 leading-none no-underline outline-none transition-colors hover:bg-emerald-50 hover:text-primary focus:bg-emerald-50 group",
+          "block select-none px-4 py-3 leading-none no-underline outline-none transition-colors hover:text-primary",
           className
         )}
         {...props}
       >
         <div className="flex items-start gap-3">
-          <ChevronRight className="h-3.5 w-3.5 mt-0.5 text-primary opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
+          <ChevronRight className="h-3.5 w-3.5 mt-0.5 text-primary opacity-0 shrink-0" />
           <div className="text-sm font-semibold text-gray-800 leading-tight">{title}</div>
         </div>
       </a>
@@ -93,12 +93,12 @@ export default function Navbar() {
     <nav
       id="nav"
       className={cn(
-        "z-50 w-full py-6 border-b border-muted-foreground/40 transition-all duration-300",
+        "z-50 w-full py-4 md:py-6 border-b border-muted-foreground/40 transition-all duration-300",
         navBg,
         textColor,
       )}
     >
-      <div className="flex items-center justify-between px-6 md:px-0 max-w-360 mx-auto">
+      <div className="flex items-center justify-between pr-6 md:px-0 max-w-360 mx-auto">
 
         {/* Logo */}
         <Link href="/">
@@ -107,7 +107,7 @@ export default function Navbar() {
             alt="Nexus Logo"
             width={160}
             height={48}
-            className={cn("transition-all duration-300 h-auto", scrolled && "h-7 lg:h-8")}
+            className={cn("transition-all duration-300 h-7 md:h-auto", scrolled && "h-7 lg:h-8")}
             priority
           />
         </Link>
@@ -234,10 +234,10 @@ export default function Navbar() {
             <Link href="/about" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>About Us</Link>
             <Link href="/blogs" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>Blog</Link>
 
-            <div className="flex gap-2 text-sm pt-4">
+            {/* <div className="flex gap-2 text-sm pt-4">
               <span className="text-primary">English</span>
               <span>| Arabic</span>
-            </div>
+            </div> */}
 
             <Button className="py-6 text-lg font-normal" asChild>
               <Link href="/contact">Contact Us</Link>
