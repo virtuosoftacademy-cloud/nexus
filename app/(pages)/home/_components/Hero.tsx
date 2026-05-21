@@ -149,7 +149,7 @@ export function HeroSection() {
                     setIsPaused(true);
                   }}
                   className={cn(
-                    "relative mx-auto px-6 py-4 text-xl font-semibold transition-colors duration-300 text-center",
+                    "relative ml-10 mr-auto px-6 py-4 text-xl font-semibold transition-colors duration-300 text-center",
                     activeTab === i ? "text-white" : "text-white/45 hover:text-white/75"
                   )}
                 >

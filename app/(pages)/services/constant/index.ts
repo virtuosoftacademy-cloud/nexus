@@ -206,7 +206,7 @@ export const PropertyCta: CtaData = {
     width: "max-w-xl",
     arrowPosition: "bottom-14 left-[110] md:bottom-16 md:left-[510]",
     href: "/contact",
-    image: "/assets/bg-img-service1.png",
+    image: "/assets/bg-img-service2.png",
 };
 
 export const PropertyResult: ResultsData = {
@@ -322,7 +322,7 @@ export const AdvisoryCta: CtaData = {
     width: "max-w-2xl",
     arrowPosition: "bottom-14 left-[110] md:bottom-16 md:left-[550]",
     href: "/contact",
-    image: "/assets/bg-img-service1.png",
+    image: "/assets/bg-img-service3.png",
 };
 
 export const AdvisoryResult: ResultsData = {
@@ -440,7 +440,7 @@ export const ConstructionCta: CtaData = {
     width: "max-w-2xl",
     arrowPosition: "bottom-14 left-[110] md:bottom-16 md:left-[670]",
     href: "/contact",
-    image: "/assets/bg-img-service1.png",
+    image: "/assets/bg-img-service4.png",
 };
 
 export const ConstructionResult: ResultsData = {
@@ -556,7 +556,7 @@ export const TechCta: CtaData = {
     width: "max-w-2xl",
     arrowPosition: "bottom-14 left-[110] md:bottom-16 md:left-[520]",
     href: "/contact",
-    image: "/assets/bg-img-service1.png",
+    image: "/assets/bg-img-service5.png",
 };
 
 export const TechResult: ResultsData = {
@@ -673,7 +673,7 @@ export const TaxCta: CtaData = {
     width: "max-w-2xl",
     arrowPosition: "bottom-14 left-[110] md:bottom-16 md:left-[550]",
     href: "/contact",
-    image: "/assets/bg-img-service1.png",
+    image: "/assets/bg-img-service6.png",
 };
 
 export const TaxResult: ResultsData = {

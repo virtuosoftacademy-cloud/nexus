@@ -1,6 +1,7 @@
 // components/landing/LandingWorks.tsx
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function LandingWorks() {
   return (
@@ -10,7 +11,7 @@ export default function LandingWorks() {
         {/* Left: image */}
         <div className="w-full h-[300px] md:h-auto overflow-hidden">
           <img
-            src="assets/landingworks.png" 
+            src="assets/landingworks.png"
             alt="Property buildings"
             className="w-full h-full object-cover hover:scale-105 transition duration-400"
           />
@@ -46,9 +47,11 @@ export default function LandingWorks() {
 
           {/* CTA */}
           <div>
-            <Button className="p-6 !font-medium hover:text-foreground hover:bg-secondary transition">
-              Read More
-            </Button>
+            <Link href={"/about"}>
+              <Button className="p-6 !font-medium hover:text-foreground hover:bg-secondary transition">
+                Read More
+              </Button>
+            </Link>
           </div>
 
         </div>
