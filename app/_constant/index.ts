@@ -147,13 +147,13 @@ export const PlatForm: PlatForm[] = [
   },
   {
     id: "p-5",
-    name: "AAT",
-    logoUrl: "/assets/icon/aat.svg",
+    name: "Association of Certified Chartered Accountants",
+    logoUrl: "/assets/icon/acca.svg",
   },
   {
     id: "p-6",
-    name: "CIMA",
-    logoUrl: "/assets/icon/cima.svg",
+    name: "Institute of Financial Accountants",
+    logoUrl: "/assets/icon/ifa.svg",
   },
 ];
 
@@ -332,6 +332,22 @@ export const testimonials: Testimonial[] = [
     review:
       "Brilliant support setting up our SPV structure. They explained everything clearly and made the whole process stress-free. Will be using them for all future property acquisitions.",
     avatarInitial: "P",
+  },
+  {
+    id: "t-7",
+    name: "M. Ismail Nagori",
+    rating: 5,
+    review:
+      "Nexus Accounting provided me with very accurate and prompt accounting services. They are very efficient in providing the accounting and advisory services. I recommend other companies to work with them as well!",
+    avatarInitial: "M",
+  },
+  {
+    id: "t-8",
+    name: "Zak Dada",
+    rating: 5,
+    review:
+      "I have been using Nexus for years for personal self assessment and business corporation tax and VAT. The owner is very quick and intelligent, they have helped me significantly getting my tax affairs in order. I would highly recommend using Nexus!",
+    avatarInitial: "Z",
   },
 ];
 

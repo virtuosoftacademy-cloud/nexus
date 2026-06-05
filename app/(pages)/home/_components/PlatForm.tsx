@@ -56,7 +56,7 @@ export default function PlatformsSection() {
           </div>
 
           {/* ── Right: 3×2 platform logo grid ── */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
             {PlatForm.map((platform) => (
               <PlatformCard key={platform.id} platform={platform} />
             ))}

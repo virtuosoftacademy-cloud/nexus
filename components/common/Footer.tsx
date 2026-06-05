@@ -24,10 +24,10 @@ const links = [
     label: "Our Services",
     href: "#"
   },
-  {
-    label: "Property Management",
-    href: "/landing"
-  },
+  // {
+  //   label: "Property Management",
+  //   href: "/landing"
+  // },
   {
     label: "Blog",
     href: "/blogs"
