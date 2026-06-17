@@ -24,8 +24,8 @@ export default function SidebarPost({ post }: SidebarPostProps) {
         <div className="flex items-center gap-0.5 md:gap-1.5 text-xs text-foreground/45">
           <Clock className="h-3 w-3" />
           <span>{timeAgo}</span>
-          <span>|</span>
-          <span>{category}</span>
+          {/* <span>|</span>
+          <span>{category}</span> */}
         </div>
       </article>
 

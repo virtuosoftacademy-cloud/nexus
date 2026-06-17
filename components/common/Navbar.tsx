@@ -35,10 +35,12 @@ interface ServiceItem { title: string; description: string; href: string }
 const serviceItems: ServiceItem[] = [
   { title: "UK Accounting & Tax", description: "Full-spectrum compliance, self-assessment, and year-end accounts for UK businesses.", href: "/services/uk-accounting-and-tax" },
   { title: "Property Accounting & Tax", description: "SDLT planning, SPV structuring, rental portfolios, and HMO compliance.", href: "/services/property-accounting-and-tax" },
-  { title: "Construction Accounting", description: "CIS obligations, VAT on construction, and subcontractor management.", href: "/services/construction-accounting" },
+  { title: "Construction & Project-Based Accounting", description: "CIS obligations, VAT on construction, and subcontractor management.", href: "/services/construction-accounting" },
   { title: "Advisory Services", description: "CFO-level advisory, governance, and strategic business intelligence.", href: "/services/advisory-services" },
-  { title: "Technology & Solutions", description: "Digital transformation, platform integration, and process automation.", href: "/services/technology-and-solutions" },
+  { title: "Digital & Systems Advisory", description: "CFO-level advisory, governance, and strategic business intelligence.", href: "/services/advisory-services" },
+  { title: "Business Consultancy", description: "Digital transformation, platform integration, and process automation.", href: "/services/technology-and-solutions" },
   { title: "Tax Authority Support", description: "HMRC and FTA correspondence, investigations, and dispute resolution.", href: "/services/tax-authority-support" },
+  { title: "Solutions", description: "HMRC and FTA correspondence, investigations, and dispute resolution.", href: "/services/tax-authority-support" },
 ];
 
 // ─── ListItem ─────────────────────────────────────────────────────────────────
@@ -98,7 +100,7 @@ export default function Navbar() {
         textColor,
       )}
     >
-      <div className="flex items-center justify-between pr-6 md:px-0 max-w-360 mx-auto">
+      <div className="flex items-center justify-between px-8 md:px-14 mx-auto">
 
         {/* Logo */}
         <Link href="/">
@@ -138,17 +140,24 @@ export default function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
+
               <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="/landing">
-                  Property Pro
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="/blogs">
+                  Industries
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="/blogs">
-                  Blog
+                  Insights
                 </NavigationMenuLink>
               </NavigationMenuItem>
+
+              {/* <NavigationMenuItem>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="/blogs">
+                  Blog
+                </NavigationMenuLink>
+              </NavigationMenuItem> */}
 
               <NavigationMenuItem>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="/about">
@@ -230,9 +239,9 @@ export default function Navbar() {
               </div>
             </div>
 
-            <Link href="/landing" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>Property Pro</Link>
+            <Link href="#" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>Industries</Link>
+            <Link href="/blogs" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>Insights</Link>
             <Link href="/about" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>About Us</Link>
-            <Link href="/blogs" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>Blog</Link>
 
             {/* <div className="flex gap-2 text-sm pt-4">
               <span className="text-primary">English</span>

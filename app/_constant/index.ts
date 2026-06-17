@@ -1,6 +1,7 @@
 
 
 
+// Home Page
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -18,8 +19,9 @@ interface TabConfig {
   cta: TabLink;
 }
 
-// ─── Tab data ─────────────────────────────────────────────────────────────────
 
+// ─── Tab data ─────────────────────────────────────────────────────────────────
+// Hero 
 export const TABS: TabConfig[] = [
   {
     label: "Accounting & Tax",
@@ -112,6 +114,29 @@ export const CoreServices: CoreService[] = [
       "Specialist accounting for SPV structures, project cost tracking, CIS compliance, VAT on development, and working capital planning across the full project lifecycle.",
     href: "#",
   },
+  {
+    id: "cs-4",
+    icon: "/assets/authoritysupport.svg",
+    title: "Tax Authority Support",
+    description:
+    "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquirers and HMRC correspondence — focused on measured response, not escalation.",
+    href: "#",
+  },
+  {
+    id: "cs-5",
+    icon: "/assets/businessconsultancy.svg",
+    title: "Business Consultancy",
+    description:
+    "We help businesses improve performance, manage growth, and make confident strategic decisions through expert guidance in operations, finance, risk management and business planning.",
+    href: "#",
+  },
+  {
+    id: "cs-6",
+    icon: "/assets/digitalandsystemsadvisory.svg",
+    title: "Digital & Systems Advisory",
+    description:"We help organizations leverage technology to optimize processes, enhance efficiency, and accelerate digital transformation through tailored systems, automation and technology strategies.",
+    href: "#",
+  },
 ];
 
 
@@ -136,24 +161,37 @@ export const PlatForm: PlatForm[] = [
     logoUrl: "/assets/icon/zero.svg",
   },
   {
-    id: "p-3",
-    name: "FreeAgent",
-    logoUrl: "/assets/icon/freeagent.svg",
-  },
-  {
     id: "p-4",
     name: "Sage",
     logoUrl: "/assets/icon/sage.svg",
   },
   {
-    id: "p-5",
-    name: "Association of Certified Chartered Accountants",
-    logoUrl: "/assets/icon/acca.svg",
+    id: "p-3",
+    name: "FreeAgent",
+    logoUrl: "/assets/icon/freeagent.svg",
+  },
+];
+
+export const memberships = [
+  {
+    id: 1,
+    name: "Association of Chartered Certified Accountants",
+    logo: "/assets/icon/acca.svg",
   },
   {
-    id: "p-6",
+    id: 2,
     name: "Institute of Financial Accountants",
-    logoUrl: "/assets/icon/ifa.svg",
+    logo: "/assets/icon/ifa.svg",
+  },
+  {
+    id: 3,
+    name: "HMRC Authorised Agent",
+    logo: "/assets/icon/hmrc.svg",
+  },
+  {
+    id: 4,
+    name: "Companies House ACSP",
+    logo: "/assets/icon/acsp.svg",
   },
 ];
 

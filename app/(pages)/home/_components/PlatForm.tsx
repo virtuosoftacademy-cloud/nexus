@@ -8,8 +8,8 @@ import { bulletPoints, PlatForm } from "@/app/_constant";
 
 export default function PlatformsSection() {
   return (
-    <section className="bg-muted py-20 px-6 sm:px-12">
-      <div className="mx-auto max-w-350">
+    <section className="bg-muted py-20 px-4 sm:px-12">
+      <div className="mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* ── Left: text content ── */}
@@ -48,15 +48,15 @@ export default function PlatformsSection() {
             </ul>
 
             {/* CTA — secondary variant, p-6 */}
-            <div>
+            {/* <div>
               <Button variant="secondary" className="p-6 font-semibold text-sm">
                 Speak to an Advisor
               </Button>
-            </div>
+            </div> */}
           </div>
 
           {/* ── Right: 3×2 platform logo grid ── */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+          <div className="grid grid-cols-2 gap-2 md:gap-6 text-center mt-8">
             {PlatForm.map((platform) => (
               <PlatformCard key={platform.id} platform={platform} />
             ))}

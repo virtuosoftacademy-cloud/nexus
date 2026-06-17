@@ -17,25 +17,25 @@ import { label } from "framer-motion/client";
 
 const links = [
   {
-    label: "Contact Us",
-    href: "/contact"
-  },
-  {
-    label: "Our Services",
+    label: "Services",
     href: "#"
   },
-  // {
-  //   label: "Property Management",
-  //   href: "/landing"
-  // },
   {
-    label: "Blog",
+    label: "Indutries",
+    href:"#"
+  },
+  {
+    label: "Insights",
     href: "/blogs"
   },
   {
     label: "About Us",
     href: "/about",
-  }
+  },
+  {
+    label: "Contact Us",
+    href: "/contact"
+  },
 ]
 
 const Footer = () => {

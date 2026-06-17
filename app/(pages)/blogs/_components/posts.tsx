@@ -45,8 +45,8 @@ export default function Posts() {
               <div className="flex items-center gap-1.5 text-xs md:text-base text-primary">
                 <Clock className="h-3.5 w-3.5" />
                 <span>{FeaturedPosts.timeAgo}</span>
-                <span>|</span>
-                <span>{FeaturedPosts.category}</span>
+                {/* <span>|</span>
+                <span>{FeaturedPosts.category}</span> */}
               </div>
             </Link>
           </div>

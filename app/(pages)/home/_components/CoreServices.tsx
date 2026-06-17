@@ -10,7 +10,7 @@ export default function CoreServicesSection() {
       className="py-16 px-6 sm:px-12 bg-primary"
       id="coreservices"
     >
-      <div className="mx-auto max-w-350">
+      <div className="mx-auto px-4">
 
         {/* Heading */}
         <h4 className="text-3xl md:text-4xl font-bold text-white mb-8">

@@ -38,8 +38,8 @@ export default function BlogCard({ post }: BlogCardProps) {
       <div className="flex items-center gap-1.5 text-xs text-primary mt-auto">
         <Clock className="h-3.5 w-3.5" />
         <span>{timeAgo}</span>
-        <span className="mx-1">|</span>
-        <span>{category}</span>
+        {/* <span className="mx-1">|</span>
+        <span>{category}</span> */}
       </div>
     </Link>
   );

@@ -56,17 +56,17 @@ export default function TestimonialsSection() {
 
   return (
     <section
-      className="bg-background py-20 px-6 sm:px-12"
+      className="bg-background py-20 px-6 sm:px-16"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       <div className="mx-auto max-w-[212.5rem]">
 
         {/* ── Heading ── */}
-        <h2 className="text-3xl md:text-[42px] font-bold text-foreground mb-10">
+        <h4 className="text-3xl md:text-[42px] font-bold text-foreground mb-10">
           What Our{" "}
           <span style={{ color: "var(--primary)" }}>Clients Say</span>
-        </h2>
+        </h4>
 
         {/* ── Sliding cards ── */}
         <div className="overflow-hidden">

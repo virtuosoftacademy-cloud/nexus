@@ -23,7 +23,6 @@ function About() {
                     <CtaForm />
                 </div>
                 <CtaSplitSection />
-                {/* <ContactForm /> */}
         </div>
     )
 }

@@ -46,32 +46,38 @@ import CoreServicesSection from "./_components/CoreServices";
 import StatsBar from "./_components/Stats";
 import VideoSection from "./_components/VideoSection";
 import ReactLenis from "lenis/react";
+import ProfessionalMemberships from "./_components/Membership";
+import GovernancePhilosophy from "./_components/Governance";
 
 export default function NexusHomepage() {
 
   return (
     <div className="min-h-screen">
       <HeroSection />
-        {/* ── STATS BAR ── */}
-        <StatsBar />
-        {/* ── CORE SERVICES ── */}
-        <CoreServicesSection />
-        {/* ── PLATFORMS ── */}
-        <PlatformsSection />
-        {/* ── INDUSTRIES ── */}
-        <IndustriesSection />
-        {/* ── RESULTS ── */}
-        <CaseStudiesSection />
-        {/* Video Section */}
-        {/* <VideoSection /> */}
-        {/* ── INSIGHTS ── */}
-        <InsightsSection />
-        {/* ── CLIENT REVIEWS ── */}
-        <TestimonialsSection />
-        {/* ── FAQ ── */}
-        <Faq items={faqsHome} />
-        {/* ── CTA SPLIT ── */}
-        <CtaSplitSection />
+      {/* ── STATS BAR ── */}
+      <StatsBar />
+      {/* ── CORE SERVICES ── */}
+      <CoreServicesSection />
+      {/* ── PLATFORMS ── */}
+      <PlatformsSection />
+      {/* Professional Memberships */}
+      <ProfessionalMemberships />
+      {/* Governance */}
+      <GovernancePhilosophy/>
+      {/* ── INDUSTRIES ── */}
+      {/* <IndustriesSection /> */}
+      {/* ── RESULTS ── */}
+      {/* <CaseStudiesSection /> */}
+      {/* Video Section */}
+      {/* <VideoSection /> */}
+      {/* ── INSIGHTS ── */}
+      <InsightsSection />
+      {/* ── CLIENT REVIEWS ── */}
+      <TestimonialsSection />
+      {/* ── FAQ ── */}
+      <Faq items={faqsHome} />
+      {/* ── CTA SPLIT ── */}
+      {/* <CtaSplitSection /> */}
     </div>
   );
 }

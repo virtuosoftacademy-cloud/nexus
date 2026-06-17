@@ -34,10 +34,10 @@ export default function Hero({ post }: BlogPostHeroProps) {
           <div className="flex flex-col gap-6">
 
             {/* Category + divider */}
-            <div>
+            {/* <div>
               <p className="text-sm md:text-xl font-semibold text-foreground mb-3">{category}</p>
               <hr className="border-border" />
-            </div>
+            </div> */}
 
             {/* Published date */}
             <h2 className="text-sm md:text-lg text-foreground/70">

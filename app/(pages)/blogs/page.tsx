@@ -8,12 +8,12 @@ import CtaForm from "@/components/common/ctaForm"
 function Blogs() {
     return (
         <div>
-                <div className="px-7 md:px-12">
+                <div className="px-7 md:px-12 pb-10">
                     <Hero />
                     <Posts />
-                    <CtaForm />
+                    {/* <CtaForm /> */}
                 </div>
-                <CtaSplitSection />
+                {/* <CtaSplitSection /> */}
         </div>
     )
 }
