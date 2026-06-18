@@ -26,7 +26,7 @@ export default function CoreServicesSection() {
 
         {/* CTA */}
         <Button variant="secondary" className="p-6 font-medium text-sm md:text-base hover:text-foreground hover:bg-accent">
-          Book a Discovery Call
+          View All Services
         </Button>
 
       </div>

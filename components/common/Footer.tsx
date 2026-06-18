@@ -17,7 +17,7 @@ import { label } from "framer-motion/client";
 
 const links = [
   {
-    label: "Services",
+    label: "Our Services",
     href: "#"
   },
   {
@@ -41,7 +41,7 @@ const links = [
 const Footer = () => {
   return (
     <footer className="bg-foreground relative" id="footer">
-      <div className="max-w-350 mx-auto py-12">
+      <div className="mx-auto py-12 px-4 sm:px-8 xl:px-18">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-center md:text-left px-6 md:px-0">
           <div className="space-y-10">
             <p className="text-base md:text-[1.2rem] text-muted-foreground md:max-w-lg leading-relaxed font-serif">

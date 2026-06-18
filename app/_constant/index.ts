@@ -1,5 +1,20 @@
 
 
+// Navbar
+
+export interface ServiceItem { icon: string, title: string; description: string; href: string }
+
+export const serviceItems: ServiceItem[] = [
+  { icon: "/assets/nav/ukaccounting.png", title: "UK Accounting & Tax", description: "UK tax and accounting support.", href: "/services/uk-accounting-and-tax" },
+  { icon: "/assets/nav/advisoryandgovernance.png", title: "Advisory & Governance", description: "Strategic business guidance.", href: "/services/advisory-services" },
+  { icon: "/assets/nav/businessconsultancy.png", title: "Business Consultancy", description: "Advice for sustainable growth.", href: "/services/technology-and-solutions" },
+  { icon: "/assets/nav/businessconsultancy.png", title: "Property Accounting & Tax", description: "Property-focused financial expertise.", href: "/services/property-accounting-and-tax" },
+  { icon: "/assets/nav/businessconsultancy.png", title: "UAE Accounting & Tax", description: "UAE tax and compliance services.", href: "/services/uae-accounting-and-tax" },
+  { icon: "/assets/nav/businessconsultancy.png", title: "Tax Authority Support", description: "Support with tax matters.", href: "/services/tax-authority-support" },
+  { icon: "/assets/nav/businessconsultancy.png", title: "Construction Accounting", description: "Accounting for construction projects.", href: "/services/construction-accounting" },
+  { icon: "/assets/nav/businessconsultancy.png", title: "Digital & Systems Advisory", description: "Smarter systems, better performance.", href: "/services/advisory-services" },
+  { icon: "/assets/nav/businessconsultancy.png", title: "Solutions", description: "Tailored solutions for business.", href: "/services/tax-authority-support" },
+];
 
 // Home Page
 
@@ -28,7 +43,7 @@ export const TABS: TabConfig[] = [
     image:
       "/assets/financialadvisory.png",
     tag: "Financial Advisory",
-    heading: "Your Business Is Growing.\nYour Financial Structure\nIsn't Keeping Up.",
+    heading: "Financial Structure, \nGovernance and Advisory \nfor Growing Businesses",
     subtitle:
       "Structured accounting, defensible tax positions, and financial discipline — for owner-managed businesses, property groups, and construction enterprises that need more than routine compliance.",
     cta: { label: "SPEAK TO AN ADVISOR", href: "#" },
@@ -44,10 +59,10 @@ export const TABS: TabConfig[] = [
     cta: { label: "EXPLORE ADVISORY SERVICES", href: "#" },
   },
   {
-    label: "Digital Solutions",
+    label: "Systems & Solutions",
     image:
       "/assets/digitalsolutions.png",
-    tag: "Digital Solutions",
+    tag: "Systems & Solutions",
     heading: "Technology Doesn’t Fix \nPoor Financial Governance.",
     subtitle:
       "Governance-led oversight for ERP implementation, platform migration, and reporting automation — ensuring every system decision is driven by financial requirements, not vendor preference.",
@@ -119,7 +134,7 @@ export const CoreServices: CoreService[] = [
     icon: "/assets/authoritysupport.svg",
     title: "Tax Authority Support",
     description:
-    "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquirers and HMRC correspondence — focused on measured response, not escalation.",
+      "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquirers and HMRC correspondence — focused on measured response, not escalation.",
     href: "#",
   },
   {
@@ -127,14 +142,14 @@ export const CoreServices: CoreService[] = [
     icon: "/assets/businessconsultancy.svg",
     title: "Business Consultancy",
     description:
-    "We help businesses improve performance, manage growth, and make confident strategic decisions through expert guidance in operations, finance, risk management and business planning.",
+      "We help businesses improve performance, manage growth, and make confident strategic decisions through expert guidance in operations, finance, risk management and business planning.",
     href: "#",
   },
   {
     id: "cs-6",
     icon: "/assets/digitalandsystemsadvisory.svg",
     title: "Digital & Systems Advisory",
-    description:"We help organizations leverage technology to optimize processes, enhance efficiency, and accelerate digital transformation through tailored systems, automation and technology strategies.",
+    description: "We help organizations leverage technology to optimize processes, enhance efficiency, and accelerate digital transformation through tailored systems, automation and technology strategies.",
     href: "#",
   },
 ];

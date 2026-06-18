@@ -42,8 +42,8 @@ const insights: InsightCard[] = [
 
 export function InsightsSection() {
   return (
-    <section className="bg-background py-20 px-6">
-      <div className="max-w-350 mx-auto">
+    <section className="bg-background py-20">
+      <div className="mx-auto px-4 sm:px-8 xl:px-18">
         <h4 className="font-heading text-4xl font-bold text-foreground mb-10">
           Our Latest{" "}
           <span className="text-primary">Insights</span>

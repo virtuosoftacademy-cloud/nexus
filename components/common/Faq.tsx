@@ -11,7 +11,7 @@ interface faqProps{
 export default function Faq({items = []}:faqProps) {
 
   return (
-    <div className="mx-auto max-w-7xl px-6 sm:px-12 text-foreground pt-10 py-20">
+    <div className="mx-auto px-4 sm:px-8 xl:px-26 text-foreground pt-10 py-20">
       <h4 className="text-2xl md:text-[42px] text-center mb-10 font-medium">
         Frequently Asked <span className="text-primary">Questions</span>
       </h4>

@@ -12,9 +12,9 @@ export default function FaqCard({ faq }:faqCardProps) {
         <>
             <AccordionItem value={value}>
                 <AccordionTrigger>
-                    <h4>
+                    <h3>
                         {question}
-                    </h4>
+                    </h3>
                 </AccordionTrigger>
                 <AccordionContent>
                     {answer}

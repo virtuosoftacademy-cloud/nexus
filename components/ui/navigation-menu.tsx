@@ -4,6 +4,8 @@ import { NavigationMenu as NavigationMenuPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 import { ChevronDownIcon } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
 
 function NavigationMenu({
   className,
@@ -87,7 +89,7 @@ function NavigationMenuContent({
     <NavigationMenuPrimitive.Content
       data-slot="navigation-menu-content"
       className={cn(
-        "top-0 left-0 w-full p-1 ease-[cubic-bezier(0.22,1,0.36,1)] group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:ring-1 group-data-[viewport=false]/navigation-menu:ring-foreground/10 group-data-[viewport=false]/navigation-menu:duration-300 data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in data-[motion^=to-]:animate-out data-[motion^=to-]:fade-out **:data-[slot=navigation-menu-link]:focus:ring-0 **:data-[slot=navigation-menu-link]:focus:outline-none md:absolute md:w-auto group-data-[viewport=false]/navigation-menu:data-open:animate-in group-data-[viewport=false]/navigation-menu:data-open:fade-in-0 group-data-[viewport=false]/navigation-menu:data-open:zoom-in-95 group-data-[viewport=false]/navigation-menu:data-closed:animate-out group-data-[viewport=false]/navigation-menu:data-closed:fade-out-0 group-data-[viewport=false]/navigation-menu:data-closed:zoom-out-95",
+        "top-0 right-0 w-full p-1 ease-[cubic-bezier(0.22,1,0.36,1)] group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:shadow group-data-[viewport=false]/navigation-menu:ring-1 group-data-[viewport=false]/navigation-menu:ring-foreground/10 group-data-[viewport=false]/navigation-menu:duration-300 data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 data-[motion^=from-]:animate-in data-[motion^=from-]:fade-in data-[motion^=to-]:animate-out data-[motion^=to-]:fade-out **:data-[slot=navigation-menu-link]:focus:ring-0 **:data-[slot=navigation-menu-link]:focus:outline-none md:absolute md:w-auto group-data-[viewport=false]/navigation-menu:data-open:animate-in group-data-[viewport=false]/navigation-menu:data-open:fade-in-0 group-data-[viewport=false]/navigation-menu:data-open:zoom-in-95 group-data-[viewport=false]/navigation-menu:data-closed:animate-out group-data-[viewport=false]/navigation-menu:data-closed:fade-out-0 group-data-[viewport=false]/navigation-menu:data-closed:zoom-out-95",
         className
       )}
       {...props}
@@ -102,7 +104,7 @@ function NavigationMenuViewport({
   return (
     <div
       className={cn(
-        "absolute top-full left-0 isolate z-50 flex justify-center"
+        "absolute top-full isolate z-50 flex justify-center"
       )}
     >
       <NavigationMenuPrimitive.Viewport
@@ -125,7 +127,7 @@ function NavigationMenuLink({
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        "flex items-center gap-2 p-2 text-base transition-all outline-none in-data-[slot=navigation-menu-content]:rounded-md data-active:bg-primary data-active:focus:bg-primary [&_svg:not([class*='size-'])]:size-4",
+        "flex items-center gap-2 p-2 text-base transition-all outline-none data-active:bg-primary data-active:focus:bg-primary [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
@@ -151,6 +153,44 @@ function NavigationMenuIndicator({
   )
 }
 
+interface ListItemProps extends React.ComponentPropsWithoutRef<"li"> {
+  icon: string;
+  title: string;
+  children: React.ReactNode;
+  href: string;
+}
+
+function ListItem({ icon, title, children, href, ...props }: ListItemProps) {
+  return (
+    <li {...props}>
+      <NavigationMenuLink asChild>
+        <Link href={href} className="block">
+          <div className="flex items-start gap-3 p-6 group hover:bg-accent/5 transition-all duration-200">
+            <div className="relative size-10 shrink-0 mt-0.5">
+              <Image
+                src={icon}
+                alt={title}
+                width={40}
+                height={40}
+                className="size-6 transition-all duration-200 group-hover:bg-primary group-hover:text-accent"
+              />
+            </div>
+
+            <div className="flex flex-col gap-1 text-sm pt-1">
+              <div className="leading-none font-medium text-base text-foreground group-hover:text-primary transition-colors">
+                {title}
+              </div>
+              <div className="line-clamp-2 text-xs text-muted-foreground">
+                {children}
+              </div>
+            </div>
+          </div>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+}
+
 export {
   NavigationMenu,
   NavigationMenuList,
@@ -161,4 +201,5 @@ export {
   NavigationMenuIndicator,
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
+  ListItem
 }

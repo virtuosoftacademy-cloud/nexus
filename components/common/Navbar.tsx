@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
+  ListItem,
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -16,58 +17,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ChevronRight, ChevronUp, Menu, X } from "lucide-react";
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
-
-const consultingServicesItems = [
-  { title: "Payroll", href: "#", subPages: [{ label: "Payroll Bureau Service", href: "#" }, { label: "Compliance Service", href: "#" }] },
-  { title: "Finance Function", href: "#", subPages: [{ label: "Business Accounting", href: "#" }, { label: "Financial Consultancy", href: "#" }, { label: "Individual Accounting", href: "#" }] },
-  { title: "Fractional CFO", href: "#", subPages: [] },
-  { title: "Digital Accounting", href: "#", subPages: [] },
-  { title: "Tax", href: "#", subPages: [] },
-  { title: "Property Accounting", href: "#", subPages: [] },
-  { title: "Industries", href: "#", subPages: [] },
-  { title: "View all Payroll Services", href: "#", subPages: [], isViewAll: true },
-];
-
-interface ServiceItem { title: string; description: string; href: string }
-
-const serviceItems: ServiceItem[] = [
-  { title: "UK Accounting & Tax", description: "Full-spectrum compliance, self-assessment, and year-end accounts for UK businesses.", href: "/services/uk-accounting-and-tax" },
-  { title: "Property Accounting & Tax", description: "SDLT planning, SPV structuring, rental portfolios, and HMO compliance.", href: "/services/property-accounting-and-tax" },
-  { title: "Construction & Project-Based Accounting", description: "CIS obligations, VAT on construction, and subcontractor management.", href: "/services/construction-accounting" },
-  { title: "Advisory Services", description: "CFO-level advisory, governance, and strategic business intelligence.", href: "/services/advisory-services" },
-  { title: "Digital & Systems Advisory", description: "CFO-level advisory, governance, and strategic business intelligence.", href: "/services/advisory-services" },
-  { title: "Business Consultancy", description: "Digital transformation, platform integration, and process automation.", href: "/services/technology-and-solutions" },
-  { title: "Tax Authority Support", description: "HMRC and FTA correspondence, investigations, and dispute resolution.", href: "/services/tax-authority-support" },
-  { title: "Solutions", description: "HMRC and FTA correspondence, investigations, and dispute resolution.", href: "/services/tax-authority-support" },
-];
-
-// ─── ListItem ─────────────────────────────────────────────────────────────────
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => (
-  <li>
-    <NavigationMenuLink asChild>
-      <a
-        ref={ref}
-        className={cn(
-          "block select-none px-4 py-3 leading-none no-underline outline-none transition-colors hover:text-primary",
-          className
-        )}
-        {...props}
-      >
-        <div className="flex items-start gap-3">
-          <ChevronRight className="h-3.5 w-3.5 mt-0.5 text-primary opacity-0 shrink-0" />
-          <div className="text-sm font-semibold text-gray-800 leading-tight">{title}</div>
-        </div>
-      </a>
-    </NavigationMenuLink>
-  </li>
-));
-ListItem.displayName = "ListItem";
+import { serviceItems } from "@/app/_constant";
 
 // ─── Navbar ───────────────────────────────────────────────────────────────────
 
@@ -87,9 +37,9 @@ export default function Navbar() {
     pathname.startsWith("/services");
 
   const isLight = scrolled || servicesOpen;
-  const navBg = isLight || !isTransparentRoute ? "bg-white shadow-sm" : "bg-transparent shadow-none";
-  const textColor = isLight || !isTransparentRoute ? "text-foreground" : "text-accent";
-  const logoSrc = isLight || !isTransparentRoute ? "/assets/logo.svg" : "/assets/logo-white.svg";
+  const navBg = !isTransparentRoute ? "bg-white shadow-sm" : "bg-transparent shadow-none";
+  const textColor = !isTransparentRoute ? "text-foreground" : "text-accent";
+  const logoSrc = !isTransparentRoute ? "/assets/logo.svg" : "/assets/logo-white.svg";
 
   return (
     <nav
@@ -109,14 +59,14 @@ export default function Navbar() {
             alt="Nexus Logo"
             width={160}
             height={48}
-            className={cn("transition-all duration-300 h-7 md:h-auto", scrolled && "h-7 lg:h-8")}
+            className="transition-all duration-300 h-6 md:h-12"
             priority
           />
         </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          
+
           <NavigationMenu onValueChange={(val) => setServicesOpen(val !== "")} className="pr-10">
             <NavigationMenuList className="gap-1">
               <NavigationMenuItem>
@@ -126,16 +76,21 @@ export default function Navbar() {
               </NavigationMenuItem>
 
               <NavigationMenuItem value="services">
-                <NavigationMenuTrigger className="hover:text-primary">Our Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent! hover:text-primary">Our Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-70 py-4">
-                    <ul className="grid grid-cols-1 text-sm">
+                  <div className="min-w-[74rem] py-4 px-7">
+                    <h4 className="text-sm text-muted-foreground leading-snug pb-4">Our Services</h4>
+                    <ul className="grid grid-cols-2 xl:grid-cols-3 gap-6 text-sm">
                       {serviceItems.map((item) => (
-                        <ListItem key={item.title} href={item.href} title={item.title}>
+                        <ListItem key={item.title} icon={item.icon} title={item.title} href={item.href}>
                           {item.description}
                         </ListItem>
                       ))}
                     </ul>
+                    <div className="pt-4 pb-2">
+                      <hr className="text-muted-foreground" />
+                      <h4 className="text-sm text-muted-foreground leading-snug pt-4">Structured financial advisory, accounting, governance and systems oversight across the UK and UAE.</h4>
+                    </div>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -175,7 +130,7 @@ export default function Navbar() {
             <span className="text-primary">English</span>
             <span className="text-accent">| Arabic</span>
           </div> */}
-          <Button size="lg" className="text-sm font-normal p-6" asChild>
+          <Button size="lg" className="text-base font-normal py-6 px-10" asChild>
             <Link href="/contact">Contact Us</Link>
           </Button>
         </div>
@@ -209,30 +164,10 @@ export default function Navbar() {
               <div className={cn("grid transition-all duration-300 ease-out", mobileServicesOpen ? "grid-rows-[1fr] opacity-100 pt-3" : "grid-rows-[0fr] opacity-0")}>
                 <div className="overflow-hidden">
                   <div className="flex flex-col gap-5 pl-4 border-l border-white/30 pt-3 pb-2">
-                    {consultingServicesItems.map((service, index) => (
-                      <div key={service.title} className="space-y-3">
-                        <div
-                          className="flex items-center justify-between cursor-pointer text-lg hover:text-primary transition-colors"
-                          onClick={() => setOpenSubMobile(openSubMobile === index ? null : index)}
-                        >
-                          <Link href={service.href}>{service.title}</Link>
-                          {service.subPages.length > 0 && (
-                            <ChevronUp className={cn("transition-transform duration-300", openSubMobile === index && "rotate-180")} />
-                          )}
-                        </div>
-
-                        <div className={cn("grid transition-all duration-300 ease-out", openSubMobile === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")}>
-                          <div className="overflow-hidden">
-                            <div className="flex flex-col gap-3 pl-6 border-l border-white/20 pt-2 pb-1">
-                              {service.subPages.map((sub, i) => (
-                                <Link key={i} href={sub.href} className="text-base text-accent hover:underline underline-offset-4 capitalize transition-colors" onClick={() => setMobileOpen(false)}>
-                                  {sub.label}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    {serviceItems.map((item) => (
+                      <ListItem key={item.title} title={item.title} icon="#" href={item.href}>
+                        {item.description}
+                      </ListItem>
                     ))}
                   </div>
                 </div>
