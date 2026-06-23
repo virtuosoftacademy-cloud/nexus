@@ -9,7 +9,7 @@ import { BlogCategories, FeaturedPosts, SidebarPosts } from "../constant";
 export default function Posts() {
   return (
     <div className="min-h-screen pt-12">
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_440px] gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10">
 
         {/* ══ LEFT COLUMN ══════════════════════════════════════════════════════ */}
         <div className="flex flex-col gap-4">

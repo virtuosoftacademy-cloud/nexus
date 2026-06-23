@@ -1,42 +1,19 @@
-import { HeroData } from "../constant";
 
-interface HeroSectionProps {
-  data: HeroData;
-}
 
-export default function Hero({ data }: HeroSectionProps) {
-  if (!data) return null;
 
-  const { title, description, image, width } = data;
+export default function Hero() {
 
-  return (
-    <section className="relative overflow-hidden -z-20 flex items-center -mt-25">
+    return (
+        <section className="py-16 border-b border-muted-foreground/30" id="hero">
+            <div className="flex gap-5 justify-center md:justify-between items-center flex-wrap text-center md:text-left">
+                <h4 className="text-4xl md:text-[3.5rem] font-medium text-foreground leading-tight">
+                    Services
+                </h4>
+                <p className="text-xl md:text-4xl font-serif text-foreground/70 leading-snug md:max-w-3xl">
+                Financial Clarity for Businesses Scaling Across Complex Environments
+                </p>
+            </div>
+        </section>
+    );
 
-      {/* Background image — dynamic per service */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${image}')` }}
-      />
-
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50 pointer-events-none" />
-
-      {/* Content */}
-      <div className={`relative w-full px-6 sm:px-14 pb-20 pt-30 md:pt-40 ${width}`}>
-        <div className="flex flex-col text-center md:text-left">
-
-          {/* Heading */}
-          <h4 className="text-4xl md:text-[3.5rem] font-medium text-white md:leading-tight">
-            {title}
-          </h4>
-
-          {/* Subtitle */}
-          <p className="text-sm md:text-base text-accent leading-tight max-w-5xl">
-            {description}
-          </p>
-
-        </div>
-      </div>
-    </section>
-  );
 }

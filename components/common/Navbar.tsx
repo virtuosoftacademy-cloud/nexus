@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -16,7 +16,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { ChevronRight, ChevronUp, Menu, X } from "lucide-react";
+import { ChevronUp, Menu, X } from "lucide-react";
 import { serviceItems } from "@/app/_constant";
 
 // ─── Navbar ───────────────────────────────────────────────────────────────────
@@ -32,9 +32,7 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   const isTransparentRoute =
-    pathname === "/" ||
-    pathname === "/landing" ||
-    pathname.startsWith("/services");
+    pathname === "/" || pathname.startsWith("/services/");
 
   const isLight = scrolled || servicesOpen;
   const navBg = !isTransparentRoute ? "bg-white shadow-sm" : "bg-transparent shadow-none";
@@ -50,7 +48,7 @@ export default function Navbar() {
         textColor,
       )}
     >
-      <div className="flex items-center justify-between px-8 md:px-14 mx-auto">
+      <div className="flex items-center justify-between px-8 sm:px-8 xl:px-16">
 
         {/* Logo */}
         <Link href="/">
@@ -76,11 +74,13 @@ export default function Navbar() {
               </NavigationMenuItem>
 
               <NavigationMenuItem value="services">
-                <NavigationMenuTrigger className="bg-transparent! hover:text-primary">Our Services</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="min-w-[74rem] py-4 px-7">
+                <NavigationMenuLink href={"/services"}>
+                  <NavigationMenuTrigger className="bg-transparent! hover:text-primary">Our Services</NavigationMenuTrigger>
+                </NavigationMenuLink>
+                <NavigationMenuContent className="">
+                  <div className="min-w-[70rem] py-4 px-7">
                     <h4 className="text-sm text-muted-foreground leading-snug pb-4">Our Services</h4>
-                    <ul className="grid grid-cols-2 xl:grid-cols-3 gap-6 text-sm">
+                    <ul className="grid grid-cols-2 xl:grid-cols-3 text-sm">
                       {serviceItems.map((item) => (
                         <ListItem key={item.title} icon={item.icon} title={item.title} href={item.href}>
                           {item.description}
@@ -97,7 +97,7 @@ export default function Navbar() {
 
 
               <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="/blogs">
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="#">
                   Industries
                 </NavigationMenuLink>
               </NavigationMenuItem>

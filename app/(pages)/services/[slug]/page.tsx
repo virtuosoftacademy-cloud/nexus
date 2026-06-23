@@ -2,13 +2,13 @@
 import { notFound } from "next/navigation";
 import { ReactLenis } from "lenis/react";
 import type { Metadata } from "next";
-import Hero from "../_components/Hero";
+import Hero from "../_components/servicePagesComponents/Hero";
 import { AccountingCta, AccountingResult, AdvisoryAbout, AdvisoryCta, AdvisoryResult, ConstructionAbout, ConstructionCta, ConstructionResult, heroAccount, heroAdvisory, heroConstruction, heroProperty, heroTax, heroTech, PropertyAbout, PropertyCta, PropertyResult, statusAccount, statusAdvisory, statusConstruction, statusProperty, statusTax, statusTech, TaxAbout, TaxCta, TaxResult, TechAbout, TechCta, TechResult, UKAccountingAbout } from "../constant";
-import Stats from "../_components/Stats";
-import ServicesStats from "../_components/Stats";
-import AboutService from "../_components/aboutservice";
-import Cta from "../_components/cta";
-import Results from "../_components/Results";
+import Stats from "../_components/servicePagesComponents/Stats";
+import ServicesStats from "../_components/servicePagesComponents/Stats";
+import AboutService from "../_components/servicePagesComponents/aboutservice";
+import Cta from "../_components/servicePagesComponents/cta";
+import Results from "../_components/servicePagesComponents/Results";
 import CtaForm from "@/components/common/ctaForm";
 import { CtaSplitSection } from "@/components/common/CTA";
 

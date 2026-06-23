@@ -13,30 +13,8 @@ import { TwitterIcon } from "../ui/twitter";
 import { InstagramIcon } from "../ui/instagram";
 import { YoutubeIcon } from "../ui/youtube";
 import { ScrollToSection } from "../scrolltosection";
-import { label } from "framer-motion/client";
+import { links } from "@/app/_constant";
 
-const links = [
-  {
-    label: "Our Services",
-    href: "#"
-  },
-  {
-    label: "Indutries",
-    href:"#"
-  },
-  {
-    label: "Insights",
-    href: "/blogs"
-  },
-  {
-    label: "About Us",
-    href: "/about",
-  },
-  {
-    label: "Contact Us",
-    href: "/contact"
-  },
-]
 
 const Footer = () => {
   return (

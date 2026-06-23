@@ -1,4 +1,4 @@
-import ReactLenis from 'lenis/react';
+
 import React from 'react'
 
 export const metadata = {

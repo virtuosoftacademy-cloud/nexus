@@ -39,7 +39,7 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative overflow-hidden min-h-screen flex flex-col -z-40 -mt-25 px-8 md:px-2">
+      <section className="relative overflow-hidden min-h-screen flex flex-col -z-40 -mt-26 px-8 md:px-2">
 
         {/* ── Background image crossfade ── */}
         <AnimatePresence initial={false}>
@@ -64,7 +64,7 @@ export function HeroSection() {
             backgroundSize: "48px 48px",
           }}
         />
-        <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none bg-gradient-to-t from-black/70 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none bg-linear-to-t from-black/70 to-transparent" />
 
         {/* ── Content ── */}
         <div className="relative flex-1 py-24 mt-30 flex flex-col justify-between">

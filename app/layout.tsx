@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import {  Ancizar_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -13,11 +12,6 @@ const ancizarSans = Ancizar_Serif({
   variable: "--font-ancizar-sans",
   display: "swap",
 });
-
-export const metadata: Metadata = {
-  title: "Nexus | Advisory and Services",
-  description: "Advisory and Services",
-};
 
 export default function RootLayout({
   children,

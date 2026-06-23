@@ -16,6 +16,35 @@ export const serviceItems: ServiceItem[] = [
   { icon: "/assets/nav/businessconsultancy.png", title: "Solutions", description: "Tailored solutions for business.", href: "/services/tax-authority-support" },
 ];
 
+
+interface FooterLinks {
+  label: string;
+  href: string
+}
+
+export const links: FooterLinks[] = [
+  {
+    label: "Our Services",
+    href: "/services"
+  },
+  {
+    label: "Indutries",
+    href: "#"
+  },
+  {
+    label: "Insights",
+    href: "/blogs"
+  },
+  {
+    label: "About Us",
+    href: "/about",
+  },
+  {
+    label: "Contact Us",
+    href: "/contact"
+  },
+]
+
 // Home Page
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -153,8 +182,41 @@ export const CoreServices: CoreService[] = [
     href: "#",
   },
 ];
+// Latest Insights
 
+interface InsightCard {
+  tag: string;
+  title: string;
+  description: string;
+  src: string;
+  gradientFrom: string;
+  gradientTo: string;
+  newsFrom: string;
+}
 
+export const insights: InsightCard[] = [
+  {
+    tag: "Accounting & Tax",
+    title: "The VAT Trap Most Property Businesses Don't See Coming",
+    description:
+      "There's a moment many property business owners experience, usually during a lender review, an HMRC compliance check or when preparing to refinance.",
+    src: "assets/vat.png",
+    gradientFrom: "hsl(174 82% 10%)",
+    gradientTo: "hsl(174 82% 22%)",
+    newsFrom: "Brief",
+
+  },
+  {
+    tag: "UAE & International",
+    title: "Why Expanding Into the UAE Without Structured Reporting Is a Risk Most Business Owners Underestimate",
+    description:
+      "There is a moment that many UK founders experience somewhere between six and eighteen months after establishing a UAE entity.",
+    src: "assets/advisory.png",
+    gradientFrom: "hsl(210 60% 10%)",
+    gradientTo: "hsl(210 60% 20%)",
+    newsFrom: "Brief",
+  },
+];
 // PlatForm
 
 export interface PlatForm {
@@ -351,7 +413,7 @@ export const testimonials: Testimonial[] = [
     name: "Faraz Ahmed",
     rating: 5,
     review:
-      "I was looking for a good, professional and affordable accountant in London and am very glad to find Alpha Tax & Accounting. I am very pleased with the service and expertise. They are great! Thank you, team.",
+      "I was looking for a good, professional and affordable accountant in London and am very glad to find Nexus Accounting. I am very pleased with the service and expertise. They are great! Thank you, team.",
     avatarInitial: "F",
   },
   {
@@ -400,6 +462,14 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     review:
       "I have been using Nexus for years for personal self assessment and business corporation tax and VAT. The owner is very quick and intelligent, they have helped me significantly getting my tax affairs in order. I would highly recommend using Nexus!",
+    avatarInitial: "Z",
+  },
+  {
+    id: "t-9",
+    name: "Muhammad Imran",
+    rating: 5,
+    review:
+      "I was searching for a reliable accountant in UK and Nexus Accounting exceeded my expectations. Their expertise and friendly service are unmatched. I m truly satisfied with their work. Highly recommend.",
     avatarInitial: "Z",
   },
 ];

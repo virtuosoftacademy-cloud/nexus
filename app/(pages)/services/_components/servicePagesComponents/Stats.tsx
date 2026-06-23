@@ -1,4 +1,4 @@
-import { StatsData } from "../constant";
+import { StatsData } from "../../constant";
 
 interface StatsSectionProps {
   data: StatsData[];

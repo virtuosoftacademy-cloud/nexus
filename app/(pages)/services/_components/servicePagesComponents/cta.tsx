@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { CtaData } from "../constant";
+import { CtaData } from "../../constant";
 
 interface CtaProps {
   data: CtaData;

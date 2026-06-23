@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ResultsData } from "../constant";
+import { ResultsData } from "../../constant";
 import { Button } from "@/components/ui/button";
 
 interface ResultsProps {

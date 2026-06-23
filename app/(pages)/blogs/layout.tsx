@@ -1,8 +1,8 @@
-import ReactLenis from 'lenis/react';
+
 import React from 'react'
 
 export const metadata = {
-  title: "Nexus | Blogs",
+  title: "Nexus | Insights",
 //   description: "Created By Virtuosoft Limited",
 };
 
@@ -12,10 +12,8 @@ export default function BlogsLayout({
     children: React.ReactNode;
 } >) {
     return (
-        <div>
-            <ReactLenis root>
+        <div className='min-h-screen mx-auto px-8 sm:px-8 xl:px-18'>
             {children}
-            </ReactLenis>
         </div>
     )
 }

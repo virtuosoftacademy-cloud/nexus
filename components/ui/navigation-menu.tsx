@@ -110,7 +110,7 @@ function NavigationMenuViewport({
       <NavigationMenuPrimitive.Viewport
         data-slot="navigation-menu-viewport"
         className={cn(
-          "border-t border-primary origin-top-center mt-7 outline-0 relative h-(--radix-navigation-menu-viewport-height) w-full overflow-hidden bg-popover text-popover-foreground shadow ring-1 ring-foreground/10 duration-100 md:w-(--radix-navigation-menu-viewport-width) data-open:animate-in data-open:zoom-in-90 data-closed:animate-out data-closed:zoom-out-90",
+          "border-t border-primary origin-top-center mt-6 outline-0 relative h-(--radix-navigation-menu-viewport-height) w-full overflow-hidden bg-popover text-popover-foreground shadow ring-1 ring-foreground/10 duration-100 md:w-(--radix-navigation-menu-viewport-width) data-open:animate-in data-open:zoom-in-90 data-closed:animate-out data-closed:zoom-out-90",
           className
         )}
         {...props}
@@ -165,19 +165,18 @@ function ListItem({ icon, title, children, href, ...props }: ListItemProps) {
     <li {...props}>
       <NavigationMenuLink asChild>
         <Link href={href} className="block">
-          <div className="flex items-start gap-3 p-6 group hover:bg-accent/5 transition-all duration-200">
+          <div className="flex items-start gap-2 py-4 group transition-all duration-200">
             <div className="relative size-10 shrink-0 mt-0.5">
               <Image
                 src={icon}
                 alt={title}
                 width={40}
                 height={40}
-                className="size-6 transition-all duration-200 group-hover:bg-primary group-hover:text-accent"
+                className="size-6 transition-all duration-200 group-hover:text-accent"
               />
             </div>
-
             <div className="flex flex-col gap-1 text-sm pt-1">
-              <div className="leading-none font-medium text-base text-foreground group-hover:text-primary transition-colors">
+              <div className="leading-none font-medium text-base text-primary group-hover:text-foreground transition-colors">
                 {title}
               </div>
               <div className="line-clamp-2 text-xs text-muted-foreground">

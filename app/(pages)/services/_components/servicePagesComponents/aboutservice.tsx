@@ -1,6 +1,6 @@
 "use client";
 
-import { ServiceArea, AboutServiceData } from "../constant";
+import { ServiceArea, AboutServiceData } from "../../constant";
 
 interface AboutServiceProps {
   data: AboutServiceData;

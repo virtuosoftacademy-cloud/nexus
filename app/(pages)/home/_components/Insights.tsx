@@ -1,44 +1,13 @@
 "use client";
 
+import { insights } from "@/app/_constant";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Bookmark, Save } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface InsightCard {
-  tag: string;
-  title: string;
-  description: string;
-  src: string;
-  gradientFrom: string;
-  gradientTo: string;
-  newsFrom: string;
-}
 
-const insights: InsightCard[] = [
-  {
-    tag: "Accounting & Tax",
-    title: "The VAT Trap Most Property Businesses Don't See Coming",
-    description:
-      "Partial exemption, the option to tax, and mixed-use developments create VAT liabilities that are avoidable — if you know they're coming. Most don't.",
-    src: "assets/vat.png",
-    gradientFrom: "hsl(174 82% 10%)",
-    gradientTo: "hsl(174 82% 22%)",
-    newsFrom: "Brief",
-
-  },
-  {
-    tag: "UAE & International",
-    title: "Why Expanding Into the UAE Without Structured Reporting Is…",
-    description:
-      "As the UAE approaches its first year of corporate tax, the gap between compliant and non-compliant businesses widens by the day.",
-    src: "assets/advisory.png",
-    gradientFrom: "hsl(210 60% 10%)",
-    gradientTo: "hsl(210 60% 20%)",
-    newsFrom: "Brief",
-  },
-];
 
 export function InsightsSection() {
   return (
@@ -100,7 +69,8 @@ export function InsightsSection() {
               variant="secondary"
               className="px-6 md:px-8"
             >
-              See All Insights <ArrowRight className="ml-2 h-4 w-4" />
+              See All Insights 
+              {/* <ArrowRight className="ml-2 h-4 w-4" /> */}
             </Button>
           </Link>
         </div>
