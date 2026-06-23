@@ -11,7 +11,7 @@ import CtaForm from '../../../components/common/ctaForm'
 function Contact() {
     return (
         <div>
-                <div className='mx-auto max-w-360 px-10 md:px-0'>
+                <div className='px-8 sm:px-8 xl:px-18'>
                     <Hero />
                     <ContactDetails />
                     <ContactFollow />

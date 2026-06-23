@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const metadata = {
-  title: "Virtuosoft | Home",
+  title: "Nexus | Contact",
   description: "Created By Virtuosoft Limited",
 };
 

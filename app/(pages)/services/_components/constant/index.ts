@@ -1,3 +1,5 @@
+
+
 export interface ServiceCardInterface {
     // tag: string;
     // eyebrow: string;
@@ -35,7 +37,7 @@ export const services: ServiceCardInterface[] = [
         title: "Business Consultancy",
         description:
             "We help businesses improve performance, manage growth, and make confident strategic decisions through expert guidance in operations, finance, risk management & business planning.",
-        image: `${images}/businessconsultancy.png`,
+        image: `${images}/businessConsultancy.png`,
         alt: "Modern office space",
         href: "#",
     },
@@ -45,7 +47,7 @@ export const services: ServiceCardInterface[] = [
         title: "Property Accounting & Tax",
         description:
             "Specialist accounting for SPV structures, project cost tracking, CIS compliance, VAT on development, and working capital planning across the full project lifecycle.",
-        image: `${images}/propertyaccounting.png`,
+        image: `${images}/propertyAccounting.png`,
         alt: "Modern office space",
         href: "#",
     },
