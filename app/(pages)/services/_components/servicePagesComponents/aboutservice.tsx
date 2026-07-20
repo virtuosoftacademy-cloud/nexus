@@ -1,37 +1,29 @@
 "use client";
 
-import { ServiceArea, AboutServiceData } from "../../constant";
+import { Dot } from "lucide-react";
+import { AboutServiceData } from "../constant";
+import { cn } from "@/lib/utils";
 
-interface AboutServiceProps {
-  data: AboutServiceData;
-}
-
-export default function AboutService({ data }: AboutServiceProps) {
-  if (!data) return null;
-
-  const { introParagraph, listIntro, serviceAreas, closingParagraph } = data;
-
+export default function AboutService({ introParagraph, listIntro, optionalParagraph, introClassName, serviceAreasTitle, serviceTitleClassName, serviceAreas, closingParagraph, className }: AboutServiceData) {
   return (
-    <div className="mx-auto max-w-240 space-y-6 py-10 md:py-18 px-8 text-foreground text-sm md:text-[1.75rem] leading-relaxed font-serif">
-
-      <p className="whitespace-pre-line">
+    <div className="mx-auto max-w-240 space-y-6 py-10 md:py-20 px-8 text-foreground text-sm md:text-[1.75rem] leading-tight">
+      <h2 className="whitespace-pre-line">
         {introParagraph}
-      </p>
-
-      <p>{listIntro}</p>
-
+      </h2>
+      <h2 className={cn("md:w-[30em] whitespace-pre-line", introClassName)}>{listIntro}</h2>
+      <h2 className={cn("whitespace-pre-line", serviceTitleClassName)}>{serviceAreasTitle}</h2>
       <div>
-        <ul className="list-disc space-y-4">
-          {serviceAreas.map((area: ServiceArea) => (
-            <li key={area.id} className="md:ml-8 text-sm md:text-[1.75rem] leading-relaxed">
-              <strong>{area.title}.</strong>{" "}
+        <ul className="space-y-4 font-serif whitespace-pre-line">
+          {serviceAreas?.map((area) => (
+            <li key={area.id} className="flex items-center gap-2 text-sm md:text-[1.75rem] leading-px">
+              <Dot />{" "}
               {area.description}
             </li>
           ))}
         </ul>
       </div>
-
-      <p>{closingParagraph}</p>
+      <p className="font-serif">{optionalParagraph}</p>
+      <h3 className={cn("text-sm md:text-[1.75rem] whitespace-pre-line", className)}>{closingParagraph}</h3>
     </div>
   );
 }

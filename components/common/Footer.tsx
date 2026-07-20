@@ -42,8 +42,8 @@ const Footer = () => {
           <Field>
             {/* <FieldLabel htmlFor="input-demo-api-key">API Key</FieldLabel> */}
             <div className="flex gap-4">
-              <div className="bg-accent-foreground p-2 w-2xl">
-                <Input id="email" type="email" placeholder="Your email address" className="rounded-none border-0 placeholder:text-sm md:placeholder:text-base" />
+              <div className="bg-accent/10 p-2 w-2xl">
+                <Input id="email" type="email" placeholder="Your email address" className="rounded-none border-0 placeholder:text-sm md:placeholder:text-base placeholder:text-accent/50" />
               </div>
               <Button className="p-6 text-sm md:text-base hover:text-foreground transition hover:bg-secondary">Subscribe</Button>
             </div>

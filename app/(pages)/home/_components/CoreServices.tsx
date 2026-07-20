@@ -25,7 +25,7 @@ export default function CoreServicesSection() {
         </div>
 
         {/* CTA */}
-        <Button variant="secondary" className="p-6 font-medium text-sm md:text-base hover:text-foreground hover:bg-accent">
+        <Button variant="secondary">
           View All Services
         </Button>
 

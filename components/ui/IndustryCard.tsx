@@ -1,30 +1,48 @@
+
 "use client";
 
-import { Industry } from "@/app/_constant";
+// ---------------------------------------------------------------------------
+// Section: Imports
+// ---------------------------------------------------------------------------
+import { Phase } from "@/app/(pages)/services/_components/constant";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-interface IndustryCardProps {
-    industry: Industry;
+// ---------------------------------------------------------------------------
+// Section: Types
+// ---------------------------------------------------------------------------
+interface PhaseCardProps {
+    phase: Phase;
 }
 
-export default function IndustryCard({ industry }: IndustryCardProps) {
-    const { title, description, image, width } = industry;
+// ---------------------------------------------------------------------------
+// Section: Shared easing — image scale and description reveal use the same
+// curve so the two motions read as one gesture.
+// ---------------------------------------------------------------------------
+const EASE: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
+
+// ---------------------------------------------------------------------------
+// Section: Component — PhaseCard
+// ---------------------------------------------------------------------------
+export default function PhaseCard({ phase }: PhaseCardProps) {
+    const { title, description, image, width } = phase;
     const [hovered, setHovered] = useState(false);
 
     return (
         <div
-            className="relative overflow-hidden flex flex-col justify-between cursor-pointer"
-            style={{ minHeight: "420px" }}
+            tabIndex={0}
+            className="relative overflow-hidden flex flex-col justify-between cursor-pointer text-left w-full h-full md:min-h-85 md:max-w-76.25"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
+            onFocus={() => setHovered(true)}
+            onBlur={() => setHovered(false)}
         >
-            {/* ── Background image — scales in on hover, out on leave ── */}
+            {/* ── Background image — scales in on hover/focus, out on leave ── */}
             <motion.div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${image})` }}
                 animate={{ scale: hovered ? 1.07 : 1 }}
-                transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{ duration: 0.55, ease: EASE }}
             />
 
             {/* ── Dark gradient overlay — always present for legibility ── */}
@@ -38,12 +56,13 @@ export default function IndustryCard({ industry }: IndustryCardProps) {
                     {title}
                 </h4>
 
-                {/* Description — bottom, fades in stronger on hover */}
-                <motion.p
-                    className={`text-accent text-sm md:text-lg mt-auto pt-4 font-serif ${width}`}
-                >
-                    {description}
-                </motion.p>
+                {description && (
+                    <motion.p
+                        className={`text-white text-sm md:text-lg mt-auto pt-4 font-serif ${width}`}
+                    >
+                        {description}
+                    </motion.p>
+                )}
             </div>
         </div>
     );

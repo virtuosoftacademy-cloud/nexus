@@ -5,6 +5,8 @@ import { Accordion as AccordionPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 import { ChevronDownIcon, ChevronUpIcon, MinusIcon, PlusIcon } from "lucide-react"
+import { usePathname } from "next/navigation"
+
 
 function Accordion({
   className,
@@ -37,19 +39,29 @@ function AccordionTrigger({
   children,
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
+  const pathName = usePathname()
   return (
     <AccordionPrimitive.Header className="flex">
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "group/accordion-trigger relative my-2 flex flex-1 items-start justify-between bg-accent data-[state=open]:text-primary p-4 text-left text-sm md:text-lg font-medium text-foreground/50 transition-all focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:after:border-ring disabled:pointer-events-none disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4 **:data-[slot=accordion-trigger-icon]:text-primary",
+          "group/accordion-trigger relative my-2 flex flex-1 items-start justify-between bg-accent data-[state=open]:text-primary p-4 text-left text-sm md:text-lg font-medium text-foreground/50 transition-all focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:after:border-ring disabled:pointer-events-none disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-7 **:data-[slot=accordion-trigger-icon]:text-primary",
           className
         )}
         {...props}
       >
         {children}
-        <PlusIcon data-slot="accordion-trigger-icon" className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden mt-1" />
-        <MinusIcon data-slot="accordion-trigger-icon" className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline mt-1" />
+        {pathName === "/" ?
+          <>
+            <MinusIcon data-slot="accordion-trigger-icon" className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline mt-1" />
+            <PlusIcon data-slot="accordion-trigger-icon" className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden mt-1" />
+          </>
+          :
+          <>
+            <ChevronDownIcon data-slot="accordion-trigger-icon" className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline mt-1" />
+            <ChevronUpIcon data-slot="accordion-trigger-icon" className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden mt-1" />
+          </>
+        }
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

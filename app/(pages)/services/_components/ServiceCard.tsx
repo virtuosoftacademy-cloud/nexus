@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
-import { ServiceCardInterface } from "./constant";
+import { ServiceCardInterface } from "../constant";
 
 export function ServiceCard({
     // tag,

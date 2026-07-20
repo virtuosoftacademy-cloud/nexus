@@ -1,42 +1,39 @@
-// components/contact/ContactFollow.tsx
 
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function ContactFollow() {
     return (
-        <section className="bg-background py-20">
-            <div className="mx-auto max-w-171 text-center md:text-left">
+        <section className="py-16">
+                <div className="flex flex-col pt-3 md:pt-12 text-lg md:text-2xl lg:text-[1.75rem] text-foreground/90 font-heading space-y-3 text-left z-10">
+                    <h2 className="text-primary font-bold text-xl md:text-2xl">Enquiry Process</h2>
+                    <div>
+                        <ul className="list-decimal list-inside">
+                            <li>Submission of structured enquiry</li>
+                            <li>Preliminary review within 1-2 working days</li>
+                            <li>Introductory discussion to assess scope</li>
+                            <li>Defined proposal outlining deliverables and engagement parameters</li>
+                        </ul>
+                    </div>
 
-                {/* Eyebrow */}
-                <p
-                    className="py-2 md:py-0 text-base text-primary font-semibold tracking-widest text-center"
-                >
-                    Follow
-                </p>
-
-                {/* Body */}
-                <p className="text-sm md:text-[1.9rem] text-foreground leading-relaxed hover:text-primary transition">
-                    Follow Nexus on LinkedIn for regular insights on UK and UAE
-                    accounting, tax, and governance. We publish briefings on regulatory
-                    changes, sector-specific advisory, and financial discipline for
-                    property, construction, and founder-led businesses — written for
-                    decision-makers, not accountants.
-                </p>
-
-                {/* Arrow link */}
-                <div className="flex justify-center">
-
-                    <Link
-                        href="#"
-                    >
-                        <Image src="assets/arrowrightblack.svg" alt="" className="transition delay-100 hover:translate-x-2 w-6" width={50} height={50} />
-                        {/* <ArrowRight className="h-5 w-5" /> */}
-                    </Link>
-
+                    <div className="">
+                        <p>
+                            We operate with intention.
+                        </p>
+                        <p className="max-w-5xl pt-5">
+                            Not every enquiry becomes an engagement.<br />
+                            This ensures that when we do engage, the relationship is focused and proportionate.
+                        </p>
+                    </div>
                 </div>
-            </div>
+                <div className="hidden lg:block -z-10">
+                    <Image
+                        src={"/assets/icon/signal-contact.svg"}
+                        alt="Enquiry Process"
+                        width={20}
+                        height={20}
+                        className="absolute right-0 -bottom-12/8 lg:size-64 xl:size-[40rem] pointer-events-none"
+                    />
+                </div>
         </section>
     );
 }

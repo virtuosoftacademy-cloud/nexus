@@ -2,6 +2,7 @@
 
 import { statusBar } from "@/app/_constant";
 import { Separator } from "@/components/ui/separator";
+import { Fragment } from "react/jsx-runtime";
 
 export default function StatsBar() {
   return (
@@ -9,14 +10,13 @@ export default function StatsBar() {
       <div className="px-4 sm:px-8 xl:px-12">
         <div className="flex items-center flex-col md:flex-row gap-4 sm:gap-6 md:gap-0">
           {statusBar.map((stat, index) => (
-            <>
+            <Fragment key={stat.id}>
               {index > 0 && (
                 <div className="items-center justify-center pr-4 first:hidden hidden md:flex">
-                  <Separator orientation="vertical" className="h-10 bg-primary" />
+                  <Separator orientation="vertical" className="w-px! h-10 bg-primary" />
                 </div>)
               }
               <div
-                key={stat.id}
                 className="flex items-center gap-2 sm:gap-3 md:px-6 xl:px-8 first:md:pl-0 last:md:pr-0 py-2"
               >
                 {/* Value */}
@@ -34,7 +34,7 @@ export default function StatsBar() {
                   {stat.label}
                 </h3>
               </div >
-            </>
+            </Fragment>
           ))}
         </div>
       </div>

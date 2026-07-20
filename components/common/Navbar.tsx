@@ -1,194 +1,250 @@
+
 "use client";
 
-import { useState } from "react";
+// ---------------------------------------------------------------------------
+// Section: Imports
+// ---------------------------------------------------------------------------
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
-  ListItem,
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
+    ListItem,
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ChevronUp, Menu, X } from "lucide-react";
 import { serviceItems } from "@/app/_constant";
 
-// ─── Navbar ───────────────────────────────────────────────────────────────────
-
+// ─── Navbar ───────────────────────────────────────────────────────────────
 export default function Navbar() {
-  const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [openSubMobile, setOpenSubMobile] = useState<number | null>(null);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+    const pathname = usePathname();
+    const [scrolled, setScrolled] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
-  // ── Track dropdown open via onValueChange — fires when any item opens/closes ──
-  const [servicesOpen, setServicesOpen] = useState(false);
+    // ── Track dropdown open via onValueChange — fires when any item opens/closes ──
+    const [servicesOpen, setServicesOpen] = useState(false);
 
-  const isTransparentRoute =
-    pathname === "/" || pathname.startsWith("/services/");
+    // ── Correction 1: scroll listener (scrolled was never set before) ──
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 8);
+        onScroll(); // sync initial state (page may restore mid-scroll)
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
-  const isLight = scrolled || servicesOpen;
-  const navBg = !isTransparentRoute ? "bg-white shadow-sm" : "bg-transparent shadow-none";
-  const textColor = !isTransparentRoute ? "text-foreground" : "text-accent";
-  const logoSrc = !isTransparentRoute ? "/assets/logo.svg" : "/assets/logo-white.svg";
+    // ── Correction 2: close menus on route change (stale-open menu fix) ──
+    useEffect(() => {
+        setMobileOpen(false);
+        setMobileServicesOpen(false);
+    }, [pathname]);
+    // ── Close the mobile panel on page scroll ──
+    useEffect(() => {
+        if (!mobileOpen) return;
 
-  return (
-    <nav
-      id="nav"
-      className={cn(
-        "z-50 w-full py-4 md:py-6 border-b border-muted-foreground/40 transition-all duration-300",
-        navBg,
-        textColor,
-      )}
-    >
-      <div className="flex items-center justify-between px-8 sm:px-8 xl:px-16">
+        const closeOnScroll = () => {
+            setMobileOpen(false);
+            setMobileServicesOpen(false);
+        };
 
-        {/* Logo */}
-        <Link href="/">
-          <Image
-            src={logoSrc}
-            alt="Nexus Logo"
-            width={160}
-            height={48}
-            className="transition-all duration-300 h-6 md:h-12"
-            priority
-          />
-        </Link>
+        window.addEventListener("scroll", closeOnScroll, { passive: true });
+        return () => window.removeEventListener("scroll", closeOnScroll);
+    }, [mobileOpen]);
+    const isTransparentRoute =
+        pathname === "/" || pathname.startsWith("/services/") || pathname.startsWith("/case-studies");
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+    const isLight = servicesOpen || mobileOpen;
+    const showLight = !isTransparentRoute;
 
-          <NavigationMenu onValueChange={(val) => setServicesOpen(val !== "")} className="pr-10">
-            <NavigationMenuList className="gap-1">
-              <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="/">
-                  Home
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+    const navBg = showLight ? "bg-white shadow-sm" : "bg-transparent shadow-none";
+    const textColor = showLight ? "text-foreground" : "text-accent";
+    const logoSrc = showLight ? "/assets/logo.svg" : "/assets/logo-white.svg";
 
-              <NavigationMenuItem value="services">
-                <NavigationMenuLink href={"/services"}>
-                  <NavigationMenuTrigger className="bg-transparent! hover:text-primary">Our Services</NavigationMenuTrigger>
-                </NavigationMenuLink>
-                <NavigationMenuContent className="">
-                  <div className="min-w-[70rem] py-4 px-7">
-                    <h4 className="text-sm text-muted-foreground leading-snug pb-4">Our Services</h4>
-                    <ul className="grid grid-cols-2 xl:grid-cols-3 text-sm">
-                      {serviceItems.map((item) => (
-                        <ListItem key={item.title} icon={item.icon} title={item.title} href={item.href}>
-                          {item.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                    <div className="pt-4 pb-2">
-                      <hr className="text-muted-foreground" />
-                      <h4 className="text-sm text-muted-foreground leading-snug pt-4">Structured financial advisory, accounting, governance and systems oversight across the UK and UAE.</h4>
-                    </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-
-              <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="#">
-                  Industries
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="/blogs">
-                  Insights
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              {/* <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="/blogs">
-                  Blog
-                </NavigationMenuLink>
-              </NavigationMenuItem> */}
-
-              <NavigationMenuItem>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "hover:text-primary")} href="/about">
-                  About Us
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-
-        {/* Desktop right */}
-        <div className="hidden md:flex items-center gap-4">
-          {/* <div className="flex gap-2 text-sm">
-            <span className="text-primary">English</span>
-            <span className="text-accent">| Arabic</span>
-          </div> */}
-          <Button size="lg" className="text-base font-normal py-6 px-10" asChild>
-            <Link href="/contact">Contact Us</Link>
-          </Button>
-        </div>
-
-        {/* Mobile toggle */}
-        <button className="md:hidden" onClick={() => setMobileOpen((p) => !p)} aria-label="Toggle menu">
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden mt-4 px-4 bg-foreground text-accent max-h-[80vh] overflow-y-auto">
-          <div className="flex flex-col py-8 px-8 gap-6 text-xl font-medium">
-
-            <Link href="/" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>
-              Home
-            </Link>
-
-            <div>
-              <div
-                className="flex items-center justify-between cursor-pointer hover:text-primary transition-colors"
-                onClick={() => setMobileServicesOpen((p) => !p)}
-              >
-                <Link href="#" onClick={(e) => { e.stopPropagation(); setMobileOpen(false); }}>
-                  Our Services
+    return (
+        <nav
+            id="nav"
+            className={cn(
+                "absolute top-0 z-50 w-full py-4 md:py-6 border-b border-muted-foreground/40 transition-all duration-300",
+                navBg,
+                textColor,
+            )}
+        >
+            <div className="flex items-center justify-between px-6 sm:px-8 xl:px-14">
+                {/* Logo */}
+                <Link href="/">
+                    <Image
+                        src={logoSrc}
+                        alt="Nexus Logo"
+                        width={160}
+                        height={48}
+                        className="transition-all duration-300 h-8 md:h-12 -mr-8 md:mr-0"
+                        priority
+                    />
                 </Link>
-                <ChevronUp className={cn("transition-transform duration-300", mobileServicesOpen && "rotate-180")} />
-              </div>
 
-              <div className={cn("grid transition-all duration-300 ease-out", mobileServicesOpen ? "grid-rows-[1fr] opacity-100 pt-3" : "grid-rows-[0fr] opacity-0")}>
-                <div className="overflow-hidden">
-                  <div className="flex flex-col gap-5 pl-4 border-l border-white/30 pt-3 pb-2">
-                    {serviceItems.map((item) => (
-                      <ListItem key={item.title} title={item.title} icon="#" href={item.href}>
-                        {item.description}
-                      </ListItem>
-                    ))}
-                  </div>
+                {/* Desktop nav */}
+                <div className="hidden md:flex items-center gap-8">
+                    <NavigationMenu
+                        onValueChange={(val) => setServicesOpen(val !== "")}
+                        className="pr-10"
+                    >
+                        <NavigationMenuList className="gap-1">
+                            <NavigationMenuItem>
+                                <NavigationMenuLink
+                                    className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
+                                    href="/"
+                                >
+                                    Home
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+
+                            <NavigationMenuItem value="services">
+                                <NavigationMenuLink href={"/services"}>
+                                    <NavigationMenuTrigger className="bg-transparent! hover:text-primary">Services</NavigationMenuTrigger>
+                                </NavigationMenuLink>
+                                <NavigationMenuContent>
+                                    <div className="min-w-[70rem] py-4 px-7">
+                                        <h4 className="text-sm text-muted-foreground leading-snug pb-4">Services</h4>
+                                        <ul className="grid grid-cols-2 xl:grid-cols-3 text-sm">
+                                            {serviceItems.map((item) => (
+                                                <ListItem key={item.title} icon={item.icon} title={item.title} href={item.href}>
+                                                    {item.description}
+                                                </ListItem>
+                                            ))}
+                                        </ul>
+                                        <div className="pt-4 pb-2">
+                                            <hr className="text-muted-foreground" />
+                                            <h4 className="text-sm text-muted-foreground leading-snug pt-4">Structured financial advisory, accounting, governance and systems oversight across the UK and UAE.</h4>
+                                        </div>
+                                    </div>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+
+                            <NavigationMenuItem>
+                                <NavigationMenuLink
+                                    className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
+                                    href="/blogs"
+                                >
+                                    Insights
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+
+
+                            <NavigationMenuItem>
+                                <NavigationMenuLink
+                                    className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
+                                    href="/case-studies"
+                                >
+                                    Case Studies
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+
+                            <NavigationMenuItem>
+                                <NavigationMenuLink
+                                    className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
+                                    href="/about"
+                                >
+                                    About
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+
+                        </NavigationMenuList>
+                    </NavigationMenu>
+
                 </div>
-              </div>
+                <div className="hidden md:flex items-center gap-4">
+                    <Button size="lg" className="text-base font-normal py-6 px-10" asChild>
+                        <Link href="/contact">Contact Us</Link>
+                    </Button>
+                </div>
+
+                {/* Mobile hamburger */}
+                <button
+                    type="button"
+                    aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={mobileOpen}
+                    className="md:hidden"
+                    onClick={() => setMobileOpen((open) => !open)}
+                >
+                    {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+                </button>
             </div>
 
-            <Link href="#" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>Industries</Link>
-            <Link href="/blogs" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>Insights</Link>
-            <Link href="/about" className="hover:text-primary transition-colors" onClick={() => setMobileOpen(false)}>About Us</Link>
+            {/* Mobile panel */}
+            {/* Mobile panel */}
+            {mobileOpen && (
+                <div className="md:hidden bg-white text-foreground border-t border-muted-foreground/20 px-8 py-6 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain mt-4">
+                    <ul className="flex flex-col gap-1">
+                        <li>
+                            <Link href="/" className="block font-medium">
+                                Home
+                            </Link>
+                        </li>
 
-            {/* <div className="flex gap-2 text-sm pt-4">
-              <span className="text-primary">English</span>
-              <span>| Arabic</span>
-            </div> */}
+                        {/* Collapsible Services group */}
+                        <li>
+                            <button
+                                type="button"
+                                aria-expanded={mobileServicesOpen}
+                                className="flex w-full items-center justify-between py-2 font-medium"
+                                onClick={() => setMobileServicesOpen((open) => !open)}
+                            >
+                                <Link href={"/services"}>
+                                Services
+                                </Link>
+                                <ChevronUp
+                                    className={cn(
+                                        "size-4 transition-transform duration-300",
+                                        !mobileServicesOpen && "rotate-180",
+                                    )}
+                                />
+                            </button>
+                            {mobileServicesOpen && (
+                                <ul className="pl-4 pb-2 flex flex-col gap-1 max-h-64 overflow-y-auto overscroll-contain">
+                                    {serviceItems.map((item) => (
+                                        <li key={item.href}>
+                                            <Link href={item.href} className="block py-1.5 text-sm">
+                                                {item.title}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </li>
 
-            <Button className="py-6 text-lg font-normal" asChild>
-              <Link href="/contact">Contact Us</Link>
-            </Button>
-          </div>
-        </div>
-      )}
-    </nav>
-  );
+
+                        <li>
+                            <Link href="/blogs" className="block py-2 font-medium">
+                                Insights
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link href="/case-studies" className="block py-2 font-medium">
+                                Case Studies
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/about" className="block py-2 font-medium">
+                                About
+                            </Link>
+                        </li>
+                        <li>
+                            <Button size="lg" className="text-base font-normal py-6 px-10" asChild>
+                                <Link href="/contact">Contact Us</Link>
+                            </Button>
+                        </li>
+                    </ul>
+                </div>
+            )}
+        </nav>
+    );
 }

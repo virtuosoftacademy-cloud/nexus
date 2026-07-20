@@ -21,7 +21,7 @@ export default function TestimonialCard({
   return (
     <div
       className={cn(
-        "flex flex-col justify-between h-full border p-6 transition-colors duration-300",
+        "flex flex-col justify-between border p-6 transition-colors duration-300 h-[17rem]",
         isActive
           ? "border-primary/30 bg-muted/40"
           : "opacity-70 border-muted bg-muted/60"
@@ -50,7 +50,7 @@ export default function TestimonialCard({
       </div>
 
       {/* Bottom: avatar + name */}
-      <div className="flex items-center gap-3 mt-6 pt-4 border-t border-border/30">
+      <div className="flex items-center gap-3 pt-4 border-t border-border/30">
         {avatarUrl ? (
           <img
             src={avatarUrl}

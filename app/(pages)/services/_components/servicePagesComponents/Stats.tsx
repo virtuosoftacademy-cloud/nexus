@@ -1,44 +1,69 @@
-import { StatsData } from "../../constant";
+/**
+ * ============================================================================
+ * File Path   : components/sections/services-stats.tsx
+ * Purpose     : Stats strip section (value + icon + label, separated by
+ *               vertical dividers on md+). Pages supply a bundled props
+ *               constant through the renderer config:
+ *                 { Component: ServicesStats, props: statsUk }
+ *               where the constant is an OBJECT holding the stats:
+ *                 export const statsUk: ServicesStatsProps = { stats: [...] }
+ *               (The renderer spreads props, so the constant must be an
+ *               object — a bare array would spread into numeric keys.)
+ *               Renders nothing if stats are missing/empty. Types come from
+ *               the page-level constant module.
+ * Module Type : Server Component (no state or event handlers)
+ * ============================================================================
+ */
 
-interface StatsSectionProps {
-  data: StatsData[];
-}
+import { Fragment } from "react";
+import { Separator } from "@/components/ui/separator";
+import { statsProps } from "../constant";
 
-export default function ServicesStats({ data }: StatsSectionProps) {
-  if (!data?.length) return null;
+// ---------------------------------------------------------------------------
+// Section: Component — ServicesStats
+// Stats arrive solely from the renderer config; renders nothing when the
+// config omits them.
+// ---------------------------------------------------------------------------
+export default function ServicesStats({ stats }: statsProps) {
+  // Guard: nothing to render without stats
+  if (!stats?.length) return null;
 
   return (
     <section className="bg-muted py-8 px-6 sm:px-12">
-      <div className="mx-auto max-w-350">
+      <div className="mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row text-center md:text-left items-center justify-center md:justify-between">
-          {data.map((stat, index) => (
-            <div key={stat.id} className="flex flex-col md:flex-row items-center gap-3 py-2">
-
-              {/* Divider — only between items, not before the first */}
-              {index !== 0 && (
-                <div className={`h-16 w-px bg-primary ${stat.size} hidden sm:block`} />
+          {stats.map((stat, index) => (
+            <Fragment key={stat.id}>
+              {index > 0 && (
+                <div className="items-center justify-center mx-18 hidden md:flex">
+                  <Separator orientation="vertical" className="h-12 bg-primary/30" />
+                </div>
               )}
 
-              {/* Value + icon */}
-              <div className="flex items-end leading-none">
-                <span className="text-4xl md:text-[4rem] font-bold text-primary md:whitespace-pre">
-                  {stat.value}
-                </span>
-                {stat.icon && (
-                  <span className="text-3xl md:text-4xl font-bold mb-1 ml-0.5 text-primary">
-                    {stat.icon}
-                  </span>
-                )}
-              </div>
+              <div className="flex flex-col md:flex-row items-center md:gap-4 py-2">
 
-              {/* Label */}
-              <div>
-                <h4 className="text-sm md:text-base text-foreground/70 leading-snug max-w-30">
-                  {stat.label}
-                </h4>
-              </div>
+                {/* Value + icon */}
 
-            </div>
+                <div className="flex items-center font-semibold">
+                  <div className="text-3xl md:text-[4rem] text-primary md:whitespace-pre">
+                    {stat.value}
+                  </div>
+                  {stat.icon && (
+                    <div className="text-3xl md:text-[4rem] ml-0.5 text-primary">
+                      {stat.icon}
+                    </div>
+                  )}
+                </div>
+
+                {/* Label */}
+                <div>
+                  <h4 className="text-xs md:text-base text-foreground/70 leading-snug max-w-52">
+                    {stat.label}
+                  </h4>
+                </div>
+
+              </div>
+            </Fragment>
           ))}
         </div>
       </div>

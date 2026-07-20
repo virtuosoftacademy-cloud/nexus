@@ -39,7 +39,7 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative overflow-hidden min-h-screen flex flex-col -z-40 -mt-26 px-8 md:px-2">
+      <section className="relative overflow-hidden min-h-screen flex flex-col -z-40 px-8 md:px-2">
 
         {/* ── Background image crossfade ── */}
         <AnimatePresence initial={false}>
@@ -67,7 +67,7 @@ export function HeroSection() {
         <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none bg-linear-to-t from-black/70 to-transparent" />
 
         {/* ── Content ── */}
-        <div className="relative flex-1 py-24 mt-30 flex flex-col justify-between">
+        <div className="relative flex-1 py-24 mt-10 md:mt-30 flex flex-col justify-between">
 
           {/* ── Animated text block ── */}
           <div className="md:ml-14">
@@ -84,7 +84,7 @@ export function HeroSection() {
                   {current.tag}
                 </motion.p>
 
-                <motion.h4 variants={itemVariants} className="font-heading text-3xl md:text-[3.6rem] font-medium leading-[1.1] mb-5 md:whitespace-pre-line">
+                <motion.h4 variants={itemVariants} className="text-3xl md:text-[3.6rem] font-medium leading-[1.1] mb-5 md:whitespace-pre-line">
                   {current.heading}
                 </motion.h4>
 
@@ -131,7 +131,7 @@ export function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -6 }}
                     transition={{ duration: 0.25 }}
-                    className="text-sm font-semibold text-white"
+                    className="text-sm font-medium text-white"
                   >
                     {current.label}
                   </motion.span>
@@ -156,7 +156,7 @@ export function HeroSection() {
                   {activeTab === i && (
                     <motion.span
                       layoutId="tab-underline-desktop"
-                      className="absolute top-0 left-6 right-0 max-w-50 h-0.5 bg-gradient-primary rounded-full"
+                      className="absolute top-0 left-6 right-0 max-w-50 h-1 bg-gradient-primary rounded-none"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}

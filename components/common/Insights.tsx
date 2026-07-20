@@ -11,9 +11,9 @@ import Link from "next/link";
 
 export function InsightsSection() {
   return (
-    <section className="bg-background py-20">
-      <div className="mx-auto px-4 sm:px-8 xl:px-18">
-        <h4 className="font-heading text-4xl font-bold text-foreground mb-10">
+    <section className="bg-background py-10 md:py-20">
+      <div className="mx-auto px-8 md:px-18">
+        <h4 className="text-2xl md:text-4xl font-bold text-foreground mb-10 text-center md:text-left">
           Our Latest{" "}
           <span className="text-primary">Insights</span>
         </h4>
@@ -50,7 +50,7 @@ export function InsightsSection() {
                 >
                   {ins.tag}
                 </p> */}
-                <h4 className="font-bold text-foreground text-xl leading-snug mb-2">
+                <h4 className="font-bold text-foreground text-xl leading-snug mb-2 line-clamp-1">
                   {ins.title}
                 </h4>
                 <p className="text-base leading-relaxed font-serif">{ins.description}</p>
@@ -66,8 +66,7 @@ export function InsightsSection() {
         <div className="text-center mt-10">
           <Link href={"/blogs"}>
             <Button
-              variant="secondary"
-              className="px-6 md:px-8"
+              variant="ternary"
             >
               See All Insights 
               {/* <ArrowRight className="ml-2 h-4 w-4" /> */}

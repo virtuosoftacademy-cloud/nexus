@@ -7,13 +7,13 @@ export interface ServiceItem { icon: string, title: string; description: string;
 export const serviceItems: ServiceItem[] = [
   { icon: "/assets/nav/ukaccounting.png", title: "UK Accounting & Tax", description: "UK tax and accounting support.", href: "/services/uk-accounting-and-tax" },
   { icon: "/assets/nav/advisoryandgovernance.png", title: "Advisory & Governance", description: "Strategic business guidance.", href: "/services/advisory-services" },
-  { icon: "/assets/nav/businessconsultancy.png", title: "Business Consultancy", description: "Advice for sustainable growth.", href: "/services/technology-and-solutions" },
+  { icon: "/assets/nav/businessconsultancy.png", title: "Business Consultancy", description: "Advice for sustainable growth.", href: "/services/business-consultancy" },
   { icon: "/assets/nav/businessconsultancy.png", title: "Property Accounting & Tax", description: "Property-focused financial expertise.", href: "/services/property-accounting-and-tax" },
   { icon: "/assets/nav/businessconsultancy.png", title: "UAE Accounting & Tax", description: "UAE tax and compliance services.", href: "/services/uae-accounting-and-tax" },
   { icon: "/assets/nav/businessconsultancy.png", title: "Tax Authority Support", description: "Support with tax matters.", href: "/services/tax-authority-support" },
   { icon: "/assets/nav/businessconsultancy.png", title: "Construction Accounting", description: "Accounting for construction projects.", href: "/services/construction-accounting" },
-  { icon: "/assets/nav/businessconsultancy.png", title: "Digital & Systems Advisory", description: "Smarter systems, better performance.", href: "/services/advisory-services" },
-  { icon: "/assets/nav/businessconsultancy.png", title: "Solutions", description: "Tailored solutions for business.", href: "/services/tax-authority-support" },
+  { icon: "/assets/nav/businessconsultancy.png", title: "Digital & Systems Advisory", description: "Smarter systems, better performance.", href: "/services/digital-and-systems-advisory" },
+  { icon: "/assets/nav/businessconsultancy.png", title: "Solutions", description: "Tailored solutions for business.", href: "/services/solutions" },
 ];
 
 
@@ -280,54 +280,6 @@ export const bulletPoints: string[] = [
 ];
 
 
-// Industries
-
-export interface Industry {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  width: string;
-}
-
-export const Industries: Industry[] = [
-  {
-    id: "ind-1",
-    title: "Property & SPVs",
-    description:
-      "Portfolio landlords, SPV structures, temporary accommodation operators, and council-linked property businesses across the UK.",
-    width: "max-w-60",
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&auto=format&fit=crop",
-  },
-  {
-    id: "ind-2",
-    title: "Construction & Contracting",
-    description:
-      "Main contractors, subcontractors, and refurbishment-led operators managing CIS, domestic reverse charge, and project margin complexity.",
-    width: "",
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop",
-  },
-  {
-    id: "ind-3",
-    title: "Founder-Led Businesses",
-    description:
-      "Owner-managed SMEs scaling through new markets, entity growth, or operational expansion — without the financial structure to match.",
-    width: "",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format&fit=crop",
-  },
-  {
-    id: "ind-4",
-    title: "UK–UAE Cross-Border",
-    description:
-      "Businesses operating across both jurisdictions requiring structural alignment, VAT clarity, and consistent reporting from both ends.",
-    width: "",
-    image:
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80&auto=format&fit=crop",
-  },
-];
 
 //Case Study
 

@@ -1,4 +1,4 @@
-import { services } from "./constant";
+import { services } from "../constant";
 import { ServiceCard} from "./ServiceCard";
 
 export function ServicesCards() {
