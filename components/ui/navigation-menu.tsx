@@ -164,22 +164,25 @@ function ListItem({ icon, title, children, href, ...props }: ListItemProps) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
-        <Link href={href} className="block">
-          <div className="flex items-start gap-2 py-4 group transition-all duration-200">
-            <div className="relative size-10 shrink-0 mt-0.5">
+        <Link
+          href={href}
+          className="group block transition-colors duration-200 hover:bg-primary"
+        >
+          <div className="flex items-start gap-2 px-3 py-4">
+            <div className="relative size-10 mt-0.5 border p-1 flex items-center justify-center">
               <Image
                 src={icon}
                 alt={title}
                 width={40}
                 height={40}
-                className="size-6 transition-all duration-200 group-hover:text-accent"
+                className="size-6 transition-[filter] duration-200 group-hover:brightness-0 group-hover:invert"
               />
             </div>
             <div className="flex flex-col gap-1 text-sm pt-1">
-              <div className="leading-none font-medium text-base text-primary group-hover:text-foreground transition-colors">
+              <div className="leading-none font-medium text-base text-primary transition-colors group-hover:text-primary-foreground">
                 {title}
               </div>
-              <div className="line-clamp-2 text-xs text-muted-foreground">
+              <div className="line-clamp-2 text-xs text-muted-foreground transition-colors group-hover:text-primary-foreground/80">
                 {children}
               </div>
             </div>
@@ -189,7 +192,6 @@ function ListItem({ icon, title, children, href, ...props }: ListItemProps) {
     </li>
   );
 }
-
 export {
   NavigationMenu,
   NavigationMenuList,

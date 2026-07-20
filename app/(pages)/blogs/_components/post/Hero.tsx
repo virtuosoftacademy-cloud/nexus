@@ -23,10 +23,10 @@ const socialLinks = [
 export default function Hero({ post }: BlogPostHeroProps) {
   if (!post) return null;
 
-  const { category, title, excerpt, image, date,accent } = post;
+  const { title, excerpt, image, date,accent } = post;
 
   return (
-    <section className="bg-background py-12 px-6 sm:px-12">
+    <section className="bg-accent pt-20 pb-10 md:pt-50 md:pb-30 px-8 sm:px-16">
       <div className="mx-auto max-w-[212.5rem]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 items-start">
 

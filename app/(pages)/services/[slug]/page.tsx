@@ -14,6 +14,7 @@ import { ContactCta } from "../_components/servicePagesComponents/contactcta";
 import ServicesStats from "../_components/servicePagesComponents/Stats";
 import DifferenceComponent from "../_components/servicePagesComponents/different";
 import ModelsSection from "../_components/servicePagesComponents/Industries";
+import Notice, { uaeImportantNotice } from "../_components/servicePagesComponents/notice";
 
 
 
@@ -53,7 +54,7 @@ const services: Service[] = [
     slug: "property-accounting-and-tax",
     title: "Property Accounting & Tax",
     sections: [
-      { Component: Hero, props: propertyHero},
+      { Component: Hero, props: propertyHero },
       { Component: ServicesStats, props: Propertystats },
       { Component: AboutService, props: propertyAbout },
       { Component: Approach, props: approachRowsProperty },
@@ -69,7 +70,7 @@ const services: Service[] = [
     title: "Construction Accounting",
     sections: [
       { Component: Hero, props: constructHero },
-      { Component: ServicesStats, props:constructStats },
+      { Component: ServicesStats, props: constructStats },
       { Component: AboutService, props: constructAbout },
       { Component: Approach, props: constructApproachRows },
       { Component: FaqWithImage, props: constructFaqItems },
@@ -83,8 +84,8 @@ const services: Service[] = [
     slug: "advisory-services",
     title: "Advisory Services",
     sections: [
-      { Component: Hero, props: cfoAdvisoryHero},
-      { Component: ServicesStats, props:cfoStats },
+      { Component: Hero, props: cfoAdvisoryHero },
+      { Component: ServicesStats, props: cfoStats },
       { Component: AboutService, props: cfoAbout },
       { Component: Approach, props: cfoApproachRows },
       { Component: FaqWithImage, props: cfoFaqItems },
@@ -98,13 +99,14 @@ const services: Service[] = [
     slug: "uae-accounting-and-tax",
     title: "UAE Accounting & Tax",
     sections: [
-      { Component: Hero, props: uaeAdvisoryHero},
-      { Component: ServicesStats, props:uaeStats },
+      { Component: Hero, props: uaeAdvisoryHero },
+      { Component: ServicesStats, props: uaeStats },
       { Component: AboutService, props: uaeAbout },
       { Component: Approach, props: uaeApproachRows },
       { Component: FaqWithImage, props: uaeFaqItems },
       { Component: ServicesCarousel, props: uaeAdvisoryCarouselProperty },
       { Component: DifferenceComponent, props: uaeDifference },
+      { Component: Notice, props:uaeImportantNotice },
       { Component: ModelsSection, props: uaeModelsData },
       { Component: ContactCta, props: uaeContactCta },
     ]
@@ -113,8 +115,8 @@ const services: Service[] = [
     slug: "digital-and-systems-advisory",
     title: "Digital & Systems Advisory",
     sections: [
-      { Component: Hero, props: systemsHero},
-      { Component: ServicesStats, props:Accountstats },
+      { Component: Hero, props: systemsHero },
+      { Component: ServicesStats, props: Accountstats },
       { Component: AboutService, props: systemsAbout },
       { Component: Approach, props: systemsApproachRows },
       { Component: FaqWithImage, props: systemsFaqItems },
@@ -128,8 +130,8 @@ const services: Service[] = [
     slug: "business-consultancy",
     title: "Business Consultancy",
     sections: [
-      { Component: Hero, props: businessAdvisoryHero},
-      { Component: ServicesStats, props:hmrcStats },
+      { Component: Hero, props: businessAdvisoryHero },
+      { Component: ServicesStats, props: hmrcStats },
       { Component: AboutService, props: businessAdvisoryAbout },
       { Component: Approach, props: businessApproachRows },
       { Component: FaqWithImage, props: businessFaqItems },
@@ -143,8 +145,8 @@ const services: Service[] = [
     slug: "tax-authority-support",
     title: "Tax Authority Support",
     sections: [
-      { Component: Hero, props: taxHero},
-      { Component: ServicesStats, props:hmrcStats },
+      { Component: Hero, props: taxHero },
+      { Component: ServicesStats, props: hmrcStats },
       { Component: AboutService, props: taxAbout },
       { Component: Approach, props: taxApproachRows },
       { Component: FaqWithImage, props: taxFaqItems },
@@ -158,8 +160,8 @@ const services: Service[] = [
     slug: "solutions",
     title: "Solutions",
     sections: [
-      { Component: Hero, props: solutionsHero},
-      { Component: ServicesStats, props:hmrcStats },
+      { Component: Hero, props: solutionsHero },
+      { Component: ServicesStats, props: hmrcStats },
       { Component: AboutService, props: solutionsAbout },
       { Component: Approach, props: solutionsApproachRows },
       { Component: FaqWithImage, props: solutionsFaqItems },

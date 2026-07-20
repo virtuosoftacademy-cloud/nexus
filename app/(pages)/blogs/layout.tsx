@@ -12,7 +12,7 @@ export default function BlogsLayout({
     children: React.ReactNode;
 } >) {
     return (
-        <div className='min-h-screen mx-auto px-8 sm:px-8 xl:px-18'>
+        <div className='min-h-screen mx-auto'>
             {children}
         </div>
     )

@@ -8,12 +8,12 @@ export const serviceItems: ServiceItem[] = [
   { icon: "/assets/nav/ukaccounting.png", title: "UK Accounting & Tax", description: "UK tax and accounting support.", href: "/services/uk-accounting-and-tax" },
   { icon: "/assets/nav/advisoryandgovernance.png", title: "Advisory & Governance", description: "Strategic business guidance.", href: "/services/advisory-services" },
   { icon: "/assets/nav/businessconsultancy.png", title: "Business Consultancy", description: "Advice for sustainable growth.", href: "/services/business-consultancy" },
-  { icon: "/assets/nav/businessconsultancy.png", title: "Property Accounting & Tax", description: "Property-focused financial expertise.", href: "/services/property-accounting-and-tax" },
-  { icon: "/assets/nav/businessconsultancy.png", title: "UAE Accounting & Tax", description: "UAE tax and compliance services.", href: "/services/uae-accounting-and-tax" },
-  { icon: "/assets/nav/businessconsultancy.png", title: "Tax Authority Support", description: "Support with tax matters.", href: "/services/tax-authority-support" },
-  { icon: "/assets/nav/businessconsultancy.png", title: "Construction Accounting", description: "Accounting for construction projects.", href: "/services/construction-accounting" },
-  { icon: "/assets/nav/businessconsultancy.png", title: "Digital & Systems Advisory", description: "Smarter systems, better performance.", href: "/services/digital-and-systems-advisory" },
-  { icon: "/assets/nav/businessconsultancy.png", title: "Solutions", description: "Tailored solutions for business.", href: "/services/solutions" },
+  { icon: "/assets/nav/propertyaccounting.png", title: "Property Accounting & Tax", description: "Property-focused financial expertise.", href: "/services/property-accounting-and-tax" },
+  { icon: "/assets/nav/uaeaccounting.png", title: "UAE Accounting & Tax", description: "UAE tax and compliance services.", href: "/services/uae-accounting-and-tax" },
+  { icon: "/assets/nav/taxauthority.png", title: "Tax Authority Support", description: "Support with tax matters.", href: "/services/tax-authority-support" },
+  { icon: "/assets/nav/construction.png", title: "Construction Accounting", description: "Accounting for construction projects.", href: "/services/construction-accounting" },
+  { icon: "/assets/nav/digital.png", title: "Digital & Systems Advisory", description: "Smarter systems, better performance.", href: "/services/digital-and-systems-advisory" },
+  { icon: "/assets/nav/solutions.png", title: "Solutions", description: "Tailored solutions for business.", href: "/services/solutions" },
 ];
 
 

@@ -10,6 +10,8 @@ const inter = Inter({
 // Ancizar Sans → --font-mono  (matches globals.css @theme: --font-mono: var(--font-geist-mono))
 const ancizarSans = Ancizar_Serif({
   variable: "--font-ancizar-sans",
+  weight: ["300","400", "500", "600", "700","800","900"],
+  subsets: ["latin"],
   display: "swap",
 });
 

@@ -20,7 +20,7 @@ export default function Hero({ title, description, image, width }:HeroData) {
         <div className="flex flex-col text-center md:text-left px-4 space-y-2 md:space-y-0">
 
           {/* Heading */}
-          <h4 className="text-2xl md:text-[3.5rem] font-medium text-white md:leading-tight">
+          <h4 className="text-2xl md:text-[3.5rem] font-medium text-white leading-6 md:leading-tight">
             {title}
           </h4>
 

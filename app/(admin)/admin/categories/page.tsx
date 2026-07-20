@@ -1,0 +1,70 @@
+// ============================================================================
+// File: app/(admin)/categories/page.tsx
+// Purpose: Category manager at /categories. Shows the add-category form
+//          and a list of all categories with their accent color swatch, post
+//          count, and a delete button. Deleting never deletes posts — they
+//          are detached to "No category" (see categories/actions.ts).
+// Type: Server Component (async, force-dynamic)
+// ============================================================================
+
+import { DeleteCategoryButton } from "@/components/category/deleteBtn";
+import { NewCategoryForm } from "@/components/category/newcategoryform";
+import { prisma } from "@/lib/prisma";
+
+export const metadata = { title: "Categories" };
+export const dynamic = "force-dynamic";
+
+export default async function CategoriesPage() {
+    const categories = await prisma.blogCategory.findMany({
+        orderBy: { label: "asc" },
+        include: { _count: { select: { posts: true } } },
+    });
+
+    return (
+        <main className="max-w-2xl">
+            <header className="mb-8">
+                <h1 className="text-3xl font-semibold text-neutral-900">Categories</h1>
+                <p className="mt-2 text-sm text-neutral-600">
+                    Deleting a category moves its posts to &quot;No category&quot; — posts
+                    are never deleted from here.
+                </p>
+            </header>
+
+            <NewCategoryForm />
+
+            <section className="mt-6 overflow-hidden rounded-lg border border-neutral-200 bg-white">
+                {categories.length === 0 ? (
+                    <p className="px-6 py-10 text-center text-neutral-600">
+                        No categories yet. Add one above to start organizing posts.
+                    </p>
+                ) : (
+                    <ul className="divide-y divide-neutral-100">
+                        {categories.map((cat) => (
+                            <li
+                                key={cat.id}
+                                className="flex items-center justify-between gap-4 px-4 py-3"
+                            >
+                                <div className="flex items-center gap-3">
+                                    <span className="font-medium text-neutral-900">
+                                        {cat.label}{" "}
+                                        {/* accent phrase, shown the way the blog index shows it */}
+                                        <span className="font-semibold text-sky-700">{cat.accent}</span>
+                                    </span>
+                                    <span className="text-xs text-neutral-500">
+                                        {cat._count.posts} post
+                                        {cat._count.posts === 1 ? "" : "s"}
+                                    </span>
+                                </div>
+                                <DeleteCategoryButton
+                                    id={cat.id}
+                                    label={cat.label}
+                                    postCount={cat._count.posts}
+                                />
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </section>
+        </main>
+    );
+}

@@ -18,9 +18,11 @@
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": ["./*"]
-    }
+     "paths": {
+      "@/*": ["./*"],
+      "@/auth": ["./app/api/auth/[...nextauth]/auth"],
+      "@/auth.config": ["./app/api/auth/[...nextauth]/auth.config"]
+    },
   },
   "include": [
     "next-env.d.ts",

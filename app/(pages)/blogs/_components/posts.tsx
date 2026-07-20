@@ -55,10 +55,10 @@ export default function Posts() {
           {BlogCategories.map((cat) => (
             <div key={cat.accent}>
               {/* Category heading */}
-              <h4 className="text-2xl md:text-[1.75rem] font-bold text-foreground my-6 md:my-6 border-l-4 pl-3 border-primary">
+              {/* <h4 className="text-2xl md:text-[1.75rem] font-bold text-foreground my-6 md:my-6 border-l-4 pl-3 border-primary">
                 {cat.label}{" "}
                 <span className="text-primary">{cat.accent}</span>
-              </h4>
+              </h4> */}
 
               {/* 3-col grid */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">

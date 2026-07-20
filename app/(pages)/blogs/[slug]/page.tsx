@@ -5,9 +5,6 @@ import type { Metadata } from "next";
 import Hero from "../_components/post/Hero";
 import PostContent from "../_components/post/PostContent";
 import { generateStaticSlugs, getPostBySlug } from "../constant";
-import ReactLenis from "lenis/react";
-import CtaForm from "@/components/common/ctaForm";
-import { CtaSplitSection } from "@/components/common/CTA";
 
 export function generateStaticParams() {
     return generateStaticSlugs();

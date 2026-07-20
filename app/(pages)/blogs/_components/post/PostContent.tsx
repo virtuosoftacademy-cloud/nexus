@@ -1,7 +1,5 @@
 // components/blog/BlogPostContent.tsx
 
-import Link from "next/link";
-import { Clock } from "lucide-react";
 import { BlogPost, SidebarPosts } from "../../constant";
 import SidebarPost from "@/components/ui/SidebarPost";
 
