@@ -3,8 +3,6 @@ import { BlogPost } from "@/app/types/types";
 import { Button } from "@/components/ui/button";
 import { coverOf } from "@/lib/blog-image";
 import { prisma } from "@/lib/prisma";
-import Image from "next/image";
-import Link from "next/link";
 import SafeImage from "../ui/safeimage";
 
 const GRADIENT_FROM = "hsl(172 66% 22%)";
@@ -25,7 +23,7 @@ export async function InsightsSection({ posts }: BlogPostProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {posts?.map((post) => (
-            <Link
+            <a
               href={post.href}
               key={post.id}
               className="overflow-hidden group cursor-pointer block"
@@ -65,19 +63,19 @@ export async function InsightsSection({ posts }: BlogPostProps) {
                   <span><Bookmark size={18} /> </span>
                 </div> */}
               </div>
-            </Link>
+            </a>
           ))}
         </div>
 
         <div className="text-center mt-10">
-          <Link href={"/blogs"}>
+          <a href={"/blogs"}>
             <Button
               variant="ternary"
             >
               See All Insights
               {/* <ArrowRight className="ml-2 h-4 w-4" /> */}
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

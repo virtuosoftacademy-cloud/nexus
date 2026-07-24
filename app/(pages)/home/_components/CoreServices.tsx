@@ -1,5 +1,4 @@
-// components/core-services/CoreServicesSection.tsx
-
+'use client'
 import { CoreServices } from "@/app/_constant";
 import CoreServiceCard from "@/components/ui/CoreServiceCard";
 import { Button } from "@/components/ui/button";

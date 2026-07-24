@@ -1,6 +1,5 @@
-
-
 import { DeleteCategoryButton } from "@/app/api/category/deleteBtn";
+import { EditCategoryForm } from "@/app/api/category/editcategoryform";
 import { NewCategoryForm } from "@/app/api/category/newcategoryform";
 import { prisma } from "@/lib/prisma";
 
@@ -38,11 +37,13 @@ export default async function CategoriesPage() {
                                 className="flex items-center justify-between gap-4 px-4 py-3"
                             >
                                 <div className="flex items-center gap-3">
-                                    <span className="font-medium text-neutral-900">
-                                        {cat.label}{" "}
-                                        {/* accent phrase, shown the way the blog index shows it */}
-                                        <span className="font-semibold text-primary">{cat.accent}</span>
-                                    </span>
+                                    {/* Display mode shows label + accent exactly as before;
+                                        Edit flips the row to inputs with Save/Cancel */}
+                                    <EditCategoryForm
+                                        id={cat.id}
+                                        label={cat.label}
+                                        accent={cat.accent}
+                                    />
                                     <span className="text-xs text-neutral-500">
                                         {cat._count.posts} post
                                         {cat._count.posts === 1 ? "" : "s"}

@@ -232,6 +232,4 @@ import type {
  * type can never drift from the schema — new columns appear here
  * automatically after `prisma generate`.
  */
-export type BlogPost = BlogPostRow & {
-    category?: BlogCategory | null;
-};
+export type BlogPost = BlogPostRow  

@@ -59,7 +59,7 @@ export default async function ViewCaseStudiesPage() {
                                         </Link>
                                         <span className="block truncate text-xs text-neutral-400">/{cs.slug}</span>
                                     </td>
-                                    <td className="px-4 py-3 text-neutral-600">{cs.industry}</td>
+                                    <td className="px-4 py-3 text-neutral-600">{cs.industryId}</td>
                                     <td className="whitespace-nowrap px-4 py-3 text-xs text-neutral-500">
                                         {cs._count.approachCards} cards · {cs._count.timeline} phases
                                     </td>
