@@ -1,10 +1,4 @@
-// ============================================================================
-// File: app/(admin)/subscribers/page.tsx
-// Purpose: Newsletter subscribers at /subscribers — count, full list newest
-//          first with signup date, per-row remove, and a CSV export button
-//          (served by ./export/route.ts, admin-guarded).
-// Type: Server Component (async, force-dynamic)
-// ============================================================================
+
 import { prisma } from "@/lib/prisma";
 import { DeleteSubscriberButton } from "../../../api/newsletter/deleteButton";
 

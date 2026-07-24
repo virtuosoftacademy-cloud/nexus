@@ -1,10 +1,4 @@
-// ============================================================================
-// File: app/(admin)/service-areas/page.tsx
-// Purpose: Service-area management at /service-areas — same pattern as blog
-//          categories: add form, list with usage counts, delete (case
-//          studies keep existing; only the tag and its links are removed).
-// Type: Server Component (async, force-dynamic)
-// ============================================================================
+
 import { prisma } from "@/lib/prisma";
 import { DeleteTaxonomyButton, NewTaxonomyForm } from "../../../../api/case-study/industry-servicearea-form";
 import { createServiceArea, deleteServiceArea } from "../../../../api/case-study/actions";
