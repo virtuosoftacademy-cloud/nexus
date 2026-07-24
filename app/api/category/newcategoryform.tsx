@@ -3,7 +3,7 @@
 
 import { useActionState } from "react";
 import { createCategory, type CategoryFormState } from "./actions";
-import { Button } from "../ui/button";
+import { Button } from "../../../components/ui/button";
 
 const initialState: CategoryFormState = {};
 

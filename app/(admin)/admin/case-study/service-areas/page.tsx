@@ -6,8 +6,8 @@
 // Type: Server Component (async, force-dynamic)
 // ============================================================================
 import { prisma } from "@/lib/prisma";
-import { DeleteTaxonomyButton, NewTaxonomyForm } from "../../_components/case-study/industry-servicearea-form";
-import { createServiceArea, deleteServiceArea } from "../../_components/case-study/actions";
+import { DeleteTaxonomyButton, NewTaxonomyForm } from "../../../../api/case-study/industry-servicearea-form";
+import { createServiceArea, deleteServiceArea } from "../../../../api/case-study/actions";
 
 export const metadata = { title: "Service areas" };
 export const dynamic = "force-dynamic";

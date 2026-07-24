@@ -61,3 +61,28 @@ export async function deleteCategory(formData: FormData) {
     revalidatePath("/view-page");
     revalidatePath("/blogs");
 }
+
+
+export type EditCategoryState = { error?: string; success?: boolean };
+
+export async function updateCategory(
+    id: number,
+    _prev: EditCategoryState,
+    formData: FormData
+): Promise<EditCategoryState> {
+    "use server"; // omit if the file already has top-level "use server"
+    const session = await auth();
+    if (session?.user?.role !== "ADMIN") {
+        return { error: "You must be signed in as an admin." };
+    }
+
+    const label = String(formData.get("label") ?? "").trim();
+    const accent = String(formData.get("accent") ?? "").trim();
+    if (!label) return { error: "Label is required." };
+
+    await prisma.blogCategory.update({ where: { id }, data: { label, accent } });
+
+    revalidatePath("/admin/blog/categories"); // adjust to your route
+    revalidatePath("/blogs");                 // labels render publicly
+    return { success: true };
+}

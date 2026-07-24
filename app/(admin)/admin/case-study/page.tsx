@@ -1,14 +1,7 @@
-// ============================================================================
-// File: app/(admin)/view-case-studies/page.tsx
-// Purpose: Case-studies overview at /view-case-studies — table of all case
-//          studies (title, industry, cards/phases counts, updated) with
-//          Edit -> /case-study/<slug>/edit and Delete. Mirrors the blog's
-//          /view-page dashboard.
-// Type: Server Component (async, force-dynamic)
-// ============================================================================
+
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-import { DeleteCaseStudyButton } from "../_components/case-study/DeleteCaseStudy";
+import { DeleteCaseStudyButton } from "../../../api/case-study/DeleteCaseStudy";
 export const metadata = { title: "Case studies" };
 export const dynamic = "force-dynamic";
 

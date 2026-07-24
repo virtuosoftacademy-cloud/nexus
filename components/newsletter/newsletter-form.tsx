@@ -3,7 +3,7 @@
 import { useActionState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { subscribe, type NewsletterState } from "@/app/(admin)/admin/_components/newsletter/actions";
+import { subscribe, type NewsletterState } from "@/app/api/newsletter/actions";
 import { showSimpleSuccess, showSimpleError } from "@/lib/toast-notifications";
 
 const initialState: NewsletterState = {};

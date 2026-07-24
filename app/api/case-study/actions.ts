@@ -193,3 +193,57 @@ export async function deleteServiceArea(formData: FormData) {
     await prisma.serviceArea.delete({ where: { id } });
     refresh();
 }
+
+
+export type EditTaxonomyState = { error?: string; success?: boolean };
+
+export async function updateIndustry(
+    id: number,
+    _prev: EditTaxonomyState,
+    formData: FormData
+): Promise<EditTaxonomyState> {
+    if (!(await requireAdmin())) return { error: "You must be signed in as an admin." };
+
+    const label = String(formData.get("label") ?? "").trim();
+    if (!label) return { error: "Industry name is required." };
+
+    try {
+        await prisma.industry.update({ where: { id }, data: { label } });
+    } catch (err) {
+        // label is @unique — renaming onto an existing name hits P2002
+        if ((err as { code?: string }).code === "P2002") {
+            return { error: `"${label}" already exists.` };
+        }
+        throw err;
+    }
+
+    revalidatePath("/admin/case-study/industries"); // adjust to your routes
+    revalidatePath("/admin/case-study");
+    revalidatePath("/case-studies");
+    return { success: true };
+}
+
+export async function updateServiceArea(
+    id: number,
+    _prev: EditTaxonomyState,
+    formData: FormData
+): Promise<EditTaxonomyState> {
+    if (!(await requireAdmin())) return { error: "You must be signed in as an admin." };
+
+    const label = String(formData.get("label") ?? "").trim();
+    if (!label) return { error: "Service area name is required." };
+
+    try {
+        await prisma.serviceArea.update({ where: { id }, data: { label } });
+    } catch (err) {
+        if ((err as { code?: string }).code === "P2002") {
+            return { error: `"${label}" already exists.` };
+        }
+        throw err;
+    }
+
+    revalidatePath("/admin/case-study/service-areas");
+    revalidatePath("/admin/case-study");
+    revalidatePath("/case-studies");
+    return { success: true };
+}

@@ -6,7 +6,7 @@
 // Type: Server Component (async, force-dynamic)
 // ============================================================================
 import { prisma } from "@/lib/prisma";
-import { DeleteSubscriberButton } from "../_components/newsletter/deleteButton";
+import { DeleteSubscriberButton } from "../../../api/newsletter/deleteButton";
 
 export const metadata = { title: "Subscribers" };
 export const dynamic = "force-dynamic";

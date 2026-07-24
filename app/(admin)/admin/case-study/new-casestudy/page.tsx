@@ -1,8 +1,8 @@
 
 
 import { prisma } from "@/lib/prisma";
-import { createCaseStudy } from "../../_components/case-study/actions";
-import { CaseStudyForm } from "../../_components/case-study/casestudy-form";
+import { createCaseStudy } from "../../../../api/case-study/actions";
+import { CaseStudyForm } from "../../../../api/case-study/casestudy-form";
 
 export const metadata = { title: "New case study" };
 

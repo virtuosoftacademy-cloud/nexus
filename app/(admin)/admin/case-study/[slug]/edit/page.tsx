@@ -1,15 +1,9 @@
-// ============================================================================
-// File: app/(admin)/case-study/[slug]/edit/page.tsx
-// Purpose: Edit page at /case-study/<slug>/edit. Loads the row with ordered
-//          children, maps them into the shared <CaseStudyForm> defaults, and
-//          binds updateCaseStudy to the slug (slug stays stable on edit).
-// Type: Server Component (async, force-dynamic)
-// ============================================================================
+
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { updateCaseStudy } from "../../../_components/case-study/actions";
-import { CaseStudyForm } from "../../../_components/case-study/casestudy-form";
+import { updateCaseStudy } from "../../../../../api/case-study/actions";
+import { CaseStudyForm } from "../../../../../api/case-study/casestudy-form";
 import { caseStudyInclude } from "../../types";
 
 export const metadata = { title: "Edit case study" };
