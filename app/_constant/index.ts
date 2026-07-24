@@ -24,16 +24,16 @@ interface FooterLinks {
 
 export const links: FooterLinks[] = [
   {
-    label: "Our Services",
+    label: "Services",
     href: "/services"
-  },
-  {
-    label: "Indutries",
-    href: "#"
   },
   {
     label: "Insights",
     href: "/blogs"
+  },
+  {
+    label: "Case Studies",
+    href: "/case-studies"
   },
   {
     label: "About Us",

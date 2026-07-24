@@ -66,7 +66,7 @@ export default function Hero({ post }: BlogPostHeroProps) {
             )}
 
             {/* Social icons */}
-            <div className="flex items-center gap-5">
+            {/* <div className="flex items-center gap-5">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <Link
                   key={label}
@@ -79,7 +79,7 @@ export default function Hero({ post }: BlogPostHeroProps) {
                   <Icon />
                 </Link>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* ── Right: image ── */}

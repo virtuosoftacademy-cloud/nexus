@@ -53,7 +53,7 @@ const Footer = () => {
               </Label>
             </FieldDescription>
 
-            <div className="flex gap-6 mt-6 text-background items-center justify-center md:justify-end">
+            {/* <div className="flex gap-6 mt-6 text-background items-center justify-center md:justify-end">
               <a href="#" className="hover:text-primary transition-colors">
                 <LinkedinIcon />
               </a>
@@ -69,7 +69,7 @@ const Footer = () => {
               <a href="#" className="hover:text-primary transition-colors pt-1">
                 <TwitterIcon />
               </a>
-            </div>
+            </div> */}
           </Field>
 
 
