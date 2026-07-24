@@ -1,3 +1,4 @@
+'use client'
 import { EditTaxonomyState } from "@/app/api/case-study/actions";
 import { useActionState, useEffect, useState } from "react";
 

@@ -2,8 +2,8 @@
 
 import { useActionState } from "react";
 import type { PostFormState } from "@/app/types/types";
-import { Button } from "../ui/button";
 import { ImageUploadField } from "@/components/upload/ImageUploadField";
+import { Button } from "@/components/ui/button";
 
 type Category = { id: number; label: string };
 
