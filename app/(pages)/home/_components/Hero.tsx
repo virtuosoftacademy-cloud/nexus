@@ -93,7 +93,7 @@ export function HeroSection() {
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
-                  
+                  <a
                     href={current.cta.href}
                     className="inline-flex items-center gap-2 text-accent text-sm font-semibold tracking-widest uppercase"
                     onMouseEnter={() => setHovered(true)}
