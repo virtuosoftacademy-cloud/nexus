@@ -1,0 +1,195 @@
+"use server";
+
+import { prisma } from "@/lib/prisma";
+import { auth } from "@/auth";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+import { type CaseStudyFormState, parseCaseStudyForm } from "./helpers";
+import { slugify } from "@/app/types/types";
+
+async function requireAdmin() {
+    const session = await auth();
+    return session?.user?.role === "ADMIN" ? session : null;
+}
+
+function childWrites(values: ReturnType<typeof parseCaseStudyForm>["values"]) {
+    if (!values) throw new Error("unreachable");
+    return {
+        approachCards: {
+            create: values.cards.map((c, i) => ({ ...c, order: i + 1 })),
+        },
+        timeline: {
+            create: values.timeline.map((t, i) => ({ ...t, order: i + 1 })),
+        },
+        relatedServices: {
+            create: values.services.map((s, i) => ({ ...s, order: i + 1 })),
+        },
+    };
+}
+
+// Revalidates everything a case-study change can affect: admin list,
+// public listing, and the public detail page.
+function refreshCaseStudies(slug?: string) {
+    revalidatePath("/admin/case-study");
+    revalidatePath("/case-study");
+    if (slug) revalidatePath(`/case-study/${slug}`);
+}
+
+export async function createCaseStudy(
+    _prev: CaseStudyFormState,
+    formData: FormData
+): Promise<CaseStudyFormState> {
+    const session = await requireAdmin();
+    if (!session) return { error: "You must be signed in as an admin." };
+
+    const { values, fieldErrors } = parseCaseStudyForm(formData);
+    if (fieldErrors || !values) return { fieldErrors };
+
+    const slug = slugify(values.heroTitle);
+    const existing = await prisma.caseStudy.findUnique({ where: { slug } });
+    if (existing) {
+        return {
+            fieldErrors: {
+                heroTitle: `A case study with the slug "${slug}" already exists. Change the title.`,
+            },
+        };
+    }
+
+    // serviceAreaIds must NOT reach Prisma as a scalar — it becomes the
+    // m2m connect below. cards/timeline/services go through childWrites.
+    const { cards, timeline, services, serviceAreaIds, ...scalars } = values;
+    try {
+        await prisma.caseStudy.create({
+            data: {
+                ...scalars,
+                slug,
+                authorId: session.user.id,
+                serviceAreas: { connect: serviceAreaIds.map((id) => ({ id })) },
+                ...childWrites(values),
+            },
+        });
+    } catch (err) {
+        console.error("Failed to create case study:", err);
+        return { error: "Could not save the case study. Check the server logs." };
+    }
+
+    refreshCaseStudies(slug);
+    redirect(`/case-studies/${slug}`);
+}
+
+export async function updateCaseStudy(
+    slug: string,
+    _prev: CaseStudyFormState,
+    formData: FormData
+): Promise<CaseStudyFormState> {
+    const session = await requireAdmin();
+    if (!session) return { error: "You must be signed in as an admin." };
+
+    const { values, fieldErrors } = parseCaseStudyForm(formData);
+    if (fieldErrors || !values) return { fieldErrors };
+
+    const { cards, timeline, services, serviceAreaIds, ...scalars } = values;
+    try {
+        await prisma.caseStudy.update({
+            where: { slug },
+            data: {
+                ...scalars,
+                // set replaces the whole m2m membership with the checked boxes
+                serviceAreas: { set: serviceAreaIds.map((id) => ({ id })) },
+                approachCards: { deleteMany: {}, create: values.cards.map((c, i) => ({ ...c, order: i + 1 })) },
+                timeline: { deleteMany: {}, create: values.timeline.map((t, i) => ({ ...t, order: i + 1 })) },
+                relatedServices: { deleteMany: {}, create: values.services.map((s, i) => ({ ...s, order: i + 1 })) },
+            },
+        });
+    } catch (err) {
+        console.error("Failed to update case study:", err);
+        return { error: "Could not update the case study. Check the server logs." };
+    }
+
+    refreshCaseStudies(slug);
+    redirect(`/admin/case-study`);
+}
+
+export async function deleteCaseStudy(formData: FormData) {
+    const session = await requireAdmin();
+    if (!session) return;
+
+    const id = String(formData.get("id") ?? "");
+    if (!id) return;
+
+    // ApproachCard / TimelinePhase / RelatedService rows cascade;
+    // ServiceArea join rows are removed automatically.
+    await prisma.caseStudy.delete({ where: { id } });
+
+    refreshCaseStudies();
+}
+
+// ── Industries ─────────────────────────────────────────────────────
+function refresh() {
+    revalidatePath("/admin/case-study/industries");
+    revalidatePath("/admin/case-study/service-areas");
+    revalidatePath("/admin/case-study");
+    revalidatePath("/admin");
+    revalidatePath("/case-studies"); // labels show on public pages too
+}
+
+export type TaxonomyFormState = { error?: string; success?: string };
+
+export async function createIndustry(
+    _prev: TaxonomyFormState,
+    formData: FormData
+): Promise<TaxonomyFormState> {
+    if (!(await requireAdmin())) return { error: "You must be signed in as an admin." };
+
+    const label = String(formData.get("label") ?? "").trim();
+    if (!label) return { error: "Industry name is required." };
+
+    const existing = await prisma.industry.findUnique({ where: { label } });
+    if (existing) return { error: `"${label}" already exists.` };
+
+    await prisma.industry.create({ data: { label } });
+    refresh();
+    return { success: `Created "${label}".` };
+}
+
+export async function deleteIndustry(formData: FormData) {
+    if (!(await requireAdmin())) return;
+    const id = Number(formData.get("id"));
+    if (!id) return;
+
+    // Detach first — case studies survive as "No industry".
+    await prisma.caseStudy.updateMany({
+        where: { industryId: id },
+        data: { industryId: null },
+    });
+    await prisma.industry.delete({ where: { id } });
+    refresh();
+}
+
+// ── Service areas ──────────────────────────────────────────────────
+export async function createServiceArea(
+    _prev: TaxonomyFormState,
+    formData: FormData
+): Promise<TaxonomyFormState> {
+    if (!(await requireAdmin())) return { error: "You must be signed in as an admin." };
+
+    const label = String(formData.get("label") ?? "").trim();
+    if (!label) return { error: "Service area name is required." };
+
+    const existing = await prisma.serviceArea.findUnique({ where: { label } });
+    if (existing) return { error: `"${label}" already exists.` };
+
+    await prisma.serviceArea.create({ data: { label } });
+    refresh();
+    return { success: `Created "${label}".` };
+}
+
+export async function deleteServiceArea(formData: FormData) {
+    if (!(await requireAdmin())) return;
+    const id = Number(formData.get("id"));
+    if (!id) return;
+
+    // Implicit m2m: deleting the area removes its join rows automatically.
+    await prisma.serviceArea.delete({ where: { id } });
+    refresh();
+}

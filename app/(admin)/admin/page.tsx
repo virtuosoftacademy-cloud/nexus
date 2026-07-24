@@ -1,0 +1,211 @@
+
+import Link from "next/link";
+import { prisma } from "@/lib/prisma";
+
+export const metadata = { title: "Dashboard" };
+export const dynamic = "force-dynamic";
+
+function Stat({ value, label }: { value: number | string; label: string }) {
+    return (
+        <div className="rounded-md bg-neutral-50 px-3 py-2">
+            <p className="text-xl font-semibold text-neutral-900">{value}</p>
+            <p className="text-xs text-neutral-500">{label}</p>
+        </div>
+    );
+}
+
+function Chip({ children }: { children: React.ReactNode }) {
+    return (
+        <span className="inline-block rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs font-medium text-neutral-700">
+            {children}
+        </span>
+    );
+}
+
+export default async function DashboardPage() {
+    const [
+        postCount,
+        featuredCount,
+        sidebarCount,
+        categories,
+        latestPost,
+        caseStudies,
+        industryRows,
+        serviceAreaRows,
+        cardTotal,
+        phaseTotal,
+    ] = await Promise.all([
+        prisma.blogPost.count(),
+        prisma.blogPost.count({ where: { isFeatured: true } }),
+        prisma.blogPost.count({ where: { isSidebar: true } }),
+        prisma.blogCategory.findMany({
+            orderBy: { label: "asc" },
+            include: { _count: { select: { posts: true } } },
+        }),
+        prisma.blogPost.findFirst({
+            orderBy: { date: "desc" },
+            select: { title: true, date: true, slug: true },
+        }),
+        prisma.caseStudy.findMany({
+            orderBy: { updatedAt: "desc" },
+            select: { heroTitle: true, slug: true, updatedAt: true },
+        }),
+        prisma.industry.findMany({
+            orderBy: { label: "asc" },
+            include: { _count: { select: { caseStudies: true } } },
+        }),
+        prisma.serviceArea.findMany({
+            orderBy: { label: "asc" },
+            include: { _count: { select: { caseStudies: true } } },
+        }),
+        prisma.approachCard.count(),
+        prisma.timelinePhase.count(),
+    ]);
+
+    const industries = industryRows.map((i) => `${i.label} · ${i._count.caseStudies}`);
+    const serviceAreas = serviceAreaRows.map((a) => `${a.label} · ${a._count.caseStudies}`);
+    const latestCaseStudy = caseStudies[0];
+
+    return (
+        <main>
+            <header className="mb-8">
+                <h1 className="text-3xl font-semibold text-neutral-900">Dashboard</h1>
+                <p className="mt-1 text-sm text-neutral-600">
+                    Content overview across the site.
+                </p>
+            </header>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+                {/* ══ Blogs card ══════════════════════════════════════════ */}
+                <section className="flex flex-col rounded-lg border border-neutral-200 bg-white p-6">
+                    <div className="flex items-start justify-between gap-4">
+                        <div>
+                            <h2 className="text-xl font-semibold text-neutral-900">Blogs</h2>
+                            <p className="mt-0.5 text-sm text-neutral-500">
+                                Posts shown at /blogs
+                            </p>
+                        </div>
+                        <Link href="/admin/blog/new-post"
+                            className="shrink-0 rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700">
+                            New post
+                        </Link>
+                    </div>
+
+                    <div className="mt-5 grid grid-cols-3 gap-3">
+                        <Stat value={postCount} label="Posts" />
+                        <Stat value={featuredCount} label="Featured" />
+                        <Stat value={sidebarCount} label="In sidebar" />
+                    </div>
+
+                    <div className="mt-5">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                            Categories
+                        </p>
+                        <div className="mt-2 flex flex-wrap gap-1.5">
+                            {categories.length === 0 ? (
+                                <span className="text-sm text-neutral-500">None yet</span>
+                            ) : (
+                                categories.map((c) => (
+                                    <Chip key={c.id}>
+                                        {c.label} · {c._count.posts}
+                                    </Chip>
+                                ))
+                            )}
+                        </div>
+                    </div>
+
+                    {latestPost && (
+                        <div className="mt-5">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                                Latest post
+                            </p>
+                            <Link href={`/blogs/${latestPost.slug}`}
+                                className="mt-1 block truncate text-sm font-medium text-neutral-900 hover:underline">
+                                {latestPost.title}
+                            </Link>
+                            <p className="text-xs text-neutral-500">{latestPost.date}</p>
+                        </div>
+                    )}
+
+                    <div className="mt-auto flex gap-4 border-t border-neutral-100 pt-4 text-sm font-medium">
+                        <Link href="/admin/blog" className="text-neutral-700 hover:text-neutral-900 hover:underline">
+                            View all posts →
+                        </Link>
+                        <Link href="/admin/blog/categories" className="text-neutral-500 hover:text-neutral-900 hover:underline">
+                            Categories
+                        </Link>
+                    </div>
+                </section>
+
+                {/* ══ Case studies card ═══════════════════════════════════ */}
+                <section className="flex flex-col rounded-lg border border-neutral-200 bg-white p-6">
+                    <div className="flex items-start justify-between gap-4">
+                        <div>
+                            <h2 className="text-xl font-semibold text-neutral-900">Case studies</h2>
+                            <p className="mt-0.5 text-sm text-neutral-500">
+                                Engagements shown at /case-studies
+                            </p>
+                        </div>
+                        <Link href="/admin/new-casestudy"
+                            className="shrink-0 rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700">
+                            New case study
+                        </Link>
+                    </div>
+
+                    <div className="mt-5 grid grid-cols-3 gap-3">
+                        <Stat value={caseStudies.length} label="Case studies" />
+                        <Stat value={cardTotal} label="Approach cards" />
+                        <Stat value={phaseTotal} label="Timeline phases" />
+                    </div>
+
+                    <div className="mt-5">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                            Industries · {industries.length}
+                        </p>
+                        <div className="mt-2 flex flex-wrap gap-1.5">
+                            {industries.length === 0 ? (
+                                <span className="text-sm text-neutral-500">None yet</span>
+                            ) : (
+                                industries.map((i) => <Chip key={i}>{i}</Chip>)
+                            )}
+                        </div>
+                    </div>
+
+                    <div className="mt-5">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                            Service areas · {serviceAreas.length}
+                        </p>
+                        <div className="mt-2 flex flex-wrap gap-1.5">
+                            {serviceAreas.length === 0 ? (
+                                <span className="text-sm text-neutral-500">None yet</span>
+                            ) : (
+                                serviceAreas.map((s) => <Chip key={s}>{s}</Chip>)
+                            )}
+                        </div>
+                    </div>
+
+                    {latestCaseStudy && (
+                        <div className="mt-5">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                                Last updated
+                            </p>
+                            <Link href={`/case-studies/${latestCaseStudy.slug}`}
+                                className="mt-1 block truncate text-sm font-medium text-neutral-900 hover:underline">
+                                {latestCaseStudy.heroTitle}
+                            </Link>
+                            <p className="text-xs text-neutral-500">
+                                {latestCaseStudy.updatedAt.toISOString().slice(0, 10)}
+                            </p>
+                        </div>
+                    )}
+
+                    <div className="mt-auto flex gap-4 border-t border-neutral-100 pt-4 text-sm font-medium">
+                        <Link href="/admin/case-study" className="text-neutral-700 hover:text-neutral-900 hover:underline">
+                            View all case studies →
+                        </Link>
+                    </div>
+                </section>
+            </div>
+        </main>
+    );
+}
