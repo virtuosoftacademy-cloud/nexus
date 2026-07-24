@@ -3,19 +3,19 @@
 import { TABS } from "@/app/_constant";
 import { ScrollToSection } from "@/components/scrolltosection";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const AUTOPLAY_INTERVAL = 5000;
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
-  exit:    { transition: { staggerChildren: 0.05, staggerDirection: -1 as const } },
+  exit:    { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden:   { opacity: 0, y: 24 },
   visible:  { opacity: 1, y: 0,  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
   exit:     { opacity: 0, y: -12, transition: { duration: 0.28, ease: [0.55, 0, 1, 0.45] } },
@@ -93,7 +93,7 @@ export function HeroSection() {
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
-                  <a
+                  
                     href={current.cta.href}
                     className="inline-flex items-center gap-2 text-accent text-sm font-semibold tracking-widest uppercase"
                     onMouseEnter={() => setHovered(true)}
