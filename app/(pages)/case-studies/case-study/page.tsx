@@ -1,3 +1,5 @@
+'use client'
+
 import CaseStudyDetail from "../_components/casestudydetails";
 import { caseStudyPropertyPortfolio } from "../constant";
 
