@@ -1,3 +1,4 @@
+'use client'
 
 import { ApproachImage, ApproachRowData } from "@/app/types/types";
 import Image from "next/image";

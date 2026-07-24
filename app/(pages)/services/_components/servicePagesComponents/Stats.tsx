@@ -1,19 +1,4 @@
-/**
- * ============================================================================
- * File Path   : components/sections/services-stats.tsx
- * Purpose     : Stats strip section (value + icon + label, separated by
- *               vertical dividers on md+). Pages supply a bundled props
- *               constant through the renderer config:
- *                 { Component: ServicesStats, props: statsUk }
- *               where the constant is an OBJECT holding the stats:
- *                 export const statsUk: ServicesStatsProps = { stats: [...] }
- *               (The renderer spreads props, so the constant must be an
- *               object — a bare array would spread into numeric keys.)
- *               Renders nothing if stats are missing/empty. Types come from
- *               the page-level constant module.
- * Module Type : Server Component (no state or event handlers)
- * ============================================================================
- */
+'use client'
 
 import { Fragment } from "react";
 import { Separator } from "@/components/ui/separator";
