@@ -1,5 +1,6 @@
-import { createPost } from "@/components/blog/createPost";
-import { PostForm } from "@/components/blog/postform";
+
+import { createPost } from "@/app/api/blog/createPost";
+import { PostForm } from "@/app/api/blog/postform";
 import { prisma } from "@/lib/prisma";
 
 export const metadata = { title: "New post" };
