@@ -12,7 +12,7 @@ export default function Hero() {
     "Financial advisory beyond compliance"
   ]
   return (
-    <section className="py-16 mt-12 md:mt-24" id="hero">
+    <section className="px-8 sm:px-18 py-16 mt-12 md:mt-24" id="hero">
       <div>
         <div className="flex flex-col md:gap-8">
           <div className="flex gap-5 justify-center md:justify-between items-center flex-wrap text-center md:text-left">

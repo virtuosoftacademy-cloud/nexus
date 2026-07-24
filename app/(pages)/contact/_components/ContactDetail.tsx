@@ -49,47 +49,12 @@ const cards: ContactCard[] = [
     ),
     linkLabel: "",
     href: "#",
-  },
-  // {
-  //   title: "Careers",
-  //   body: (
-  //     <p>
-  //       We seek professionals who demonstrate analytical precision, understand
-  //       the importance of documentation, and value long-term advisory
-  //       relationships. Opportunities are offered selectively with clear role
-  //       definition.
-  //     </p>
-  //   ),
-  //   linkLabel: "View Open Positions",
-  //   href: "#",
-  // },
-  // {
-  //   title: "Insights & Blog",
-  //   body: (
-  //     <p>
-  //       Questions or comments about our published insights on UK accounting, UAE
-  //       tax, property VAT, or construction compliance? We welcome feedback and
-  //       topic suggestions from our readers.
-  //     </p>
-  //   ),
-  //   linkLabel: "Email Us",
-  //   href: "#",
-  // },
-  // {
-  //   title: "Advisory Enquiries",
-  //   body: (
-  //     <p>
-  //       If you require structured financial advisory, governance design, or cross-border UK–UAE alignment — submit a detailed enquiry and a senior advisor will review and respond within 1–2 working days.
-  //     </p>
-  //   ),
-  //   linkLabel: "Submit an Enquiry",
-  //   href: "#",
-  // },
+  }
 ];
 
 export default function ContactDetails() {
   return (
-    <section className="py-10">
+    <section className="py-10 px-8 sm:px-18">
       <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
 
         {/* Row 1 — 3 cards */}

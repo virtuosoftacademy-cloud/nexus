@@ -99,7 +99,7 @@ export default function Navbar() {
                         <NavigationMenuList className="gap-1">
                             <NavigationMenuItem>
                                 <NavigationMenuLink
-                                    className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
+                                    className={cn(navigationMenuTriggerStyle(), "bg-transparent! hover:text-primary")}
                                     href="/"
                                 >
                                     Home
@@ -130,7 +130,7 @@ export default function Navbar() {
 
                             <NavigationMenuItem>
                                 <NavigationMenuLink
-                                    className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
+                                    className={cn(navigationMenuTriggerStyle(), "bg-transparent! hover:text-primary")}
                                     href="/blogs"
                                 >
                                     Insights
@@ -140,7 +140,7 @@ export default function Navbar() {
 
                             <NavigationMenuItem>
                                 <NavigationMenuLink
-                                    className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
+                                    className={cn(navigationMenuTriggerStyle(), "bg-transparent! hover:text-primary")}
                                     href="/case-studies"
                                 >
                                     Case Studies
@@ -149,7 +149,7 @@ export default function Navbar() {
 
                             <NavigationMenuItem>
                                 <NavigationMenuLink
-                                    className={cn(navigationMenuTriggerStyle(), "hover:text-primary")}
+                                    className={cn(navigationMenuTriggerStyle(), "bg-transparent! hover:text-primary")}
                                     href="/about"
                                 >
                                     About
