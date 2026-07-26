@@ -111,10 +111,6 @@ async function main() {
         console.log(`✔ Admin user: ${admin.email} (password from ADMIN_PASSWORD)`);
     }
 
-    // Editorial author — attribution only, no password, cannot log in.
-    const author = await prisma.user.create({
-        data: { email: EDITORIAL_AUTHOR.email, name: EDITORIAL_AUTHOR.name, role: "USER" },
-    });
 
     // ════════════════════════════════════════════════════════════════
     // 2. Blog — categories
@@ -473,7 +469,7 @@ None of these kill a purchase on their own — they direct your survey. Tell you
                 isFeatured: p.isFeatured,
                 isSidebar: p.isSidebar,
                 categoryId: p.category ? categories[p.category] : null,
-                authorId: author.id,
+                authorId: admin.id,
             },
         });
     }
@@ -697,7 +693,7 @@ Tax and VAT payments scheduled into the forecast, never a surprise`,
                 ...scalars,
                 industryId: industries[industry],
                 serviceAreas: connectAreas(serviceAreas),
-                authorId: author.id,
+                authorId: admin.id,
                 approachCards: { create: cards.map((c, i) => ({ ...c, order: i + 1 })) },
                 timeline: { create: timeline.map((t, i) => ({ ...t, order: i + 1 })) },
                 relatedServices: { create: services.map((s, i) => ({ ...s, order: i + 1 })) },
