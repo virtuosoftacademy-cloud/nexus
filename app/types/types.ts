@@ -177,7 +177,7 @@ export type ServiceSlide = {
     caseButton?: string
     caseDialogTitle?: string
     caseDialogIntro?: string
-    caseDialogItemsTitle?:string
+    caseDialogItemsTitle?: string
     caseDialogItems?: string[]
     caseDialogIcon?: string
     caseDialogIconAlt?: string
@@ -220,10 +220,7 @@ export type ContactCtaProps = {
     image?: ContactCtaImage
 }
 
-import type {
-    BlogPost as BlogPostRow,
-    BlogCategory,
-} from "@/generated/prisma/client";
+import type { BlogPost as BlogPostRow, } from "@/generated/prisma/client";
 
 /**
  * A blog post as the UI receives it: the Prisma row, optionally carrying

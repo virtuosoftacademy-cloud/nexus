@@ -3,10 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Field, FieldDescription } from "../ui/field";
-import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Checkbox } from "../ui/checkbox";
-import { Button } from "../ui/button";
 import { FacebookIcon } from "../ui/facebook";
 import { LinkedinIcon } from "../ui/linkedin";
 import { TwitterIcon } from "../ui/twitter";
@@ -55,7 +53,7 @@ const Footer = () => {
               </Label>
             </FieldDescription>
 
-            <div className="flex gap-6 mt-6 text-background items-center justify-center md:justify-end">
+            {/* <div className="flex gap-6 mt-6 text-background items-center justify-center md:justify-end">
               <a href="#" className="hover:text-primary transition-colors">
                 <LinkedinIcon />
               </a>
@@ -71,7 +69,7 @@ const Footer = () => {
               <a href="#" className="hover:text-primary transition-colors pt-1">
                 <TwitterIcon />
               </a>
-            </div>
+            </div> */}
           </Field>
 
 

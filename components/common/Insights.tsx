@@ -2,7 +2,6 @@
 import { BlogPost } from "@/app/types/types";
 import { Button } from "@/components/ui/button";
 import { coverOf } from "@/lib/blog-image";
-import { prisma } from "@/lib/prisma";
 import SafeImage from "../ui/safeimage";
 
 const GRADIENT_FROM = "hsl(172 66% 22%)";
@@ -12,7 +11,7 @@ type BlogPostProps={
   posts:BlogPost[]
 }
 
-export async function InsightsSection({ posts }: BlogPostProps) {
+export function InsightsSection({ posts }: BlogPostProps) {
   return (
     <section className="bg-background py-10 md:py-20">
       <div className="mx-auto px-8 md:px-18">

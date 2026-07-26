@@ -9,7 +9,7 @@ import CoreServicesSection from "./_components/CoreServices";
 import StatsBar from "./_components/Stats";
 import ProfessionalMemberships from "./_components/Membership";
 import GovernancePhilosophy from "./_components/Governance";
-import { blogPosts } from "@/lib/blogActions";
+import { blogPosts} from "@/lib/blogActions";
 
 
 export default function Homepage() {
