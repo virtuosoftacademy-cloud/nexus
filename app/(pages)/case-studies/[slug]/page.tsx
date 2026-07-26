@@ -7,11 +7,11 @@ import { caseStudyInclude, toDetailProps } from "@/app/(admin)/admin/case-study/
 
 // Pre-render every existing case study at build time.
 export async function generateStaticParams() {
-    try{
+    try {
         const rows = await prisma.caseStudy.findMany({ select: { slug: true } });
         return rows.map((r) => ({ slug: r.slug }));
-    }catch{
-     return []
+    } catch {
+        return []
     }
 };
 
