@@ -15,8 +15,7 @@ export async function generateStaticParams() {
     }
 };
 
-// Posts published via the admin after the build still work.
-export const dynamicParams = true;
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
     params,

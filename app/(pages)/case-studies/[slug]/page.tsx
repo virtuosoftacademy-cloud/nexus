@@ -15,8 +15,7 @@ export async function generateStaticParams() {
     }
 };
 
-// Case studies published via the admin after the build render on demand.
-export const dynamicParams = true;
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
     params,
