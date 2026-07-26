@@ -18,9 +18,13 @@ import { prisma } from "@/lib/prisma";
 
 // Pre-render every existing post at build time.
 export async function generateStaticParams() {
-    const posts = await prisma.blogPost.findMany({ select: { slug: true } });
-    return posts.map((p) => ({ slug: p.slug }));
-}
+    try {
+        const posts = await prisma.blogPost.findMany({ select: { slug: true } });
+        return posts.map((p) => ({ slug: p.slug }));
+    } catch {
+        return []
+    }
+};
 
 // Posts published via the admin after the build still work.
 export const dynamicParams = true;

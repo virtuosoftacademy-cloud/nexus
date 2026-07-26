@@ -1,13 +1,3 @@
-// ============================================================================
-// File: app/case-studies/[slug]/page.tsx
-// Purpose: Case study page — UPDATED from one hardcoded page per case study
-//          (spreading a constant like caseStudyPropertyPortfolio) to a single
-//          dynamic route serving every case study from Prisma:
-//            /case-studies/<slug> -> findUnique + toDetailProps -> component
-//          New case studies published in the admin get a page automatically;
-//          per-case-study folders and constants can be deleted.
-// Type: Server Component (async)
-// ============================================================================
 
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -17,9 +7,13 @@ import { caseStudyInclude, toDetailProps } from "@/app/(admin)/admin/case-study/
 
 // Pre-render every existing case study at build time.
 export async function generateStaticParams() {
-    const rows = await prisma.caseStudy.findMany({ select: { slug: true } });
-    return rows.map((r) => ({ slug: r.slug }));
-}
+    try{
+        const rows = await prisma.caseStudy.findMany({ select: { slug: true } });
+        return rows.map((r) => ({ slug: r.slug }));
+    }catch{
+     return []
+    }
+};
 
 // Case studies published via the admin after the build render on demand.
 export const dynamicParams = true;
