@@ -1,21 +1,6 @@
-// ============================================================================
-// File: app/case-studies/_components/CaseStudies.tsx
-// Purpose: Case-studies listing grid — Prisma-backed, layout untouched.
-//          toCard() maps each row to CaseStudyCardProps exactly:
-//            image        <- heroImage (fallback cover when empty)
-//            imageAlt     <- heroTitle
-//            category     <- industry
-//            title        <- heroTitle
-//            summary      <- heroSubtitle (written as a one-line description)
-//            serviceAreas <- one-per-line column split into the chip list
-//            href         <- /case-studies/<slug>
-// Type: Async Server Component (must be rendered from a server tree)
-// ============================================================================
 
 import { prisma } from "@/lib/prisma";
-import { coverOf } from "@/lib/blog-image";
 import { CaseStudyCard, type CaseStudyCardProps } from "./ui/CaseStudyCard";
-import SafeImage from "@/components/ui/safeimage";
 
 function toCard(row: {
     id: string;

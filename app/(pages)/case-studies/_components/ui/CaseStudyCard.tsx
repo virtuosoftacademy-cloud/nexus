@@ -1,12 +1,4 @@
-// ============================================================================
-// File: app/case-studies/_components/ui/CaseStudyCard.tsx
-// Purpose: Case study listing card — UI untouched. ONLY change: the props
-//          type no longer comes from constant.ts; CaseStudyCardProps is
-//          defined here and exported so the listing's toCard() mapper can
-//          satisfy it exactly.
-// Type: Server-safe presentational component
-// ============================================================================
-import Image from "next/image";
+'use client'
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import SafeImage from "@/components/ui/safeimage";

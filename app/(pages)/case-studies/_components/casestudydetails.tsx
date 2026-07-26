@@ -5,11 +5,6 @@ import { ArrowList } from "@/components/ui/ArrowList";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { CaseStudyDetailProps } from "@/app/(admin)/admin/case-study/types";
 
-// ---------------------------------------------------------------------------
-// Section: Sub-component — SectionHeading
-// h4 heading; first word plain, everything after it highlighted text-primary
-// ("Executive Summary" -> Executive <span>Summary</span>).
-// ---------------------------------------------------------------------------
 function SectionHeading({ title }: { title: string }) {
     const [first, ...rest] = title.split(" ");
 

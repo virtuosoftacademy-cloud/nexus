@@ -2,7 +2,7 @@
 import CaseStudies from './_components/CaseStudies'
 import Hero from './_components/Hero'
 
-function CaseStudiesPage() {
+export default function CaseStudiesPage() {
     return (
         <div className='min-h-screen'>
             <Hero />
@@ -10,5 +10,3 @@ function CaseStudiesPage() {
         </div>
     )
 }
-
-export default CaseStudiesPage
