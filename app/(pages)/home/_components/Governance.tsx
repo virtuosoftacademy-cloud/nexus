@@ -1,4 +1,4 @@
-// components/governance/GovernancePhilosophy.tsx
+'use client'
 
 import Image from "next/image";
 

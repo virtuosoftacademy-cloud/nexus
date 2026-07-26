@@ -1,3 +1,4 @@
+'use client'
 
 import { BlogPost } from "@/app/types/types";
 import { Button } from "@/components/ui/button";

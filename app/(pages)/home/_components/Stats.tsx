@@ -1,4 +1,4 @@
-// components/stats/StatsBar.tsx
+'use client'
 
 import { statusBar } from "@/app/_constant";
 import { Separator } from "@/components/ui/separator";
