@@ -6,10 +6,6 @@ import { hash } from "bcryptjs";
 // ── Config ──────────────────────────────────────────────────────────
 const DEV_ADMIN_EMAIL = "admin@example.com";
 const DEV_ADMIN_PASSWORD = "change-me-locally-123";
-const EDITORIAL_AUTHOR = {
-    email: "admin@example.com",
-    name: "Nexus Editorial",
-};
 
 const INDUSTRIES = [
     "Property & Real Estate",
