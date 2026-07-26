@@ -1,14 +1,3 @@
-// ============================================================================
-// File: app/blogs/[slug]/page.tsx
-// Purpose: Public blog post page at /blogs/<slug> — data source swapped from
-//          the static constant.ts functions to live Prisma queries. Markup
-//          preserved exactly, including the commented-out ReactLenis wrapper
-//          and CTA blocks (uncomment + restore their imports when needed).
-//            generateStaticSlugs -> async prisma slug query (build-time)
-//            getPostBySlug       -> prisma.blogPost.findUnique
-//            dynamicParams=true  -> admin-published posts render on demand
-// Type: Server Component (async)
-// ============================================================================
 
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -35,15 +24,20 @@ export async function generateMetadata({
     params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
     const { slug } = await params;
-    const post = await prisma.blogPost.findUnique({
-        where: { slug },
-        select: { title: true, excerpt: true },
-    });
-    if (!post) return { title: "Post Not Found | Nexus" };
-    return {
-        title: `${post.title} | Nexus Advisory`,
-        description: post.excerpt,
-    };
+    try {
+
+        const post = await prisma.blogPost.findUnique({
+            where: { slug },
+            select: { title: true, excerpt: true },
+        });
+        if (!post) return { title: "Post Not Found | Nexus" };
+        return {
+            title: `${post.title} | Nexus Advisory`,
+            description: post.excerpt,
+        };
+    } catch {
+        return { title: "Nexus Advisory" }
+    }
 }
 
 export default async function BlogPostPage({

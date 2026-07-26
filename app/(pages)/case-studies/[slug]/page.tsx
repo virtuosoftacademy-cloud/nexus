@@ -24,15 +24,19 @@ export async function generateMetadata({
     params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
     const { slug } = await params;
-    const row = await prisma.caseStudy.findUnique({
-        where: { slug },
-        select: { heroTitle: true, heroSubtitle: true },
-    });
-    if (!row) return { title: "Case Study Not Found | Nexus" };
-    return {
-        title: `${row.heroTitle} | Nexus Advisory`,
-        description: row.heroSubtitle,
-    };
+    try {
+        const row = await prisma.caseStudy.findUnique({
+            where: { slug },
+            select: { heroTitle: true, heroSubtitle: true },
+        });
+        if (!row) return { title: "Case Study Not Found | Nexus" };
+        return {
+            title: `${row.heroTitle} | Nexus Advisory`,
+            description: row.heroSubtitle,
+        };
+    } catch {
+        return { title: "Nexus Advisory" }
+    }
 }
 
 export default async function CaseStudyPage({
