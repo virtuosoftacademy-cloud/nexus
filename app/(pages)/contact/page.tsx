@@ -3,12 +3,12 @@ import Hero from './_components/Hero'
 import ContactDetails from './_components/ContactDetail'
 import ContactFollow from './_components/Follow'
 import Faq from '@/components/common/Faq'
-import { faqsHome } from '@/app/_constant'
 import TestimonialsSection from '@/components/common/Testimonials'
+import { faqsHome } from '@/app/_constant'
 import { InsightsSection } from '../../../components/common/Insights'
 import { blogPosts } from '@/lib/blogActions'
 
-function Contact() {
+export default function Contact() {
     return (
         <div>
             <div>
@@ -23,5 +23,4 @@ function Contact() {
     )
 }
 
-export default Contact
 

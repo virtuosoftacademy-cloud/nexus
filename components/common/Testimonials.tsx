@@ -1,6 +1,5 @@
 "use client";
 
-// components/testimonials/TestimonialsSection.tsx
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";

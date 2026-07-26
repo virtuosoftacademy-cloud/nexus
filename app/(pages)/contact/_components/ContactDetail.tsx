@@ -1,7 +1,4 @@
-// components/contact/ContactDetails.tsx
-
-import Link from "next/link";
-import { ArrowRight, Building, Building2 } from "lucide-react";
+'use client'
 import Image from "next/image";
 
 interface ContactCard {

@@ -1,5 +1,6 @@
 
 'use client'
+
 import { Accordion } from '@/components/ui/accordion';
 import FaqCard from '@/components/ui/FaqCard';
 import { FaqItem } from '@/app/_constant';

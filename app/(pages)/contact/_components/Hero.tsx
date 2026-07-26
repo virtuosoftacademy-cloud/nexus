@@ -1,5 +1,4 @@
-// components/contact/ContactHero.tsx
-
+'use client'
 import { ArrowList } from "@/components/ui/ArrowList";
 import Image from "next/image";
 
