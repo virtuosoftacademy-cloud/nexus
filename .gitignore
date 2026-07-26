@@ -45,5 +45,3 @@ package-lock.json
 
 # Prisma
 generated
-
-/app/(pages)/blogs/
