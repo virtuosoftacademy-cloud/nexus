@@ -1,6 +1,5 @@
 
 import { HeroSection } from "./_components/Hero";
-import { InsightsSection } from "../../../components/common/Insights";
 import { faqsHome } from "@/app/_constant";
 import Faq from "@/components/common/Faq";
 import TestimonialsSection from "@/components/common/Testimonials";
@@ -9,7 +8,6 @@ import CoreServicesSection from "./_components/CoreServices";
 import StatsBar from "./_components/Stats";
 import ProfessionalMemberships from "./_components/Membership";
 import GovernancePhilosophy from "./_components/Governance";
-import { blogPosts} from "@/lib/blogActions";
 
 
 export default function Homepage() {
@@ -27,8 +25,6 @@ export default function Homepage() {
       <ProfessionalMemberships />
       {/* Governance */}
       <GovernancePhilosophy />
-      {/* ── INSIGHTS ── */}
-      <InsightsSection posts={blogPosts} />
       {/* ── CLIENT REVIEWS ── */}
       <TestimonialsSection />
       {/* ── FAQ ── */}
