@@ -2,7 +2,6 @@
 
 import { notFound } from "next/navigation";
 import { ReactLenis } from "lenis/react";
-import type { Metadata } from "next";
 import Hero from "../_components/servicePagesComponents/Hero";
 import { Accountstats, approachRows, approachRowsProperty, businessAdvisoryAbout, businessAdvisoryCarouselProperty, businessAdvisoryHero, businessApproachRows, businessCta, businessDifference, businessFaqItems, businessModelsData, cfoAbout, cfoAdvisoryCarouselProperty, cfoAdvisoryHero, cfoApproachRows, cfoContactCta, cfoDifference, cfoFaqItems, cfoModelsData, cfoStats, constructAbout, constructApproachRows, constructContactCta, constructDifferenceConstruct, constructFaqItems, constructHero, constructModelsData, constructServicesCarousel, constructStats, contactCtaProperty, contactCtaUk, differenceProperty, differenceUk, faqItemsProperty, faqItemsUk, hmrcStats, ModelsDataProperty, ModelsDataUK, propertyAbout, propertyHero, Propertystats, servicesCarouselProperty, servicesCarouselUk, solutionsAbout, solutionsApproachRows, solutionsCarousel, solutionsContactCta, solutionsDifference, solutionsFaqItems, solutionsHero, solutionsModelsData, systemsAbout, systemsApproachRows, systemsCarousel, systemsContactCta, systemsDifference, systemsFaqItems, systemsHero, systemsModelsData, taxAbout, taxApproachRows, taxCarouselProperty, taxContactCta, taxDifference, taxFaqItems, taxHero, taxModelsData, uaeAbout, uaeAdvisoryCarouselProperty, uaeAdvisoryHero, uaeApproachRows, uaeContactCta, uaeDifference, uaeFaqItems, uaeModelsData, uaeStats, UKAccountingAbout, ukheroAccount } from "../_components/constant";
 import AboutService from "../_components/servicePagesComponents/aboutservice";
@@ -14,26 +13,18 @@ import ServicesStats from "../_components/servicePagesComponents/Stats";
 import DifferenceComponent from "../_components/servicePagesComponents/different";
 import ModelsSection from "../_components/servicePagesComponents/Industries";
 import Notice, { uaeImportantNotice } from "../_components/servicePagesComponents/notice";
-
+import { getServiceBySlug, Service } from "./layout";
 
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-interface ServiceSection {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  Component: React.ComponentType<any>;
-  props?: Record<string, unknown>;
-}
 
-interface Service {
-  slug: string;
-  title: string;
-  sections: ServiceSection[];
-}
+
+
 
 // ─── Service definitions ──────────────────────────────────────────────────────
 
-const services: Service[] = [
+export const services: Service[] = [
   {
     slug: "uk-accounting-and-tax",
     title: "UK Accounting & Tax",
@@ -174,35 +165,7 @@ const services: Service[] = [
 
 // ─── Helper ───────────────────────────────────────────────────────────────────
 
-function getServiceBySlug(slug: string): Service | undefined {
-  return services.find((s) => s.slug === slug);
-}
 
-// ─── Static params ────────────────────────────────────────────────────────────
-
-export function generateStaticParams(): { slug: string }[] {
-  return services.map((s) => ({ slug: s.slug }));
-}
-
-// ─── Metadata ─────────────────────────────────────────────────────────────────
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const service = getServiceBySlug(slug);
-
-  if (!service) {
-    return { title: "Service Not Found | Nexus" };
-  }
-
-  return {
-    title: `${service.title} | Nexus Advisory`,
-    description: `Professional ${service.title} services by Nexus Advisory — structured, compliant, and built around your business.`,
-  };
-}
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 

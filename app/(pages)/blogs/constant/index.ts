@@ -121,7 +121,7 @@ export const BlogCategories: BlogCategory[] = [
                 timeAgo: "23hrs ago",
                 date: "15 May 2026",
                 href: "/blogs/domestic-reverse-charge-guide",
-                content: `<p>The domestic reverse charge rules remain one of the most misapplied areas of construction VAT. Introduced in March 2021, the rules shifted the obligation to account for VAT from the supplier to the customer in most construction supply chains.</p>`,
+                content: `The domestic reverse charge rules remain one of the most misapplied areas of construction VAT. Introduced in March 2021, the rules shifted the obligation to account for VAT from the supplier to the customer in most construction supply chains.`,
             },
         ],
     },

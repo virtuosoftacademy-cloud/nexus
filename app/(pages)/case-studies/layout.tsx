@@ -5,7 +5,7 @@ export const metadata = {
 //   description: "Created By Virtuosoft Limited",
 };
 
-export default function CaseStudiesPageLayout({
+export default function CaseStudiesLayout({
     children,
 }: Readonly < {
     children: React.ReactNode;

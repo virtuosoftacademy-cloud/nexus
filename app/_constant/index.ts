@@ -178,7 +178,7 @@ export const CoreServices: CoreService[] = [
     id: "cs-6",
     icon: "/assets/digitalandsystemsadvisory.svg",
     title: "Digital & Systems Advisory",
-    description: "We help organizations leverage technology to optimize processes, enhance efficiency, and accelerate digital transformation through tailored systems, automation and technology strategies.",
+    description: "We help organisations leverage technology to optimize processes, enhance efficiency, and accelerate digital transformation through tailored systems, automation and technology strategies.",
     href: "/services/digital-and-systems-advisory",
   },
 ];

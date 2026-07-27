@@ -1,3 +1,4 @@
+'use client'
 
 import Hero from './_components/Hero'
 import ContactDetails from './_components/ContactDetail'
@@ -7,9 +8,9 @@ import { faqsHome } from '@/app/_constant'
 import TestimonialsSection from '@/components/common/Testimonials'
 import { InsightsSection } from '../../../components/common/Insights'
 
-function Contact() {
+function ContactPage() {
     return (
-        <div className=''>
+        <div>
             <div>
                 <Hero />
                 <ContactDetails />
@@ -22,5 +23,5 @@ function Contact() {
     )
 }
 
-export default Contact
+export default ContactPage
 

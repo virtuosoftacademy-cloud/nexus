@@ -4,7 +4,6 @@ import Posts from "./_components/posts";
 
 export const metadata = { title: "Blog | Nexus Advisory & Services" };
 
-export const dynamic = "force-dynamic";
 
 export default function Blogs() {
     return (
