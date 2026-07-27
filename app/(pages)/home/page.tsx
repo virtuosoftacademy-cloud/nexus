@@ -1,4 +1,3 @@
-"use client";
 
 import { HeroSection } from "./_components/Hero";
 import { InsightsSection } from "../../../components/common/Insights";

@@ -3,28 +3,28 @@
 import { TABS } from "@/app/_constant";
 import { ScrollToSection } from "@/components/scrolltosection";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const AUTOPLAY_INTERVAL = 5000;
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
-  exit:    { transition: { staggerChildren: 0.05, staggerDirection: -1 as const } },
+  exit: { transition: { staggerChildren: 0.05, staggerDirection: -1 as const } },
 };
 
-const itemVariants = {
-  hidden:   { opacity: 0, y: 24 },
-  visible:  { opacity: 1, y: 0,  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
-  exit:     { opacity: 0, y: -12, transition: { duration: 0.28, ease: [0.55, 0, 1, 0.45] } },
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+  exit: { opacity: 0, y: -12, transition: { duration: 0.28, ease: [0.55, 0, 1, 0.45] } },
 };
 
 export function HeroSection() {
-  const [activeTab, setActiveTab]   = useState(0);
-  const [isPaused, setIsPaused]     = useState(false);
-  const [hovered, setHovered]       = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     if (isPaused) return;

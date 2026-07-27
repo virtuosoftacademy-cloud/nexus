@@ -46,7 +46,6 @@ export default async function Posts() {
                     alt={featured.title}
                     width={400}
                     height={700}
-                    priority
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>

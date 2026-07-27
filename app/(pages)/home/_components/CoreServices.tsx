@@ -1,3 +1,4 @@
+'use client'
 
 import { CoreServices } from "@/app/_constant";
 import CoreServiceCard from "@/components/ui/CoreServiceCard";

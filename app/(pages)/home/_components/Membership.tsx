@@ -1,3 +1,4 @@
+'use client'
 
 import { memberships } from "@/app/_constant";
 import Image from "next/image";
