@@ -66,7 +66,7 @@ export default function Navbar() {
 
     const navBg = showLight ? "bg-white shadow-sm" : "bg-transparent shadow-none";
     const textColor = showLight ? "text-foreground" : "text-accent";
-    const logoSrc = showLight ? "/assets/logo.svg" : "/assets/logo-white.svg";
+    const logoSrc = showLight ? "/assets/logo.png" : "/assets/logo-white.png";
 
     return (
         <nav
@@ -85,7 +85,7 @@ export default function Navbar() {
                         alt="Nexus Logo"
                         width={160}
                         height={48}
-                        className="transition-all duration-300 h-8 md:h-12 -mr-8 md:mr-0"
+                        className="transition-all duration-300 h-6 md:h-10 -mr-8 md:mr-0"
                         priority
                     />
                 </Link>

@@ -1,4 +1,3 @@
-// components/core-services/CoreServicesSection.tsx
 
 import { CoreServices } from "@/app/_constant";
 import CoreServiceCard from "@/components/ui/CoreServiceCard";
@@ -26,7 +25,9 @@ export default function CoreServicesSection() {
 
         {/* CTA */}
         <Button variant="secondary">
-          View All Services
+          <a href={"/services"}>
+            View All Services
+          </a>
         </Button>
 
       </div>

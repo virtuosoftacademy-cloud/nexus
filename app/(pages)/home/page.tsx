@@ -26,12 +26,6 @@ export default function Homepage() {
       <ProfessionalMemberships />
       {/* Governance */}
       <GovernancePhilosophy/>
-      {/* ── INDUSTRIES ── */}
-      {/* <IndustriesSection /> */}
-      {/* ── RESULTS ── */}
-      {/* <CaseStudiesSection /> */}
-      {/* Video Section */}
-      {/* <VideoSection /> */}
       {/* ── INSIGHTS ── */}
       <InsightsSection />
       {/* ── CLIENT REVIEWS ── */}

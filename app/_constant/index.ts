@@ -140,7 +140,7 @@ export const CoreServices: CoreService[] = [
     title: "Accounting & Tax",
     description:
       "Statutory accounts, VAT, corporation tax, and payroll — structured around financial discipline for UK and UAE businesses, not just filing deadlines.",
-    href: "#",
+    href: "/services/uk-accounting-and-tax",
   },
   {
     id: "cs-2",
@@ -148,7 +148,7 @@ export const CoreServices: CoreService[] = [
     title: "Advisory & Governance",
     description:
       "CFO-level financial interpretation, cashflow planning, and governance design — without the full-time overhead. Built for founders and directors who need clarity, not more reports.",
-    href: "#",
+    href: "/services/advisory-services",
   },
   {
     id: "cs-3",
@@ -156,7 +156,7 @@ export const CoreServices: CoreService[] = [
     title: "Property & Construction",
     description:
       "Specialist accounting for SPV structures, project cost tracking, CIS compliance, VAT on development, and working capital planning across the full project lifecycle.",
-    href: "#",
+    href: "/services/property-accounting-and-tax",
   },
   {
     id: "cs-4",
@@ -164,7 +164,7 @@ export const CoreServices: CoreService[] = [
     title: "Tax Authority Support",
     description:
       "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquirers and HMRC correspondence — focused on measured response, not escalation.",
-    href: "#",
+    href: "/services/tax-authority-support",
   },
   {
     id: "cs-5",
@@ -172,14 +172,14 @@ export const CoreServices: CoreService[] = [
     title: "Business Consultancy",
     description:
       "We help businesses improve performance, manage growth, and make confident strategic decisions through expert guidance in operations, finance, risk management and business planning.",
-    href: "#",
+    href: "/services/business-consultancy",
   },
   {
     id: "cs-6",
     icon: "/assets/digitalandsystemsadvisory.svg",
     title: "Digital & Systems Advisory",
     description: "We help organizations leverage technology to optimize processes, enhance efficiency, and accelerate digital transformation through tailored systems, automation and technology strategies.",
-    href: "#",
+    href: "/services/digital-and-systems-advisory",
   },
 ];
 // Latest Insights
