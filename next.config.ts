@@ -12,7 +12,6 @@ try {
 const nextConfig: NextConfig = {
   serverExternalPackages: ["mariadb", "@prisma/adapter-mariadb"],
 
-  output:'standalone',
   images: {
     remotePatterns: [
       ...(r2Hostname
