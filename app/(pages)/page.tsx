@@ -1,6 +1,6 @@
 import Home from './home/page'
 
-function Page() {
+export default function Pages() {
     return (
         <div>
             <Home/>
@@ -8,5 +8,4 @@ function Page() {
     )
 }
 
-export default Page
     

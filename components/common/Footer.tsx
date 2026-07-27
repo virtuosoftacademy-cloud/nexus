@@ -7,11 +7,6 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Checkbox } from "../ui/checkbox";
 import { Button } from "../ui/button";
-import { FacebookIcon } from "../ui/facebook";
-import { LinkedinIcon } from "../ui/linkedin";
-import { TwitterIcon } from "../ui/twitter";
-import { InstagramIcon } from "../ui/instagram";
-import { YoutubeIcon } from "../ui/youtube";
 import { ScrollToSection } from "../scrolltosection";
 import { links } from "@/app/_constant";
 
