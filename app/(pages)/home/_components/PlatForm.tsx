@@ -1,6 +1,8 @@
-'use client'
- 
+
+// components/platforms/PlatformsSection.tsx
+
 import PlatformCard from "@/components/ui/PlatformCard";
+import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { bulletPoints, PlatForm } from "@/app/_constant";
 

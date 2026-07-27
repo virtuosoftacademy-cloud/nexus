@@ -25,7 +25,7 @@ function Info({ data }: InfoProps) {
                 <h4 className='text-2xl md:text-4xl font-semibold text-center shrink-0 max-w-[80vw] sm:max-w-none'>{title}</h4>
                 <Separator className='min-w-4 max-w-12 sm:max-w-24 md:max-w-3xs! hidden lg:block' />
             </div>
-            <div className='text-lg md:text-[1.75rem] space-y-3 md:space-y-6 font-heading text-foreground/80'>
+            <div className='text-lg md:text-[1.75rem] space-y-3 md:space-y-6 font-heading text-foreground'>
                 <h3 className='font-bold'>{subTitle}</h3>
                 <p>{intro}</p>
                 <p>{listTitle}</p>

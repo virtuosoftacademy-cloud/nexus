@@ -1,4 +1,4 @@
-'use client'
+// components/governance/GovernancePhilosophy.tsx
 
 import Image from "next/image";
 
@@ -14,10 +14,10 @@ export default function GovernancePhilosophy() {
             <h4 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
               Governance <span className="text-primary">Philosophy</span>
             </h4>
-            <h3 className="text-base sm:text-lg text-foreground/70 leading-relaxed mb-6">
+            {/* <h3 className="text-base sm:text-lg text-foreground/70 leading-relaxed mb-6">
               This should sit on the homepage or About page. It is one of the
               core brand ideas and should not be buried.
-            </h3>
+            </h3> */}
 
             <h4 className="text-base sm:text-lg font-semibold text-primary mb-2">
               Structure Before Scale
@@ -65,10 +65,10 @@ export default function GovernancePhilosophy() {
             <h4 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
               Why <span className="text-primary">Nexus</span>
             </h4>
-            <h3 className="text-base sm:text-lg text-foreground/70 leading-relaxed mb-6">
+            {/* <h3 className="text-base sm:text-lg text-foreground/70 leading-relaxed mb-6">
               This section should explain the difference between Nexus and a
               standard accounting firm without sounding boastful.
-            </h3>
+            </h3> */}
 
             <h4 className="text-base sm:text-lg font-semibold text-primary mb-2">
               Why Clients Work With Nexus

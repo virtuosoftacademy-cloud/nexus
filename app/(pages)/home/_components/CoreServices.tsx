@@ -1,4 +1,4 @@
-'use client'
+
 import { CoreServices } from "@/app/_constant";
 import CoreServiceCard from "@/components/ui/CoreServiceCard";
 import { Button } from "@/components/ui/button";
@@ -25,7 +25,9 @@ export default function CoreServicesSection() {
 
         {/* CTA */}
         <Button variant="secondary">
-          View All Services
+          <a href={"/services"}>
+            View All Services
+          </a>
         </Button>
 
       </div>
