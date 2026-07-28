@@ -27,7 +27,7 @@ export default function Homepage() {
       {/* Governance */}
       <GovernancePhilosophy/>
       {/* ── INSIGHTS ── */}
-      <InsightsSection />
+      {/* <InsightsSection /> */}
       {/* ── CLIENT REVIEWS ── */}
       <TestimonialsSection />
       {/* ── FAQ ── */}

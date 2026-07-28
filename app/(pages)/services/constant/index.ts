@@ -53,7 +53,7 @@ export const services: ServiceCardInterface[] = [
     {
         title: "Tax Authority Support",
         description:
-            "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquirers and HMRC correspondence — focused on measured response, not escalation.",
+            "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquiries and HMRC correspondence — focused on measured response, not escalation.",
         image: `${images}/taxauthority.png`,
         alt: "Modern office space",
         href: "/services/tax-authority-support",
@@ -61,7 +61,7 @@ export const services: ServiceCardInterface[] = [
     {
         title: "Construction Accounting",
         description:
-            "Specialized accounting services for construction businesses, helping you manage improve cash flow and maximize profitability. Gain clear financial insights at every stage of your projects.",
+            "Specialised accounting services for construction businesses, helping you manage improve cash flow and maximise profitability. Gain clear financial insights at every stage of your projects.",
         image: `${images}/constructionaccounting.png`,
         alt: "Modern office space",
         href: "/services/construction-accounting",
@@ -69,7 +69,7 @@ export const services: ServiceCardInterface[] = [
     {
         title: "Digital & Systems Advisory",
         description:
-            "Optimize your business with smarter digital solutions. We streamline processes, improve efficiency, and support sustainable growth. Empower your team with technology.",
+            "Optimise your business with smarter digital solutions. We streamline processes, improve efficiency, and support sustainable growth. Empower your team with technology.",
         image: `${images}/digitalandsystems.png`,
         alt: "Modern office space",
         href: "/services/digital-and-systems-advisory",
@@ -77,7 +77,7 @@ export const services: ServiceCardInterface[] = [
     {
         title: "Solutions",
         description:
-            "Expert guidance on tax, compliance, and regulatory matters. Helping businesses reduce risk and stay confidently compliant. We provide practical solutions to support informed decision.",
+            "Expert guidance on tax, compliance, and regulatory matters. Helping businesses reduce risk and stay confidently compliant. We provide practical solutions to support informed decisions.",
         image: `${images}/solutions.png`,
         alt: "Modern office space",
         href: "/services/solutions",

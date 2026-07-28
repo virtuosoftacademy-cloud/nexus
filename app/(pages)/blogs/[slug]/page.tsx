@@ -18,16 +18,10 @@ export default async function BlogPostPage({
 
     return (
         <>
-            {/* <ReactLenis root> */}
                 <main className="min-h-screen pt-6">
                     <Hero post={post} />
                     <PostContent post={post} />
-                    {/* <div className="px-7 md:px-12">
-                        <CtaForm />
-                    </div> */}
-                    {/* <CtaSplitSection /> */}
                 </main>
-            {/* </ReactLenis> */}
         </>
     );
 }

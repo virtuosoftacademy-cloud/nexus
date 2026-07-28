@@ -79,7 +79,7 @@ export const BlogCategories: BlogCategory[] = [
                 timeAgo: "23hrs ago",
                 date: "22 May 2026",
                 href: "/blogs/council-leasing-vat-treatment",
-                content: `<p>The 28-day rule, service level agreements, and supply classification create layered risk that many landlords working with local authorities have not fully mapped.</p>`,
+                content: `The 28-day rule, service level agreements, and supply classification create layered risk that many landlords working with local authorities have not fully mapped.`,
             },
         ],
     },

@@ -139,7 +139,7 @@ export const CoreServices: CoreService[] = [
     icon: "/assets/accountingandtax.svg",
     title: "Accounting & Tax",
     description:
-      "Statutory accounts, VAT, corporation tax, and payroll — structured around financial discipline for UK and UAE businesses, not just filing deadlines.",
+      "Statutory accounts, VAT, corporation tax, and payroll structured around financial discipline for UK and UAE businesses, not just filing deadlines.",
     href: "/services/uk-accounting-and-tax",
   },
   {
@@ -178,7 +178,7 @@ export const CoreServices: CoreService[] = [
     id: "cs-6",
     icon: "/assets/digitalandsystemsadvisory.svg",
     title: "Digital & Systems Advisory",
-    description: "We help organisations leverage technology to optimize processes, enhance efficiency, and accelerate digital transformation through tailored systems, automation and technology strategies.",
+    description: "We help organisations leverage technology to optimise processes, enhance efficiency, and accelerate digital transformation through tailored systems, automation and technology strategies.",
     href: "/services/digital-and-systems-advisory",
   },
 ];
@@ -192,6 +192,7 @@ interface InsightCard {
   gradientFrom: string;
   gradientTo: string;
   newsFrom: string;
+  slug:string
 }
 
 export const insights: InsightCard[] = [
@@ -200,21 +201,22 @@ export const insights: InsightCard[] = [
     title: "The VAT Trap Most Property Businesses Don't See Coming",
     description:
       "There's a moment many property business owners experience, usually during a lender review, an HMRC compliance check or when preparing to refinance.",
-    src: "assets/vat.png",
+    src: "/assets/vat.png",
     gradientFrom: "hsl(174 82% 10%)",
     gradientTo: "hsl(174 82% 22%)",
     newsFrom: "Brief",
-
+    slug:"" 
   },
   {
     tag: "UAE & International",
     title: "Why Expanding Into the UAE Without Structured Reporting Is a Risk Most Business Owners Underestimate",
     description:
       "There is a moment that many UK founders experience somewhere between six and eighteen months after establishing a UAE entity.",
-    src: "assets/advisory.png",
+    src: "/assets/advisory.png",
     gradientFrom: "hsl(210 60% 10%)",
     gradientTo: "hsl(210 60% 20%)",
     newsFrom: "Brief",
+    slug:"" 
   },
 ];
 // PlatForm
@@ -273,7 +275,7 @@ export const memberships = [
 ];
 
 export const bulletPoints: string[] = [
-  "Finance-led platform selection — not vendor-driven",
+  "Finance-led platform selection not vendor-driven",
   "Chart of accounts designed around your reporting needs",
   "Migration oversight with data integrity validation",
   "Post-implementation review before full acceptance",
@@ -442,63 +444,63 @@ export const faqsHome: FaqItem[] = [
     value: "item-1",
     question: "Who is Nexus Advisory & Services right for?",
     answer:
-      "Nexus works with owner-managed businesses, property and construction groups, and founder-led companies operating in the UK, UAE, or across both. We work selectively — with organisations where structured financial intervention can make a material difference. If your reporting is reactive, your tax position uncertain, or your structure hasn’t kept pace with growth, we’re likely the right fit."
+      "Nexus works with owner-managed businesses, property and construction groups, and founder-led companies operating in the UK, UAE, or across both. We work selectively with organisations where structured financial intervention can make a material difference. If your reporting is reactive, your tax position uncertain, or your structure hasn’t kept pace with growth, we’re likely the right fit."
   },
   {
     id: "faq-2",
     value: "item-2",
     question: "Do you only handle compliance, or do you offer strategic advice too?",
     answer:
-      "Both — but our focus goes well beyond compliance. We prepare statutory accounts, VAT returns, and tax filings, but our core value is the advisory layer on top: interpreting what the numbers mean, identifying structural risk, and helping leadership make better financial decisions. Compliance is the floor, not the ceiling."
+      "Both but our focus goes well beyond compliance. We prepare statutory accounts, VAT returns, and tax filings, but our core value is the advisory layer on top: interpreting what the numbers mean, identifying structural risk, and helping leadership make better financial decisions. Compliance is the floor, not the ceiling."
   },
   {
     id: "faq-3",
     value: "item-3",
     question: "Can you support businesses operating in both the UK and UAE?",
     answer:
-      "Yes. Cross-border alignment between UK and UAE entities is one of our core practice areas. We support structural alignment, intercompany reporting clarity, VAT treatment across jurisdictions, and corporate tax readiness in the UAE — ensuring operations in one jurisdiction don’t create unintended exposure in the other.",
+      "Yes. Cross border alignment between UK and UAE entities is one of our core practice areas. We support structural alignment, intercompany reporting clarity, VAT treatment across jurisdictions, and corporate tax readiness in the UAE ensuring operations in one jurisdiction don't create unintended exposure in the other.",
   },
   {
     id: "faq-4",
     value: "item-4",
     question: "Do you work with property businesses specifically?",
     answer:
-      "Property is one of our deepest areas of expertise. We work with portfolio landlords, SPV structures, temporary accommodation operators, council leasing models, and property developers. We understand partial exemption, the 28-day rule, capital vs revenue classification, and the reporting discipline required across multi-entity property groups.",
+      "Property is one of our deepest areas of expertise. We work with portfolio landlords, SPV structures, temporary accommodation operators, council leasing models, and property developers. We understand partial exemption, the 28-day rule, capital vs revenue classification, and the reporting discipline required across multi entity property groups.",
   },
   {
     id: "faq-5",
     value: "item-5",
     question: "What does a typical engagement look like?",
     answer:
-      "Every engagement begins with a structured diagnostic — not a sales call. We assess your current reporting, tax exposure, and governance gaps before recommending anything. From there, scope is defined clearly with documented deliverables. Engagements can be monthly, quarterly, or project-based depending on your needs.",
+      "Every engagement begins with a structured diagnostic not a sales call. We assess your current reporting, tax exposure, and governance gaps before recommending anything. From there, scope is defined clearly with documented deliverables. Engagements can be monthly, quarterly, or project-based depending on your needs.",
   },
   {
     id: "faq-6",
     value: "item-6",
     question: "Do you support businesses during HMRC enquiries?",
     answer:
-      "Yes. We provide structured support for VAT compliance checks, corporation tax enquiries, CIS queries, and PAYE reviews. Our approach is documentation-led and professionally framed — focused on measured response rather than escalation. We do not provide tribunal litigation services.",
+      "Yes. We provide structured support for VAT compliance checks, corporation tax enquiries, CIS queries, and PAYE reviews. Our approach is documentation led and professionally framed focused on measured response rather than escalation. We do not provide tribunal litigation services.",
   },
   {
     id: "faq-7",
     value: "item-7",
     question: "Can you help with ERP or accounting software implementation?",
     answer:
-      "Yes — but not as a software developer. We provide governance-led oversight for ERP and accounting platform implementations, ensuring systems are designed around financial requirements, not vendor preferences. We define scope, oversee configuration, and validate outputs before sign-off. Technical build is delivered through approved specialist partners under Nexus oversight.",
+      "Yes but not as a software developer. We provide governance-led oversight for ERP and accounting platform implementations, ensuring systems are designed around financial requirements, not vendor preferences. We define scope, oversee configuration, and validate outputs before sign-off. Technical build is delivered through approved specialist partners under Nexus oversight.",
   },
   {
     id: "faq-8",
     value: "item-8",
     question: "How is Nexus different from a standard accounting firm?",
     answer:
-      "Most accounting firms operate at volume — returns filed, deadlines met, relationship ends. Nexus operates differently. Every engagement is partner-led. We focus on financial interpretation, governance design, and structural clarity — not just compliance output. We work selectively and proportionately, which means clients receive structured attention rather than a junior handoff.",
+      "Most accounting firms operate at volume returns filed, deadlines met, relationship ends. Nexus operates differently. Every engagement is partner-led. We focus on financial interpretation, governance design, and structural clarity not just compliance output. We work selectively and proportionately, which means clients receive structured attention rather than a junior handoff.",
   },
   {
     id: "faq-9",
     value: "item-9",
     question: "How do we get started?",
     answer:
-      "Submit an enquiry through our Contact page. All enquiries are reviewed by senior advisory personnel to assess fit before a conversation is booked. From there: a short introductory discussion, a diagnostic review, and a clearly defined proposal. We operate with intention — not every enquiry becomes an engagement, and that’s by design.",
+      "Submit an enquiry through our Contact page. All enquiries are reviewed by senior advisory personnel to assess fit before a conversation is booked. From there: a short introductory discussion, a diagnostic review, and a clearly defined proposal. We operate with intention not every enquiry becomes an engagement, and that's by design.",
   },
 ];
 
