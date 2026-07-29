@@ -7,7 +7,7 @@ export default function Aboutstats() {
     const stats = [
         {
             value: "2024",
-            label: "Year Nexus was established — built around professional standards, not personality"
+            label: "Year Nexus was established – built around professional standards, not personality"
         },
         {
             value: "UK & UAE",
@@ -15,7 +15,7 @@ export default function Aboutstats() {
         },
         {
             value: "100%",
-            label: "Partner-led at every stage — no junior handoffs, no volume processing"
+            label: "Partner-led at every stage – no junior handoffs, no volume processing"
         }
     ]
     return (

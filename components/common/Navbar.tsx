@@ -111,17 +111,16 @@ export default function Navbar() {
                 {/* Desktop nav */}
                 <div className="hidden md:flex items-center">
                     <NavigationMenu>
-                        <NavigationMenuList className="space-x-4">
-
+                        <NavigationMenuList>
                             {navMenuLink.map((item) =>
                                 item.children ? (
-                                    <NavigationMenuItem key={item.label} value={item.label.toLowerCase()}>
+                                    <NavigationMenuItem key={item.label} value={item.label.toLowerCase()} className="z-10">
                                         <NavigationMenuTrigger className="bg-transparent! hover:text-primary">
                                             <NavigationMenuLink href={item.href}>
                                                 {item.label}
                                             </NavigationMenuLink>
                                         </NavigationMenuTrigger>
-                                        <NavigationMenuContent>
+                                        <NavigationMenuContent >
                                             <div className="min-w-[70rem] py-4 px-7">
                                                 <h4 className="text-sm text-muted-foreground leading-snug pb-4">{item.label}</h4>
                                                 <ul className="grid grid-cols-2 xl:grid-cols-3 text-sm">
@@ -131,6 +130,7 @@ export default function Navbar() {
                                                         </ListItem>
                                                     ))}
                                                 </ul>
+                                                <p className="text-sm text-muted-foreground leading-snug border-muted-foreground/60 border-t pt-4">Structured financial advisory, accounting, governance and systems oversight across the UK and UAE.</p>
                                             </div>
                                         </NavigationMenuContent>
                                     </NavigationMenuItem>

@@ -15,14 +15,7 @@ import ModelsSection from "../_components/servicePagesComponents/Industries";
 import Notice, { uaeImportantNotice } from "../_components/servicePagesComponents/notice";
 import { getServiceBySlug, Service } from "./layout";
 
-
-// ─── Types ────────────────────────────────────────────────────────────────────
-
-
-
-
-
-// ─── Service definitions ──────────────────────────────────────────────────────
+// ─── Services Content ──────────────────────────────────────────────────────
 
 export const services: Service[] = [
   {

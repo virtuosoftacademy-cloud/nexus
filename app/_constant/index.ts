@@ -359,7 +359,7 @@ export const testimonials: Testimonial[] = [
     name: "Zeynep Kara",
     rating: 5,
     review:
-      "I enlisted the help of this Accountancy Firm after after i was badly let down from my previous Accountants in London.\nThis Firm has helped me soooo much. They have brought my Company tax affairs in order, and i have never been happier.\nI would highly recommend them! 😊😊😊",
+      "I enlisted the help of this Accountancy Firm after i was badly let down from my previous Accountants in London.\nThis Firm has helped me soooo much. They have brought my Company tax affairs in order, and i have never been happier.\nI would highly recommend them! 😊😊😊",
     avatarUrl: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
@@ -552,7 +552,7 @@ export const PricingPlans: PricingPlan[] = [
       "Source Files",
       "Free Appointments",
       "Enhanced Security",
-      "Free Installment",
+      "Free Instalment",
     ],
     cta: "Buy Now",
     note: "*T&C Apply",

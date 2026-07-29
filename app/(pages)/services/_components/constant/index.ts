@@ -17,7 +17,7 @@ import { ServicesCarouselProps } from "@/app/types/types"
 
 export const ukheroAccount: HeroData = {
     title: "Financial Discipline That Supports Growth",
-    description: "Structured accounting, defensible tax positions, and financial discipline — for owner-managed businesses, property groups, and construction enterprises that need more than routine compliance.",
+    description: "Structured accounting, defensible tax positions, and financial discipline for owner-managed businesses, property groups, and construction enterprises that need more than routine compliance.",
     width: "max-w-6xl",
     image: "/assets/services/bg-img-service1.png"
 }
@@ -66,8 +66,8 @@ export type AboutServiceData = {
 
 export const UKAccountingAbout: AboutServiceData = {
     introParagraph:
-        `For many businesses, accounting begins as compliance and gradually becomes complexity. Growth introduces multiple entities, intercompany balances, property structures, construction contracts, VAT exposure, and corporation tax considerations. Without structure, reporting becomes reactive — and risk accumulates quietly.`,
-    listIntro: "Nexus Advisory & Services provides UK Accounting & Tax support built around control, clarity, and defensible technical positioning. We work with owner-managed businesses, property groups, construction-led enterprises, and growth-stage companies that require more than routine year-end processing.",
+        `For many businesses, accounting begins as compliance and gradually becomes complexity. Growth introduces multiple entities, intercompany balances, property structures, construction contracts, VAT exposure, and corporation tax considerations. Without structure, reporting becomes reactive and risk accumulates quietly.`,
+    listIntro: "Nexus Advisory & Services provides UK Accounting & Tax support built around control, clarity, and defensible technical positioning. We work with owner managed businesses, property groups, construction led enterprises, and growth stage companies that require more than routine year-end processing.",
     className: "italic font-bold",
     closingParagraph:
         "Our objective is not simply to file accounts and returns. \nOur objective is to strengthen financial discipline.",
@@ -87,14 +87,14 @@ export const approachRows: ApproachProps = {
             titleHighlight: "Is For",
             intro: "Our UK Accounting & Tax services are designed for:",
             items: [
-                "Owner-managed businesses seeking stronger reporting control",
+                "Owner managed businesses seeking stronger reporting control",
                 "Property-backed groups operating through SPVs",
-                "Construction and project-based enterprises",
-                "Multi-entity groups requiring consolidation alignment",
+                "Construction and project based enterprises",
+                "Multi entity groups requiring consolidation alignment",
                 "Growing SMEs preparing for lender or investor scrutiny",
             ],
             closing:
-                "If your reporting feels reactive, inconsistent, or disconnected from decision-making, structured intervention is often required.",
+                "If your reporting feels reactive, inconsistent, or disconnected from decision making, structured intervention is often required.",
             image: {
                 src: "/assets/services/accounting-uk/approach1.png",
                 alt: "Professional team in a boardroom meeting",
@@ -107,10 +107,10 @@ export const approachRows: ApproachProps = {
             titleHighlight: "Is For",
             intro: "Our UK Accounting & Tax services are designed for:",
             items: [
-                "Owner-managed businesses seeking stronger reporting control",
-                "Property-backed groups operating through SPVs",
-                "Construction and project-based enterprises",
-                "Multi-entity groups requiring consolidation alignment",
+                "Owner managed businesses seeking stronger reporting control",
+                "Property backed groups operating through SPVs",
+                "Construction and project based enterprises",
+                "Multi entity groups requiring consolidation alignment",
                 "Growing SMEs preparing for lender or investor scrutiny",
             ],
             closing:
@@ -185,7 +185,7 @@ export const servicesCarouselUk: ServicesCarouselProps = {
             titleLine1: "1. Statutory Accounting",
             titleLine2: "Audit-Ready Reporting Discipline",
             intro:
-                "We prepare statutory financial statements under UK GAAP (FRS 102 / FRS 105) with an audit-ready mindset, even where audit is not required.",
+                "We prepare statutory financial statements under UK GAAP (FRS 102 / FRS 105) with an audit ready mindset, even where audit is not required.",
             optionalHeading: "",
             optionallistItems: [],
             optionalParagraph: "",
@@ -193,16 +193,16 @@ export const servicesCarouselUk: ServicesCarouselProps = {
             listItems: [
                 "Preparation of statutory financial statements",
                 "Full balance sheet reconciliations",
-                "Audit-ready working papers and schedules",
+                "Audit ready working papers and schedules",
                 "Group consolidation support (non-audit)",
                 "Technical accounting support for complex judgements",
-                "Year-end accounts finalisation and Companies House filing support",
+                "Year end accounts finalisation and Companies House filing support",
             ],
             outro:
-                "We ensure that year-end outputs reflect disciplined monthly reporting — not a year-end reconstruction exercise.",
-            caseTitle: "Case Illustration - Multi-SPV Property Group",
+                "We ensure that year-end outputs reflect disciplined monthly reporting not a year-end reconstruction exercise.",
+            caseTitle: "Case Illustration Multi-SPV Property Group",
             caseIntro:
-                "A property group operating through multiple SPVs experienced repeated delays at year-end due to:",
+                "A property group operating through multiple SPVs experienced repeated delays at year end due to:",
             caseProblems: [
                 "Intercompany mismatches",
                 "Development cost inconsistencies",
@@ -212,7 +212,7 @@ export const servicesCarouselUk: ServicesCarouselProps = {
             caseSolutions: [
                 "Standardised accounting policy framework",
                 "Monthly intercompany reconciliation templates",
-                "Consolidation-ready reporting schedules",
+                "Consolidation ready reporting schedules",
             ],
             caseResultTitle: "Result",
             caseResult:
@@ -242,7 +242,7 @@ export const servicesCarouselUk: ServicesCarouselProps = {
             ],
             outro:
                 "Our focus is ensuring tax efficiency while preserving commercial margin and compliance integrity.",
-            caseTitle: "Case Illustration - Temporary Accommodation VAT Review",
+            caseTitle: "Case Illustration Temporary Accommodation VAT Review",
             caseIntro:
                 "A temporary accommodation provider faced uncertainty regarding:",
             caseProblems: [],
@@ -265,10 +265,10 @@ export const servicesCarouselUk: ServicesCarouselProps = {
             titleLine1: "3. Construction & Project-Based Accounting",
             titleLine2: "Financial Visibility Across the Project Lifecycle",
             intro: "",
-            optionalHeading: "Construction and project-based businesses require:",
+            optionalHeading: "Construction and project based businesses require:",
             optionallistItems: [
-                "Cost-to-complete accuracy",
-                "Stage-of-completion clarity",
+                "Cost to complete accuracy",
+                "Stage of completion clarity",
                 "Working capital forecasting",
                 "CIS compliance discipline",
             ],
@@ -280,17 +280,17 @@ export const servicesCarouselUk: ServicesCarouselProps = {
                 "VAT treatment support for construction activities",
                 "CIS compliance and subcontractor structuring",
                 "Budgeting and cashflow forecasting",
-                "Multi-currency accounting frameworks",
+                "Multi currency accounting frameworks",
             ],
             outro: "",
-            caseTitle: "Case Illustration – Margin Erosion in Growing Contractor",
+            caseTitle: "Case Illustration Margin Erosion in Growing Contractor",
             caseIntro:
                 "A contractor experienced turnover growth but declining margins.",
             caseProblems: [],
             caseSolutionHeading: "We implemented:",
             caseSolutions: [
-                "Project-level profitability dashboards",
-                "Monthly cost-to-complete reviews",
+                "Project level profitability dashboards",
+                "Monthly cost to complete reviews",
                 "Overhead allocation discipline",
                 "Cashflow modelling aligned to milestones",
             ],
@@ -321,9 +321,9 @@ export const servicesCarouselUk: ServicesCarouselProps = {
             ],
             outro:
                 "We focus on documentation, proportionality, and sustainability.",
-            caseTitle: "Case Illustration - Group Relief Optimisation",
+            caseTitle: "Case Illustration Group Relief Optimisation",
             caseIntro:
-                "A multi-entity group held unutilised losses in one entity while another entity was profitable. \n\nWe reviewed group structure, calculated surrenderable losses, and aligned reporting.",
+                "A multi entity group held unutilised losses in one entity while another entity was profitable. \n\nWe reviewed group structure, calculated surrenderable losses, and aligned reporting.",
             caseProblems: [],
             caseSolutionHeading: "",
             caseSolutions: [],
@@ -355,7 +355,7 @@ export const servicesCarouselUk: ServicesCarouselProps = {
             ],
             outro:
                 "Our objective is proactive exposure management.",
-            caseTitle: "Case Illustration – Partial Exemption Exposure",
+            caseTitle: "Case Illustration Partial Exemption Exposure",
             caseIntro:
                 "A property group had overstated input tax recovery due to mixed-use property classification.\n\nWe recalculated recovery ratios and documented methodology.",
             caseProblems: [],
@@ -373,8 +373,8 @@ export const servicesCarouselUk: ServicesCarouselProps = {
             caseIconAlt: "Payroll discipline icon",
             titleLine1: "6. Payroll & Employment Taxes",
             titleLine2: "Controlled Employment Tax Compliance",
-            intro:
-                "VAT risk frequently arises in property and construction sectors.",
+            // intro:
+            //     "VAT risk frequently arises in property and construction sectors.",
             optionalHeading: "",
             optionallistItems: [],
             optionalParagraph: "",
@@ -390,7 +390,7 @@ export const servicesCarouselUk: ServicesCarouselProps = {
                 "Payroll is integrated into reporting discipline, not treated in isolation.",
             caseTitle: "Why Payroll Discipline Matters",
             caseIntro:
-                "Payroll errors are rarely isolated. A misclassified worker, a missed RTI deadline, or an incorrectly processed benefit creates a chain of exposure — PAYE liability, NIC underpayment, and potential HMRC review.\n\nWe integrate payroll compliance into the broader reporting framework. Not as a standalone administrative function, but as a controlled process with documented outputs, aligned to your wider employment tax position.",
+                "Payroll errors are rarely isolated. A misclassified worker, a missed RTI deadline, or an incorrectly processed benefit creates a chain of exposure PAYE liability, NIC underpayment, and potential HMRC review.\n\nWe integrate payroll compliance into the broader reporting framework. Not as a standalone administrative function, but as a controlled process with documented outputs, aligned to your wider employment tax position.",
             caseProblems: [],
             caseSolutionHeading: "",
             caseSolutions: [],
@@ -419,11 +419,11 @@ export const differenceUk: DifferenceProps = {
     titleHighlight: "Nexus Different",
     subtitle: "Unlike compliance-driven firms, we:",
     items: [
-        { id: "partner-led", text: "Partner-led delivery, not volume processing" },
-        { id: "property-and-constrction", text: "Property and Constrction sector depth" },
-        { id: "audit", text: "Audit-ready working standards" },
-        { id: "governance", text: "Governance-first mindset" },
-        { id: "cross-border", text: "Cross-border perspective (UK and UAE readiness)" },
+        { id: "partner led", text: "Partner-led delivery, not volume processing" },
+        { id: "property and construction", text: "Property and Construction sector depth" },
+        { id: "audit", text: "Audit ready working standards" },
+        { id: "governance", text: "Governance first mindset" },
+        { id: "cross-border", text: "Cross border perspective (UK and UAE readiness)" },
         { id: "advisory", text: "Advisory capability beyond compliance" },
     ],
     closing: "We combine technical precision with commercial understanding.",
@@ -511,7 +511,7 @@ export const contactCtaUk: ContactCtaProps = {
         "What practical scope is appropriate",
     ],
     closing: "A structured early discussion can prevent future compliance risk.",
-    buttonLabel: "Speak to an Advisor",
+    buttonLabel: "Speak to an Adviser",
     buttonHref: "/contact",
     image: {
         src: `${ctaImage}/servicePagesCta.png`,
@@ -526,7 +526,7 @@ export const contactCtaUk: ContactCtaProps = {
 export const propertyHero: HeroData = {
     title: "Specialist Financial & Tax Support for Property Structures",
     description:
-        "From portfolio landlords and SPV structures to temporary accommodation operators and property developers — structured financial and tax support for the full complexity of UK property ownership.",
+        "From portfolio landlords and SPV structures to temporary accommodation operators and property developers structured financial and tax support for the full complexity of UK property ownership.",
     width: "max-w-6xl",
     image: "/assets/bg-img-service2.png",
 }
@@ -688,9 +688,9 @@ export const servicesCarouselProperty: ServicesCarouselProps = {
                 "Monthly reconciliation discipline",
                 "Intercompany alignment",
                 "Dividend documentation clarity",
-                "Lender-ready financial reporting",
+                "Lender ready financial reporting",
             ],
-            caseTitle: "Case Illustration – Multi-SPV Portfolio with Reporting Gaps",
+            caseTitle: "Case Illustration Multi-SPV Portfolio with Reporting Gaps",
             caseIntro:
                 "A property group operating 14 SPVs had inconsistent accounting treatment and intercompany mismatches.",
             caseSolutionHeading: "We:",
@@ -701,7 +701,7 @@ export const servicesCarouselProperty: ServicesCarouselProps = {
             ],
             caseResultTitle: "Outcome:",
             caseResult:
-                "Reduced year-end consolidation pressure and improved lender confidence.",
+                "Reduced year end consolidation pressure and improved lender confidence.",
         },
         {
             id: "landlord-structures",
@@ -712,17 +712,17 @@ export const servicesCarouselProperty: ServicesCarouselProps = {
             titleLine1: "2. Resident & Non-Resident",
             titleLine2: "Landlord Structures",
             intro:
-                "Cross-border property ownership introduces additional compliance layers.",
+                "Cross border property ownership introduces additional compliance layers.",
             listHeading: "We support:",
             listItems: [
                 "Non-resident landlord tax compliance",
                 "UK withholding considerations",
-                "Cross-border reporting alignment",
+                "Cross border reporting alignment",
                 "Structuring reviews for efficiency and clarity",
             ],
             outro:
                 "Our approach ensures technical compliance while preserving commercial viability.",
-            caseTitle: "Case Illustration – Overseas Investor with UK Rental Portfolio",
+            caseTitle: "Case Illustration Overseas Investor with UK Rental Portfolio",
             caseIntro:
                 "An overseas investor operating UK properties lacked clarity on reporting and withholding treatment.",
             caseSolutionHeading: "We:",
@@ -745,19 +745,19 @@ export const servicesCarouselProperty: ServicesCarouselProps = {
             titleLine2: "Partial Exemption Analysis",
             optionalHeading: "Property VAT is frequently misunderstood, particularly in:",
             optionallistItems: [
-                "Mixed-use buildings",
+                "Mixed use buildings",
                 "Opted-to-tax units",
                 "Temporary accommodation",
-                "Development-to-rental transitions",
+                "Development to rental transitions",
             ],
             listHeading: "We provide:",
             listItems: [
                 "Partial exemption calculations and review",
-                "VAT option-to-tax assessment",
+                "VAT option to tax assessment",
                 "Input tax recovery modelling",
                 "Scenario planning for development conversion",
             ],
-            caseTitle: "Case Illustration – Partial Exemption Exposure",
+            caseTitle: "Case Illustration Partial Exemption Exposure",
             caseIntro:
                 "A property group overstated input VAT recovery across mixed-use units. \n\nWe recalculated recovery ratios and documented defensible methodology.",
             caseResultTitle: "Outcome:",
@@ -786,7 +786,7 @@ export const servicesCarouselProperty: ServicesCarouselProps = {
                 "VAT recovery implications",
                 "Pricing impact",
             ],
-            caseTitle: "Case Illustration – Council Leasing Operator",
+            caseTitle: "Case Illustration Council Leasing Operator",
             caseIntro:
                 "An operator leasing properties to councils faced potential standard-rated VAT exposure due to service structure.",
             caseSolutionHeading: "We:",
@@ -814,12 +814,12 @@ export const servicesCarouselProperty: ServicesCarouselProps = {
                 "Development cost capitalisation frameworks",
                 "Revenue recognition timing",
                 "WIP treatment",
-                "Stage-of-completion reviews",
-                "Development-to-investment transitions",
+                "Stage of completion reviews",
+                "Development to investment transitions",
             ],
-            caseTitle: "Case Illustration – Refurbishment Programme Classification Risk",
+            caseTitle: "Case Illustration Refurbishment Programme Classification Risk",
             caseIntro:
-                "A refurbishment-heavy portfolio incorrectly capitalised minor repairs.",
+                "A refurbishment heavy portfolio incorrectly capitalised minor repairs.",
             caseSolutionHeading: "We:",
             caseSolutions: [
                 "Introduced capital vs revenue framework",
@@ -854,10 +854,10 @@ export const differenceProperty: DifferenceProps = {
     subtitle: "Unlike generic accounting firms, we:",
     items: [
         { id: "temp-accommodation", text: "Deep understanding of temporary accommodation models" },
-        { id: "council-leasing", text: "Experience with council-linked leasing arrangements" },
+        { id: "council-leasing", text: "Experience with council linked leasing arrangements" },
         { id: "vat-modelling", text: "Structured VAT modelling" },
-        { id: "spv-reporting", text: "SPV-focused reporting discipline" },
-        { id: "cross-border", text: "Cross-border landlord \nunderstanding" },
+        { id: "spv-reporting", text: "SPV focused reporting discipline" },
+        { id: "cross-border", text: "Cross border landlord \nunderstanding" },
         { id: "advisory-mindset", text: "Advisory mindset beyond \ncompliance" },
     ],
     closing: "We combine technical tax awareness with commercial practicality.",
@@ -938,7 +938,7 @@ export const contactCtaProperty: ContactCtaProps = {
         "You are considering expansion or refinancing",
     ],
     closing: "A short discussion can clarify exposure and next steps.",
-    buttonLabel: "Speak to a Property Advisor",
+    buttonLabel: "Speak to a Property Adviser",
     buttonHref: "/contact",
     image: {
         src: `${ctaImage}/servicePagesCta.png`,
@@ -949,9 +949,9 @@ export const contactCtaProperty: ContactCtaProps = {
 // Construction Accounting
 
 export const constructHero: HeroData = {
-    title: "Financial Control for Contract-Driven and Project-Led Businesses",
+    title: "Financial Control for Contract Driven and Project Led Businesses",
     description:
-        "Project-led businesses face unique financial complexities, from tracking milestone billing to managing subcontractor costs.",
+        "Project led businesses face unique financial complexities, from tracking milestone billing to managing subcontractor costs.",
     width: "max-w-6xl",
     image: "/assets/bg-img-service5.png"
 }
@@ -970,7 +970,7 @@ export const constructStats: statsProps = {
 
 export const constructAbout: AboutServiceData = {
     introParagraph:
-        `Construction and project-based businesses operate in a financially demanding environment. Revenue is milestone-driven, costs fluctuate across phases, margins can be narrow, and working capital pressure is constant.
+        `Construction and project-based businesses operate in a financially demanding environment. Revenue is milestone driven, costs fluctuate across phases, margins can be narrow, and working capital pressure is constant.
 
 Standard accounting processes are rarely sufficient for contract-led operations. Without disciplined cost tracking, revenue recognition clarity, and structured cashflow planning, profitability can erode long before it becomes visible in statutory accounts.
 
@@ -1019,7 +1019,7 @@ export const constructApproachRows: ApproachProps = {
                 "Margin drift due to incomplete cost allocation",
                 "Overstatement or understatement of WIP",
                 "Revenue recognition misalignment",
-                "Poor visibility of cost-to-complete",
+                "Poor visibility of cost to complete",
                 "CIS compliance errors",
                 "VAT misapplication under domestic reverse charge",
                 "Working capital strain due to milestone timing",
@@ -1044,7 +1044,7 @@ export const constructFaqItems: FaqWithImageProps = {
     data: [
         {
             value: "project-Level-financial-visibility",
-            trigger: "1. Project-Level Financial Visibility",
+            trigger: "1. Project Level Financial Visibility",
             content:
                 "Ensuring each contract or project has measurable profitability tracking.",
             image:
@@ -1055,7 +1055,7 @@ export const constructFaqItems: FaqWithImageProps = {
             value: "revenue-recognition-discipline",
             trigger: "2. Revenue Recognition Discipline",
             content:
-                "Aligning reporting with stage-of-completion methodology where appropriate.",
+                "Aligning reporting with stage of completion methodology where appropriate.",
             image:
                 `${ImagesConstruct}/revenue.png`,
             alt: "Tax and legal documents on a desk",
@@ -1073,7 +1073,7 @@ export const constructFaqItems: FaqWithImageProps = {
             value: "compliance-control",
             trigger: "4. Compliance Control",
             content:
-                "Managing CIS and VAT obligations with structured documentation.-",
+                "Managing CIS and VAT obligations with structured documentation.",
             image:
                 `${ImagesConstruct}/compliance.png`,
             alt: "Analytics dashboard with financial charts",
@@ -1109,20 +1109,20 @@ export const constructServicesCarousel: ServicesCarouselProps = {
                 "Construction profitability depends on real-time cost awareness.",
             listHeading: "We implement:",
             listItems: [
-                "Project-level P&L tracking",
-                "Cost-to-complete modelling",
+                "Project level P&L tracking",
+                "Cost to complete modelling",
                 "Overhead allocation frameworks",
                 "Margin variance reporting",
                 "Contract performance dashboards"
             ],
             outro: "Our focus is ongoing financial monitoring, not retrospective review.",
-            caseTitle: "Case Illustration – Margin Erosion in Expanding Contractor",
+            caseTitle: "Case Illustration Margin Erosion in Expanding Contractor",
             caseIntro:
                 "A growing contractor reported increasing turnover but declining net profit margins. Project reporting was informal and overhead allocation inconsistent.",
             caseSolutionHeading: "We:",
             caseSolutions: [
-                "Introduced project-based reporting structure",
-                "Implemented monthly cost-to-complete reviews",
+                "Introduced project based reporting structure",
+                "Implemented monthly cost to complete reviews",
                 "Allocated indirect costs proportionately",
                 "Created margin variance analysis"
             ],
@@ -1150,13 +1150,13 @@ export const constructServicesCarousel: ServicesCarouselProps = {
             ],
             outro:
                 "This ensures statutory accounts reflect economic reality.",
-            caseTitle: "Case Illustration - WIP Overstatement Risk",
+            caseTitle: "Case Illustration WIP Overstatement Risk",
             caseIntro:
                 "A contractor recognised revenue aggressively at early project stages, overstating profit.",
             caseSolutionHeading: "We:",
             caseSolutions: [
                 "Reviewed contract performance",
-                "Adjusted stage-of-completion calculations",
+                "Adjusted stage of completion calculations",
                 "Introduced revenue recognition checklist"
             ],
             caseResultTitle: "Outcome:",
@@ -1176,7 +1176,7 @@ export const constructServicesCarousel: ServicesCarouselProps = {
                 "Domestic reverse charge",
                 "Mixed residential and commercial supply",
                 "Subcontractor invoicing",
-                "Reduced-rate eligibility",
+                "Reduced rate eligibility",
             ],
             listHeading: "We provide:",
             listItems: [
@@ -1185,7 +1185,7 @@ export const constructServicesCarousel: ServicesCarouselProps = {
                 "Compliance health checks",
                 "Invoice structure review",
                 "HMRC correspondence support (non-tribunal)",
-                "Multi-currency accounting frameworks"
+                "Multi currency accounting frameworks"
             ],
             outro: "Our objective is to reduce avoidable VAT risk exposure.",
             caseTitle: "Case Illustration - Domestic Reverse Charge Confusion",
@@ -1250,7 +1250,7 @@ export const constructServicesCarousel: ServicesCarouselProps = {
             optionallistItems: [
                 "Rolling cashflow forecasts",
                 "Retention tracking models",
-                "Milestone-based forecasting",
+                "Milestone based forecasting",
                 "Supplier payment scheduling support",
                 "Scenario modelling"
             ],
@@ -1274,22 +1274,22 @@ export const constructServicesCarousel: ServicesCarouselProps = {
             iconAlt: "Development accounting icon",
             caseIcon: "/assets/icon/file-search.svg",
             caseIconAlt: "Case illustration icon",
-            titleLine1: "6. Multi-Currency Accounting",
+            titleLine1: "6. Multi Currency Accounting",
             titleLine2: "",
-            intro: "For contractors sourcing materials internationally or operating cross-border, currency volatility adds risk.",
+            intro: "For contractors sourcing materials internationally or operating cross border, currency volatility adds risk.",
             listHeading: "We Support",
             listItems: [
                 "Foreign currency transaction tracking",
                 "FX gain/loss monitoring",
-                "Multi-currency reporting alignment",
+                "Multi currency reporting alignment",
                 "Cashflow impact modelling",
 
             ],
-            caseTitle: "Why Multi-Currency Accounting Matters",
+            caseTitle: "Why Multi Currency Accounting Matters",
             caseIntro:
-                "Currency volatility is rarely contained. A foreign material purchase, a cross-border subcontract, or an untracked FX movement creates a chain of exposure — reporting distortion, margin erosion, and cashflow uncertainty. \nWe integrate multi-currency accounting into the broader project reporting framework. Not as a peripheral consideration, but as a structured process with documented transaction tracking, aligned to your wider financial control position.\n The result is a currency accounting function that is accurate, consistently monitored, and defensible under lender or regulatory scrutiny.",
+                "Currency volatility is rarely contained. A foreign material purchase, a cross-border subcontract, or an untracked FX movement creates a chain of exposure reporting distortion, margin erosion, and cashflow uncertainty. \nWe integrate multi currency accounting into the broader project reporting framework. Not as a peripheral consideration, but as a structured process with documented transaction tracking, aligned to your wider financial control position.\n The result is a currency accounting function that is accurate, consistently monitored, and defensible under lender or regulatory scrutiny.",
             caseResult:
-                "Reduced cashflow risk and strengthened cross-border reporting discipline."
+                "Reduced cashflow risk and strengthened cross border reporting discipline."
         },
     ],
 }
@@ -1303,7 +1303,7 @@ export const constructDifferenceConstruct: DifferenceProps = {
     items: [
         { id: "temp-accommodation", text: "Practical understanding of project margin dynamics" },
         { id: "council-leasing", text: "Sector awareness of domestic reverse charge" },
-        { id: "vat-modelling", text: "Structured cost-to-complete frameworks" },
+        { id: "vat-modelling", text: "Structured cost to complete frameworks" },
         { id: "spv-reporting", text: "CIS compliance depth" },
         { id: "cross-border", text: "Cashflow modelling discipline" },
         { id: "advisory-mindset", text: "Audit-ready reporting approach" },
@@ -1343,7 +1343,7 @@ export const constructModelsData: ModelsDataProps = {
             id: "prop-phase-3",
             title: "Phase 3 - Implementation of Project Reporting Structure",
             description:
-                "Next, we build and deploy a customized project reporting framework.",
+                "Next, we build and deploy a customised project reporting framework.",
             width: "",
             image:
                 `${ImagesProperty}/phase3.png`
@@ -1385,7 +1385,7 @@ export const constructContactCta: ContactCtaProps = {
         "Project reporting lacks discipline"
     ],
     closing: "A structured review can clarify financial exposure and strengthen profitability visibility.",
-    buttonLabel: "Speak to a Construction Advisor",
+    buttonLabel: "Speak to a Construction Adviser",
     buttonHref: "/contact",
     image: {
         src: `${ctaImage}/servicePagesCta.png`,
@@ -1412,14 +1412,14 @@ export const solutionsHero: HeroData = {
 export const taxHero: HeroData = {
     title: "Structured Engagement with Tax Authorities",
     description:
-        "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquiries, CIS reviews, and HMRC correspondence — focused on measured response, not escalation.",
+        "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquiries, CIS reviews, and HMRC correspondence – focused on measured response, not escalation.",
     width: "max-w-6xl",
     image: "/assets/bg-img-service8.png",
 };
 
 // 3. Digital & Systems
 export const systemsHero: HeroData = {
-    title: "Ensuring Technology Serves Financial Control — Not the Other Way Around",
+    title: "Ensuring Technology Serves Financial Control – Not the Other Way Around",
     description:
         "Technology promises efficiency. Poorly implemented systems create complexity.",
     width: "max-w-6xl",
@@ -1439,7 +1439,7 @@ export const businessAdvisoryHero: HeroData = {
 export const uaeAdvisoryHero: HeroData = {
     title: "Structured Financial & Tax Readiness in a Changing Regulatory Environment",
     description:
-        "Advisory-led accounting and tax support for businesses establishing or scaling in the UAE — covering VAT readiness, corporate tax compliance, bookkeeping discipline, and cross-border alignment with UK operations.",
+        "Advisory-led accounting and tax support for businesses establishing or scaling in the UAE – covering VAT readiness, corporate tax compliance, bookkeeping discipline, and cross-border alignment with UK operations.",
     width: "max-w-6xl",
     image: `${ImagesUae}/bg-hero.png`,
 };
@@ -1448,7 +1448,7 @@ export const uaeAdvisoryHero: HeroData = {
 export const cfoAdvisoryHero: HeroData = {
     title: "Financial Clarity for Leaders Who Require More Than Compliance",
     description:
-        "CFO-level financial interpretation, governance design, cashflow planning, and strategic structuring — for founders, directors, and management teams who require disciplined financial oversight without building a full in-house finance function.",
+        "CFO level financial interpretation, governance design, cashflow planning, and strategic structuring for founders, directors, and management teams who require disciplined financial oversight without building a full in-house finance function.",
     width: "max-w-7xl",
     image: "/assets/bg-img-service4.png",
 };
@@ -1484,7 +1484,7 @@ export const cfoStats: statsProps = {
 
 export const solutionsAbout: AboutServiceData = {
     introParagraph:
-        `As businesses grow, standard accounting software and reporting frameworks often become insufficient. Manual reconciliations increase, reporting becomes fragmented, and operational workflows expand without financial oversight.\n\nMany organisations respond by purchasing new tools or commissioning bespoke development — frequently without defining financial governance requirements first.`,
+        `As businesses grow, standard accounting software and reporting frameworks often become insufficient. Manual reconciliations increase, reporting becomes fragmented, and operational workflows expand without financial oversight.\n\nMany organisations respond by purchasing new tools or commissioning bespoke development – frequently without defining financial governance requirements first.`,
     listIntro:
         "Nexus Advisory & Services provides structured solution design and oversight for finance-led systems, tools, and workflow enhancements. We define, govern, and validate financial solutions.",
     serviceAreasTitle: "",
@@ -1521,7 +1521,7 @@ export const systemsAbout: AboutServiceData = {
         { id: "post-implementation-corrections", description: "Expensive post-implementation corrections" },
     ],
     optionalParagraph:
-    "Nexus Advisory & Services provides governance-led digital and systems advisory for businesses implementing or upgrading financial systems. We design, oversee, and validate systems from a finance and control perspective.",
+        "Nexus Advisory & Services provides governance-led digital and systems advisory for businesses implementing or upgrading financial systems. We design, oversee, and validate systems from a finance and control perspective.",
     closingParagraph:
         "We do not operate as a software development house. \nWe operate as a financial governance partner.",
 };
@@ -1543,14 +1543,14 @@ export const businessAdvisoryAbout: AboutServiceData = {
 export const cfoAbout: AboutServiceData = {
     introParagraph:
         `Compliance reports what happened.`,
-    listIntro: "Advisory explains what it means — and what to do next.",
+    listIntro: "Advisory explains what it means and what to do next.",
     introClassName: "italic font-bold -mt-6",
     serviceAreasTitle:
         "As businesses grow, financial complexity increases faster than reporting maturity. Revenue expands, cost structures diversify, teams scale and decision-making accelerates. Yet financial visibility often remains fragmented. \n\nNexus Advisory & Services provides structured, partner-led advisory support to founders, directors, and management teams who require disciplined financial interpretation without building a full in-house finance leadership function.",
     className: "italic font-bold",
     serviceAreas: [],
     closingParagraph:
-        "Our role is not to produce more reports. \nOur role is to improve financial judgment.",
+        "Our role is not to produce more reports. \nOur role is to improve financial judgement.",
 };
 
 export const uaeAbout: AboutServiceData = {
@@ -1646,7 +1646,7 @@ export const taxFaqItems: FaqWithImageProps = {
             value: "mitigation-strategy",
             trigger: "5. Mitigation Strategy",
             content:
-                "Where exposure exists, we assess behavioural classification and penalty mitigation options. Our focus is measured response — not escalation.",
+                "Where exposure exists, we assess behavioural classification and penalty mitigation options. Our focus is measured response – not escalation.",
             image: `${ImagesTax}/mitigation.png`,
             alt: "Hands steadying a wooden block tower",
         },
@@ -2068,14 +2068,14 @@ export const cfoApproachRows: ApproachProps = {
                 "Property and construction groups managing multi-entity complexity",
                 "Businesses preparing for lender scrutiny or refinancing",
                 "Directors seeking stronger financial control",
-                "Organizations without a full-time CFO but requiring strategic oversight",
+                "Organisations without a full-time CFO but requiring strategic oversight",
                 "Businesses experiencing margin pressure or cashflow uncertainty",
             ],
             closing:
                 "If decision-making feels reactive or financially opaque, structured advisory intervention becomes necessary.",
             image: {
                 src: `${ImagesCfo}/approach1.png`,
-                alt: "Advisor presenting data on a screen to colleagues",
+                alt: "Adviser presenting data on a screen to colleagues",
             },
             imagePosition: "right",
         },
@@ -2129,7 +2129,7 @@ export const solutionsCarousel: ServicesCarouselProps = {
             ],
             outro:
                 "Our role is to ensure tools reflect accounting integrity and commercial reality.",
-            caseTitle: "Case Illustration – Multi-Entity Reporting Fragmentation",
+            caseTitle: "Case Illustration Multi-Entity Reporting Fragmentation",
             caseIntro:
                 "A property and construction group operating multiple SPVs relied on inconsistent spreadsheet reporting.",
             caseSolutionHeading: "We:",
@@ -2169,7 +2169,7 @@ export const solutionsCarousel: ServicesCarouselProps = {
             ],
             outro:
                 "All workflows are designed around control integrity and documentation clarity.",
-            caseTitle: "Case Illustration – Disconnected Approval Processes",
+            caseTitle: "Case Illustration Disconnected Approval Processes",
             caseIntro:
                 "A construction business operated multiple manual approval systems, leading to delayed payments and inconsistent control.",
             caseSolutionHeading: "We:",
@@ -2224,7 +2224,7 @@ export const taxCarouselProperty: ServicesCarouselProps = {
                 "Technically accurate",
                 "Professionally framed",
             ],
-            caseTitle: "Case Illustration – VAT Compliance Check",
+            caseTitle: "Case Illustration VAT Compliance Check",
             caseIntro:
                 "A property group received a VAT compliance check regarding partial exemption treatment.",
             caseSolutionHeading: "We:",
@@ -2254,7 +2254,7 @@ export const taxCarouselProperty: ServicesCarouselProps = {
                 "Documentation alignment",
             ],
             outro: "Our aim is to reduce uncertainty and prevent scope expansion.",
-            caseTitle: "Case Illustration – Corporation Tax Review",
+            caseTitle: "Case Illustration Corporation Tax Review",
             caseIntro:
                 "A construction business faced HMRC review regarding capital allowances and development expenditure classification.",
             caseSolutionHeading: "We:",
@@ -2287,7 +2287,7 @@ export const taxCarouselProperty: ServicesCarouselProps = {
             ],
             outro:
                 "We focus on demonstrating proportionality and documented effort.",
-            caseTitle: "Case Illustration – Late VAT Filing Exposure",
+            caseTitle: "Case Illustration Late VAT Filing Exposure",
             caseIntro:
                 "A business faced penalties due to late VAT submissions linked to reporting process weaknesses.",
             caseSolutionHeading: "We:",
@@ -2367,7 +2367,7 @@ export const systemsCarousel: ServicesCarouselProps = {
             ],
             outro:
                 "We ensure financial outputs remain reliable during transition.",
-            caseTitle: "Case Illustration – Spreadsheet-Dependent SME",
+            caseTitle: "Case Illustration Spreadsheet-Dependent SME",
             caseIntro:
                 "A growing SME relied heavily on spreadsheets with limited accounting software integration.",
             caseSolutionHeading: "We:",
@@ -2408,7 +2408,7 @@ export const systemsCarousel: ServicesCarouselProps = {
                 "Internal control frameworks",
             ],
             caseTitle:
-                "Case Illustration – ERP Implementation Risk in Manufacturing Business",
+                "Case Illustration ERP Implementation Risk in Manufacturing Business",
             caseIntro:
                 "A business implementing ERP lacked finance-led oversight and faced risk of reporting misalignment.",
             caseSolutionHeading: "We:",
@@ -2430,7 +2430,7 @@ export const systemsCarousel: ServicesCarouselProps = {
             titleLine1: "3. Reporting & Automation Oversight",
             titleLine2: "Structured Automation Without Control Erosion",
             intro:
-                "Automation can improve efficiency — but poorly designed automation weakens oversight.",
+                "Automation can improve efficiency – but poorly designed automation weakens oversight.",
             listHeading: "We support:",
             listItems: [
                 "Management reporting automation design",
@@ -2441,7 +2441,7 @@ export const systemsCarousel: ServicesCarouselProps = {
             ],
             outro:
                 "We ensure automation enhances clarity without compromising audit trail.",
-            caseTitle: "Case Illustration – Dashboard Misalignment",
+            caseTitle: "Case Illustration Dashboard Misalignment",
             caseIntro:
                 "A business invested in dashboard software that presented visually attractive but commercially misleading metrics.",
             caseSolutionHeading: "We:",
@@ -2491,7 +2491,7 @@ export const businessAdvisoryCarouselProperty: ServicesCarouselProps = {
             ],
             outro:
                 "Our objective is to ensure structural decisions are sustainable, defensible, and aligned with growth strategy.",
-            caseTitle: "Case Illustration – Fragmented Multi-Entity Group",
+            caseTitle: "Case Illustration Fragmented Multi-Entity Group",
             caseIntro:
                 "A property and construction group operated across multiple entities created over several years without strategic alignment.",
             caseSolutionHeading: "We:",
@@ -2526,7 +2526,7 @@ export const businessAdvisoryCarouselProperty: ServicesCarouselProps = {
             ],
             outro:
                 "Our aim is to ensure financial processes support operational performance rather than hinder it.",
-            caseTitle: "Case Illustration – Rapidly Scaling Service Business",
+            caseTitle: "Case Illustration Rapidly Scaling Service Business",
             caseIntro:
                 "A service business scaled from 10 to 40 employees within two years but retained informal operational controls.",
             caseSolutionHeading: "We:",
@@ -2600,7 +2600,7 @@ export const uaeAdvisoryCarouselProperty: ServicesCarouselProps = {
                 "VAT documentation framework",
                 "VAT return review and advisory oversight",
             ],
-            caseTitle: "Case Illustration – Service Business VAT Confusion",
+            caseTitle: "Case Illustration Service Business VAT Confusion",
             caseIntro:
                 "A UAE service firm applied inconsistent VAT treatment across contracts.",
             caseSolutionHeading: "We:",
@@ -2633,7 +2633,7 @@ export const uaeAdvisoryCarouselProperty: ServicesCarouselProps = {
             ],
             outro:
                 "Our objective is to ensure businesses understand their obligations before filing deadlines arise.",
-            caseTitle: "Case Illustration – Free Zone Corporate Tax Uncertainty",
+            caseTitle: "Case Illustration Free Zone Corporate Tax Uncertainty",
             caseIntro:
                 "A free zone entity was uncertain about its corporate tax position and qualifying income status.",
             caseSolutionHeading: "We:",
@@ -2699,19 +2699,19 @@ export const cfoAdvisoryCarouselProperty: ServicesCarouselProps = {
             titleLine1: "1. CFO-Style Strategic Financial Advisory",
             titleLine2: "Structured Financial Interpretation",
             intro:
-                "We provide ongoing or project-based CFO-level support without requiring full-time executive overhead.",
+                "We provide ongoing or project based CFO-level support without requiring full time executive overhead.",
             listHeading: "This includes:",
             listItems: [
                 "Financial performance analysis",
                 "Margin and profitability review by segment or project",
-                "Cost structure rationalization",
+                "Cost structure rationalisation",
                 "Variance interpretation and board reporting",
-                "Pricing and cost modeling support",
+                "Pricing and cost modelling support",
                 "Financial decision support for directors",
             ],
             outro:
                 "We bridge the gap between accounting output and strategic decision-making.",
-            caseTitle: "Case Illustration – Scaling Multi-Channel Business",
+            caseTitle: "Case Illustration Scaling Multi Channel Business",
             caseIntro:
                 "A founder-led business expanded into new product lines and channels but lacked clarity on true profitability drivers.",
             caseSolutionHeading: "We:",
@@ -2739,19 +2739,19 @@ export const cfoAdvisoryCarouselProperty: ServicesCarouselProps = {
             listItems: [
                 "Rolling 3, 6, and 12-month cash flow forecasts",
                 "Sensitivity modelling under stress scenarios",
-                "Working capital optimization reviews",
-                "Retention and milestone modeling (construction/property)",
+                "Working capital optimisation reviews",
+                "Retention and milestone modelling (construction/property)",
                 "Debt covenant readiness",
                 "Funding readiness support (non-regulated)",
             ],
             outro:
-                "Our modeling is conservative, assumption-driven, and documented.",
-            caseTitle: "Case Illustration – Rapid Growth Cash flow Gap",
+                "Our modelling is conservative, assumption-driven, and documented.",
+            caseTitle: "Case Illustration Rapid Growth Cash flow Gap",
             caseIntro:
-                "A contractor scaling across multiple concurrent projects experienced short-term liquidity pressure due to milestone misalignment.",
+                "A contractor scaling across multiple concurrent projects experienced short term liquidity pressure due to milestone misalignment.",
             caseSolutionHeading: "We:",
             caseSolutions: [
-                "Modeled project-level cash timing",
+                "Modelled project-level cash timing",
                 "Identified funding gap window",
                 "Structured staged payment sequencing",
             ],
@@ -2766,20 +2766,20 @@ export const cfoAdvisoryCarouselProperty: ServicesCarouselProps = {
             caseIcon: "/assets/icon/progress.svg", // screenshot shows a dashboard icon here
             caseIconAlt: "Case illustration icon",
             titleLine1: "3. Governance & Financial Control Advisory",
-            titleLine2: "Embedding Discipline Before Risk Materializes",
+            titleLine2: "Embedding Discipline Before Risk Materialises",
             intro: "As businesses scale, informal controls become insufficient.",
             listHeading: "We provide:",
             listItems: [
                 "Financial controls review",
                 "Segregation of duties mapping",
-                "Authorization matrix design",
+                "Authorisation matrix design",
                 "Month-end close discipline frameworks",
                 "Policy and procedure documentation",
                 "Reporting governance structure",
             ],
             outro:
                 "Our objective is to build financial repeatability and reduce operational risk.",
-            caseTitle: "Case Illustration – Founder-Led SME with Informal Controls",
+            caseTitle: "Case Illustration Founder Led SME with Informal Controls",
             caseIntro:
                 "A business grew from £2m to £8m turnover without strengthening internal governance.",
             caseSolutionHeading: "We:",
@@ -2787,7 +2787,7 @@ export const cfoAdvisoryCarouselProperty: ServicesCarouselProps = {
                 "Mapped finance processes",
                 "Introduced approval thresholds",
                 "Implemented structured month-end timetable",
-                "Formalized financial policies",
+                "Formalised financial policies",
             ],
             caseResultTitle: "Outcome:",
             caseResult:
@@ -2806,14 +2806,14 @@ export const cfoAdvisoryCarouselProperty: ServicesCarouselProps = {
             listHeading: "We provide:",
             listItems: [
                 "Group structuring advisory (UK / UAE)",
-                "Entity rationalization",
+                "Entity rationalisation",
                 "Cross-border expansion alignment",
-                "Financial feasibility modeling",
+                "Financial feasibility modelling",
                 "Risk exposure identification",
             ],
             outro:
                 "We ensure structural decisions align with financial sustainability.",
-            caseTitle: "Case Illustration – Cross-Border Expansion Without Clarity",
+            caseTitle: "Case Illustration Cross Border Expansion Without Clarity",
             caseIntro:
                 "A UK founder expanded into the UAE without defined reporting or structural alignment.",
             caseSolutionHeading: "We:",
@@ -2896,7 +2896,7 @@ export const businessDifference: DifferenceProps = {
         { id: "governance-first-mindset", text: "Governance-first mindset" },
         { id: "proportionate-structuring", text: "Proportionate structuring approach" },
     ],
-    closing: "We focus on clarity and sustainability — not complexity for its own sake.",
+    closing: "We focus on clarity and sustainability – not complexity for its own sake.",
 };
 
 // 5. UAE Advisory page
@@ -2912,7 +2912,7 @@ export const uaeDifference: DifferenceProps = {
         { id: "cross-border-understanding", text: "Cross-border structural understanding" },
         { id: "advisory-first", text: "Advisory-first positioning" },
     ],
-    closing: "We focus on building structure early – not correcting errors later.",
+    closing: "We focus on building structure early not correcting errors later.",
 };
 
 // 6. CFO-Level Strategic Advisory page
@@ -3143,7 +3143,7 @@ export const cfoModelsData: ModelsDataProps = {
         {
             id: "cfo-phase-2",
             title: "Phase 2 – Structured Recommendations",
-            description: "Clear, prioritized advisory roadmap.",
+            description: "Clear, prioritised advisory roadmap.",
             width: "",
             image: `${ImagesCfo}/phase2.png`,
         },
@@ -3168,7 +3168,7 @@ export const cfoModelsData: ModelsDataProps = {
 // "When to Contact Us" CTA sections extracted from screenshots,
 // following your ContactCtaProps structure. All six use the same CTA image
 // as your construct example (`${ctaImage}/servicePagesCta.png`).
-// NOTE: one screenshot is the PROPERTY page ("Speak to a Property Advisor") —
+// NOTE: one screenshot is the PROPERTY page ("Speak to a Property Adviser") —
 // no Business Consultancy CTA was in this batch.
 
 // 1. Solutions Advisory page
@@ -3187,7 +3187,7 @@ export const solutionsContactCta: ContactCtaProps = {
     ],
     closing:
         "Early advisory intervention reduces implementation risk and protects financial control.",
-    buttonLabel: "Speak to a Solutions Advisor",
+    buttonLabel: "Speak to a Solutions Adviser",
     buttonHref: "/contact",
     image: {
         src: `${ctaImage}/servicePagesCta.png`,
@@ -3209,7 +3209,7 @@ export const taxContactCta: ContactCtaProps = {
         "You wish to respond in a measured and structured manner",
     ],
     closing: "Early intervention often prevents escalation.",
-    buttonLabel: "Speak to a Tax Advisor",
+    buttonLabel: "Speak to a Tax Adviser",
     buttonHref: "/contact",
     image: {
         src: `${ctaImage}/servicePagesCta.png`,
@@ -3221,12 +3221,12 @@ export const taxContactCta: ContactCtaProps = {
 export const businessCta: ContactCtaProps = {
     titleStart: "When to",
     titleHighlight: "Contact Us",
-    intro: 
-    "Consider structured business consultancy support if:",
+    intro:
+        "Consider structured business consultancy support if:",
     listIntro: "",
     discussionPoints: [
         "Your group structure has evolved without review",
-        "You are expanding into new markets",    
+        "You are expanding into new markets",
         "Operational inefficiencies are affecting margins",
         "You are preparing for refinancing or investment",
         "Governance has not evolved with growth",
@@ -3279,11 +3279,11 @@ export const uaeContactCta: ContactCtaProps = {
         "You require structured reporting from inception",
     ],
     closing: "A structured early discussion can prevent future compliance risk.",
-    buttonLabel: "Speak to an Advisor",
+    buttonLabel: "Speak to an Adviser",
     buttonHref: "/contact",
     image: {
         src: `${ctaImage}/servicePagesCta.png`,
-        alt: "Advisor ready to take your call",
+        alt: "Adviser ready to take your call",
     },
 };
 
@@ -3304,10 +3304,10 @@ export const cfoContactCta: ContactCtaProps = {
     ],
     closing:
         "A structured initial conversation can identify exposure and opportunity.",
-    buttonLabel: "Speak to an Advisor",
+    buttonLabel: "Speak to an Adviser",
     buttonHref: "/contact",
     image: {
         src: `${ctaImage}/servicePagesCta.png`,
-        alt: "Advisor ready to take your call",
+        alt: "Adviser ready to take your call",
     },
 };

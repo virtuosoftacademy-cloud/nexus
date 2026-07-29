@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
                 {/* ── 1. Who we are ── */}
                 <Section title="1. Who we are">
                     <p>
-                        Nexus Advisory & Services is a [company type — e.g. limited company
+                        Nexus Advisory & Services is a [company type – e.g. limited company
                         registered in England and Wales], company number [COMPANY NUMBER],
                         with its registered office at [REGISTERED ADDRESS].
                     </p>
@@ -89,7 +89,7 @@ export default function PrivacyPolicyPage() {
                                 Client and financial data:
                             </strong>{" "}
                             where you engage our services, information necessary to deliver
-                            accounting and advisory work — for example accounting records,
+                            accounting and advisory work – for example accounting records,
                             tax information, payroll details, and related documentation for
                             you or your business.
                         </li>
@@ -143,7 +143,7 @@ export default function PrivacyPolicyPage() {
                                 Legitimate interests:
                             </strong>{" "}
                             to run and improve our business, respond to enquiries, and keep
-                            our website secure — provided your rights do not override those
+                            our website secure – provided your rights do not override those
                             interests.
                         </li>
                         <li>
@@ -159,9 +159,9 @@ export default function PrivacyPolicyPage() {
                     <p>We do not sell your personal data. We may share it with:</p>
                     <ul className="list-disc space-y-2 pl-6">
                         <li>
-                            Service providers who help us operate — for example our website
+                            Service providers who help us operate – for example our website
                             hosting provider, cloud storage, email, and analytics providers
-                            — who process data on our behalf under written agreements.
+                            – who process data on our behalf under written agreements.
                         </li>
                         <li>
                             Professional advisers, regulators, and authorities such as HM
@@ -181,7 +181,7 @@ export default function PrivacyPolicyPage() {
                         We keep personal data only for as long as necessary for the purposes
                         we collected it, including to satisfy legal, accounting, or reporting
                         requirements. For client engagements, we generally retain records for
-                        at least [RETENTION PERIOD — e.g. six] years after the relationship
+                        at least [RETENTION PERIOD – e.g. six] years after the relationship
                         ends, in line with tax and regulatory obligations. Newsletter data is
                         kept until you unsubscribe.
                     </p>
@@ -203,9 +203,9 @@ export default function PrivacyPolicyPage() {
                 <Section title="7. International transfers">
                     <p>
                         Some of our service providers may process data outside the UK. Where
-                        that happens, we ensure an appropriate safeguard is in place — such
+                        that happens, we ensure an appropriate safeguard is in place – such
                         as an adequacy decision or the UK International Data Transfer
-                        Agreement — so your data receives an equivalent level of protection.
+                        Agreement – so your data receives an equivalent level of protection.
                     </p>
                 </Section>
 
@@ -217,7 +217,7 @@ export default function PrivacyPolicyPage() {
                         necessary for the site to work; non-essential cookies (such as
                         analytics) are only set with your consent. You can manage your
                         preferences through your browser settings [and our cookie banner, if
-                        applicable]. For more detail, see our [Cookie Policy — link, if you
+                        applicable]. For more detail, see our [Cookie Policy – link, if you
                         have a separate one].
                     </p>
                 </Section>

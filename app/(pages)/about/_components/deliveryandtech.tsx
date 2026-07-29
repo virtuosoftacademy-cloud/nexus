@@ -19,11 +19,23 @@ function DeliveryAndTech() {
         [
             {
                 id: 
+                "shoaib-ur-rehman",
+                name: 
+                "Shoaib Ur Rehman",
+                role: 
+                "Chief Executive Officer – Virtuosoft",
+                image: 
+                "/assets/about/shoaiburrehman.png",
+                bio: 
+            "Shoaib ur Rehman brings over 20 years of experience delivering large-scale digital solutions across Pakistan, the UAE, the MENA region, and global markets. His expertise spans software engineering, solution architecture, cloud computing, and enterprise system design. He leads Virtuosoft's strategic vision, technology roadmap, and delivery operations – guiding organisations through cloud modernisation, data-driven transformation, and human-centred system design. He holds a Masters in Computer Science from IBA and a BE in Computer & Information Systems from NED University."
+            },
+            {
+                id: 
                 "amir-jamili",
                 name: 
                 "Amir Jamili",
                 role: 
-                "Director, Cybersecurity & IT Governance — Virtuosoft",
+                "Director, Cybersecurity & IT Governance – Virtuosoft",
                 image: 
                 "/assets/about/amirjamili.png",
                 bio: 
@@ -31,27 +43,15 @@ function DeliveryAndTech() {
             },
             {
                 id: 
-                "shoaib-ur-rehman",
-                name: 
-                "Shoaib Ur Rehman",
-                role: 
-                "Chief Executive Officer — Virtuosoft",
-                image: 
-                "/assets/about/shoaiburrehman.png",
-                bio: 
-            "Shoaib ur Rehman brings over 20 years of experience delivering large-scale digital solutions across Pakistan, the UAE, the MENA region, and global markets. His expertise spans software engineering, solution architecture, cloud computing, and enterprise system design. He leads Virtuosoft's strategic vision, technology roadmap, and delivery operations — guiding organisations through cloud modernisation, data-driven transformation, and human-centred system design. He holds a Masters in Computer Science from IBA and a BE in Computer & Information Systems from NED University."
-            },
-            {
-                id: 
                 "azher-rizvi",
                 name: 
                 "Azher Rizvi",
                 role: 
-                "Chief Operating Officer — Virtuosoft",
+                "Chief Operating Officer – Virtuosoft",
                 image: 
                 "/assets/about/azherrizvi.png",
                 bio: 
-            "Mr. Azher, an MBA graduate from SZABIST University, Dubai, is a seasoned Regional Marketing Manager with a strong background in market segmentation, channel development, and revenue optimization. His leadership spans successful engagements across Far East Asia and West Africa, focusing on customer relations, sales growth, compliance, and strategic project alignment for impactful business outcomes."
+            "Mr. Azher, an MBA graduate from SZABIST University, Dubai, is a seasoned Regional Marketing Manager with a strong background in market segmentation, channel development, and revenue optimisation. His leadership spans successful engagements across Far East Asia and West Africa, focusing on customer relations, sales growth, compliance, and strategic project alignment for impactful business outcomes."
             },
             {
                 id: 
@@ -59,7 +59,7 @@ function DeliveryAndTech() {
                 name: 
                 "Wasif Shariq",
                 role: 
-                "Head of Growth — Virtuosoft",
+                "Head of Growth – Virtuosoft",
                 image: 
                 "/assets/about/wasifshariq.png",
                 bio: 

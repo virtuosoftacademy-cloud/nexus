@@ -13,7 +13,7 @@ export const services: ServiceCardInterface[] = [
     {
         title: "UK Accounting & Tax",
         description:
-            "Statutory accounts, VAT, corporation tax, and payroll — structured around financial discipline for UK and UAE businesses, not just filing deadlines.",
+            "Statutory accounts, VAT, corporation tax, and payroll – structured around financial discipline for UK and UAE businesses, not just filing deadlines.",
         image: `${images}/ukaccounting.png`,
         alt: "Business professionals in a meeting room",
         href: "/services/uk-accounting-and-tax",
@@ -21,7 +21,7 @@ export const services: ServiceCardInterface[] = [
     {
         title: "Advisory & Governance",
         description:
-            "CFO-level financial interpretation, cashflow planning, and governance design — without the full-time overhead. Built for founders and directors who need clarity, not more reports.",
+            "CFO-level financial interpretation, cashflow planning, and governance design – without the full-time overhead. Built for founders and directors who need clarity, not more reports.",
         image: `${images}/advisory.png`,
         alt: "Strategy session with team",
         href: "/services/advisory-services",
@@ -53,7 +53,7 @@ export const services: ServiceCardInterface[] = [
     {
         title: "Tax Authority Support",
         description:
-            "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquiries and HMRC correspondence — focused on measured response, not escalation.",
+            "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquiries and HMRC correspondence – focused on measured response, not escalation.",
         image: `${images}/taxauthority.png`,
         alt: "Modern office space",
         href: "/services/tax-authority-support",
@@ -61,7 +61,7 @@ export const services: ServiceCardInterface[] = [
     {
         title: "Construction Accounting",
         description:
-            "Specialised accounting services for construction businesses, helping you manage improve cash flow and maximise profitability. Gain clear financial insights at every stage of your projects.",
+            "Specialised accounting services for construction businesses, helping you manage and improve cash flow and maximise profitability. Gain clear financial insights at every stage of your projects.",
         image: `${images}/constructionaccounting.png`,
         alt: "Modern office space",
         href: "/services/construction-accounting",

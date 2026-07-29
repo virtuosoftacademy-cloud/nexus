@@ -124,7 +124,7 @@ export function ServicesCarousel({
                             <div className="grid gap-5 md:grid-cols-2 h-full md:h-[42em]">
                                 {/* --- Left card: service description --- */}
                                 <Card className="rounded-none border-0 shadow-none">
-                                    <CardContent className="p-8 md:py-4 md:px-10">
+                                    <CardContent className="p-8 md:p-10">
                                         <IconChip src={slide.icon} alt={slide.iconAlt} />
 
                                         <h4 className="text-lg font-semibold leading-snug md:text-xl whitespace-pre-line">
