@@ -54,20 +54,12 @@ const cards: ContactCard[] = [
 
 export default function ContactDetails() {
   return (
-    <section className="py-10 px-8 sm:px-18">
-      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+    <section className="py-10 px-8 lg:px-18">
+      <div className="grid grid-cols-1 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
 
-        {/* Row 1 — 3 cards */}
-        {cards.slice(0, 3).map((card) => (
+        {cards.map((card) => (
           <ContactCard key={card.title} card={card} />
         ))}
-
-        {/* Row 2 — 2 cards + empty cell */}
-        {cards.slice(3).map((card) => (
-          <ContactCard key={card.title} card={card} />
-        ))}
-        {/* Empty placeholder to keep the grid balanced */}
-        <div className="hidden md:block border-t border-white/10" />
 
       </div>
     </section>
@@ -76,7 +68,7 @@ export default function ContactDetails() {
 
 function ContactCard({ card }: { card: ContactCard }) {
   return (
-    <div className="flex flex-col justify-between gap-8 p-10 border border-muted-foreground md:min-h-80">
+    <div className="flex flex-col justify-between items-center lg:items-start gap-8 p-10 border border-muted-foreground lg:min-h-80">
 
       {/* Top */}
       <div className="flex flex-col gap-5">

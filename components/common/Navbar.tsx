@@ -109,7 +109,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop nav */}
-                <div className="hidden md:flex items-center">
+                <div className="hidden lg:flex items-center">
                     <NavigationMenu>
                         <NavigationMenuList>
                             {navMenuLink.map((item) =>
@@ -121,7 +121,7 @@ export default function Navbar() {
                                             </NavigationMenuLink>
                                         </NavigationMenuTrigger>
                                         <NavigationMenuContent >
-                                            <div className="min-w-[70rem] py-4 px-7">
+                                            <div className="w-[min(70rem,92vw)] py-4 px-7">
                                                 <h4 className="text-sm text-muted-foreground leading-snug pb-4">{item.label}</h4>
                                                 <ul className="grid grid-cols-2 xl:grid-cols-3 text-sm">
                                                     {item.children.map((c) => (
@@ -149,7 +149,7 @@ export default function Navbar() {
                     </NavigationMenu>
 
                 </div>
-                <div className="hidden md:flex items-center gap-4">
+                <div className="hidden lg:flex items-center gap-4">
                     <Button size="lg" className="text-base font-normal py-6 px-10" asChild>
                         <Link href="/contact">Contact Us</Link>
                     </Button>
@@ -160,7 +160,7 @@ export default function Navbar() {
                     type="button"
                     aria-label={mobileOpen ? "Close menu" : "Open menu"}
                     aria-expanded={mobileOpen}
-                    className="md:hidden"
+                    className="lg:hidden"
                     onClick={() => setMobileOpen((open) => !open)}
                 >
                     {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
@@ -170,7 +170,7 @@ export default function Navbar() {
             {/* Mobile panel */}
             {/* Mobile panel */}
             {mobileOpen && (
-                <div className="md:hidden bg-white text-foreground border-t border-muted-foreground/20 px-8 py-6 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain mt-4">
+                <div className="lg:hidden bg-white text-foreground border-t border-muted-foreground/20 px-8 py-6 max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain mt-4">
                     <ul className="flex flex-col gap-1">
                         <li>
                             <Link href="/" className="block font-medium">

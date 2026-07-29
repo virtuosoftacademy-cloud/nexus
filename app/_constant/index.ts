@@ -74,8 +74,8 @@ export const TABS: TabConfig[] = [
     tag: "Financial Advisory",
     heading: "Financial Structure, \nGovernance and Advisory \nfor Growing Businesses",
     subtitle:
-      "Structured accounting, defensible tax positions, and financial discipline — for owner-managed businesses, property groups, and construction enterprises that need more than routine compliance.",
-    cta: { label: "SPEAK TO AN ADVISOR", href: "#" },
+      "Structured accounting, defensible tax positions, and financial disciplinefor owner managed businesses, property groups, and construction enterprises that need more than routine compliance.",
+    cta: { label: "SPEAK TO AN ADVISER", href: "#" },
   },
   {
     label: "Advisory Services",
@@ -84,7 +84,7 @@ export const TABS: TabConfig[] = [
     tag: "Strategic Financial Advisory",
     heading: "Compliance Tells You What Happened. Advisory Tells You What to Do Next.",
     subtitle:
-      "CFO-level financial interpretation, governance design, and cashflow planning — for founders and directors who need structured oversight without the full-time overhead.",
+      "CFO level financial interpretation, governance design, and cashflow planningfor founders and directors who need structured oversight without the full time overhead.",
     cta: { label: "EXPLORE ADVISORY SERVICES", href: "#" },
   },
   {
@@ -94,7 +94,7 @@ export const TABS: TabConfig[] = [
     tag: "Systems & Solutions",
     heading: "Technology Doesn’t Fix \nPoor Financial Governance.",
     subtitle:
-      "Governance-led oversight for ERP implementation, platform migration, and reporting automation — ensuring every system decision is driven by financial requirements, not vendor preference.",
+      "Governance led oversight for ERP implementation, platform migration, and reporting automationensuring every system decision is driven by financial requirements, not vendor preference.",
     cta: { label: "EXPLORE DIGITAL SOLUTIONS", href: "#" },
   },
   {
@@ -104,7 +104,7 @@ export const TABS: TabConfig[] = [
     tag: "Property & Construction Advisory",
     heading: "Your Margins Are Under Pressure. Your Reporting Should Tell You Exactly Where.",
     subtitle:
-      "Specialist accounting for SPV structures, project cost tracking, CIS compliance, VAT on construction activities, and working capital discipline — built for the full financial complexity of property and construction businesses.",
+      "Specialist accounting for SPV structures, project cost tracking, CIS compliance, VAT on construction activities, and working capital disciplinebuilt for the full financial complexity of property and construction businesses.",
     cta: { label: "EXPLORE PROPERTY & CONSTRUCTION", href: "#" },
   },
 ];
@@ -118,9 +118,9 @@ export interface Stat {
 }
 
 export const statusBar: Stat[] = [
-  { id: "s-1", value: "UK & UAE", iconPlus: "", label: "Cross-Border Coverage" },
+  { id: "s-1", value: "UK & UAE", iconPlus: "", label: "Cross Border Coverage" },
   { id: "s-2", value: "15", iconPlus: "+", label: "Years of Sector Experience" },
-  { id: "s-3", value: "100", iconPlus: "+", label: "Partner-Led Engagements" },
+  { id: "s-3", value: "100", iconPlus: "+", label: "Partner Led Engagements" },
   { id: "s-4", value: "4", iconPlus: "", label: "Core Practice Areas" },
 ];
 //Core Services
@@ -147,7 +147,7 @@ export const CoreServices: CoreService[] = [
     icon: "/assets/advisoryandgovernance.svg",
     title: "Advisory & Governance",
     description:
-      "CFO-level financial interpretation, cashflow planning, and governance design — without the full-time overhead. Built for founders and directors who need clarity, not more reports.",
+      "CFO level financial interpretation, cashflow planning, and governance designwithout the full time overhead. Built for founders and directors who need clarity, not more reports.",
     href: "/services/advisory-services",
   },
   {
@@ -163,7 +163,7 @@ export const CoreServices: CoreService[] = [
     icon: "/assets/authoritysupport.svg",
     title: "Tax Authority Support",
     description:
-      "Documentation-led support for businesses facing VAT compliance checks, corporation tax enquirers and HMRC correspondence — focused on measured response, not escalation.",
+      "Documentation led support for businesses facing VAT compliance checks, corporation tax enquirers and HMRC correspondencefocused on measured response, not escalation.",
     href: "/services/tax-authority-support",
   },
   {
@@ -224,7 +224,7 @@ export const insights: InsightCard[] = [
 export interface PlatForm {
   id: string;
   name: string;
-  /** SVG logo as a URL or inline — use public CDN logos */
+  /** SVG logo as a URL or inlineuse public CDN logos */
   logoUrl: string;
 }
 
@@ -275,7 +275,7 @@ export const memberships = [
 ];
 
 export const bulletPoints: string[] = [
-  "Finance-led platform selection not vendor-driven",
+  "Finance led platform selection not vendor driven",
   "Chart of accounts designed around your reporting needs",
   "Migration oversight with data integrity validation",
   "Post-implementation review before full acceptance",
@@ -349,7 +349,7 @@ export interface Testimonial {
   name: string;
   rating: number; // out of 5
   review: string;
-  avatarUrl?: string; // optional — falls back to initials
+  avatarUrl?: string; // optionalfalls back to initials
   avatarInitial?: string;
 }
 
@@ -383,7 +383,7 @@ export const testimonials: Testimonial[] = [
     name: "Sarah Mitchell",
     rating: 5,
     review:
-      "Exceptional service from start to finish. The team handled our year-end accounts with complete professionalism. Highly recommended for any SME looking for reliable accountants.",
+      "Exceptional service from start to finish. The team handled our year end accounts with complete professionalism. Highly recommended for any SME looking for reliable accountants.",
     avatarInitial: "S",
   },
   {
@@ -399,7 +399,7 @@ export const testimonials: Testimonial[] = [
     name: "Priya Sharma",
     rating: 5,
     review:
-      "Brilliant support setting up our SPV structure. They explained everything clearly and made the whole process stress-free. Will be using them for all future property acquisitions.",
+      "Brilliant support setting up our SPV structure. They explained everything clearly and made the whole process stress free. Will be using them for all future property acquisitions.",
     avatarInitial: "P",
   },
   {
@@ -444,7 +444,7 @@ export const faqsHome: FaqItem[] = [
     value: "item-1",
     question: "Who is Nexus Advisory & Services right for?",
     answer:
-      "Nexus works with owner-managed businesses, property and construction groups, and founder-led companies operating in the UK, UAE, or across both. We work selectively with organisations where structured financial intervention can make a material difference. If your reporting is reactive, your tax position uncertain, or your structure hasn’t kept pace with growth, we’re likely the right fit."
+      "Nexus works with owner managed businesses, property and construction groups, and founder led companies operating in the UK, UAE, or across both. We work selectively with organisations where structured financial intervention can make a material difference. If your reporting is reactive, your tax position uncertain, or your structure hasn’t kept pace with growth, we’re likely the right fit."
   },
   {
     id: "faq-2",
@@ -486,14 +486,14 @@ export const faqsHome: FaqItem[] = [
     value: "item-7",
     question: "Can you help with ERP or accounting software implementation?",
     answer:
-      "Yes but not as a software developer. We provide governance-led oversight for ERP and accounting platform implementations, ensuring systems are designed around financial requirements, not vendor preferences. We define scope, oversee configuration, and validate outputs before sign-off. Technical build is delivered through approved specialist partners under Nexus oversight.",
+      "Yes but not as a software developer. We provide governance led oversight for ERP and accounting platform implementations, ensuring systems are designed around financial requirements, not vendor preferences. We define scope, oversee configuration, and validate outputs before sign-off. Technical build is delivered through approved specialist partners under Nexus oversight.",
   },
   {
     id: "faq-8",
     value: "item-8",
     question: "How is Nexus different from a standard accounting firm?",
     answer:
-      "Most accounting firms operate at volume returns filed, deadlines met, relationship ends. Nexus operates differently. Every engagement is partner-led. We focus on financial interpretation, governance design, and structural clarity not just compliance output. We work selectively and proportionately, which means clients receive structured attention rather than a junior handoff.",
+      "Most accounting firms operate at volume returns filed, deadlines met, relationship ends. Nexus operates differently. Every engagement is partner led. We focus on financial interpretation, governance design, and structural clarity not just compliance output. We work selectively and proportionately, which means clients receive structured attention rather than a junior handoff.",
   },
   {
     id: "faq-9",

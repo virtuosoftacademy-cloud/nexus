@@ -31,6 +31,7 @@ export default function Notice({
 }: ImportantNoticeProps) {
     return (
         <section className="bg-primary/5 py-10 md:py-20">
+            {/* Flips via CSS direction (not order-*) so the image's fill/object-cover keeps working after the swap */}
             <div
                 className={`grid grid-cols-1 md:grid-cols-2 px-4 md:px-18 ${imagePosition === "right" ? "md:[direction:rtl]" : ""
                     }`}

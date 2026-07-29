@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { services } from './page';
 
 export interface ServiceSection {
+  // any is required — each section pairs a different component with a differently shaped
+  // props object (HeroData, statsProps, ApproachProps, ...), so no shared generic fits the render loop
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Component: React.ComponentType<any>;
   props?: Record<string, unknown>;

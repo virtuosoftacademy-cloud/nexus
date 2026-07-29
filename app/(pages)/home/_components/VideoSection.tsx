@@ -4,6 +4,10 @@ import { useState } from "react";
 import { Paperclip, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// TODO: set the real YouTube video ID here to enable playback.
+// Previously: src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
+const VIDEO_ID = "";
+
 export default function VideoSection() {
     const [playing, setPlaying] = useState(false);
 
@@ -11,10 +15,10 @@ export default function VideoSection() {
         <section className="relative w-full overflow-hidden md:min-h-160">
 
             {/* ── Background image / video ── */}
-            {playing ? (
+            {playing && VIDEO_ID ? (
                 <iframe
                     className="absolute inset-0 w-full h-full"
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1"
+                    src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1`}
                     allow="autoplay; fullscreen"
                     allowFullScreen
                 />
@@ -101,7 +105,7 @@ export default function VideoSection() {
                     {/* Middle: play button */}
                     <div className="mx-40">
                         <button
-                            onClick={() => setPlaying(true)}
+                            onClick={() => VIDEO_ID && setPlaying(true)}
                             className="w-17 h-16 rounded-full bg-white/85 hover:bg-white transition-colors flex items-center justify-center shadow-md"
                             aria-label="Play video"
                         >

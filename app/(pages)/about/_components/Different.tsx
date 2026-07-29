@@ -2,19 +2,11 @@ import { Separator } from "@/components/ui/separator"
 import { Fragment } from "react/jsx-runtime"
 
 type IntersectionProps = {
-    titleStart?: string
-    /** Highlighted (text-primary) part of the heading */
-    titleHighlight?: string
-    /** Optional trailing heading text after the highlight (e.g. "of:") */
-    titleEnd?: string
     /** Item rows — one array per divider row; renders null when missing/empty */
     rows?: string[][]
 }
 
 const intersectionUk: IntersectionProps = {
-    titleStart: "We operate at the",
-    titleHighlight: "intersection",
-    titleEnd: "of:",
     rows: [
         [
             "Technical accounting discipline",
@@ -28,16 +20,11 @@ const intersectionUk: IntersectionProps = {
     ],
 }
 
-function Different({
-    titleStart,
-    titleHighlight,
-    titleEnd,
-}: IntersectionProps) {
-
+function Different() {
 
     return (
         <section className="py-8">
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-4 pb-12">
                 <div className="w-90 h-0.5 bg-primary/5 hidden md:block" />
                 <div>
                     <h4 className="text-2xl md:text-4xl font-semibold text-center px-6">
@@ -49,14 +36,6 @@ function Different({
                     </h4>
                 </div>
                 <div className="w-90 h-0.5 bg-primary/5 hidden md:block" />
-            </div>
-
-            <div className="flex items-center justify-center gap-6 py-3 md:py-6">
-                <h4 className="text-center text-3xl font-semibold text-foreground md:text-4xl">
-                    {titleStart}{" "}
-                    <span className="text-primary">{titleHighlight}</span>
-                    {titleEnd && <>{" "}{titleEnd}</>}
-                </h4>
             </div>
 
             <div className="bg-muted py-10 md:py-14">

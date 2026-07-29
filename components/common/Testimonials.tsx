@@ -60,13 +60,14 @@ export default function TestimonialsSection() {
       <div className="mx-auto max-w-[212.5rem]">
 
         {/* ── Heading ── */}
-        <h4 className="text-center md:text-left text-2xl md:text-[42px] font-bold text-foreground mb-10">
+        <h4 className="text-center lg:text-left text-2xl md:text-[42px] font-bold text-foreground mb-10">
           What Our <span className="text-primary">Clients Say</span>
         </h4>
 
         {/* ── Carousel: cards shift one slot at a time ── */}
-        <div className="overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* relative is required so popLayout's absolutely-positioned exit animations are clipped here, not at the viewport */}
+        <div className="relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <AnimatePresence
               mode="popLayout"
               initial={false}

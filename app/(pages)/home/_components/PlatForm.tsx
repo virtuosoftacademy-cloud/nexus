@@ -18,7 +18,7 @@ export default function PlatformsSection() {
             {/* Heading */}
             <h4 className="text-3xl md:text-[42px] font-bold text-foreground leading-tight">
               We Work Across Every Major{" "}
-              <span style={{ color: "var(--primary)" }}>
+              <span className="text-primary">
                 Accounting Platform
               </span>
             </h4>
@@ -31,7 +31,7 @@ export default function PlatformsSection() {
               evaluating QuickBooks. Our role is to ensure the platform serves
               your financial structure, not the other way around. We define the
               requirements, oversee implementation, and validate outputs before
-              sign-off.
+              sign off.
             </p>
 
             {/* Bullet points */}
@@ -39,8 +39,7 @@ export default function PlatformsSection() {
               {bulletPoints.map((point) => (
                 <li key={point} className="flex items-start gap-2.5 text-sm text-foreground/70">
                   <Check
-                    className="h-4 w-4 mt-0.5 shrink-0"
-                    style={{ color: "var(--primary)" }}
+                    className="h-4 w-4 mt-0.5 shrink-0 text-primary"
                   />
                   {point}
                 </li>

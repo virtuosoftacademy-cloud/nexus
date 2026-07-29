@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer className="bg-foreground relative" id="footer">
       <div className="mx-auto py-12 px-4 sm:px-8 xl:px-18">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-center md:text-left px-6 md:px-0">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 text-center md:text-left px-6 md:px-0">
           <div className="space-y-10">
             <p className="text-base md:text-[1.2rem] text-muted-foreground md:max-w-lg leading-relaxed font-serif">
               Stay ahead in a rapidly changing world. Subscribe to Nexus Insights. Our monthly look at the critical issues facing global businesses.
@@ -70,7 +70,7 @@ const Footer = () => {
 
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm md:text-base text-background/50">
+        <div className="flex flex-col gap-4 items-center sm:flex-row lg:justify-between text-sm md:text-base text-background/50 pt-8 px-6 sm:px-0">
           <p>© 2026 Nexus Advisory & Services | All rights reserved.</p>
           {/* <p>Made for modern property managers.</p> */}
           <ScrollToSection sections={[

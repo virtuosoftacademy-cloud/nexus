@@ -45,3 +45,4 @@ prisma
 generated
 
 package-lock.json
+.claude

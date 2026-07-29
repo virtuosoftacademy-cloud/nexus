@@ -21,7 +21,7 @@ export default function ProfessionalMemberships() {
           commitment to compliance, governance, and continuous professional
           development ensures clients receive trusted advice and dependable
           support. Every engagement is approached with professionalism,
-          transparency, and a focus on long-term success.
+          transparency, and a focus on long term success.
         </p>
 
         {/* Membership Cards */}

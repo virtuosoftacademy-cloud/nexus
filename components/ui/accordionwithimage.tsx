@@ -63,7 +63,7 @@ function FaqAccordion({
                     <AccordionTrigger className="font-sans -my-0.5 font-semibold bg-transparent text-primary">
                         {item.trigger}
                     </AccordionTrigger>
-                    <AccordionContent className="text-light w-[18em] max-w-[30em] text-foreground/70 text-xs">{item.content}</AccordionContent>
+                    <AccordionContent className="text-foreground/70 text-xs text-light md:w-[18em] max-w-[30em]">{item.content}</AccordionContent>
                 </AccordionItem>
             ))}
         </Accordion>
@@ -79,7 +79,7 @@ function FaqImageStack({
     active: string
 }) {
     return (
-        <div className="relative max-h-full w-full shrink-0 md:self-stretch overflow-hidden bg-accent md:w-1/2">
+        <div className="hidden lg:inline-block relative max-h-full w-full shrink-0 md:self-stretch overflow-hidden bg-accent md:w-1/2">
             {items.map((item) => (
                 <Image
                     key={item.value}
