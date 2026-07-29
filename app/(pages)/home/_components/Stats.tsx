@@ -6,18 +6,18 @@ import { Fragment } from "react/jsx-runtime";
 
 export default function StatsBar() {
   return (
-    <section className="bg-muted py-6 sm:py-8 mx-auto md:pl-6">
+    <section className="bg-muted py-6 sm:py-8 mx-auto lg:pl-6">
       <div className="px-4 sm:px-8 xl:px-12">
-        <div className="flex items-center flex-col md:flex-row gap-4 sm:gap-6 md:gap-0">
+        <div className="flex items-center flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-0">
           {statusBar.map((stat, index) => (
             <Fragment key={stat.id}>
               {index > 0 && (
-                <div className="items-center justify-center pr-4 first:hidden hidden md:flex">
+                <div className="items-center justify-center pr-4 first:hidden hidden lg:flex">
                   <Separator orientation="vertical" className="w-px! h-10 bg-primary" />
                 </div>)
               }
               <div
-                className="flex items-center gap-2 sm:gap-3 md:px-6 xl:px-8 first:md:pl-0 last:md:pr-0 py-2"
+                className="flex items-center gap-2 sm:gap-3 lg:px-6 xl:px-8 first:lg:pl-0 last:lg:pr-0 py-2"
               >
                 {/* Value */}
                 <span className="text-4xl sm:text-3xl md:text-4xl xl:text-[4rem] font-bold leading-none text-primary">

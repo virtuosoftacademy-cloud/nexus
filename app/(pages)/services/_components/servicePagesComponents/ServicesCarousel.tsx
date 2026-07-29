@@ -121,7 +121,7 @@ export function ServicesCarousel({
                 <CarouselContent>
                     {slides.map((slide) => (
                         <CarouselItem key={slide.id}>
-                            <div className="grid gap-5 md:grid-cols-2 h-full md:h-[42em]">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 h-full xl:h-[42em]">
                                 {/* --- Left card: service description --- */}
                                 <Card className="rounded-none border-0 shadow-none">
                                     <CardContent className="p-8 md:py-4 md:px-10">

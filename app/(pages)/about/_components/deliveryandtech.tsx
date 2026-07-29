@@ -72,7 +72,7 @@ function DeliveryAndTech() {
     return (
         <div>
             <Info data={deliveryandtech} />
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-1 max-w-4xl mx-auto pt-5 md:pt-10 px-8 md:px-0'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-1 max-w-4xl mx-auto pt-5 md:pt-10 px-8 md:px-0'>
 
                 {
                     teamAbout.map((memeber) => (

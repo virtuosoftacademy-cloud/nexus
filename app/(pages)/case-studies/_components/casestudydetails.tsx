@@ -235,7 +235,7 @@ export default function CaseStudyDetail({
                         <p className="mt-2 font-heading text-sm text-foreground/70 md:text-lg">
                             Solutions engagements typically follow:
                         </p>
-                        <div className="mt-10 flex">
+                        <div className="mt-10 flex flex-wrap">
                             {relatedServices?.map((service) => (
                                 <div
                                     key={service.href}

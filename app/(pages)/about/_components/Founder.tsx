@@ -7,9 +7,9 @@ function Founder() {
     return (
         <div className="pt-6 md:pt-18 mx-auto max-w-6xl px-8">
             <div className='flex items-center justify-between pb-6'>
-                <Separator className='min-w-4 max-w-12 sm:max-w-24 md:max-w-3xs!' />
+                <Separator className='min-w-4 max-w-12 sm:max-w-24 lg:max-w-3xs!' />
                 <h4 className='text-2xl md:text-4xl font-semibold text-center shrink-0 max-w-[80vw] sm:max-w-none'>About The Founder</h4>
-                <Separator className='min-w-4 max-w-12 sm:max-w-24 md:max-w-3xs!' />
+                <Separator className='min-w-4 max-w-12 sm:max-w-24 lg:max-w-3xs!' />
             </div>
             <div className="flex justify-center py-5 md:py-10">
                 <Image src={"/assets/founder.png"} alt="" className="size-5/5" width={400} height={700}/>
@@ -78,6 +78,7 @@ function Founder() {
                             Measured judgement
                         </li>
                     </ul>
+                    {/* Repeats lines 44–47 verbatim — confirm this is intentional closing emphasis, not a copy-paste leftover */}
                     <p>The firm reflects this experience: technically disciplined, commercially aware, and governance-led.</p>
                     <p>Rather than positioning the firm around personality, Nexus is structured around professional standards and documented methodology.</p>
                 </div>

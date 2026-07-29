@@ -76,11 +76,11 @@ export default function GovernancePhilosophy() {
             <h3 className="text-base sm:text-lg text-foreground/70 leading-relaxed mb-4">
               Clients work with Nexus when they require more than routine
               compliance. They usually need clearer reporting, stronger controls,
-              defensible tax positions, better systems oversight or cross-border
+              defensible tax positions, better systems oversight or cross border
               financial structure.
             </h3>
             <h3 className="text-base sm:text-lg text-foreground/70 leading-relaxed">
-              Our work is partner-led, documented and proportionate to the
+              Our work is partner led, documented and proportionate to the
               complexity of each engagement. We focus on interpretation,
               governance and disciplined implementation rather than volume
               processing.

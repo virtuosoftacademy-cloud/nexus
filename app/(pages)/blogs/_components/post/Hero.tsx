@@ -73,6 +73,7 @@ export default function Hero({ post }: BlogPostHeroProps) {
             </h2>
 
             {/* Title */}
+            {/* Regex targets words from this one featured post's title — other posts won't get any highlight */}
             <h4 className="text-4xl md:text-[3.5rem] font-semibold text-foreground leading-tight max-w-4xl">
               <AccentedTitle title={title} accent={accent} />
             </h4>

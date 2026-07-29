@@ -54,7 +54,7 @@ export function ScrollToSection({ sections }: ScrollToSectionProps) {
   if (!activeConfig) return null;
 
   return (
-    <div className="z-50 hidden md:block">
+    <div className="z-50 hidden xl:block">
       {activeConfig.variant === "down" ? (
         <button
           onClick={() => scrollTo(activeConfig.targetId)}

@@ -15,7 +15,7 @@ type BlogPostProps={
 export function InsightsSection({ posts }: BlogPostProps) {
   return (
     <section className="bg-background py-10 md:py-20">
-      <div className="mx-auto px-8 md:px-18">
+      <div className="mx-auto px-8 lg:px-18">
         <h4 className="text-2xl md:text-4xl font-bold text-foreground mb-10 text-center md:text-left">
           Our Latest{" "}
           <span className="text-primary">Insights</span>

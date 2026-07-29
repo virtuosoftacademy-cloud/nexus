@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ContactFollow() {
     return (
-        <section className="py-16 px-8 sm:px-18">
+        <section className="py-16 px-8 lg:px-18">
                 <div className="flex flex-col pt-3 md:pt-12 text-lg md:text-2xl lg:text-[1.75rem] text-foreground/90 font-heading space-y-3 text-left z-10">
                     <h2 className="text-primary font-bold text-xl md:text-2xl">Enquiry Process</h2>
                     <div>
