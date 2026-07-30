@@ -1,13 +1,4 @@
-// ============================================================================
-// File: app/api/upload/route.ts
-// Purpose: Image upload endpoint for the admin forms. Receives multipart
-//          FormData { file, kind } where kind is "post" | "case-study",
-//          verifies the ADMIN session (route handlers are their own
-//          endpoints — they guard themselves), validates the file
-//          server-side, processes + stores via lib/r2-server, and returns
-//          { success, url } for the form to save in its image field.
-// Type: Route Handler (POST)
-// ============================================================================
+
 import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import { uploadImageToR2, type ImageKind } from "@/lib/r2-server";

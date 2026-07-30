@@ -1,24 +1,3 @@
-/**
- * ============================================================================
- * File: lib/r2-server.ts
- * Purpose: Server-side R2 utilities for the Nexus site. Import ONLY from
- *          server code (route handlers, server actions) — never from
- *          "use client" files. Adapted from the PropertyPro version:
- *            - Branding (logo/favicon) machinery removed
- *            - One image per entity: uploadImageToR2(file, kind) with
- *              kind "post" | "case-study" -> posts/ | case-studies/,
- *              matching lib/r2-client.ts objectKeyFor() key shape
- *            - sharp preprocessing simplified to what our slots need:
- *              cap width (default 2400, no enlargement), re-encode at
- *              quality 80 — heroes are served as-is (CSS background),
- *              so capping originals is what controls bandwidth
- *            - PutObjectCommand instead of multipart Upload (files are
- *              <=10MB, so @aws-sdk/lib-storage isn't needed)
- *          Install: npm i @aws-sdk/client-s3 sharp
- *          Env: R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY,
- *               R2_BUCKET, NEXT_PUBLIC_R2_PUBLIC_URL
- * ============================================================================
- */
 
 import {
     S3Client,
