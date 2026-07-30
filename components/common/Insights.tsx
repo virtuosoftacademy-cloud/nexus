@@ -13,6 +13,8 @@ type BlogPostProps={
 }
 
 export function InsightsSection({ posts }: BlogPostProps) {
+  if (!posts?.length) return null;
+
   return (
     <section className="bg-background py-10 md:py-20">
       <div className="mx-auto px-8 lg:px-18">

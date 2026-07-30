@@ -1,20 +1,29 @@
 // Server data-access — a FUNCTION, not a top-level awaited value.
+import { cache } from "react";
 import { prisma } from "@/lib/prisma";
 
-export function getCaseStudyCards() {
-    return prisma.caseStudy.findMany({
-        orderBy: { updatedAt: "desc" },
-        select: {
-            id: true,
-            slug: true,
-            heroTitle: true,
-            heroSubtitle: true,
-            heroImage: true,
-            industry: { select: { label: true } },
-            serviceAreas: { select: { label: true }, orderBy: { label: "asc" } },
-        },
-    });
-}
+// cache() dedupes across components in the same request; the try/catch
+// degrades to an empty list instead of crashing the page (or the build's
+// static generation) if the DB call fails — same pattern as getBlogData
+// in lib/blogActions.ts.
+export const getCaseStudyCards = cache(async () => {
+    try {
+        return await prisma.caseStudy.findMany({
+            orderBy: { updatedAt: "desc" },
+            select: {
+                id: true,
+                slug: true,
+                heroTitle: true,
+                heroSubtitle: true,
+                heroImage: true,
+                industry: { select: { label: true } },
+                serviceAreas: { select: { label: true }, orderBy: { label: "asc" } },
+            },
+        });
+    } catch {
+        return [];
+    }
+});
 
 
 import { type CaseStudyCardProps } from "@/app/(pages)/case-studies/_components/ui/CaseStudyCard";

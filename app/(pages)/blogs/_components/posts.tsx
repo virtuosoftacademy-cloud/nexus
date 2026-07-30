@@ -32,10 +32,11 @@ export default async function Posts() {
         <div className="flex flex-col gap-4">
 
           {/* ── Latest (Featured) ── */}
-          <h4 className="text-2xl md:text-4xl font-semibold text-foreground border-l-4 pl-3 border-primary">
-            Latest
-          </h4>
           {featured && (
+            <>
+            <h4 className="text-2xl md:text-4xl font-semibold text-foreground border-l-4 pl-3 border-primary">
+              Latest
+            </h4>
             <div className="bg-accent p-4">
               {/* Section heading with left teal bar */}
 
@@ -70,6 +71,7 @@ export default async function Posts() {
                 </div>
               </Link>
             </div>
+            </>
           )}
 
           {/* ── Category sections ── */}
@@ -87,27 +89,31 @@ export default async function Posts() {
               </div>
             </div>
           ))} */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {sidebarPosts.map((post) => (
-              <BlogCard key={post.id} post={post} />
-            ))}
-          </div>
+          {sidebarPosts.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {sidebarPosts.map((post) => (
+                <BlogCard key={post.id} post={post} />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* ══ RIGHT SIDEBAR ════════════════════════════════════════════════════ */}
-        <aside className="flex flex-col gap-4">
-          {/* Sidebar heading */}
-          <h4 className="text-lg md:text-2xl font-bold text-foreground mb-2 border-l-4 pl-3 border-primary">
-            More from Nexus
-          </h4>
+        {sidebarPosts.length > 0 && (
+          <aside className="flex flex-col gap-4">
+            {/* Sidebar heading */}
+            <h4 className="text-lg md:text-2xl font-bold text-foreground mb-2 border-l-4 pl-3 border-primary">
+              More from Nexus
+            </h4>
 
-          {/* Sidebar posts */}
-          <div className="space-y-6">
-            {sidebarPosts.map((post) => (
-              <SidebarPost key={post.id} post={post} />
-            ))}
-          </div>
-        </aside>
+            {/* Sidebar posts */}
+            <div className="space-y-6">
+              {sidebarPosts.map((post) => (
+                <SidebarPost key={post.id} post={post} />
+              ))}
+            </div>
+          </aside>
+        )}
 
       </div>
     </div>
