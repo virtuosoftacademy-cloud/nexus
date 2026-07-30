@@ -1,4 +1,4 @@
-
+'use client'
 import { HeroData} from "@/app/types/types";
 
 export default function Hero({ title, description, image, width }:HeroData) {

@@ -1,3 +1,4 @@
+'use client'
 
 import PhaseCard from "@/components/ui/IndustryCard";
 import { ModelsDataProps } from "../constant";

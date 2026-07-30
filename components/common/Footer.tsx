@@ -3,13 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Field, FieldDescription } from "../ui/field";
+import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Checkbox } from "../ui/checkbox";
-import { FacebookIcon } from "../ui/facebook";
-import { LinkedinIcon } from "../ui/linkedin";
-import { TwitterIcon } from "../ui/twitter";
-import { InstagramIcon } from "../ui/instagram";
-import { YoutubeIcon } from "../ui/youtube";
+import { Button } from "../ui/button";
 import { ScrollToSection } from "../scrolltosection";
 import { links } from "@/app/_constant";
 import { NewsletterForm } from "../newsletter/newsletter-form";
@@ -22,7 +19,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 text-center md:text-left px-6 md:px-0">
           <div className="space-y-10">
             <p className="text-base md:text-[1.2rem] text-muted-foreground md:max-w-lg leading-relaxed font-serif">
-              Stay ahead in a rapidly changing world. Subscribe to Nexus Insights — our monthly look at the critical issues facing global businesses.
+              Stay ahead in a rapidly changing world. Subscribe to Nexus Insights. Our monthly look at the critical issues facing global businesses.
             </p>
             <div className="flex justify-center md:justify-start">
               <Link href="/">
@@ -49,7 +46,7 @@ const Footer = () => {
             <NewsletterForm />
             <FieldDescription className="flex gap-2 pt-2 text-background items-center">
               <Checkbox id="terms" className="bg-background rounded-none text-sm md:text-base" />
-              <Label htmlFor="terms" className="font-normal text-xs md:text-base">* I have read and understand<Link href="#" className="underline underline-offset-4 decoration-primary">Nexus Privacy Notice.</Link>
+              <Label htmlFor="terms" className="font-normal text-xs md:text-base">* I have read and understand<Link href="/privacy-policy" className="underline underline-offset-4 decoration-primary">Nexus Privacy Notice.</Link>
               </Label>
             </FieldDescription>
 

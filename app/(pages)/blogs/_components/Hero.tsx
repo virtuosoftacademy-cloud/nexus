@@ -10,7 +10,7 @@ export default function Hero() {
                     Insights
                 </h4>
                 <p className="text-base md:text-lg font-serif text-foreground/70 leading-snug md:max-w-xl">
-                    Practical insight on accounting, tax, and governance for UK and UAE businesses. Written for decision-makers, not just accountants.
+                    Practical insight on accounting, tax, and governance for UK and UAE businesses. Written for decision makers, not just accountants.
                 </p>
             </div>
         </section>

@@ -1,3 +1,4 @@
+'use client'
 
 import Image from "next/image"
 import Link from "next/link"
@@ -31,11 +32,11 @@ export function ContactCta({
                                 {titleStart} <span className="text-primary">{titleHighlight}</span>
                             </h4>
 
-                            <p className="mt-4 max-w-lg font-serif text-sm leading-relaxed md:text-lg">
+                            <p className="mt-4 max-w-lg font-heading text-sm leading-relaxed md:text-lg">
                                 {intro}
                             </p>
 
-                            <p className="mt-5 font-serif text-sm md:text-lg">
+                            <p className="mt-5 font-heading text-sm md:text-lg">
                                 {listIntro}
                             </p>
 
@@ -57,7 +58,7 @@ export function ContactCta({
                                 ))}
                             </ul>
 
-                            <p className="mt-6 font-serif text-sm md:text-lg">
+                            <p className="mt-6 font-heading text-sm md:text-lg">
                                 {closing}
                             </p>
                         </CardContent>

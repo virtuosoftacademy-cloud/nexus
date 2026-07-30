@@ -10,7 +10,7 @@ export default function AboutService({ introParagraph, listIntro, optionalParagr
       <h2 className="whitespace-pre-line">
         {introParagraph}
       </h2>
-      <h2 className={cn("md:w-[30rem] max-w-full whitespace-pre-line", introClassName)}>{listIntro}</h2>
+      <p className={cn("max-w-full font-heading whitespace-pre-line", introClassName)}>{listIntro}</p>
       <h2 className={cn("whitespace-pre-line", serviceTitleClassName)}>{serviceAreasTitle}</h2>
       <div>
         <ul className="space-y-4 font-serif whitespace-pre-line">

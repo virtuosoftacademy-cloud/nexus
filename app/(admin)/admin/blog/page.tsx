@@ -9,7 +9,7 @@ export const metadata = { title: "Dashboard" };
 
 export const dynamic = "force-dynamic";
 
-export default async function AdminDashboardPage() {
+export default async function PostsPage() {
     // One round of parallel queries: the full post list for the table,
     // plus the three counts for the stat cards.
     const [posts, postCount, categoryCount, featuredCount] = await Promise.all([

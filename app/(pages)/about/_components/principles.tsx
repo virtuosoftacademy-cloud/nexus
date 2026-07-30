@@ -14,7 +14,7 @@ function Principles() {
                 value: "clarity-before-complexity",
                 trigger: "Clarity Before Complexity",
                 content:
-                "Financial systems should simplify commercial understanding — not obscure it.",
+                "Financial systems should simplify commercial understanding not obscure it.",
                 image:
                     `${ImageSrc}/clarity.png`,
                 alt: "Modern residential property exterior",

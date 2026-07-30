@@ -1,19 +1,4 @@
-/**
- * ============================================================================
- * File Path   : components/sections/services-stats.tsx
- * Purpose     : Stats strip section (value + icon + label, separated by
- *               vertical dividers on md+). Pages supply a bundled props
- *               constant through the renderer config:
- *                 { Component: ServicesStats, props: statsUk }
- *               where the constant is an OBJECT holding the stats:
- *                 export const statsUk: ServicesStatsProps = { stats: [...] }
- *               (The renderer spreads props, so the constant must be an
- *               object — a bare array would spread into numeric keys.)
- *               Renders nothing if stats are missing/empty. Types come from
- *               the page-level constant module.
- * Module Type : Server Component (no state or event handlers)
- * ============================================================================
- */
+'use client'
 
 import { Fragment } from "react";
 import { Separator } from "@/components/ui/separator";
@@ -35,7 +20,7 @@ export default function ServicesStats({ stats }: statsProps) {
           {stats.map((stat, index) => (
             <Fragment key={stat.id}>
               {index > 0 && (
-                <div className="items-center justify-center mx-6 lg:mx-10 2xl:mx-18 hidden lg:flex">
+                <div className="items-center justify-center mx-6 lg:mx-10 hidden lg:flex">
                   <Separator orientation="vertical" className="h-12 bg-primary/30" />
                 </div>
               )}
@@ -45,7 +30,7 @@ export default function ServicesStats({ stats }: statsProps) {
                 {/* Value + icon */}
 
                 <div className="flex items-center font-semibold">
-                  <div className="text-2xl sm:text-3xl md:text-4xl 2xl:text-[4rem] text-primary">
+                  <div className="text-2xl sm:text-3xl md:text-4xl 2xl:text-[4rem] text-primary whitespace-pre">
                     {stat.value}
                   </div>
                   {stat.icon && (
@@ -57,7 +42,7 @@ export default function ServicesStats({ stats }: statsProps) {
 
                 {/* Label */}
                 <div>
-                  <h4 className="text-xs md:text-base text-foreground/70 leading-snug max-w-52 lg:max-w-40 2xl:max-w-52">
+                  <h4 className="text-xs md:text-base text-foreground/70 leading-snug max-w-52 lg:max-w-40 ">
                     {stat.label}
                   </h4>
                 </div>

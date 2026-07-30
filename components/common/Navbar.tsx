@@ -67,7 +67,25 @@ export default function Navbar() {
     const navBg = showLight ? "bg-white shadow-sm" : "bg-transparent shadow-none";
     const textColor = showLight ? "text-foreground" : "text-accent";
     const logoSrc = showLight ? "/assets/logo.png" : "/assets/logo-white.png";
+    type NavChild = { label: string; href: string; icon?: string; description?: string };
+    type NavLink = { label: string; href: string; children?: NavChild[] };
 
+    const navMenuLink: NavLink[] = [
+        { label: "Home", href: "/" },
+        {
+            label: "Services",
+            href: "/services",
+            children: serviceItems.map((s) => ({
+                label: s.title,
+                href: s.href,
+                icon: s.icon,
+                description: s.description,
+            })),
+        },
+        { label: "Insights", href: "/blogs" },
+        { label: "Case Studies", href: "/case-studies" },
+        { label: "About", href: "/about" },
+    ];
     return (
         <nav
             id="nav"
@@ -85,77 +103,48 @@ export default function Navbar() {
                         alt="Nexus Logo"
                         width={160}
                         height={48}
-                        className="transition-all duration-300 h-6 md:h-10 -mr-8 md:mr-0"
+                        className="transition-all duration-300 h-8 md:h-10 -mr-8 md:mr-0"
                         priority
                     />
                 </Link>
 
                 {/* Desktop nav */}
-                <div className="hidden lg:flex items-center gap-8">
-                    <NavigationMenu
-                        onValueChange={(val) => setServicesOpen(val !== "")}
-                        className="pr-10"
-                    >
-                        <NavigationMenuList className="gap-1">
-                            <NavigationMenuItem>
-                                <NavigationMenuLink
-                                    className={cn(navigationMenuTriggerStyle(), "bg-transparent! hover:text-primary")}
-                                    href="/"
-                                >
-                                    Home
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-
-                            <NavigationMenuItem value="services">
-                                <NavigationMenuLink href={"/services"}>
-                                    <NavigationMenuTrigger className="bg-transparent! hover:text-primary">Services</NavigationMenuTrigger>
-                                </NavigationMenuLink>
-                                <NavigationMenuContent>
-                                    <div className="w-[min(70rem,92vw)] py-4 px-7">
-                                        <h4 className="text-sm text-muted-foreground leading-snug pb-4">Services</h4>
-                                        <ul className="grid grid-cols-2 xl:grid-cols-3 text-sm">
-                                            {serviceItems.map((item) => (
-                                                <ListItem key={item.title} icon={item.icon} title={item.title} href={item.href}>
-                                                    {item.description}
-                                                </ListItem>
-                                            ))}
-                                        </ul>
-                                        <div className="pt-4 pb-2">
-                                            <hr className="text-muted-foreground" />
-                                            <h4 className="text-sm text-muted-foreground leading-snug pt-4">Structured financial advisory, accounting, governance and systems oversight across the UK and UAE.</h4>
-                                        </div>
-                                    </div>
-                                </NavigationMenuContent>
-                            </NavigationMenuItem>
-
-                            <NavigationMenuItem>
-                                <NavigationMenuLink
-                                    className={cn(navigationMenuTriggerStyle(), "bg-transparent! hover:text-primary")}
-                                    href="/blogs"
-                                >
-                                    Insights
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-
-
-                            <NavigationMenuItem>
-                                <NavigationMenuLink
-                                    className={cn(navigationMenuTriggerStyle(), "bg-transparent! hover:text-primary")}
-                                    href="/case-studies"
-                                >
-                                    Case Studies
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-
-                            <NavigationMenuItem>
-                                <NavigationMenuLink
-                                    className={cn(navigationMenuTriggerStyle(), "bg-transparent! hover:text-primary")}
-                                    href="/about"
-                                >
-                                    About
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-
+                <div className="hidden lg:flex items-center">
+                    <NavigationMenu>
+                        <NavigationMenuList>
+                            {navMenuLink.map((item) =>
+                                item.children ? (
+                                    <NavigationMenuItem key={item.label} value={item.label.toLowerCase()} className="z-10">
+                                        <NavigationMenuTrigger className="bg-transparent! hover:text-primary">
+                                            <NavigationMenuLink href={item.href}>
+                                                {item.label}
+                                            </NavigationMenuLink>
+                                        </NavigationMenuTrigger>
+                                        <NavigationMenuContent >
+                                            <div className="w-[min(70rem,92vw)] py-4 px-7">
+                                                <h4 className="text-sm text-muted-foreground leading-snug pb-4">{item.label}</h4>
+                                                <ul className="grid grid-cols-2 xl:grid-cols-3 text-sm">
+                                                    {item.children.map((c) => (
+                                                        <ListItem key={c.label} icon={c.icon} title={c.label} href={c.href}>
+                                                            {c.description}
+                                                        </ListItem>
+                                                    ))}
+                                                </ul>
+                                                <p className="text-sm text-muted-foreground leading-snug border-muted-foreground/60 border-t pt-4">Structured financial advisory, accounting, governance and systems oversight across the UK and UAE.</p>
+                                            </div>
+                                        </NavigationMenuContent>
+                                    </NavigationMenuItem>
+                                ) : (
+                                    <NavigationMenuItem key={item.label}>
+                                        <NavigationMenuLink
+                                            className={cn(navigationMenuTriggerStyle(), "bg-transparent! hover:text-primary")}
+                                            href={item.href}
+                                        >
+                                            {item.label}
+                                        </NavigationMenuLink>
+                                    </NavigationMenuItem>
+                                )
+                            )}
                         </NavigationMenuList>
                     </NavigationMenu>
 
@@ -198,7 +187,7 @@ export default function Navbar() {
                                 onClick={() => setMobileServicesOpen((open) => !open)}
                             >
                                 <Link href={"/services"}>
-                                Services
+                                    Services
                                 </Link>
                                 <ChevronUp
                                     className={cn(

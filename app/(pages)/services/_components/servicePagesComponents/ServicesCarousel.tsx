@@ -121,10 +121,10 @@ export function ServicesCarousel({
                 <CarouselContent>
                     {slides.map((slide) => (
                         <CarouselItem key={slide.id}>
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 h-full xl:h-[42em]">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 h-full sm:h-full lg:h-[46em]">
                                 {/* --- Left card: service description --- */}
                                 <Card className="rounded-none border-0 shadow-none">
-                                    <CardContent className="p-8 md:py-4 md:px-10">
+                                    <CardContent className="p-8 md:p-10">
                                         <IconChip src={slide.icon} alt={slide.iconAlt} />
 
                                         <h4 className="text-lg font-semibold leading-snug md:text-xl whitespace-pre-line">

@@ -7,6 +7,6 @@ export default middleware;
 
 // middleware.ts
 export const config = {
-    matcher: ["/admin", "/admin/view-page", "/admin/new-post", "/admin/posts/:path*", "/admin/categories"],
+    matcher: ["/admin", "/admin/:path*"],
 };
 

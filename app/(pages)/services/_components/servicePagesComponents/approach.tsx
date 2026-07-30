@@ -1,3 +1,4 @@
+'use client'
 
 import { ApproachImage, ApproachRowData } from "@/app/types/types";
 import Image from "next/image";
@@ -49,7 +50,7 @@ function ApproachImageBlock({
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover hover:scale-110 duration-500 transition"
+                className="object-fill hover:scale-110 duration-500 transition"
                 loading="lazy"
             />
         </div>
@@ -67,7 +68,7 @@ function ApproachRow({ row }: { row: ApproachRowData }) {
                 />
                 <ApproachImageBlock
                     image={row.image}
-                    className="relative w-full aspect-4/3 lg:aspect-auto lg:min-h-100 overflow-hidden"
+                    className="relative w-full aspect-4/3 lg:aspect-auto lg:min-h-110 overflow-hidden"
                 />
             </div>
         );
@@ -77,7 +78,7 @@ function ApproachRow({ row }: { row: ApproachRowData }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 px-4 md:px-0">
             <ApproachImageBlock
                 image={row.image}
-                className="relative w-full aspect-4/3 lg:aspect-auto lg:min-h-100 overflow-hidden order-1 lg:order-0"
+                className="relative w-full aspect-4/3 lg:aspect-auto lg:min-h-110 overflow-hidden order-1 lg:order-0"
             />
             <ApproachText
                 row={row}

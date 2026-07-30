@@ -1,7 +1,8 @@
 import type { NextAuthConfig } from "next-auth";
+import { NextResponse } from "next/server";
 
 // Keep this list in sync with the matcher in middleware.ts.
-const PROTECTED_PREFIXES = ["/admin","/admin/view-page", "/admin/new-post", "/admin/posts", "/admin/categories"];
+const PROTECTED_PREFIXES = ["/admin"];
 
 export const authConfig = {
     pages: {
@@ -36,7 +37,11 @@ export const authConfig = {
                 pathname.startsWith(p)
             );
             if (!isProtected) return true;
-            return auth?.user?.role === "ADMIN";
+            if (auth?.user?.role === "ADMIN") return true;
+            // Hide the admin area from unauthorised visitors — a blocked
+            // admin route renders as a plain 404 rather than bouncing to
+            // /signin (which would reveal that the route exists at all).
+            return NextResponse.rewrite(new URL("/admin/not-found", request.url));
         },
     },
     providers: [], // real providers live in auth.ts
