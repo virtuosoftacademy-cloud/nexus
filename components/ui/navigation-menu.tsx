@@ -170,13 +170,15 @@ function ListItem({ icon, title, children, href, ...props }: ListItemProps) {
         >
           <div className="flex items-start gap-2 px-3 py-4">
             <div className="relative size-10 mt-0.5 border p-1 flex items-center justify-center">
-              <Image
-                src={icon}
-                alt={title}
-                width={40}
-                height={40}
-                className="size-6 transition-[filter] duration-200 group-hover:brightness-0 group-hover:invert"
-              />
+              {icon && (
+                <Image
+                  src={icon}
+                  alt={title}
+                  width={40}
+                  height={40}
+                  className="size-6 transition-[filter] duration-200 group-hover:brightness-0 group-hover:invert"
+                />
+              )}
             </div>
             <div className="flex flex-col gap-1 text-sm pt-1">
               <div className="leading-none font-medium text-base text-primary transition-colors group-hover:text-primary-foreground">
