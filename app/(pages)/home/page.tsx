@@ -9,9 +9,10 @@ import CoreServicesSection from "./_components/CoreServices";
 import StatsBar from "./_components/Stats";
 import ProfessionalMemberships from "./_components/Membership";
 import GovernancePhilosophy from "./_components/Governance";
-import { blogPosts } from "@/lib/blogActions";
+import { getBlogData } from "@/lib/blogActions";
 
-export default function Homepage() {
+export default async function Homepage() {
+  const { blogPosts } = await getBlogData();
 
   return (
     <div className="min-h-screen">

@@ -6,9 +6,11 @@ import Faq from '@/components/common/Faq'
 import TestimonialsSection from '@/components/common/Testimonials'
 import { faqsHome } from '@/app/_constant'
 import { InsightsSection } from '../../../components/common/Insights'
-import { blogPosts } from '@/lib/blogActions'
+import { getBlogData } from '@/lib/blogActions'
 
-export default function Contact() {
+export default async function Contact() {
+    const { blogPosts } = await getBlogData();
+
     return (
         <div>
             <div>

@@ -1,6 +1,6 @@
 // components/blog/BlogPostContent.tsx
 
-import { sidebarPosts } from "@/lib/blogActions";
+import { getBlogData } from "@/lib/blogActions";
 import SidebarPost from "@/components/ui/SidebarPost";
 import { BlogPost } from "@/app/types/types";
 
@@ -8,8 +8,10 @@ interface BlogPostContentProps {
     post: BlogPost;
 }
 
-export default function PostContent({ post }: BlogPostContentProps) {
+export default async function PostContent({ post }: BlogPostContentProps) {
     if (!post) return null;
+
+    const { sidebarPosts } = await getBlogData();
 
     const { content } = post;
 

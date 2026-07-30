@@ -16,12 +16,13 @@ import Link from "next/link";
 import { Clock } from "lucide-react";
 import BlogCard from "@/components/ui/BlogCard";
 import SidebarPost from "@/components/ui/SidebarPost";
-import { featured, sidebarPosts } from "@/lib/blogActions";
+import { getBlogData } from "@/lib/blogActions";
 import Image from "next/image";
 import { coverOf } from "@/lib/blog-image";
 import SafeImage from "@/components/ui/safeimage";
 
 export default async function Posts() {
+  const { featured, sidebarPosts } = await getBlogData();
 
   return (
     <div className="min-h-screen pt-12">
