@@ -2,7 +2,7 @@
 
 import { BlogPost } from "@/app/types/types";
 import { Button } from "@/components/ui/button";
-import { coverOf } from "@/lib/blog-image";
+import { coverOf } from "@/lib/blog-actions/blog-image";
 import SafeImage from "../ui/safeimage";
 
 const GRADIENT_FROM = "hsl(172 66% 22%)";

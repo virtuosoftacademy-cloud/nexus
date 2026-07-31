@@ -1,6 +1,6 @@
 // components/blog/BlogPostContent.tsx
 
-import { getBlogData } from "@/lib/blogActions";
+import { getBlogData } from "@/lib/blog-actions/blogActions";
 import SidebarPost from "@/components/ui/SidebarPost";
 import { BlogPost } from "@/app/types/types";
 

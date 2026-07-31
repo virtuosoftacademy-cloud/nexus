@@ -9,7 +9,7 @@ import CoreServicesSection from "./_components/CoreServices";
 import StatsBar from "./_components/Stats";
 import ProfessionalMemberships from "./_components/Membership";
 import GovernancePhilosophy from "./_components/Governance";
-import { getBlogData } from "@/lib/blogActions";
+import { getBlogData } from "@/lib/blog-actions/blogActions";
 
 export default async function Homepage() {
   const { blogPosts } = await getBlogData();

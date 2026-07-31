@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Clock } from "lucide-react";
 import Image from "next/image";
 import { BlogPost } from "@/app/types/types";
-import { coverOf } from "@/lib/blog-image";
+import { coverOf } from "@/lib/blog-actions/blog-image";
 import SafeImage from "./safeimage";
 
 interface BlogCardProps {

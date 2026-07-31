@@ -16,9 +16,9 @@ import Link from "next/link";
 import { Clock } from "lucide-react";
 import BlogCard from "@/components/ui/BlogCard";
 import SidebarPost from "@/components/ui/SidebarPost";
-import { getBlogData } from "@/lib/blogActions";
+import { getBlogData } from "@/lib/blog-actions/blogActions";
 import Image from "next/image";
-import { coverOf } from "@/lib/blog-image";
+import { coverOf } from "@/lib/blog-actions/blog-image";
 import SafeImage from "@/components/ui/safeimage";
 
 export default async function Posts() {

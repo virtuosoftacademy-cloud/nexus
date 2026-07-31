@@ -8,7 +8,7 @@ import { FacebookIcon } from "@/components/ui/facebook";
 import { TwitterIcon } from "@/components/ui/twitter";
 import Link from "next/link";
 import Image from "next/image";
-import { coverOf } from "@/lib/blog-image";
+import { coverOf } from "@/lib/blog-actions/blog-image";
 import SafeImage from "@/components/ui/safeimage";
 
 interface BlogPostHeroProps {
