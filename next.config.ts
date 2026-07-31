@@ -12,6 +12,27 @@ try {
 const nextConfig: NextConfig = {
   serverExternalPackages: ["mariadb", "@prisma/adapter-mariadb"],
 
+  // Hostinger builds with output:"standalone", which ships only the files Next's
+  // tracer can follow. `mariadb` resolves through conditional "exports"
+  // (./dist/promise.cjs), which the tracer misses — it copied package.json and
+  // nothing else, so the driver failed to load at runtime and every Prisma query
+  // died with "pool timeout ... active=0 idle=0". Force-copy these packages.
+  // The whole chain must be listed: the tracer misses mariadb's transitive
+  // deps (iconv-lite, lru-cache, denque) for the same "exports" reason, and
+  // each one copied as a bare package.json breaks the require() the moment
+  // the driver loads.
+  outputFileTracingIncludes: {
+    "/**": [
+      "./node_modules/mariadb/**/*",
+      "./node_modules/@prisma/adapter-mariadb/**/*",
+      "./node_modules/@prisma/driver-adapter-utils/**/*",
+      "./node_modules/@prisma/debug/**/*",
+      "./node_modules/iconv-lite/**/*",
+      "./node_modules/safer-buffer/**/*",
+      "./node_modules/lru-cache/**/*",
+      "./node_modules/denque/**/*",
+    ],
+  },
 
   images: {
     remotePatterns: [
