@@ -125,7 +125,7 @@ async function main() {
             accent: "checklist",
             category: "Renting",
             date: "2026-07-18",
-            image: "/images/posts/first-time-renter.jpg",
+            image: "/assets/propertyandconstruction.png",
             isFeatured: true,
             isSidebar: false,
             excerpt:
@@ -141,7 +141,7 @@ Before signing, confirm the deposit will be protected in a government-approved s
             accent: "actually afford",
             category: "Renting",
             date: "2026-07-12",
-            image: "/images/posts/rent-affordability.jpg",
+            image: "/assets/financialadvisory.png",
             isFeatured: false,
             isSidebar: true,
             excerpt:
@@ -157,7 +157,7 @@ Our rule of thumb for clients: if a property only works when nothing goes wrong,
             accent: "deposit rights",
             category: "Renting",
             date: "2026-07-05",
-            image: "/images/posts/deposit-rights.jpg",
+            image: "/assets/vat.png",
             isFeatured: false,
             isSidebar: false,
             excerpt:
@@ -173,7 +173,7 @@ If you disagree with a deduction, don't accept a partial refund as final. Every 
             accent: "negotiable",
             category: "Renting",
             date: "2026-06-27",
-            image: "/images/posts/rent-increase.jpg",
+            image: "/assets/advisoryandservices.png",
             isFeatured: false,
             isSidebar: true,
             excerpt:
@@ -236,7 +236,7 @@ Counter-offering is normal and expected. A reasonable response acknowledges the 
             heroTitle: "Finance transformation for a regional property group",
             heroSubtitle:
                 "How a 120-unit portfolio moved from spreadsheet chaos to monthly management accounts in ninety days.",
-            heroImage: "/images/case-studies/property-group.jpg",
+            heroImage: "/assets/services/propertyAccounting.png",
             industry: "Property & Real Estate",
             serviceAreas: ["Management Accounts", "Systems Migration", "Advisory"],
 
@@ -298,7 +298,7 @@ Lender reporting pack produced on demand instead of on request`,
             heroTitle: "Project profitability for a 40-person architecture practice",
             heroSubtitle:
                 "Turning timesheets into a live view of which projects pay — and which quietly do not.",
-            heroImage: "/images/case-studies/architecture-practice.jpg",
+            heroImage: "/assets/services/businessConsultancy.png",
             industry: "Professional Services",
             serviceAreas: ["Management Accounts", "Payroll", "Advisory"],
 
@@ -360,7 +360,7 @@ Two service lines repriced on evidence rather than instinct`,
             heroTitle: "Surviving the shoulder season: cash flow for a hospitality group",
             heroSubtitle:
                 "Four sites, one seasonal revenue curve, and a rolling forecast that replaced the January scramble.",
-            heroImage: "/images/case-studies/hospitality-group.jpg",
+            heroImage: "/assets/services/solutions.png",
             industry: "Hospitality & Leisure",
             serviceAreas: ["Cash Flow Forecasting", "Tax Planning", "Advisory"],
 

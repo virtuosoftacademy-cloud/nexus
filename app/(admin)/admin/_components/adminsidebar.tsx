@@ -1,15 +1,4 @@
-// ============================================================================
-// File: app/(admin)/_components/AdminSidebar.tsx
-// Purpose: Admin navigation built on shadcn/ui's Sidebar primitives
-//          (npx shadcn@latest add sidebar). Two groups — Blog and Case
-//          Studies — with matching route conventions:
-//            Blog:          /view-page, /new-post, /categories
-//            Case Studies:  /view-case-studies, /new-case-study
-//          Client component so usePathname can highlight the active item.
-//          Session email + sign-out arrive as props/children from the
-//          server layout (this file never touches auth itself).
-// Type: Client Component ("use client")
-// ============================================================================
+
 "use client";
 
 import Link from "next/link";
@@ -138,7 +127,7 @@ export function AdminSidebar({
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
-                            <Link href="/blogs">
+                            <Link href="/">
                                 <ExternalLink />
                                 <span>View site</span>
                             </Link>
