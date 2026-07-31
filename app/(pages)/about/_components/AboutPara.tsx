@@ -14,7 +14,7 @@ function AboutParagraph() {
                         </strong>
                     </p>
                     <p>
-                        Many businesses expand through new contracts, asset acquisitions, cross-border activity, or operational scale without strengthening the financial architecture that underpins those activities. Over time, this imbalance creates inefficiency, ambiguity, and avoidable risk.
+                        Many businesses expand through new contracts, asset acquisitions, cross border activity, or operational scale without strengthening the financial architecture that underpins those activities. Over time, this imbalance creates inefficiency, ambiguity, and avoidable risk.
                     </p>
                     <p>
                         Nexus exists to introduce structure where complexity has begun to outpace control.

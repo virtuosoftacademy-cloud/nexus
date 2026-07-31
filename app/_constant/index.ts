@@ -74,7 +74,7 @@ export const TABS: TabConfig[] = [
     tag: "Financial Advisory",
     heading: "Financial Structure, \nGovernance and Advisory \nfor Growing Businesses",
     subtitle:
-      "Structured accounting, defensible tax positions, and financial disciplinefor owner managed businesses, property groups, and construction enterprises that need more than routine compliance.",
+      "Structured accounting, defensible tax positions, and financial discipline for owner managed businesses, property groups, and construction enterprises that need more than routine compliance.",
     cta: { label: "SPEAK TO AN ADVISER", href: "#" },
   },
   {
@@ -84,7 +84,7 @@ export const TABS: TabConfig[] = [
     tag: "Strategic Financial Advisory",
     heading: "Compliance Tells You What Happened. Advisory Tells You What to Do Next.",
     subtitle:
-      "CFO level financial interpretation, governance design, and cashflow planningfor founders and directors who need structured oversight without the full time overhead.",
+      "CFO level financial interpretation, governance design, and cashflow planning for founders and directors who need structured oversight without the full time overhead.",
     cta: { label: "EXPLORE ADVISORY SERVICES", href: "#" },
   },
   {
@@ -94,7 +94,7 @@ export const TABS: TabConfig[] = [
     tag: "Systems & Solutions",
     heading: "Technology Doesn’t Fix \nPoor Financial Governance.",
     subtitle:
-      "Governance led oversight for ERP implementation, platform migration, and reporting automationensuring every system decision is driven by financial requirements, not vendor preference.",
+      "Governance led oversight for ERP implementation, platform migration, and reporting automation ensuring every system decision is driven by financial requirements, not vendor preference.",
     cta: { label: "EXPLORE DIGITAL SOLUTIONS", href: "#" },
   },
   {
@@ -104,7 +104,7 @@ export const TABS: TabConfig[] = [
     tag: "Property & Construction Advisory",
     heading: "Your Margins Are Under Pressure. Your Reporting Should Tell You Exactly Where.",
     subtitle:
-      "Specialist accounting for SPV structures, project cost tracking, CIS compliance, VAT on construction activities, and working capital disciplinebuilt for the full financial complexity of property and construction businesses.",
+      "Specialist accounting for SPV structures, project cost tracking, CIS compliance, VAT on construction activities, and working capital discipline built for the full financial complexity of property and construction businesses.",
     cta: { label: "EXPLORE PROPERTY & CONSTRUCTION", href: "#" },
   },
 ];
@@ -139,7 +139,7 @@ export const CoreServices: CoreService[] = [
     icon: "/assets/accountingandtax.svg",
     title: "Accounting & Tax",
     description:
-      "Statutory accounts, VAT, corporation tax, and payroll — structured around financial discipline for UK and UAE businesses, not just filing deadlines.",
+      "Statutory accounts, VAT, corporation tax, and payroll structured around financial discipline for UK and UAE businesses, not just filing deadlines.",
     href: "/services/uk-accounting-and-tax",
   },
   {
@@ -147,7 +147,7 @@ export const CoreServices: CoreService[] = [
     icon: "/assets/advisoryandgovernance.svg",
     title: "Advisory & Governance",
     description:
-      "CFO level financial interpretation, cashflow planning, and governance designwithout the full time overhead. Built for founders and directors who need clarity, not more reports.",
+      "CFO level financial interpretation, cashflow planning, and governance design without the full time overhead. Built for founders and directors who need clarity, not more reports.",
     href: "/services/advisory-services",
   },
   {
@@ -163,7 +163,7 @@ export const CoreServices: CoreService[] = [
     icon: "/assets/authoritysupport.svg",
     title: "Tax Authority Support",
     description:
-      "Documentation led support for businesses facing VAT compliance checks, corporation tax enquirers and HMRC correspondencefocused on measured response, not escalation.",
+      "Documentation led support for businesses facing VAT compliance checks, corporation tax enquiries and HMRC correspondence focused on measured response, not escalation.",
     href: "/services/tax-authority-support",
   },
   {
@@ -178,7 +178,7 @@ export const CoreServices: CoreService[] = [
     id: "cs-6",
     icon: "/assets/digitalandsystemsadvisory.svg",
     title: "Digital & Systems Advisory",
-    description: "We help organizations leverage technology to optimize processes, enhance efficiency, and accelerate digital transformation through tailored systems, automation and technology strategies.",
+    description: "We help organisations leverage technology to optimise processes, enhance efficiency, and accelerate digital transformation through tailored systems, automation and technology strategies.",
     href: "/services/digital-and-systems-advisory",
   },
 ];
@@ -222,7 +222,7 @@ export const insights: InsightCard[] = [
 export interface PlatForm {
   id: string;
   name: string;
-  /** SVG logo as a URL or inlineuse public CDN logos */
+  /** SVG logo as a URL or inline — use public CDN logos */
   logoUrl: string;
 }
 
@@ -276,7 +276,7 @@ export const bulletPoints: string[] = [
   "Finance led platform selection not vendor driven",
   "Chart of accounts designed around your reporting needs",
   "Migration oversight with data integrity validation",
-  "Post-implementation review before full acceptance",
+  "Post implementation review before full acceptance",
 ];
 
 
@@ -347,7 +347,7 @@ export interface Testimonial {
   name: string;
   rating: number; // out of 5
   review: string;
-  avatarUrl?: string; // optionalfalls back to initials
+  avatarUrl?: string; // optional — falls back to initials
   avatarInitial?: string;
 }
 
@@ -449,14 +449,14 @@ export const faqsHome: FaqItem[] = [
     value: "item-2",
     question: "Do you only handle compliance, or do you offer strategic advice too?",
     answer:
-      "Both — but our focus goes well beyond compliance. We prepare statutory accounts, VAT returns, and tax filings, but our core value is the advisory layer on top: interpreting what the numbers mean, identifying structural risk, and helping leadership make better financial decisions. Compliance is the floor, not the ceiling."
+      "Both, but our focus goes well beyond compliance. We prepare statutory accounts, VAT returns, and tax filings, but our core value is the advisory layer on top: interpreting what the numbers mean, identifying structural risk, and helping leadership make better financial decisions. Compliance is the floor, not the ceiling."
   },
   {
     id: "faq-3",
     value: "item-3",
     question: "Can you support businesses operating in both the UK and UAE?",
     answer:
-      "Yes. Cross-border alignment between UK and UAE entities is one of our core practice areas. We support structural alignment, intercompany reporting clarity, VAT treatment across jurisdictions, and corporate tax readiness in the UAE — ensuring operations in one jurisdiction don’t create unintended exposure in the other.",
+      "Yes, cross border alignment between UK and UAE entities is one of our core practice areas. We support structural alignment, intercompany reporting clarity, VAT treatment across jurisdictions, and corporate tax readiness in the UAE, ensuring operations in one jurisdiction don’t create unintended exposure in the other.",
   },
   {
     id: "faq-4",
@@ -470,21 +470,21 @@ export const faqsHome: FaqItem[] = [
     value: "item-5",
     question: "What does a typical engagement look like?",
     answer:
-      "Every engagement begins with a structured diagnostic — not a sales call. We assess your current reporting, tax exposure, and governance gaps before recommending anything. From there, scope is defined clearly with documented deliverables. Engagements can be monthly, quarterly, or project-based depending on your needs.",
+      "Every engagement begins with a structured diagnostic, not a sales call. We assess your current reporting, tax exposure, and governance gaps before recommending anything. From there, scope is defined clearly with documented deliverables. Engagements can be monthly, quarterly, or project-based depending on your needs.",
   },
   {
     id: "faq-6",
     value: "item-6",
     question: "Do you support businesses during HMRC enquiries?",
     answer:
-      "Yes. We provide structured support for VAT compliance checks, corporation tax enquiries, CIS queries, and PAYE reviews. Our approach is documentation-led and professionally framed — focused on measured response rather than escalation. We do not provide tribunal litigation services.",
+      "Yes, we provide structured support for VAT compliance checks, corporation tax enquiries, CIS queries, and PAYE reviews. Our approach is documentation-led and professionally framed, focused on measured response rather than escalation. We do not provide tribunal litigation services.",
   },
   {
     id: "faq-7",
     value: "item-7",
     question: "Can you help with ERP or accounting software implementation?",
     answer:
-      "Yes but not as a software developer. We provide governance led oversight for ERP and accounting platform implementations, ensuring systems are designed around financial requirements, not vendor preferences. We define scope, oversee configuration, and validate outputs before sign-off. Technical build is delivered through approved specialist partners under Nexus oversight.",
+      "Yes, but not as a software developer. We provide governance led oversight for ERP and accounting platform implementations, ensuring systems are designed around financial requirements, not vendor preferences. We define scope, oversee configuration, and validate outputs before sign-off. Technical build is delivered through approved specialist partners under Nexus oversight.",
   },
   {
     id: "faq-8",
@@ -498,7 +498,7 @@ export const faqsHome: FaqItem[] = [
     value: "item-9",
     question: "How do we get started?",
     answer:
-      "Submit an enquiry through our Contact page. All enquiries are reviewed by senior advisory personnel to assess fit before a conversation is booked. From there: a short introductory discussion, a diagnostic review, and a clearly defined proposal. We operate with intention — not every enquiry becomes an engagement, and that’s by design.",
+      "Submit an enquiry through our Contact page. All enquiries are reviewed by senior advisory personnel to assess fit before a conversation is booked. From there: a short introductory discussion, a diagnostic review, and a clearly defined proposal. We operate with intention, not every enquiry becomes an engagement, and that’s by design.",
   },
 ];
 

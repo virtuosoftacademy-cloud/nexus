@@ -15,7 +15,7 @@ const intersectionUk: IntersectionProps = {
         ],
         [
             "Commercial interpretation",
-            "Cross-border alignment",
+            "Cross border alignment",
         ],
     ],
 }
@@ -75,7 +75,7 @@ function Different() {
                         <strong>Our Advisory Perspective</strong>
                     </h3>
                     <p>
-                        We do not position ourselves as a volume-driven practice.
+                        We do not position ourselves as a volume driven practice.
                     </p>
                     <p>
                         We operate as a boutique advisory firm, working with organisations that:
@@ -99,7 +99,7 @@ function Different() {
                         </li>
 
                     </ul>
-                    <p>Financial reporting is not merely a statutory requirement. It is a governance instrument. When structured correctly, it supports confident decision-making. When neglected, it becomes an administrative burden that obscures risk.</p>
+                    <p>Financial reporting is not merely a statutory requirement. It is a governance instrument. When structured correctly, it supports confident decision making. When neglected, it becomes an administrative burden that obscures risk.</p>
                 </div>
             </div>
 

@@ -23,7 +23,7 @@ export type DbConfig = {
 const DEFAULTS = {
     host: "localhost",
     port: 3306,
-    user: "root",
+    user: "",
     password: "",
     connectionLimit: 5,
 };

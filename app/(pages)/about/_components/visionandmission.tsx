@@ -12,7 +12,7 @@ function Visionandmission() {
                     </span>
                 </h4>
                 <p className="font-serif text-foreground/70 text-base md:text-lg max-w-xl">
-                    To introduce financial structure, discipline, and governance into businesses where complexity has begun to outpace control – so that growth is built on a foundation that holds up under scrutiny, not one that collapses under it.
+                    To introduce financial structure, discipline, and governance into businesses where complexity has begun to outpace control, so that growth is built on a foundation that holds up under scrutiny, not one that collapses under it.
                 </p>
                 <div className="overflow-hidden">
                 <Image src={"assets/mission.png"} className="max-w-2xl w-xs md:w-2xl hover:scale-110 transition-transform duration-300 ease-in-out" alt="Our Mission" width={"40"} height={"40"} />
@@ -25,7 +25,7 @@ function Visionandmission() {
                     </span>
                 </h4>
                 <p className="font-serif text-foreground/70 text-base md:text-lg max-w-xl">
-                    To be the advisory firm that growing businesses in the UK and UAE turn to when they need more than compliance – when they need financial clarity, structural integrity, and a long-term partner who operates with the same discipline they aspire to.
+                    To be the advisory firm that growing businesses in the UK and UAE turn to when they need more than compliance, when they need financial clarity, structural integrity, and a long-term partner who operates with the same discipline they aspire to.
                 </p>
                 <div className="overflow-hidden">
                 <Image src={"assets/vision.png"} className="max-w-2xl w-xs md:w-2xl hover:scale-110 transition-transform duration-300 ease-in-out" alt="Our Mission" width={"40"} height={"40"} />

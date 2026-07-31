@@ -121,7 +121,7 @@ async function main() {
     // ════════════════════════════════════════════════════════════════
     const postsData = [
         {
-            title: "The complete first-time renter's checklist",
+            title: "The complete first time renter's checklist",
             accent: "checklist",
             category: "Renting",
             date: "2026-07-18",
@@ -129,7 +129,7 @@ async function main() {
             isFeatured: true,
             isSidebar: false,
             excerpt:
-                "From viewing to move-in day: the documents, questions, and small print every first-time tenant should have covered before signing.",
+                "From viewing to move in day: the documents, questions, and small print every first time tenant should have covered before signing.",
             content: `Renting your first home is equal parts exciting and confusing. Between referencing checks, deposits, and a tenancy agreement full of unfamiliar terms, it's easy to say yes to things you don't fully understand.
 
 Start with the viewing: check water pressure, test every window, ask about council tax banding and average utility bills, and look for damp in corners and behind furniture. A ten-minute inspection now saves months of complaints later.
@@ -166,7 +166,7 @@ Our rule of thumb for clients: if a property only works when nothing goes wrong,
 
 Deductions at the end of a tenancy have to reflect actual loss: unpaid rent, damage beyond fair wear and tear, or missing items from the inventory. Faded paint and worn carpet after three years of normal living are not damage — they're depreciation.
 
-If you disagree with a deduction, don't accept a partial refund as final. Every protection scheme includes a free dispute resolution service, and the burden of evidence sits with the landlord, which is exactly why your dated move-in photos matter.`,
+If you disagree with a deduction, don't accept a partial refund as final. Every protection scheme includes a free dispute resolution service, and the burden of evidence sits with the landlord, which is exactly why your dated move in photos matter.`,
         },
         {
             title: "Rent increases: what's fair and what's negotiable",

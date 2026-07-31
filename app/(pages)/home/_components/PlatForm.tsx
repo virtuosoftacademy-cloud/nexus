@@ -26,7 +26,7 @@ export default function PlatformsSection() {
               We don&apos;t sell software. We govern it.
               <br />
               Whether you&apos;re migrating to Xero, implementing Sage, or
-              evaluating QuickBooks — our role is to ensure the platform serves
+              evaluating QuickBooks, our role is to ensure the platform serves
               your financial structure, not the other way around. We define the
               requirements, oversee implementation, and validate outputs before
               sign off.

@@ -12,11 +12,11 @@ function Careers() {
                 "Understand the importance of documentation",
                 "Appreciate governance as a growth enabler",
                 "Operate with professional restraint",
-                "Value long-term advisory relationships"
+                "Value long term advisory relationships"
             ]
         ,
         outro:
-            `We are not a high-volume practice. We are a structured advisory firm.
+            `We are not a high volume practice. We are a structured advisory firm.
 
 Opportunities are offered selectively, with clear role definition and accountability.
 

@@ -48,12 +48,12 @@ function Principles() {
             },
             {
                 value: "long-term-financial-integrity",
-                trigger: "Long-Term Financial Integrity",
+                trigger: "Long Term Financial Integrity",
                 content:
                 "We prioritise sustainable frameworks over short-term efficiency gains.",
                 image:
                     `${ImageSrc}/cashflow.png`,
-                alt: "Long-Term Financial Integrity",
+                alt: "Long Term Financial Integrity",
             },
         ],
     }

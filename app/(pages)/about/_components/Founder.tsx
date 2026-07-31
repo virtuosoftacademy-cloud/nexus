@@ -15,7 +15,7 @@ function Founder() {
                 <Image src={"/assets/founder.png"} alt="" className="size-5/5" width={400} height={700}/>
             </div>
             <div className="py-6 md:py-10 text-lg md:text-[1.75rem] font-heading space-y-3 md:space-y-6">
-                <p>Nexus Advisory & Services is led by Syed Toseef Ali, whose professional background spans statutory accounting, property and construction structures, VAT advisory, financial governance, and cross-border operational alignment.</p>
+                <p>Nexus Advisory & Services is led by Syed Toseef Ali, whose professional background spans statutory accounting, property and construction structures, VAT advisory, financial governance, and cross border operational alignment.</p>
                 <p>His work has focused on environments where:
                 </p>
                 <ul className="list-disc list-inside">
@@ -37,11 +37,11 @@ function Founder() {
                     </li>
                     <li>
 
-                        Cross-border reporting requires structured alignment
+                        Cross border reporting requires structured alignment
                     </li>
                 </ul>
                 <p>
-                    The firm reflects this experience: technically disciplined, commercially aware, and governance-led.
+                    The firm reflects this experience: technically disciplined, commercially aware, and governance led.
                 </p>
                 <p>
                     Rather than positioning the firm around personality, Nexus is structured around professional standards and documented methodology.
@@ -79,7 +79,7 @@ function Founder() {
                         </li>
                     </ul>
                     {/* Repeats lines 44–47 verbatim — confirm this is intentional closing emphasis, not a copy-paste leftover */}
-                    <p>The firm reflects this experience: technically disciplined, commercially aware, and governance-led.</p>
+                    <p>The firm reflects this experience: technically disciplined, commercially aware, and governance led.</p>
                     <p>Rather than positioning the firm around personality, Nexus is structured around professional standards and documented methodology.</p>
                 </div>
             </div>

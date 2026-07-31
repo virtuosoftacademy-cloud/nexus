@@ -17,7 +17,7 @@ export default function ProfessionalMemberships() {
         {/* Description */}
         <p className="font-serif text-sm sm:text-base text-foreground/70 leading-relaxed mb-10 sm:mb-12">
           We uphold the highest professional standards in every aspect of our
-          work. Guided by recognized industry bodies and regulatory requirements,
+          work. Guided by recognised industry bodies and regulatory requirements,
           we deliver services with integrity, accuracy, and accountability. Our
           commitment to compliance, governance, and continuous professional
           development ensures clients receive trusted advice and dependable

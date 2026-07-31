@@ -23,11 +23,11 @@ function DeliveryAndTech() {
                 name: 
                 "Shoaib Ur Rehman",
                 role: 
-                "Chief Executive Officer – Virtuosoft",
+                "Chief Executive Officer, Virtuosoft",
                 image: 
                 "/assets/about/shoaiburrehman.png",
                 bio: 
-            "Shoaib ur Rehman brings over 20 years of experience delivering large-scale digital solutions across Pakistan, the UAE, the MENA region, and global markets. His expertise spans software engineering, solution architecture, cloud computing, and enterprise system design. He leads Virtuosoft's strategic vision, technology roadmap, and delivery operations guiding organisations through cloud modernisation, data-driven transformation, and human-centred system design. He holds a Masters in Computer Science from IBA and a BE in Computer & Information Systems from NED University."
+            "Shoaib ur Rehman brings over 20 years of experience delivering large scale digital solutions across Pakistan, the UAE, the MENA region, and global markets. His expertise spans software engineering, solution architecture, cloud computing, and enterprise system design. He leads Virtuosoft's strategic vision, technology roadmap, and delivery operations guiding organisations through cloud modernisation, data driven transformation, and human centred system design. He holds a Masters in Computer Science from IBA and a BE in Computer & Information Systems from NED University."
             },
             {
                 id: 
@@ -35,11 +35,11 @@ function DeliveryAndTech() {
                 name: 
                 "Amir Jamili",
                 role: 
-                "Director, Cybersecurity & IT Governance – Virtuosoft",
+                "Director, Cybersecurity & IT Governance, Virtuosoft",
                 image: 
                 "/assets/about/amirjamili.png",
                 bio: 
-                "Amir Jamili is a senior cybersecurity executive with 18 years of experience building national-grade security programmes across financial and regulated sectors. His expertise covers cybersecurity strategy, IT governance, business continuity, disaster recovery, and AI-driven security automation. He is a Certified Lead Risk Manager (PECB), Cloud Architecture Solution Advisor (IBM), and Certified Technology Specialist (Microsoft), and is currently pursuing a PhD in Cyber Security. His contributions include establishing information security as a core organisational function, achieving ISO 22301 and ISO 20000 certifications, and receiving recognition through the CISO Cyber Sentinels Award and CXO Excellence Award.",
+                "Amir Jamili is a senior cybersecurity executive with 18 years of experience building national grade security programmes across financial and regulated sectors. His expertise covers cybersecurity strategy, IT governance, business continuity, disaster recovery, and AI driven security automation. He is a Certified Lead Risk Manager (PECB), Cloud Architecture Solution Advisor (IBM), and Certified Technology Specialist (Microsoft), and is currently pursuing a PhD in Cyber Security. His contributions include establishing information security as a core organisational function, achieving ISO 22301 and ISO 20000 certifications, and receiving recognition through the CISO Cyber Sentinels Award and CXO Excellence Award.",
             },
             {
                 id: 
@@ -47,7 +47,7 @@ function DeliveryAndTech() {
                 name: 
                 "Azher Rizvi",
                 role: 
-                "Chief Operating Officer – Virtuosoft",
+                "Chief Operating Officer, Virtuosoft",
                 image: 
                 "/assets/about/azherrizvi.png",
                 bio: 
@@ -59,11 +59,11 @@ function DeliveryAndTech() {
                 name: 
                 "Wasif Shariq",
                 role: 
-                "Head of Growth – Virtuosoft",
+                "Head of Growth, Virtuosoft",
                 image: 
                 "/assets/about/wasifshariq.png",
                 bio: 
-            "Wasif Shariq leads growth strategy and marketing operations at Virtuosoft, bringing extensive experience in commercial development, market positioning, and client acquisition across technology-led businesses. His focus is on building structured growth frameworks that align marketing execution with long-term commercial objectives."
+            "Wasif Shariq leads growth strategy and marketing operations at Virtuosoft, bringing extensive experience in commercial development, market positioning, and client acquisition across technology led businesses. His focus is on building structured growth frameworks that align marketing execution with long term commercial objectives."
             },
         ]
 

@@ -194,7 +194,7 @@ export const servicesCarouselUk: ServicesCarouselProps = {
                 "Preparation of statutory financial statements",
                 "Full balance sheet reconciliations",
                 "Audit ready working papers and schedules",
-                "Group consolidation support (non-audit)",
+                "Group consolidation support (non audit)",
                 "Technical accounting support for complex judgements",
                 "Year end accounts finalisation and Companies House filing support",
             ],
@@ -317,7 +317,7 @@ export const servicesCarouselUk: ServicesCarouselProps = {
                 "Group relief optimisation",
                 "Capital allowances reviews",
                 "Tax provision and ETR analysis",
-                "R&D tax credit eligibility support (non-contingent)",
+                "R&D tax credit eligibility support (non contingent)",
             ],
             outro:
                 "We focus on documentation, proportionality, and sustainability.",
@@ -351,7 +351,7 @@ export const servicesCarouselUk: ServicesCarouselProps = {
                 "Partial exemption analysis",
                 "Property and construction VAT structuring",
                 "Compliance health checks",
-                "HMRC VAT correspondence (non-tribunal)",
+                "HMRC VAT correspondence (non tribunal)",
             ],
             outro:
                 "Our objective is proactive exposure management.",
@@ -458,7 +458,7 @@ export const ModelsDataUK: ModelsDataProps =
     data: [
         {
             id: "ind-1",
-            title: "Phase 1 - Initial Structured Review",
+            title: "Phase 1: Initial Structured Review",
             description:
                 "A structured assessment of financial reporting, governance, and risk exposure to identify key improvement opportunities.",
             width: "max-w-60",
@@ -467,7 +467,7 @@ export const ModelsDataUK: ModelsDataProps =
         },
         {
             id: "ind-2",
-            title: "Phase 2 - Scope definition and timetable alignment",
+            title: "Phase 2: Scope definition and timetable alignment",
             description:
                 "Establish clear objectives, priorities, and timelines to create a focused and achievable implementation roadmap.",
             width: "",
@@ -476,7 +476,7 @@ export const ModelsDataUK: ModelsDataProps =
         },
         {
             id: "ind-3",
-            title: "Phase 3 - Implementation with documented deliverables Implementation Oversight",
+            title: "Phase 3: Implementation with documented deliverables Implementation Oversight",
             description:
                 "Manage execution and monitor progress to ensure deliverables are completed accurately, on time and in line with agreed objectives.",
             width: "",
@@ -485,7 +485,7 @@ export const ModelsDataUK: ModelsDataProps =
         },
         {
             id: "ind-4",
-            title: "Phase 4 - Ongoing cadence (monthly, quarterly, annual as appropriate)",
+            title: "Phase 4: Ongoing cadence (monthly, quarterly, annual as appropriate)",
             description: "Regular monthly, quarterly, or annual reviews to monitor performance, manage risks and support continuous improvement.",
             width: "",
             image:
@@ -545,11 +545,11 @@ export const propertyAbout: AboutServiceData = {
     introParagraph:
         `Property businesses operate within a uniquely complex financial and tax environment. Rental portfolios, SPVs, refurbishment programmes, development cycles, VAT exposure, SDLT implications, and capital allowances all intersect in ways that generic accounting rarely addresses adequately.`,
     listIntro:
-        "Nexus Advisory & Services provides structured property focused accounting and tax support for landlords, developers, investors, and council-linked operators.",
+        "Nexus Advisory & Services provides structured property focused accounting and tax support for landlords, developers, investors, and council linked operators.",
     serviceAreasTitle: "We work with:",
     serviceAreas: [
         { id: "psa-1", description: "Portfolio landlords operating through multiple SPVs" },
-        { id: "psa-2", description: "Resident and Non-Resident Landlord structures" },
+        { id: "psa-2", description: "Resident and Non Resident Landlord structures" },
         { id: "psa-3", description: "Temporary accommodation providers" },
         { id: "psa-4", description: "Council leasing and guaranteed rent operators" },
         { id: "psa-5", description: "Property developers and refurbishment led groups" },
@@ -596,7 +596,7 @@ export const approachRowsProperty: ApproachProps = {
                 "Intercompany loan documentation gaps",
                 "VAT misapplication (particularly in temporary accommodation)",
                 "Partial exemption miscalculations",
-                "Non-resident landlord compliance confusion",
+                "Non resident landlord compliance confusion",
                 "SDLT planning handled without accounting alignment",
                 "Weak reporting across multiple SPVs",
             ],
@@ -709,13 +709,13 @@ export const servicesCarouselProperty: ServicesCarouselProps = {
             iconAlt: "Landlord structures icon",
             caseIcon: "/assets/icon/file-search.svg",
             caseIconAlt: "Case illustration icon",
-            titleLine1: "2. Resident & Non-Resident",
+            titleLine1: "2. Resident & Non Resident",
             titleLine2: "Landlord Structures",
             intro:
                 "Cross border property ownership introduces additional compliance layers.",
             listHeading: "We support:",
             listItems: [
-                "Non-resident landlord tax compliance",
+                "Non resident landlord tax compliance",
                 "UK withholding considerations",
                 "Cross border reporting alignment",
                 "Structuring reviews for efficiency and clarity",
@@ -746,7 +746,7 @@ export const servicesCarouselProperty: ServicesCarouselProps = {
             optionalHeading: "Property VAT is frequently misunderstood, particularly in:",
             optionallistItems: [
                 "Mixed use buildings",
-                "Opted-to-tax units",
+                "Opted to tax units",
                 "Temporary accommodation",
                 "Development to rental transitions",
             ],
@@ -875,7 +875,7 @@ export const ModelsDataProperty: ModelsDataProps = {
     data: [
         {
             id: "prop-phase-1",
-            title: "Phase 1 - Initial Structural & Reporting Review",
+            title: "Phase 1: Initial Structural & Reporting Review",
             description:
                 "Reviewing financial governance and reporting effectiveness.",
             width: "",
@@ -884,7 +884,7 @@ export const ModelsDataProperty: ModelsDataProps = {
         },
         {
             id: "prop-phase-2",
-            title: "Phase 2 - Identification of Risk Areas",
+            title: "Phase 2: Identification of Risk Areas",
             description:
                 "Identifying risks and revenue recovery opportunities.",
             width: "",
@@ -893,7 +893,7 @@ export const ModelsDataProperty: ModelsDataProps = {
         },
         {
             id: "prop-phase-3",
-            title: "Phase 3 - VAT & Tax Position Modelling",
+            title: "Phase 3: VAT & Tax Position Modelling",
             description:
                 "Developing a clear and defensible tax framework.",
             width: "",
@@ -902,7 +902,7 @@ export const ModelsDataProperty: ModelsDataProps = {
         },
         {
             id: "prop-phase-4",
-            title: "Phase 4 - Structured Reporting Discipline & Ongoing Oversight",
+            title: "Phase 4: Structured Reporting Discipline & Ongoing Oversight",
             description:
                 "Providing ongoing monitoring and reporting guidance.",
             width: "",
@@ -911,7 +911,7 @@ export const ModelsDataProperty: ModelsDataProps = {
         },
         {
             id: "prop-phase-5",
-            title: "Phase 5 - Ongoing Oversight",
+            title: "Phase 5: Ongoing Oversight",
             description:
                 "Maintaining accurate records and regulatory compliance.",
             width: "",
@@ -1184,7 +1184,7 @@ export const constructServicesCarousel: ServicesCarouselProps = {
                 "Reverse charge assessment",
                 "Compliance health checks",
                 "Invoice structure review",
-                "HMRC correspondence support (non-tribunal)",
+                "HMRC correspondence support (non tribunal)",
                 "Multi currency accounting frameworks"
             ],
             outro: "Our objective is to reduce avoidable VAT risk exposure.",
@@ -1323,7 +1323,7 @@ export const constructModelsData: ModelsDataProps = {
     data: [
         {
             id: "prop-phase-1",
-            title: "Phase 1 - Initial Financial Process Review",
+            title: "Phase 1: Initial Financial Process Review",
             description:
                 "We conduct a structured review of your financial reporting, governance, and risk exposure.",
             width: "",
@@ -1332,7 +1332,7 @@ export const constructModelsData: ModelsDataProps = {
         },
         {
             id: "prop-phase-2",
-            title: "Phase 2 - Identification of Reporting and Margin Gaps",
+            title: "Phase 2: Identification of Reporting and Margin Gaps",
             description:
                 "We uncover immediate opportunities to recapture revenue and improve data accuracy.",
             width: "",
@@ -1341,7 +1341,7 @@ export const constructModelsData: ModelsDataProps = {
         },
         {
             id: "prop-phase-3",
-            title: "Phase 3 - Implementation of Project Reporting Structure",
+            title: "Phase 3: Implementation of Project Reporting Structure",
             description:
                 "Next, we build and deploy a customised project reporting framework.",
             width: "",
@@ -1350,7 +1350,7 @@ export const constructModelsData: ModelsDataProps = {
         },
         {
             id: "prop-phase-4",
-            title: "Phase 4 - Ongoing Monthly or Quarterly Oversight",
+            title: "Phase 4: Ongoing Monthly or Quarterly Oversight",
             description:
                 "We provide regular monthly or quarterly oversight to monitor your performance.",
             width: "",
@@ -1359,7 +1359,7 @@ export const constructModelsData: ModelsDataProps = {
         },
         {
             id: "prop-phase-5",
-            title: "Phase 5 - Annual Statutory Alignment",
+            title: "Phase 5: Annual Statutory Alignment",
             description:
                 "We ensure your internal financials perfectly match external legal and regulatory requirements.",
             width: "",
@@ -1968,7 +1968,7 @@ export const businessApproachRows: ApproachProps = {
             items: [
                 "Founder led and owner managed businesses",
                 "Property and construction groups scaling operations",
-                "Businesses expanding into new jurisdictions (UK-UAE)",
+                "Businesses expanding into new jurisdictions (UK and UAE)",
                 "Organisations restructuring group entities",
                 "Businesses preparing for investment or refinancing",
                 "Companies experiencing operational inefficiency",
@@ -2283,7 +2283,7 @@ export const taxCarouselProperty: ServicesCarouselProps = {
                 "Behavioural position analysis",
                 "Reasonable care documentation",
                 "Mitigation submissions",
-                "Structured appeal preparation (non-tribunal)",
+                "Structured appeal preparation (non tribunal)",
             ],
             outro:
                 "We focus on demonstrating proportionality and documented effort.",
@@ -2300,12 +2300,12 @@ export const taxCarouselProperty: ServicesCarouselProps = {
             caseResult: "Reduced penalty impact.",
         },
         {
-            id: "dispute-preparation-non-tribunal",
+            id: "dispute-preparation-non tribunal",
             icon: "/assets/icon/money-hand.svg",
             iconAlt: "Dispute preparation icon",
             caseIcon: "/assets/icon/file-search.svg",
             caseIconAlt: "Sector depth icon",
-            titleLine1: "4. Dispute Preparation (Non-Tribunal)",
+            titleLine1: "4. Dispute Preparation (Non Tribunal)",
             titleLine2: "",
             listHeading: "Where disagreement arises, we assist with:",
             listItems: [
@@ -2545,7 +2545,7 @@ export const businessAdvisoryCarouselProperty: ServicesCarouselProps = {
             iconAlt: "Risk and compliance icon",
             caseIcon: "/assets/icon/file-search.svg",
             caseIconAlt: "Cross border consultancy icon",
-            titleLine1: "3. Risk & Compliance Advisory (Non-Regulated)",
+            titleLine1: "3. Risk & Compliance Advisory (Non Regulated)",
             titleLine2: "Identifying Financial Exposure Before It Escalates",
             intro:
                 "Growth introduces financial and structural risk that may not be immediately visible.",
@@ -2554,12 +2554,12 @@ export const businessAdvisoryCarouselProperty: ServicesCarouselProps = {
                 "Financial risk identification",
                 "Compliance readiness reviews",
                 "Internal control gap analysis",
-                "Regulatory awareness advisory (non-regulated)",
+                "Regulatory awareness advisory (non regulated)",
                 "Documentation framework design",
             ],
             outro:
                 "Our focus is early identification of exposure before enforcement or lender scrutiny arises.",
-            caseTitle: "Cross Border Consultancy (UK–UAE)",
+            caseTitle: "Cross Border Consultancy (UK and UAE)",
             caseIntro:
                 "For businesses operating across jurisdictions, we support:",
             caseSolutionHeading: "We:",
@@ -2665,7 +2665,7 @@ export const uaeAdvisoryCarouselProperty: ServicesCarouselProps = {
                 "Documentation procedures",
             ],
             outro: "This creates reliable financial outputs from inception.",
-            caseTitle: "Cross Border Perspective (UK–UAE Alignment)",
+            caseTitle: "Cross Border Perspective (UK and UAE Alignment)",
             caseIntro:
                 "For businesses operating across both jurisdictions, we assist with:",
             caseSolutionHeading: "We:",
@@ -2742,7 +2742,7 @@ export const cfoAdvisoryCarouselProperty: ServicesCarouselProps = {
                 "Working capital optimisation reviews",
                 "Retention and milestone modelling (construction/property)",
                 "Debt covenant readiness",
-                "Funding readiness support (non-regulated)",
+                "Funding readiness support (non regulated)",
             ],
             outro:
                 "Our modelling is conservative, assumption driven, and documented.",
@@ -2892,7 +2892,7 @@ export const businessDifference: DifferenceProps = {
         { id: "sector-familiarity", text: "Property and construction sector familiarity" },
         // NOTE: the live page shows "Governance-Cross border UK–UAE insight mindset" —
         // this looks like two items merged by a data bug. Extracted as the likely intended text:
-        { id: "cross-border-insight", text: "Cross border UK-UAE insight" },
+        { id: "cross-border-insight", text: "Cross border UK and UAE insight" },
         { id: "governance-first-mindset", text: "Governance first mindset" },
         { id: "proportionate-structuring", text: "Proportionate structuring approach" },
     ],
@@ -2947,28 +2947,28 @@ export const solutionsModelsData: ModelsDataProps = {
     data: [
         {
             id: "sol-phase-1",
-            title: "Phase 1 – Requirements Definition",
+            title: "Phase 1: Requirements Definition",
             description: "Clarify reporting, control, and workflow objectives.",
             width: "",
             image: `${ImagesSolutions}/phase1.png`,
         },
         {
             id: "sol-phase-2",
-            title: "Phase 2 – Structured Design",
+            title: "Phase 2: Structured Design",
             description: "Define tool logic, integration flow, and governance safeguards.",
             width: "",
             image: `${ImagesSolutions}/phase2.png`,
         },
         {
             id: "sol-phase-3",
-            title: "Phase 3 – Development Oversight",
+            title: "Phase 3: Development Oversight",
             description: "Coordinate with partner to ensure scope integrity.",
             width: "",
             image: `${ImagesSolutions}/phase3.png`,
         },
         {
             id: "sol-phase-4",
-            title: "Phase 4 – Testing & Validation",
+            title: "Phase 4: Testing & Validation",
             description: "Financial validation and documentation prior to deployment.",
             width: "",
             image: `${ImagesSolutions}/phase4.png`,
@@ -2986,28 +2986,28 @@ export const taxModelsData: ModelsDataProps = {
     data: [
         {
             id: "hmrc-phase-1",
-            title: "Phase 1 – Initial Review",
+            title: "Phase 1: Initial Review",
             description: "Clear documentation of financial and reporting needs.",
             width: "",
             image: `${ImagesTax}/phase1.png`,
         },
         {
             id: "hmrc-phase-2",
-            title: "Phase 2 – Technical Analysis",
+            title: "Phase 2: Technical Analysis",
             description: "Evaluation of accounting and tax treatment.",
             width: "",
             image: `${ImagesTax}/phase2.png`,
         },
         {
             id: "hmrc-phase-3",
-            title: "Phase 3 – Response Preparation",
+            title: "Phase 3: Response Preparation",
             description: "Drafting structured, disciplined submissions.",
             width: "",
             image: `${ImagesTax}/phase3.png`,
         },
         {
             id: "hmrc-phase-4",
-            title: "Phase 4 – Ongoing Correspondence",
+            title: "Phase 4: Ongoing Correspondence",
             description: "Managing follow up requests and clarifications.",
             width: "",
             image: `${ImagesTax}/phase4.png`,
@@ -3025,28 +3025,28 @@ export const systemsModelsData: ModelsDataProps = {
     data: [
         {
             id: "sys-phase-1",
-            title: "Phase 1 – Diagnostic Review",
+            title: "Phase 1: Diagnostic Review",
             description: "Assessment of current reporting and system gaps.",
             width: "",
             image: `${ImagesSystems}/phase1.png`,
         },
         {
             id: "sys-phase-2",
-            title: "Phase 2 – Requirements Definition",
+            title: "Phase 2: Requirements Definition",
             description: "Clear documentation of financial and reporting needs.",
             width: "",
             image: `${ImagesSystems}/phase2.png`,
         },
         {
             id: "sys-phase-3",
-            title: "Phase 3 – Oversight & Implementation Monitoring",
+            title: "Phase 3: Oversight & Implementation Monitoring",
             description: "Coordination with delivery partner.",
             width: "",
             image: `${ImagesSystems}/phase3.png`,
         },
         {
             id: "sys-phase-4",
-            title: "Phase 4 – Validation & Acceptance",
+            title: "Phase 4: Validation & Acceptance",
             description: "Financial integrity review prior to system approval.",
             width: "",
             image: `${ImagesSystems}/phase4.png`,
@@ -3064,28 +3064,28 @@ export const businessModelsData: ModelsDataProps = {
     data: [
         {
             id: "biz-phase-1",
-            title: "Phase 1 – Diagnostic Review",
+            title: "Phase 1: Diagnostic Review",
             description: "Assessment of structural and operational exposure.",
             width: "",
             image: `${ImagesBusiness}/phase1.png`,
         },
         {
             id: "biz-phase-2",
-            title: "Phase 2 – Advisory Roadmap",
+            title: "Phase 2: Advisory Roadmap",
             description: "Clear, prioritised recommendations with financial modelling.",
             width: "",
             image: `${ImagesBusiness}/phase2.png`,
         },
         {
             id: "biz-phase-3",
-            title: "Phase 3 – Implementation Support",
+            title: "Phase 3: Implementation Support",
             description: "Oversight of agreed changes.",
             width: "",
             image: `${ImagesBusiness}/phase3.png`,
         },
         {
             id: "biz-phase-4",
-            title: "Phase 4 – Ongoing Strategic Oversight (Optional)",
+            title: "Phase 4: Ongoing Strategic Oversight (Optional)",
             description: "Periodic review aligned to growth phase.",
             width: "",
             image: `${ImagesBusiness}/phase4.png`,
@@ -3103,21 +3103,21 @@ export const uaeModelsData: ModelsDataProps = {
     data: [
         {
             id: "uae-phase-1",
-            title: "Phase 1 – Initial Readiness Review",
+            title: "Phase 1: Initial Readiness Review",
             description: "Assessment of VAT, corporate tax, and reporting exposure.",
             width: "",
             image: `${ImagesUae}/phase1.png`,
         },
         {
             id: "uae-phase-2",
-            title: "Phase 2 – Framework Design",
+            title: "Phase 2: Framework Design",
             description: "Implementation of structured bookkeeping and documentation processes.",
             width: "",
             image: `${ImagesUae}/phase2.png`,
         },
         {
             id: "uae-phase-3",
-            title: "Phase 3 – Ongoing Advisory Oversight",
+            title: "Phase 3: Ongoing Advisory Oversight",
             description: "Periodic review aligned to growth stage.",
             width: "",
             image: `${ImagesUae}/phase3.png`,
@@ -3135,28 +3135,28 @@ export const cfoModelsData: ModelsDataProps = {
     data: [
         {
             id: "cfo-phase-1",
-            title: "Phase 1 – Diagnostic Review",
+            title: "Phase 1: Diagnostic Review",
             description: "Structured review of financial reporting, governance, and risk exposure.",
             width: "",
             image: `${ImagesCfo}/phase1.png`,
         },
         {
             id: "cfo-phase-2",
-            title: "Phase 2 – Structured Recommendations",
+            title: "Phase 2: Structured Recommendations",
             description: "Clear, prioritised advisory roadmap.",
             width: "",
             image: `${ImagesCfo}/phase2.png`,
         },
         {
             id: "cfo-phase-3",
-            title: "Phase 3 – Implementation Oversight",
+            title: "Phase 3: Implementation Oversight",
             description: "Support implementation of agreed changes.",
             width: "",
             image: `${ImagesCfo}/phase3.png`,
         },
         {
             id: "cfo-phase-4",
-            title: "Phase 4 – Ongoing Cadence (Optional)",
+            title: "Phase 4: Ongoing Cadence (Optional)",
             description: "Monthly or quarterly strategic oversight.",
             width: "",
             image: `${ImagesCfo}/phase4.png`,

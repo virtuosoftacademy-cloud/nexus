@@ -27,7 +27,7 @@ export default async function CategoriesPage() {
             <section className="mt-6 overflow-hidden rounded-lg border border-neutral-200 bg-white">
                 {categories.length === 0 ? (
                     <p className="px-6 py-10 text-center text-neutral-600">
-                        No categories yet. Add one above to start organizing posts.
+                        No categories yet. Add one above to start organising posts.
                     </p>
                 ) : (
                     <ul className="divide-y divide-neutral-100">
