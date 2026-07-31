@@ -44,7 +44,7 @@ export function CaseStudyCard({ image, category, href, imageAlt, serviceAreas, s
                 </h4>
 
                 {/* Summary */}
-                <p className="mt-4 font-serif text-lg leading-relaxed text-foreground/70">
+                <p className="mt-4 font-heading text-lg leading-relaxed text-foreground/70">
                     {summary}
                 </p>
 

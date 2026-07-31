@@ -30,7 +30,7 @@ export default function StatsBar() {
                   {stat.iconPlus}
                 </div>
                 {/* Label */}
-                <h3 className="font-serif text-sm md:text-base text-foreground/70 leading-snug max-w-24 sm:max-w-30">
+                <h3 className="font-heading text-sm md:text-base text-foreground/70 leading-snug max-w-24 sm:max-w-30">
                   {stat.label}
                 </h3>
               </div >

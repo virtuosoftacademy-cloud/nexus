@@ -9,7 +9,7 @@ export default function Hero() {
                 <h4 className="text-4xl md:text-[3.5rem] font-medium text-foreground leading-tight">
                     Services
                 </h4>
-                <p className="text-xl md:text-4xl font-serif text-foreground/70 leading-snug md:max-w-3xl">
+                <p className="text-xl md:text-4xl font-heading text-foreground/70 leading-snug md:max-w-3xl">
                 Financial Clarity for Businesses Scaling Across Complex Environments
                 </p>
             </div>

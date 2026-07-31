@@ -59,7 +59,7 @@ export function InsightsSection({ posts }: BlogPostProps) {
                 <h4 className="font-bold text-foreground text-xl leading-snug mb-2 line-clamp-1">
                   {post.title}
                 </h4>
-                <p className="text-base leading-relaxed font-serif">{post.excerpt}</p>
+                <p className="text-base leading-relaxed font-heading">{post.excerpt}</p>
                 {/* <div className="flex justify-between pt-2 text-foreground/50 text-sm">
                   <span>{post.timeAgo}</span>
                   <span><Bookmark size={18} /> </span>

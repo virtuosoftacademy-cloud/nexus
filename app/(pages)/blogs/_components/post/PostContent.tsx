@@ -20,7 +20,7 @@ export default async function PostContent({ post }: BlogPostContentProps) {
             <div className="mx-auto max-w-[212.5rem]">
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_440px]">
 
-                    <h3 className="font-serif text-sm md:text-xl text-foreground/70 whitespace-pre-line max-w-4xl">
+                    <h3 className="font-heading text-sm md:text-xl text-foreground/70 whitespace-pre-line max-w-4xl">
                         {content}
                     </h3>
 

@@ -13,7 +13,7 @@ export function ArrowList({ items, textclassName, markerclassName, itemsClassNam
     return (
         <ul>
             {items.map((item) => (
-                <li key={item} className={cn("flex gap-1 font-serif text-base md:text-lg text-foreground/70", itemsClassName)}>
+                <li key={item} className={cn("flex gap-1 font-heading text-base md:text-lg text-foreground/70", itemsClassName)}>
                     {/* Amber play-style arrow marker, matching the design */}
                     <span aria-hidden="true" className={cn("-mt-1.5 text-secondary text-3xl -ml-1", markerclassName)}>
                         &#9656;

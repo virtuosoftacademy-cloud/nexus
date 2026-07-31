@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
                 </p> */}
             </header>
 
-            <div className="space-y-10 font-serif text-base leading-relaxed text-foreground/80">
+            <div className="space-y-10 font-heading text-base leading-relaxed text-foreground/80">
 
                 {/* ── Intro ── */}
                 <section className="space-y-4">

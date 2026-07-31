@@ -59,7 +59,7 @@ export default function VideoSection() {
                                         d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828L18 9.828A4 4 0 1012.343 4.17L5.757 10.757a6 6 0 108.486 8.486L20.5 13"
                                     />
                                 </svg>
-                                <h4 className="font-serif text-sm md:text-xl text-foreground/80 leading-snug flex-1">
+                                <h4 className="font-heading text-sm md:text-xl text-foreground/80 leading-snug flex-1">
                                     Growth doesn&apos;t fix broken reporting. It exposes it
                                 </h4>
                                 {/* Send button */}

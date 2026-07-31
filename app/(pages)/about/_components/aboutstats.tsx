@@ -46,7 +46,7 @@ export default function Aboutstats() {
                                 {stat.value}
                             </span>
                             {/* Label */}
-                            <h3 className="max-w-xs font-serif text-base md:text-lg text-foreground/60">
+                            <h3 className="max-w-xs font-heading text-base md:text-lg text-foreground/60">
                                 {stat.label}
                             </h3>
                         </div>

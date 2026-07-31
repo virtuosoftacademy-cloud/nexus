@@ -30,7 +30,7 @@ function FaqHeader({
             <h4 className="text-2xl md:text-4xl text-center font-semibold mb-4">
                 {titleStart} <span className="text-primary">{titleHighlight}</span>
             </h4>
-            <p className="font-serif text-center">{subtitle}</p>
+            <p className="font-heading text-center">{subtitle}</p>
         </div>
     )
 }

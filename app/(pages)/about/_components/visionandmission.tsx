@@ -11,7 +11,7 @@ function Visionandmission() {
                         Mission
                     </span>
                 </h4>
-                <p className="font-serif text-foreground/70 text-base md:text-lg max-w-xl">
+                <p className="font-heading text-foreground/70 text-base md:text-lg max-w-xl">
                     To introduce financial structure, discipline, and governance into businesses where complexity has begun to outpace control, so that growth is built on a foundation that holds up under scrutiny, not one that collapses under it.
                 </p>
                 <div className="overflow-hidden">
@@ -24,7 +24,7 @@ function Visionandmission() {
                         Vision
                     </span>
                 </h4>
-                <p className="font-serif text-foreground/70 text-base md:text-lg max-w-xl">
+                <p className="font-heading text-foreground/70 text-base md:text-lg max-w-xl">
                     To be the advisory firm that growing businesses in the UK and UAE turn to when they need more than compliance, when they need financial clarity, structural integrity, and a long-term partner who operates with the same discipline they aspire to.
                 </p>
                 <div className="overflow-hidden">

@@ -39,7 +39,7 @@ export default function CoreServiceCard({ service }: CoreServiceCardProps) {
                     </h4>
 
                     {/* Description */}
-                    <p className="text-sm md:text-base text-foreground/70 leading-relaxed font-serif">
+                    <p className="text-sm md:text-base text-foreground/70 leading-relaxed font-heading">
                         {description}
                     </p>
                 </div>

@@ -18,7 +18,7 @@ export default function Hero() {
             <h4 className="text-4xl md:text-[3.5rem] font-medium text-foreground leading-tight">
               Contact Us
             </h4>
-            <p className="text-base md:text-[2.75rem] font-serif text-foreground/70 leading-snug">
+            <p className="text-base md:text-[2.75rem] font-heading text-foreground/70 leading-snug">
               Ready to start a structured conversation?
             </p>
           </div>

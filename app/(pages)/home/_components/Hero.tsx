@@ -80,7 +80,7 @@ export function HeroSection() {
                 animate="visible"
                 exit="exit"
               >
-                <motion.p variants={itemVariants} className="text-base font-serif capitalize tracking-widest mb-3 text-accent">
+                <motion.p variants={itemVariants} className="text-base font-heading capitalize tracking-widest mb-3 text-accent">
                   {current.tag}
                 </motion.p>
 
@@ -88,7 +88,7 @@ export function HeroSection() {
                   {current.heading}
                 </motion.h4>
 
-                <motion.p variants={itemVariants} className="font-serif text-base leading-relaxed mb-8 text-white/75">
+                <motion.p variants={itemVariants} className="font-heading text-base leading-relaxed mb-8 text-white/75">
                   {current.subtitle}
                 </motion.p>
 

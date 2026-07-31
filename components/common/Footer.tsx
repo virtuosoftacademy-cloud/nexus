@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="mx-auto py-12 px-4 sm:px-8 xl:px-18">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 text-center md:text-left px-6 md:px-0">
           <div className="space-y-10">
-            <p className="text-base md:text-[1.2rem] text-muted-foreground md:max-w-lg leading-relaxed font-serif">
+            <p className="text-base md:text-[1.2rem] text-muted-foreground md:max-w-lg leading-relaxed font-heading">
               Stay ahead in a rapidly changing world. Subscribe to Nexus Insights. Our monthly look at the critical issues facing global businesses.
             </p>
             <div className="flex justify-center md:justify-start">

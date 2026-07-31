@@ -54,7 +54,7 @@ function CaseButton({
                     <IconChip src={icon || ""} alt={iconAlt || ""} />
                     <DialogTitle className="text-xl font-sans! -mt-5">{title ?? label}</DialogTitle>
                     {intro && (
-                        <DialogDescription className="font-serif text-sm md:text-base text-foreground/70">
+                        <DialogDescription className="font-heading text-sm md:text-base text-foreground/70">
                             {intro}
                         </DialogDescription>
                     )}
@@ -108,7 +108,7 @@ export function ServicesCarousel({
                     {titleStart}{" "}
                     <span className="text-secondary">{titleHighlight}</span>
                 </h4>
-                <p className="mt-3 font-serif text-primary-foreground/80">
+                <p className="mt-3 font-heading text-primary-foreground/80">
                     {subtitle}
                 </p>
             </div>
@@ -134,7 +134,7 @@ export function ServicesCarousel({
                                         </h4>
 
                                         {slide.intro && (
-                                            <p className="mt-4 font-serif text-base md:text-lg">
+                                            <p className="mt-4 font-heading text-base md:text-lg">
                                                 {slide.intro}
                                             </p>
                                         )}
@@ -152,7 +152,7 @@ export function ServicesCarousel({
                                         <ArrowList items={slide.listItems} />
 
                                         {slide.outro && (
-                                            <p className="mt-5 font-serif text-base md:text-lg">
+                                            <p className="mt-5 font-heading text-base md:text-lg">
                                                 {slide.outro}
                                             </p>
                                         )}
@@ -169,7 +169,7 @@ export function ServicesCarousel({
                                         </h4>
 
                                         {slide.caseIntro && (
-                                            <p className="mt-4 font-serif text-sm md:text-lg whitespace-pre-line">
+                                            <p className="mt-4 font-heading text-sm md:text-lg whitespace-pre-line">
                                                 {slide.caseIntro}
                                             </p>
                                         )}
@@ -188,7 +188,7 @@ export function ServicesCarousel({
                                         </div>
 
                                         {slide.optionalParagraph && (
-                                            <p className="mt-5 mb-3 font-serif text-sm md:text-lg">
+                                            <p className="mt-5 mb-3 font-heading text-sm md:text-lg">
                                                 {slide.optionalParagraph}
                                             </p>
                                         )}
@@ -198,7 +198,7 @@ export function ServicesCarousel({
                                             </p>
                                         )}
                                         {slide.caseResult && (
-                                            <p className="font-serif text-sm md:text-lg whitespace-pre-line">
+                                            <p className="font-heading text-sm md:text-lg whitespace-pre-line">
                                                 {slide.caseResult}
                                             </p>
                                         )}

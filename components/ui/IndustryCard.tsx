@@ -58,7 +58,7 @@ export default function PhaseCard({ phase }: PhaseCardProps) {
 
                 {description && (
                     <motion.p
-                        className={`text-white text-sm md:text-lg mt-auto pt-4 font-serif ${width}`}
+                        className={`text-white text-sm md:text-lg mt-auto pt-4 font-heading ${width}`}
                     >
                         {description}
                     </motion.p>

@@ -24,7 +24,7 @@ export default function CaseStudyCard({ study }: CaseStudyCardProps) {
           <span className="text-primary">delivered.</span>
         </h4>
 
-        <h4 className="font-serif text-sm md:text-lg">Featured Client Stories</h4>
+        <h4 className="font-heading text-sm md:text-lg">Featured Client Stories</h4>
         <hr className="w-172" />
         {/* Case title */}
         <h4 className="text-2xl md:text-4xl text-foreground font-semibold leading-snug mt-5">
@@ -45,7 +45,7 @@ export default function CaseStudyCard({ study }: CaseStudyCardProps) {
                 >
                   {m.value}
                 </p>
-                <p className="text-sm md:text-lg text-foreground/60 leading-snug font-serif">{m.label}</p>
+                <p className="text-sm md:text-lg text-foreground/60 leading-snug font-heading">{m.label}</p>
               </div>
             ))}
           </div>

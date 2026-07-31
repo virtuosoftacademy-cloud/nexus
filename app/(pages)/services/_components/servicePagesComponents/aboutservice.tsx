@@ -13,7 +13,7 @@ export default function AboutService({ introParagraph, listIntro, optionalParagr
       <p className={cn("max-w-full font-heading whitespace-pre-line", introClassName)}>{listIntro}</p>
       <h2 className={cn("whitespace-pre-line", serviceTitleClassName)}>{serviceAreasTitle}</h2>
       <div>
-        <ul className="space-y-4 font-serif whitespace-pre-line">
+        <ul className="space-y-4 font-heading whitespace-pre-line">
           {serviceAreas?.map((area) => (
             <li key={area.id} className="flex items-center gap-2 text-sm md:text-[1.75rem] leading-px">
               <Dot />{" "}
@@ -22,7 +22,7 @@ export default function AboutService({ introParagraph, listIntro, optionalParagr
           ))}
         </ul>
       </div>
-      <p className="font-serif">{optionalParagraph}</p>
+      <p className="font-heading">{optionalParagraph}</p>
       <h3 className={cn("text-sm md:text-[1.75rem] whitespace-pre-line", className)}>{closingParagraph}</h3>
     </div>
   );

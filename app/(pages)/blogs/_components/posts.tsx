@@ -58,7 +58,7 @@ export default async function Posts() {
                 </h4>
 
                 {/* Excerpt */}
-                <p className="text-sm md:text-base font-serif text-foreground/60 leading-relaxed">
+                <p className="text-sm md:text-base font-heading text-foreground/60 leading-relaxed">
                   {featured.excerpt}
                 </p>
 
