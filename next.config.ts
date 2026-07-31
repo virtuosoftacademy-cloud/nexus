@@ -12,12 +12,6 @@ try {
 const nextConfig: NextConfig = {
   serverExternalPackages: ["mariadb", "@prisma/adapter-mariadb"],
 
-  // Quiet the dev server terminal — disables the "GET /path 200 in Xms"
-  // request lines and the "└─ ƒ actionName(...)" server-function lines.
-  logging: {
-    incomingRequests: false,
-    serverFunctions: false,
-  },
 
   images: {
     remotePatterns: [
