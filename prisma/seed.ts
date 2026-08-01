@@ -22,14 +22,6 @@ const SERVICE_AREAS = [
     "Cash Flow Forecasting",
 ];
 
-// Reserved example domains — these can never reach a real inbox.
-const SUBSCRIBERS = [
-    "hannah.wright@example.co.uk",
-    "d.okafor@example.com",
-    "priya.raman@example.co.uk",
-    "tom.fletcher@example.com",
-];
-
 // ── Helpers ─────────────────────────────────────────────────────────
 function slugify(title: string): string {
     return title
@@ -433,19 +425,6 @@ Tax and VAT payments scheduled into the forecast, never a surprise`,
         });
     }
     console.log(`✔ ${caseStudiesData.length} case studies`);
-
-    // ════════════════════════════════════════════════════════════════
-    // 6. Newsletter subscribers
-    // ════════════════════════════════════════════════════════════════
-    await prisma.newsletterSubscriber.createMany({
-        data: SUBSCRIBERS.map((email, i) => ({
-            email: email.toLowerCase(),
-            // Staggered over ~6 weeks so "newest first" ordering is visible.
-            createdAt: new Date(Date.now() - i * 3.5 * 24 * 60 * 60 * 1000),
-        })),
-        skipDuplicates: true,
-    });
-    console.log(`✔ ${SUBSCRIBERS.length} newsletter subscribers`);
 
     console.log("\nSeed complete. Log in at /login with the admin credentials above.");
 }
