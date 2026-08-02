@@ -49,18 +49,31 @@ function fromDatabaseUrl(raw: string): Omit<DbConfig, "connectionLimit"> {
 }
 
 /**
- * Reads an env var, stripping surrounding quotes and stray whitespace/CR.
+ * Reads an env var, undoing the mangling Hostinger's hPanel applies on its way
+ * into the process. dotenv never gets a chance to normalise these: the app runs
+ * from a directory with no .env file, so these values arrive raw.
  *
- * Hostinger's hPanel writes .env values wrapped in single quotes and injects
- * them into the process verbatim — dotenv never parses them, because the app
- * runs from a directory with no .env file. An unstripped DB_HOST arrives as
- * "'127.0.0.1'", which fails DNS with ENOTFOUND, so the connection pool never
- * fills and every query dies with "pool timeout ... active=0 idle=0".
+ * Two observed transformations, both verified against the live process:
+ *
+ *  1. Values are stored wrapped in single quotes. An unstripped DB_HOST arrives
+ *     as "'127.0.0.1'" and fails DNS with ENOTFOUND.
+ *  2. Shell metacharacters are backslash-escaped. A password of "#F3dDNqRyY"
+ *     arrives as "\#F3dDNqRyY" — one character longer, and rejected by MySQL.
+ *
+ * Either one leaves the connection pool unable to open a single connection, so
+ * every query fails with "pool timeout ... active=0 idle=0" rather than a
+ * useful authentication error.
  */
 function env(key: string): string | undefined {
     const raw = process.env[key];
     if (raw === undefined) return undefined;
-    return raw.trim().replace(/\r$/, "").replace(/^(["'])([\s\S]*)\1$/, "$2");
+    return raw
+        .trim()
+        .replace(/\r$/, "")
+        .replace(/^(["'])([\s\S]*)\1$/, "$2")
+        // Unescape shell metacharacters. Only these — a blanket \\(.) → $1
+        // would corrupt legitimate backslashes in a password.
+        .replace(/\\([#$`"'!&;|<>() ])/g, "$1");
 }
 
 export function getDbConfig(): DbConfig {
