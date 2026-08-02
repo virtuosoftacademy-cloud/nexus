@@ -48,26 +48,43 @@ function fromDatabaseUrl(raw: string): Omit<DbConfig, "connectionLimit"> {
     };
 }
 
+/**
+ * Reads an env var, stripping surrounding quotes and stray whitespace/CR.
+ *
+ * Hostinger's hPanel writes .env values wrapped in single quotes and injects
+ * them into the process verbatim — dotenv never parses them, because the app
+ * runs from a directory with no .env file. An unstripped DB_HOST arrives as
+ * "'127.0.0.1'", which fails DNS with ENOTFOUND, so the connection pool never
+ * fills and every query dies with "pool timeout ... active=0 idle=0".
+ */
+function env(key: string): string | undefined {
+    const raw = process.env[key];
+    if (raw === undefined) return undefined;
+    return raw.trim().replace(/\r$/, "").replace(/^(["'])([\s\S]*)\1$/, "$2");
+}
+
 export function getDbConfig(): DbConfig {
     const connectionLimit =
-        Number(process.env.DB_CONNECTION_LIMIT) || DEFAULTS.connectionLimit;
+        Number(env("DB_CONNECTION_LIMIT")) || DEFAULTS.connectionLimit;
 
     // Discrete vars win. DB_NAME is the marker that they've been configured,
     // since it's the only field with no sensible default.
-    if (process.env.DB_NAME) {
+    const database = env("DB_NAME");
+    if (database) {
         return {
-            host: process.env.DB_HOST || DEFAULTS.host,
-            port: Number(process.env.DB_PORT) || DEFAULTS.port,
-            user: process.env.DB_USER || DEFAULTS.user,
+            host: env("DB_HOST") || DEFAULTS.host,
+            port: Number(env("DB_PORT")) || DEFAULTS.port,
+            user: env("DB_USER") || DEFAULTS.user,
             // ?? not || — an empty password is valid (passwordless local root).
-            password: process.env.DB_PASSWORD ?? DEFAULTS.password,
-            database: process.env.DB_NAME,
+            password: env("DB_PASSWORD") ?? DEFAULTS.password,
+            database,
             connectionLimit,
         };
     }
 
-    if (process.env.DATABASE_URL) {
-        return { ...fromDatabaseUrl(process.env.DATABASE_URL), connectionLimit };
+    const databaseUrl = env("DATABASE_URL");
+    if (databaseUrl) {
+        return { ...fromDatabaseUrl(databaseUrl), connectionLimit };
     }
 
     throw new Error(
