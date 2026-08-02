@@ -4,8 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { hash } from "bcryptjs";
 
 // ── Config ──────────────────────────────────────────────────────────
-const DEV_ADMIN_EMAIL = "admin@example.com";
-const DEV_ADMIN_PASSWORD = "change-me-locally-123";
+const MIN_PASSWORD_LENGTH = 12;
 
 const INDUSTRIES = [
     "Property & Real Estate",
@@ -45,6 +44,32 @@ function computeTimeAgo(dateStr: string): string {
 
 async function main() {
     // ════════════════════════════════════════════════════════════════
+    // Validate BEFORE anything destructive. Section 0 wipes every table,
+    // so failing later would leave the database empty AND without an admin.
+    // Credentials must come from the environment — a default password
+    // committed to this repo would be public knowledge, and this script is
+    // runnable against production.
+    // ════════════════════════════════════════════════════════════════
+    const adminEmail = (process.env.ADMIN_EMAIL ?? "").toLowerCase().trim();
+    const adminPassword = process.env.ADMIN_PASSWORD ?? "";
+
+    if (!adminEmail || !adminPassword) {
+        console.error(
+            "✖ ADMIN_EMAIL and ADMIN_PASSWORD must both be set before seeding.\n" +
+            "  Set them in .env locally, or in your host's environment variables.\n" +
+            "  Nothing was changed."
+        );
+        process.exit(1);
+    }
+
+    if (adminPassword.length < MIN_PASSWORD_LENGTH) {
+        console.error(
+            `✖ ADMIN_PASSWORD must be at least ${MIN_PASSWORD_LENGTH} characters. Nothing was changed.`
+        );
+        process.exit(1);
+    }
+
+    // ════════════════════════════════════════════════════════════════
     // 0. Clean slate — children before parents
     // ════════════════════════════════════════════════════════════════
     await prisma.approachCard.deleteMany();
@@ -64,19 +89,16 @@ async function main() {
     // ════════════════════════════════════════════════════════════════
     // 1. Admin user
     // ════════════════════════════════════════════════════════════════
-    // Uses ADMIN_EMAIL / ADMIN_PASSWORD when provided (production, or any
-    // time you want a real login); otherwise falls back to dev credentials.
-    const adminEmail = (process.env.ADMIN_EMAIL ?? DEV_ADMIN_EMAIL).toLowerCase().trim();
-    const adminPassword = process.env.ADMIN_PASSWORD ?? DEV_ADMIN_PASSWORD;
-    const usingFallback = !process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD;
-
-    if (!usingFallback && adminPassword.length < 12) {
-        console.error("✖ ADMIN_PASSWORD must be at least 12 characters.");
-        process.exit(1);
-    }
-
-    const admin = await prisma.user.create({
-        data: {
+    // upsert, not create: re-running the seed should rotate the password
+    // rather than fail on the unique email constraint.
+    const admin = await prisma.user.upsert({
+        where: { email: adminEmail },
+        update: {
+            name: process.env.ADMIN_NAME?.trim() || "Admin",
+            password: await hash(adminPassword, 12),
+            role: "ADMIN",
+        },
+        create: {
             name: process.env.ADMIN_NAME?.trim() || "Admin",
             email: adminEmail,
             password: await hash(adminPassword, 12),
@@ -84,12 +106,7 @@ async function main() {
         },
     });
 
-    if (usingFallback) {
-        console.log(`✔ Admin user: ${admin.email} / ${DEV_ADMIN_PASSWORD}`);
-        console.log("  ⚠ Dev credentials — set ADMIN_EMAIL and ADMIN_PASSWORD for anything public.");
-    } else {
-        console.log(`✔ Admin user: ${admin.email} (password from ADMIN_PASSWORD)`);
-    }
+    console.log(`✔ Admin user: ${admin.email} (password from ADMIN_PASSWORD)`);
 
 
     // ════════════════════════════════════════════════════════════════
