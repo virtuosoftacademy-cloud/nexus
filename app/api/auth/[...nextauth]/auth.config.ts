@@ -41,7 +41,16 @@ export const authConfig = {
             // Hide the admin area from unauthorised visitors — a blocked
             // admin route renders as a plain 404 rather than bouncing to
             // /signin (which would reveal that the route exists at all).
-            return NextResponse.rewrite(new URL("/admin/not-found", request.url));
+            //
+            // Clone nextUrl rather than building from request.url: the latter
+            // yields an absolute URL, which behind Passenger makes the app
+            // HTTP-fetch itself and fail with
+            // "Failed to proxy https://<host>/admin/not-found: socket hang up"
+            // on every unauthenticated hit, including crawlers.
+            const notFound = request.nextUrl.clone();
+            notFound.pathname = "/admin/not-found";
+            notFound.search = "";
+            return NextResponse.rewrite(notFound);
         },
     },
     providers: [], // real providers live in auth.ts
