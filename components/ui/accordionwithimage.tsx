@@ -63,7 +63,7 @@ function FaqAccordion({
                     <AccordionTrigger className="font-sans -my-0.5 font-semibold bg-transparent text-primary">
                         {item.trigger}
                     </AccordionTrigger>
-                    <AccordionContent className="text-foreground/70 text-xs text-light md:w-[18em] max-w-[30em]">{item.content}</AccordionContent>
+                    <AccordionContent className="text-foreground/70 text-xs text-light md:w-[20em] max-w-[30em] md:text-lg!">{item.content}</AccordionContent>
                 </AccordionItem>
             ))}
         </Accordion>

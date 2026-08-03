@@ -1,6 +1,8 @@
 
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { describeUserAgent } from "@/lib/device";
+import { Button } from "@/components/ui/button";
 
 export const metadata = { title: "Dashboard" };
 export const dynamic = "force-dynamic";
@@ -34,6 +36,10 @@ export default async function DashboardPage() {
         serviceAreaRows,
         cardTotal,
         phaseTotal,
+        subscriberCount,
+        subscribersLast30,
+        latestSubscriber,
+        pendingDevices,
     ] = await Promise.all([
         prisma.blogPost.count(),
         prisma.blogPost.count({ where: { isFeatured: true } }),
@@ -60,6 +66,20 @@ export default async function DashboardPage() {
         }),
         prisma.approachCard.count(),
         prisma.timelinePhase.count(),
+        prisma.newsletterSubscriber.count(),
+        prisma.newsletterSubscriber.count({
+            where: { createdAt: { gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) } },
+        }),
+        prisma.newsletterSubscriber.findFirst({
+            orderBy: { createdAt: "desc" },
+            select: { email: true, createdAt: true },
+        }),
+        // Sign-in attempts from browsers this account hasn't trusted yet.
+        prisma.device.findMany({
+            where: { approved: false },
+            orderBy: { lastSeenAt: "desc" },
+            select: { id: true, label: true, ip: true, userAgent: true, lastSeenAt: true },
+        }),
     ]);
 
     const industries = industryRows.map((i) => `${i.label} · ${i._count.caseStudies}`);
@@ -75,6 +95,50 @@ export default async function DashboardPage() {
                 </p>
             </header>
 
+            {/* Security notices sit above the content cards so a sign-in
+                attempt from an unknown browser can't be scrolled past. */}
+            {pendingDevices.length > 0 && (
+                <section className="mb-6 rounded-lg border border-amber-300 bg-amber-50 p-5">
+                    <h2 className="text-base font-semibold text-amber-900">
+                        {pendingDevices.length === 1
+                            ? "A new device is waiting for approval"
+                            : `${pendingDevices.length} new devices are waiting for approval`}
+                    </h2>
+                    <p className="mt-1 text-sm text-amber-800">
+                        Someone signed in with the correct password from a browser this
+                        account has not used before. They have been refused access until
+                        you approve them.
+                    </p>
+
+                    <ul className="mt-4 space-y-2">
+                        {pendingDevices.slice(0, 4).map((d) => (
+                            <li
+                                key={d.id}
+                                className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 rounded-md bg-white/70 px-3 py-2 text-sm"
+                            >
+                                <span className="font-medium text-amber-900">
+                                    {d.label || "Unnamed device"}
+                                </span>
+                                <span className="text-xs text-amber-800">
+                                    {describeUserAgent(d.userAgent)}
+                                </span>
+                                <span className="text-xs text-amber-700">
+                                    {d.ip ?? "unknown IP"} ·{" "}
+                                    {d.lastSeenAt.toISOString().slice(0, 16).replace("T", " ")}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <Link
+                        href="/admin/devices"
+                        className="mt-4 inline-block rounded-md bg-amber-900 px-4 py-2 text-sm font-medium text-white hover:bg-amber-800"
+                    >
+                        Review devices
+                    </Link>
+                </section>
+            )}
+
             <div className="grid gap-6 lg:grid-cols-2">
                 {/* ══ Blogs card ══════════════════════════════════════════ */}
                 <section className="flex flex-col rounded-lg border border-neutral-200 bg-white p-6">
@@ -85,10 +149,11 @@ export default async function DashboardPage() {
                                 Posts shown at /blogs
                             </p>
                         </div>
-                        <Link href="/admin/blog/new-post"
-                            className="shrink-0 rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700">
-                            New post
-                        </Link>
+                        <Button>
+                            <Link href="/admin/blog/new-post">
+                                New post
+                            </Link>
+                        </Button>
                     </div>
 
                     <div className="mt-5 grid grid-cols-3 gap-3">
@@ -146,10 +211,11 @@ export default async function DashboardPage() {
                                 Engagements shown at /case-studies
                             </p>
                         </div>
-                        <Link href="/admin/new-casestudy"
-                            className="shrink-0 rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700">
-                            New case study
-                        </Link>
+                        <Button>
+                            <Link href="/admin/new-casestudy">
+                                New case study
+                            </Link>
+                        </Button>
                     </div>
 
                     <div className="mt-5 grid grid-cols-3 gap-3">
@@ -202,6 +268,55 @@ export default async function DashboardPage() {
                     <div className="mt-auto flex gap-4 border-t border-neutral-100 pt-4 text-sm font-medium">
                         <Link href="/admin/case-study" className="text-neutral-700 hover:text-neutral-900 hover:underline">
                             View all case studies →
+                        </Link>
+                    </div>
+                </section>
+
+                {/* ══ Newsletter card ═══════════════════════════════════════ */}
+                <section className="flex flex-col rounded-lg border border-neutral-200 bg-white p-6">
+                    <div className="flex items-start justify-between gap-4">
+                        <div>
+                            <h2 className="text-xl font-semibold text-neutral-900">Newsletter</h2>
+                            <p className="mt-0.5 text-sm text-neutral-500">
+                                Sign-ups from the site footer
+                            </p>
+                        </div>
+                        <Link href="/admin/newsletter/export"
+                            className="shrink-0 rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700">
+                            Export CSV
+                        </Link>
+                    </div>
+
+                    <div className="mt-5 grid grid-cols-3 gap-3">
+                        <Stat value={subscriberCount} label="Subscribers" />
+                        <Stat value={subscribersLast30} label="Last 30 days" />
+                        <Stat
+                            value={subscriberCount - subscribersLast30}
+                            label="Earlier"
+                        />
+                    </div>
+
+                    {latestSubscriber ? (
+                        <div className="mt-5">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-neutral-400">
+                                Most recent
+                            </p>
+                            <p className="mt-1 truncate text-sm font-medium text-neutral-900">
+                                {latestSubscriber.email}
+                            </p>
+                            <p className="text-xs text-neutral-500">
+                                {latestSubscriber.createdAt.toISOString().slice(0, 10)}
+                            </p>
+                        </div>
+                    ) : (
+                        <div className="mt-5">
+                            <p className="text-sm text-neutral-500">No sign-ups yet.</p>
+                        </div>
+                    )}
+
+                    <div className="mt-auto flex gap-4 border-t border-neutral-100 pt-4 text-sm font-medium">
+                        <Link href="/admin/newsletter" className="text-neutral-700 hover:text-neutral-900 hover:underline">
+                            View all subscribers →
                         </Link>
                     </div>
                 </section>

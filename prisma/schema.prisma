@@ -150,9 +150,44 @@ model User {
   sessions    Session[]
   posts       BlogPost[]
   caseStudies CaseStudy[]
+  devices     Device[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+/// A browser that has attempted to sign in, identified by a random id held in
+/// a signed httpOnly cookie — not a fingerprint, which breaks on browser
+/// updates and is trivial to spoof.
+///
+/// `approved = false` is the pending state: the credentials were correct but
+/// the device is unrecognised, so sign-in was refused and it awaits an admin
+/// decision. There is no separate request table; a pending device IS the request.
+model Device {
+  id       String @id @default(cuid())
+  /// Value stored in the client cookie. Unique per user rather than globally,
+  /// so two accounts can each trust the same shared browser.
+  deviceId String
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  /// Supplied by the person signing in, so an admin knows what they're approving.
+  label     String?
+  userAgent String? @db.Text
+  ip        String?
+
+  approved   Boolean   @default(false)
+  approvedAt DateTime?
+  /// Null for the bootstrap device (first sign-in self-approves).
+  approvedBy String?
+
+  lastSeenAt DateTime @default(now())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, deviceId])
+  @@index([userId, approved])
 }
 
 model Account {

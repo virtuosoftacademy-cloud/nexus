@@ -41,7 +41,7 @@ const cards: ContactCard[] = [
     title: "Email",
     body: (
       <p>
-        info@nexusadvisory.uk
+        connect@nexusadvisory.uk
       </p>
     ),
     linkLabel: "",

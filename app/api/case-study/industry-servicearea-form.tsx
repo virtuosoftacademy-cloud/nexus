@@ -5,6 +5,7 @@
 
 import { useActionState } from "react";
 import { TaxonomyFormState } from "./actions";
+import { Button } from "@/components/ui/button";
 
 const initialState: TaxonomyFormState = {};
 
@@ -38,14 +39,12 @@ export function NewTaxonomyForm({
                                focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
                 />
             </div>
-            <button
+            <Button
                 type="submit"
                 disabled={isPending}
-                className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white
-                           hover:bg-neutral-700 disabled:opacity-60"
             >
                 {isPending ? "Adding…" : "Add"}
-            </button>
+            </Button>
 
             {state.error && (
                 <p role="alert" className="w-full text-sm text-red-600">{state.error}</p>

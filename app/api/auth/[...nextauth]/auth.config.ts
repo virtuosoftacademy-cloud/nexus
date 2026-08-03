@@ -39,7 +39,9 @@ const NOT_FOUND_HTML = `<!doctype html>
 
 export const authConfig = {
     pages: {
-        signIn: "/signin",
+        // Route lives at app/(admin)/auth/signin — "(admin)" is a route group,
+        // so it contributes nothing to the URL.
+        signIn: "/auth/signin",
     },
     session: {
         // Credentials provider requires JWT sessions — database

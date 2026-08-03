@@ -19,16 +19,16 @@ export default function GovernancePhilosophy() {
               core brand ideas and should not be buried.
             </h3> */}
 
-            <h4 className="text-base sm:text-lg font-semibold text-primary mb-2">
+            <h4 className="text-base md:text-lg font-semibold text-primary mb-2">
               Structure Before Scale
             </h4>
-            <h3 className="text-base sm:text-lg text-foreground/70 leading-relaxed mb-4">
+            <h3 className="text-base md:text-lg text-foreground/70 leading-relaxed mb-4">
               Most businesses outgrow their original financial structure long
               before they realise it. Reporting becomes reactive, governance
               weakens, systems become fragmented and leadership decisions are
               made without consistent financial clarity.
             </h3>
-            <h3 className="text-base sm:text-lg text-foreground/70 leading-relaxed">
+            <h3 className="text-base md:text-lg text-foreground/70 leading-relaxed">
               Nexus was built around a different philosophy: sustainable growth
               requires structure, discipline and governance before scale. Our
               role is not simply to prepare reports or file returns. Our role is
@@ -70,16 +70,16 @@ export default function GovernancePhilosophy() {
               standard accounting firm without sounding boastful.
             </h3> */}
 
-            <h4 className="text-base sm:text-lg font-semibold text-primary mb-2">
+            <h4 className="text-base md:text-lg font-semibold text-primary mb-2">
               Why Clients Work With Nexus
             </h4>
-            <h3 className="text-base sm:text-lg text-foreground/70 leading-relaxed mb-4">
+            <h3 className="text-base md:text-lg text-foreground/70 leading-relaxed mb-4">
               Clients work with Nexus when they require more than routine
               compliance. They usually need clearer reporting, stronger controls,
               defensible tax positions, better systems oversight or cross border
               financial structure.
             </h3>
-            <h3 className="text-base sm:text-lg text-foreground/70 leading-relaxed">
+            <h3 className="text-base md:text-lg text-foreground/70 leading-relaxed">
               Our work is partner led, documented and proportionate to the
               complexity of each engagement. We focus on interpretation,
               governance and disciplined implementation rather than volume

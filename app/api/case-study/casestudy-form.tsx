@@ -18,6 +18,7 @@ import type {
     TimelineRow,
     ServiceRow,
 } from "./helpers";
+import { Button } from "@/components/ui/button";
 
 const initialState: CaseStudyFormState = {};
 
@@ -288,10 +289,9 @@ export function CaseStudyForm({
             </fieldset>
 
             <div className="flex items-center gap-3 border-t border-neutral-200 pt-6">
-                <button type="submit" disabled={isPending}
-                    className="rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-neutral-700 disabled:cursor-not-allowed disabled:opacity-60">
+                <Button type="submit" disabled={isPending}>
                     {isPending ? pendingLabel : submitLabel}
-                </button>
+                </Button>
             </div>
         </form>
     );

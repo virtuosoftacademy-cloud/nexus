@@ -27,12 +27,19 @@ import {
     FolderPlus,
     ExternalLink,
     LetterText,
+    UserRound,
+    MonitorSmartphone,
 } from "lucide-react";
 import type { ReactNode } from "react";
 
 const overviewItems = [
     { href: "/admin", label: "Dashboard", icon: Home },
     { href: "/admin/newsletter", label: "Newsletter", icon: LetterText },
+];
+
+const accountItems = [
+    { href: "/admin/profile", label: "Profile", icon: UserRound },
+    { href: "/admin/devices", label: "Devices", icon: MonitorSmartphone },
 ];
 
 const blogItems = [
@@ -108,6 +115,24 @@ export function AdminSidebar({
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {caseStudyItems.map((item) => (
+                                <SidebarMenuItem key={item.href}>
+                                    <SidebarMenuButton asChild isActive={isActive(item.href)}>
+                                        <Link href={item.href}>
+                                            <item.icon />
+                                            <span>{item.label}</span>
+                                        </Link>
+                                    </SidebarMenuButton>
+                                </SidebarMenuItem>
+                            ))}
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup>
+
+                <SidebarGroup>
+                    <SidebarGroupLabel>Account</SidebarGroupLabel>
+                    <SidebarGroupContent>
+                        <SidebarMenu>
+                            {accountItems.map((item) => (
                                 <SidebarMenuItem key={item.href}>
                                     <SidebarMenuButton asChild isActive={isActive(item.href)}>
                                         <Link href={item.href}>

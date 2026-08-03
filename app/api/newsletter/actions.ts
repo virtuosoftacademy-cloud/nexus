@@ -21,6 +21,13 @@ export async function subscribe(
         return { success: "Thanks — you're on the list." };
     }
 
+    // Consent is required. The submit button is disabled until the box is
+    // ticked, but that is only a UI hint — this action is a public endpoint and
+    // can be POSTed directly, so the consent has to be enforced here too.
+    if (formData.get("consent") !== "yes") {
+        return { error: "Please accept the Privacy Notice before subscribing." };
+    }
+
     const email = String(formData.get("email") ?? "").toLowerCase().trim();
 
     if (!email || email.length > 254 || !EMAIL_RE.test(email)) {

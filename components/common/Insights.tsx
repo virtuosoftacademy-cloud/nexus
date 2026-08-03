@@ -56,10 +56,10 @@ export function InsightsSection({ posts }: BlogPostProps) {
                 >
                   {post.category?.label}
                 </p> */}
-                <h4 className="font-bold text-foreground text-xl leading-snug mb-2 line-clamp-1">
+                <h4 className="font-bold text-foreground text-xl md:text-2xl leading-snug mb-2 line-clamp-1">
                   {post.title}
                 </h4>
-                <p className="text-base leading-relaxed font-heading">{post.excerpt}</p>
+                <p className="text-base md:text-lg leading-relaxed font-heading">{post.excerpt}</p>
                 {/* <div className="flex justify-between pt-2 text-foreground/50 text-sm">
                   <span>{post.timeAgo}</span>
                   <span><Bookmark size={18} /> </span>

@@ -1,8 +1,5 @@
 // components/stats/StatsBar.tsx
 
-import { statusBar } from "@/app/_constant";
-import { Plus } from "lucide-react";
-
 export default function Aboutstats() {
     const stats = [
         {

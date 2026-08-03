@@ -44,11 +44,7 @@ const Footer = () => {
               <Button className="p-6 text-sm md:text-base hover:text-foreground transition hover:bg-secondary">Subscribe</Button>
             </div> */}
             <NewsletterForm />
-            <FieldDescription className="flex gap-2 pt-2 text-background items-center">
-              <Checkbox id="terms" className="bg-background rounded-none text-sm md:text-base" />
-              <Label htmlFor="terms" className="font-normal text-xs md:text-base">* I have read and understand<Link href="/privacy-policy" className="underline underline-offset-4 decoration-primary">Nexus Privacy Notice.</Link>
-              </Label>
-            </FieldDescription>
+            
 
             {/* <div className="flex gap-6 mt-6 text-background items-center justify-center md:justify-end">
               <a href="#" className="hover:text-primary transition-colors">

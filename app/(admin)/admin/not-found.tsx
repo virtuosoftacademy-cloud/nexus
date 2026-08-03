@@ -9,9 +9,9 @@ export default function NotFound() {
       <p className="max-w-md font-heading text-primary text-sm md:text-base">
         The page you&apos;re looking for doesn&apos;t exist or may have been moved.
       </p>
-      <Button asChild size="lg" className="mt-4">
+      {/* <Button asChild size="lg" className="mt-4">
         <Link href="/">Back to Home</Link>
-      </Button>
+      </Button> */}
     </div>
   )
 }

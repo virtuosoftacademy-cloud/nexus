@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import { AdminSidebar } from "./_components/adminsidebar";
-import { SignOutButton } from "../signin/signoutbtn";
+import { SignOutButton } from "../auth/signin/signoutbtn";
 
 export const metadata = {
     title: { template: "%s · Admin", default: "Admin" },
@@ -13,7 +13,7 @@ export const metadata = {
 export default async function AdminLayout({ children }: { children: ReactNode }) {
     // LAYER 2 — enforcing guard, not just display.
     const session = await auth();
-    if (session?.user?.role !== "ADMIN") redirect("/signin");
+    if (session?.user?.role !== "ADMIN") redirect("/auth/signin");
 
     return (
         <SidebarProvider>

@@ -136,6 +136,26 @@ CREATE TABLE `User` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
+CREATE TABLE `Device` (
+    `id` VARCHAR(191) NOT NULL,
+    `deviceId` VARCHAR(191) NOT NULL,
+    `userId` VARCHAR(191) NOT NULL,
+    `label` VARCHAR(191) NULL,
+    `userAgent` TEXT NULL,
+    `ip` VARCHAR(191) NULL,
+    `approved` BOOLEAN NOT NULL DEFAULT false,
+    `approvedAt` DATETIME(3) NULL,
+    `approvedBy` VARCHAR(191) NULL,
+    `lastSeenAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+
+    INDEX `Device_userId_approved_idx`(`userId`, `approved`),
+    UNIQUE INDEX `Device_userId_deviceId_key`(`userId`, `deviceId`),
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
 CREATE TABLE `Account` (
     `id` VARCHAR(191) NOT NULL,
     `userId` VARCHAR(191) NOT NULL,
@@ -204,6 +224,9 @@ ALTER TABLE `TimelinePhase` ADD CONSTRAINT `TimelinePhase_caseStudyId_fkey` FORE
 
 -- AddForeignKey
 ALTER TABLE `RelatedService` ADD CONSTRAINT `RelatedService_caseStudyId_fkey` FOREIGN KEY (`caseStudyId`) REFERENCES `CaseStudy`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Device` ADD CONSTRAINT `Device_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `User`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `Account` ADD CONSTRAINT `Account_userId_fkey` FOREIGN KEY (`userId`) REFERENCES `User`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;

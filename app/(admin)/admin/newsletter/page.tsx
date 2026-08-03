@@ -21,7 +21,7 @@ export default async function SubscribersPage() {
                 </div>
                 <a
                     href="/admin/newsletter/export"
-                    className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-700"
+                    className="rounded-none bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-secondary"
                 >
                     Export CSV
                 </a>

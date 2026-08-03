@@ -1,10 +1,20 @@
 
-import NextAuth from "next-auth";
+import NextAuth, { CredentialsSignin } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { compare } from "bcryptjs";
 import { prisma } from "@/lib/prisma";
+import { registerDeviceForLogin } from "@/lib/device";
 import { authConfig } from "./auth.config";
+
+/**
+ * Raised when the password was right but the browser isn't trusted yet.
+ * A distinct error type so the sign-in form can say "waiting for approval"
+ * instead of the generic "invalid email or password".
+ */
+export class DevicePendingError extends CredentialsSignin {
+    code = "device_pending";
+}
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
     adapter: PrismaAdapter(prisma),
@@ -14,6 +24,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             credentials: {
                 email: { label: "Email", type: "email" },
                 password: { label: "Password", type: "password" },
+                // Optional; only used the first time a browser is seen, so the
+                // admin approving it has something friendlier than a UA string.
+                deviceName: { label: "Device name", type: "text" },
             },
             async authorize(credentials) {
                 // Normalize the email the same way create-admin.ts stores it
@@ -29,6 +42,17 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
                 const valid = await compare(password, user.password);
                 if (!valid) return null;
+
+                // Password is correct; now decide whether this browser is one
+                // the account has signed in from before. Runs after the password
+                // check so an attacker can't probe an account's device list.
+                const verdict = await registerDeviceForLogin(
+                    user.id,
+                    credentials?.deviceName == null
+                        ? null
+                        : String(credentials.deviceName)
+                );
+                if (verdict === "pending") throw new DevicePendingError();
 
                 // Only return what the JWT needs — never the password hash.
                 return {

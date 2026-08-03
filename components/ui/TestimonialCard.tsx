@@ -59,8 +59,7 @@ export default function TestimonialCard({
           />
         ) : (
           <div
-            className="h-10 w-10 rounded-full flex items-center justify-center text-sm font-bold text-primary-foreground shrink-0"
-            style={{ background: "var(--gradient-primary)" }}
+            className="h-10 w-10 rounded-full flex items-center justify-center text-sm font-bold text-primary-foreground shrink-0 bg-primary"
           >
             {avatarInitial ?? name.charAt(0)}
           </div>

@@ -22,7 +22,7 @@ export default function PlatformsSection() {
             </h4>
 
             {/* Body copy */}
-            <p className="text-sm text-foreground/70 font-heading leading-relaxed max-w-lg">
+            <p className="text-lg text-foreground/70 font-heading leading-relaxed max-w-lg">
               We don&apos;t sell software. We govern it.
               <br />
               Whether you&apos;re migrating to Xero, implementing Sage, or
@@ -33,9 +33,9 @@ export default function PlatformsSection() {
             </p>
 
             {/* Bullet points */}
-            <ul className="flex flex-col gap-3 font-heading">
+            <ul className="flex flex-col font-heading">
               {bulletPoints.map((point) => (
-                <li key={point} className="flex items-start gap-2.5 text-sm text-foreground/70">
+                <li key={point} className="flex items-center gap-x-2.5 text-lg text-foreground/70">
                   <Check
                     className="h-4 w-4 mt-0.5 shrink-0 text-primary"
                   />

@@ -15,7 +15,7 @@ export default function ProfessionalMemberships() {
         </h4>
 
         {/* Description */}
-        <p className="font-heading text-sm sm:text-base text-foreground/70 leading-relaxed mb-10 sm:mb-12">
+        <p className="font-heading text-sm sm:text-lg text-foreground/70 leading-relaxed mb-10 sm:mb-12">
           We uphold the highest professional standards in every aspect of our
           work. Guided by recognised industry bodies and regulatory requirements,
           we deliver services with integrity, accuracy, and accountability. Our
@@ -40,7 +40,7 @@ export default function ProfessionalMemberships() {
                   className="object-contain"
                 />
               </div>
-              <p className="text-sm sm:text-sm text-foreground/80 text-center">
+              <p className="text-sm sm:text-lg text-foreground/80 text-center">
                 {membership.name}
               </p>
             </div>

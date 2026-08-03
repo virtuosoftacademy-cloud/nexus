@@ -22,7 +22,13 @@ export function LoginForm() {
             {state.error && (
                 <div
                     role="alert"
-                    className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700"
+                    className={
+                        // A pending device isn't a failure the person can fix by
+                        // retrying, so it reads as a notice rather than an error.
+                        state.pendingDevice
+                            ? "rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800"
+                            : "rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700"
+                    }
                 >
                     {state.error}
                 </div>
@@ -60,6 +66,31 @@ export function LoginForm() {
                     autoComplete="current-password"
                     className={inputClass}
                 />
+            </div>
+
+            <div>
+                <label
+                    htmlFor="deviceName"
+                    className="block text-sm font-medium text-neutral-800"
+                >
+                    Device name{" "}
+                    <span className="font-normal text-neutral-500">(optional)</span>
+                </label>
+                <input
+                    id="deviceName"
+                    name="deviceName"
+                    type="text"
+                    // Matches DEVICE_LABEL_MAX in lib/device.ts, which is
+                    // server-only and so can't be imported here.
+                    maxLength={60}
+                    autoComplete="off"
+                    placeholder="e.g. Office laptop"
+                    className={inputClass}
+                />
+                <p className="mt-1 text-xs text-neutral-500">
+                    Only used the first time you sign in from a browser, so the
+                    administrator can recognise it.
+                </p>
             </div>
 
             <Button

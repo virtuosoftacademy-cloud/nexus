@@ -2,6 +2,7 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { DeleteCaseStudyButton } from "../../../api/case-study/DeleteCaseStudy";
+import { Button } from "@/components/ui/button";
 export const metadata = { title: "Case studies" };
 export const dynamic = "force-dynamic";
 
@@ -22,10 +23,11 @@ export default async function ViewCaseStudiesPage() {
                         Manage the case studies shown at /case-studies.
                     </p>
                 </div>
-                <Link href="/admin/case-study/new-casestudy"
-                    className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-700">
-                    New case study
-                </Link>
+                <Button>
+                    <Link href="/admin/case-study/new-casestudy">
+                        New case study
+                    </Link>
+                </Button>
             </header>
 
             <section className="overflow-hidden rounded-lg border border-neutral-200 bg-white">
