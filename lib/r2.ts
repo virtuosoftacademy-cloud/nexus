@@ -28,7 +28,14 @@ export interface R2UploadResult {
 }
 
 
-export type ImageKind = "post" | "case-study";
+export type ImageKind = "post" | "case-study" | "case-study-thumb";
+
+/** Every valid ImageKind, so the upload route can validate without repeating the union. */
+export const IMAGE_KINDS = ["post", "case-study", "case-study-thumb"] as const;
+
+export function isImageKind(value: string): value is ImageKind {
+    return (IMAGE_KINDS as readonly string[]).includes(value);
+}
 
 export interface ImageValidationResult {
     isValid: boolean;
@@ -73,7 +80,11 @@ export function buildR2Url(objectKey: string): string {
  * Folder comes from what the image is for; filename is slugified.
  */
 export function objectKeyFor(kind: ImageKind, fileName: string): string {
-    const folder = kind === "post" ? "nexus/posts" : "nexus/case-studies";
+    const folder = {
+        post: "nexus/posts",
+        "case-study": "nexus/case-studies",
+        "case-study-thumb": "nexus/case-studies/thumbnails",
+    }[kind];
     const ext = fileName.includes(".")
         ? fileName.slice(fileName.lastIndexOf(".")).toLowerCase()
         : "";
@@ -160,6 +171,14 @@ export const IMAGE_VALIDATION: Record<
         maxDimensions: { width: 4000, height: 4000 },
         recommended: { width: 1600, height: 900 },
         note: "Hero images render full-bleed; keep them wide but compressed — they are served as-is.",
+    },
+    "case-study-thumb": {
+        // The card image box is 30rem wide by 20rem tall at most, so roughly
+        // 3:2. Smaller than a hero because next/image resizes these down.
+        minDimensions: { width: 800, height: 500 },
+        maxDimensions: { width: 4000, height: 4000 },
+        recommended: { width: 1200, height: 800 },
+        note: "Card thumbnails are cropped to fill a 3:2 box in the case studies grid.",
     },
 };
 

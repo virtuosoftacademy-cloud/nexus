@@ -246,6 +246,7 @@ Counter-offering is normal and expected. A reasonable response acknowledges the 
             heroSubtitle:
                 "How a 120-unit portfolio moved from spreadsheet chaos to monthly management accounts in ninety days.",
             heroImage: "/assets/services/propertyAccounting.png",
+            thumbnailImage: "/assets/services/ukaccounting.png",
             industry: "Property & Real Estate",
             serviceAreas: ["Management Accounts", "Systems Migration", "Advisory"],
 
@@ -308,6 +309,7 @@ Lender reporting pack produced on demand instead of on request`,
             heroSubtitle:
                 "Turning timesheets into a live view of which projects pay — and which quietly do not.",
             heroImage: "/assets/services/businessConsultancy.png",
+            thumbnailImage: "/assets/services/digitalandsystems.png",
             industry: "Professional Services",
             serviceAreas: ["Management Accounts", "Payroll", "Advisory"],
 
@@ -370,6 +372,7 @@ Two service lines repriced on evidence rather than instinct`,
             heroSubtitle:
                 "Four sites, one seasonal revenue curve, and a rolling forecast that replaced the January scramble.",
             heroImage: "/assets/services/solutions.png",
+            thumbnailImage: "/assets/services/advisory.png",
             industry: "Hospitality & Leisure",
             serviceAreas: ["Cash Flow Forecasting", "Tax Planning", "Advisory"],
 

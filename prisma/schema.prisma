@@ -59,6 +59,10 @@ model CaseStudy {
   heroSubtitle String @db.Text
   heroImage    String
 
+  /// Shown on the case study card in the listing grid. Optional: cards fall
+  /// back to heroImage when it's unset, so existing rows keep working.
+  thumbnailImage String?
+
   industryId Int?
   industry   Industry? @relation(fields: [industryId], references: [id])
 

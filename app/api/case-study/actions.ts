@@ -31,8 +31,10 @@ function childWrites(values: ReturnType<typeof parseCaseStudyForm>["values"]) {
 // public listing, and the public detail page.
 function refreshCaseStudies(slug?: string) {
     revalidatePath("/admin/case-study");
-    revalidatePath("/case-study");
-    if (slug) revalidatePath(`/case-study/${slug}`);
+    // The public routes are /case-studies (plural) — revalidating
+    // "/case-study" silently did nothing, so the grid stayed stale.
+    revalidatePath("/case-studies");
+    if (slug) revalidatePath(`/case-studies/${slug}`);
 }
 
 export async function createCaseStudy(

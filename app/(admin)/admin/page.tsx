@@ -212,7 +212,7 @@ export default async function DashboardPage() {
                             </p>
                         </div>
                         <Button>
-                            <Link href="/admin/new-casestudy">
+                            <Link href="/admin/case-study/new-casestudy">
                                 New case study
                             </Link>
                         </Button>

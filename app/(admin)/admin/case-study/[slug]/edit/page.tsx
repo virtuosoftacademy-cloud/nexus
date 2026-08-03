@@ -46,6 +46,7 @@ export default async function EditCaseStudyPage({ params }: Props) {
                     heroTitle: cs.heroTitle,
                     heroSubtitle: cs.heroSubtitle,
                     heroImage: cs.heroImage,
+                    thumbnailImage: cs.thumbnailImage,
                     industryId: cs.industryId,
                     serviceAreaIds: cs.serviceAreas.map((a) => a.id),
                     summary: cs.summary,

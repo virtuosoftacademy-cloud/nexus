@@ -23,6 +23,8 @@ export type ParsedCaseStudy = {
     heroTitle: string;
     heroSubtitle: string;
     heroImage: string;
+    /** Optional; the card falls back to heroImage when this is blank. */
+    thumbnailImage: string | null;
     industryId: number | null;
     serviceAreaIds: number[];
     summary: string;
@@ -111,6 +113,7 @@ export function parseCaseStudyForm(formData: FormData): {
             heroTitle: get("heroTitle"),
             heroSubtitle: get("heroSubtitle"),
             heroImage: get("heroImage"),
+            thumbnailImage: opt("thumbnailImage"),
             industryId: industryIdRaw ? Number(industryIdRaw) : null,
             serviceAreaIds,
             summary: get("summary"),

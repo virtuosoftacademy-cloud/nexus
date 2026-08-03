@@ -25,12 +25,14 @@ export function ImageUploadField({
     label,
     defaultValue = "",
     error,
+    help,
 }: {
     name: string;            // form field name the server action reads
-    kind: ImageKind;         // "post" | "case-study" -> R2 folder + validation
+    kind: ImageKind;         // picks the R2 folder + the dimension rules
     label: string;
     defaultValue?: string | null;
     error?: string;          // server-side field error, if any
+    help?: string;           // optional hint under the label
 }) {
     const [url, setUrl] = useState(defaultValue ?? "");
     const [uploading, setUploading] = useState(false);
@@ -75,6 +77,7 @@ export function ImageUploadField({
     return (
         <div>
             <span className="block text-sm font-medium text-neutral-800">{label}</span>
+            {help && <p className="mt-0.5 text-xs text-neutral-500">{help}</p>}
 
             {/* The value the server action actually receives */}
             <input type="hidden" name={name} value={url} />

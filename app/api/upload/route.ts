@@ -2,6 +2,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import { uploadImageToR2, type ImageKind } from "@/lib/r2-server";
+import { isImageKind } from "@/lib/r2";
 
 const MAX_SIZE = 10 * 1024 * 1024; // 10MB — mirror of the client check
 
@@ -20,8 +21,7 @@ export async function POST(request: Request) {
 
     const file = formData.get("file");
     const kindRaw = String(formData.get("kind") ?? "");
-    const kind: ImageKind | null =
-        kindRaw === "post" || kindRaw === "case-study" ? kindRaw : null;
+    const kind: ImageKind | null = isImageKind(kindRaw) ? kindRaw : null;
 
     if (!(file instanceof File) || !kind) {
         return NextResponse.json(

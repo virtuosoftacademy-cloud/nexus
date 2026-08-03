@@ -16,6 +16,7 @@ export const getCaseStudyCards = cache(async () => {
                 heroTitle: true,
                 heroSubtitle: true,
                 heroImage: true,
+                thumbnailImage: true,
                 industry: { select: { label: true } },
                 serviceAreas: { select: { label: true }, orderBy: { label: "asc" } },
             },
@@ -34,6 +35,7 @@ type CaseStudyCardRow = {
     heroTitle: string;
     heroSubtitle: string;
     heroImage: string;
+    thumbnailImage: string | null;
     industry: { label: string } | null;
     serviceAreas: { label: string }[];
 };
@@ -41,7 +43,9 @@ type CaseStudyCardRow = {
 export function toCard(row: CaseStudyCardRow): CaseStudyCardProps {
     return {
         id: row.id,
-        image: row.heroImage,
+        // Prefer the card-specific thumbnail; heroImage is cropped for a
+        // full-bleed banner, so it often loses its subject in a 3:2 card.
+        image: row.thumbnailImage || row.heroImage,
         imageAlt: row.heroTitle,
         category: row.industry?.label ?? "",
         title: row.heroTitle,

@@ -131,6 +131,7 @@ function RowsEditor<T extends Record<string, string>>({
 // ── Default values shape (edit page fills this from the row) ───────
 export type CaseStudyFormValues = {
     heroTitle?: string; heroSubtitle?: string; heroImage?: string;
+    thumbnailImage?: string | null;
     industryId?: number | null; serviceAreaIds?: number[]; summary?: string;
     situationParagraphs?: string; situationQuestions?: string; situationClosing?: string | null;
     challenge?: string; approachIntro?: string; outcome?: string; keyResults?: string;
@@ -183,6 +184,15 @@ export function CaseStudyForm({
                 label="Hero image"
                 defaultValue={defaultValues.heroImage}
                 error={errors.heroImage}
+            />
+            {/* ── Card thumbnail: optional, falls back to the hero image ── */}
+            <ImageUploadField
+                name="thumbnailImage"
+                kind="case-study-thumb"
+                label="Card thumbnail (optional)"
+                defaultValue={defaultValues.thumbnailImage ?? undefined}
+                error={errors.thumbnailImage}
+                help="Shown on the case study card in the listing grid. Leave blank to reuse the hero image."
             />
 
             <div className="grid gap-6 sm:grid-cols-2">

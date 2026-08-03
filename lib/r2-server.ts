@@ -37,7 +37,7 @@ function createR2Client() {
 
 // ── Types ──────────────────────────────────────────────────────────
 
-export type ImageKind = "post" | "case-study";
+export type ImageKind = "post" | "case-study" | "case-study-thumb";
 
 export interface R2UploadResult {
     success: boolean;
@@ -90,7 +90,11 @@ async function processImage(
 // ── Object keys (mirror of client's objectKeyFor) ──────────────────
 
 function objectKeyFor(kind: ImageKind, fileName: string): string {
-    const folder = kind === "post" ? "nexus/posts" : "nexus/case-studies";
+    const folder = {
+        post: "nexus/posts",
+        "case-study": "nexus/case-studies",
+        "case-study-thumb": "nexus/case-studies/thumbnails",
+    }[kind];
     const ext = fileName.includes(".")
         ? fileName.slice(fileName.lastIndexOf(".")).toLowerCase()
         : "";
