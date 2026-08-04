@@ -55,6 +55,7 @@ CREATE TABLE `CaseStudy` (
     `heroTitle` VARCHAR(191) NOT NULL,
     `heroSubtitle` TEXT NOT NULL,
     `heroImage` VARCHAR(191) NOT NULL,
+    `thumbnailImage` VARCHAR(191) NULL,
     `industryId` INTEGER NULL,
     `summary` LONGTEXT NOT NULL,
     `situationParagraphs` LONGTEXT NOT NULL,

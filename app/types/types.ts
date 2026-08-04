@@ -1,7 +1,16 @@
 
+import { isRenderableImageSrc } from "@/lib/blog-actions/blog-image";
+
 export type PostFormState = {
     error?: string;
     fieldErrors?: Partial<Record<string, string>>;
+    /**
+     * What was submitted, echoed back so a rejected save can be re-rendered
+     * with the author's own text still in place. React resets an uncontrolled
+     * form once its action resolves, so without this a missing image would
+     * blank out the title, excerpt and body along with it.
+     */
+    values?: ParsedPostForm;
 };
 
 export function slugify(title: string): string {
@@ -34,6 +43,8 @@ export type ParsedPostForm = {
     excerpt: string;
     content: string;
     image: string;
+    /** Optional; cards fall back to `image` when this is blank. */
+    thumbnailImage: string | null;
     accent: string;
     date: string;
     categoryId: number | null;
@@ -41,15 +52,24 @@ export type ParsedPostForm = {
     isSidebar: boolean;
 };
 
+// Always returns `values` — even when invalid — so the caller can hand the
+// submission back to the form instead of letting React blank it. Callers must
+// check `fieldErrors` before writing anything to the database.
 export function parseAndValidatePostForm(formData: FormData): {
-    values?: ParsedPostForm;
+    values: ParsedPostForm;
     fieldErrors?: Record<string, string>;
 } {
     const title = String(formData.get("title") ?? "").trim();
     const excerpt = String(formData.get("excerpt") ?? "").trim();
     const content = String(formData.get("content") ?? "").trim();
     const image = String(formData.get("image") ?? "").trim();
-    const accent = String(formData.get("accent") ?? "#3b82f6").trim();
+    const thumbnailImage = String(formData.get("thumbnailImage") ?? "").trim();
+    // A highlighted PHRASE from the title, not a colour. It used to fall back
+    // to "#3b82f6" — a leftover from when this field held a hex value — and
+    // because AccentedTitle appends an accent it can't find in the title, any
+    // post saved without one rendered "#3b82f6" after its heading. Blank now
+    // stays blank, which AccentedTitle already handles by returning the title.
+    const accent = String(formData.get("accent") ?? "").trim();
     const date = String(formData.get("date") ?? "").trim();
     const categoryIdRaw = String(formData.get("categoryId") ?? "");
 
@@ -58,15 +78,28 @@ export function parseAndValidatePostForm(formData: FormData): {
     if (!excerpt) fieldErrors.excerpt = "Excerpt is required.";
     if (!content) fieldErrors.content = "Content is required.";
     if (!image) fieldErrors.image = "Image URL or path is required.";
+    // The paste-a-URL box accepts free text; storing it would crash next/image
+    // on the public post page rather than failing here.
+    else if (!isRenderableImageSrc(image))
+        fieldErrors.image =
+            "Image must be a path starting with / or a full http(s) URL.";
+    // Optional, but if given it has to be renderable — cards run it through
+    // next/image just like the cover.
+    if (thumbnailImage && !isRenderableImageSrc(thumbnailImage))
+        fieldErrors.thumbnailImage =
+            "Card thumbnail must be a path starting with / or a full http(s) URL.";
     if (!date) fieldErrors.date = "Publish date is required.";
-    if (Object.keys(fieldErrors).length > 0) return { fieldErrors };
+
+    const invalid = Object.keys(fieldErrors).length > 0;
 
     return {
+        fieldErrors: invalid ? fieldErrors : undefined,
         values: {
             title,
             excerpt,
             content,
             image,
+            thumbnailImage: thumbnailImage || null,
             accent,
             date,
             categoryId: categoryIdRaw ? Number(categoryIdRaw) : null,

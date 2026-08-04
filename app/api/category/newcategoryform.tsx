@@ -27,6 +27,9 @@ export function NewCategoryForm() {
                     name="label"
                     type="text"
                     required
+                    // Cleared once the category is created, otherwise the name
+                    // just added would sit in the box for the next one.
+                    defaultValue={state.success ? "" : state.values?.label ?? ""}
                     placeholder="Technology"
                     className="mt-1 block w-full rounded-md border border-neutral-300 px-3 py-2 text-sm
                                focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"
@@ -45,6 +48,7 @@ export function NewCategoryForm() {
                     id="cat-accent"
                     name="accent"
                     type="text"
+                    defaultValue={state.success ? "" : state.values?.accent ?? ""}
                     placeholder="Growth"
                     className="mt-1 block w-full rounded-md border border-neutral-300 px-3 py-2 text-sm
                                focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"

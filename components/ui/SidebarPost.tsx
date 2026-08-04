@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Clock } from "lucide-react";
 import Image from "next/image";
-import { coverOf } from "@/lib/blog-actions/blog-image";
+import { cardImageOf } from "@/lib/blog-actions/blog-image";
 import { BlogPost } from "@/app/types/types";
 import SafeImage from "./safeimage";
 
@@ -35,7 +35,7 @@ export default function SidebarPost({ post }: SidebarPostProps) {
       {/* Thumbnail */}
       <div className="w-16 h-14 shrink-0 overflow-hidden">
         <SafeImage
-          src={coverOf(post)} alt={title} width={200} height={175} priority
+          src={cardImageOf(post)} alt={title} width={200} height={175} priority
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>

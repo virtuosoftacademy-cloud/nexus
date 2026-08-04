@@ -12,6 +12,7 @@ export type PostFormValues = {
     excerpt: string;
     content: string;
     image: string;
+    thumbnailImage: string | null;
     accent: string;
     date: string;
     categoryId: number | null;
@@ -44,6 +45,12 @@ export function PostForm({
     const [state, formAction, isPending] = useActionState(action, initialState);
     const errors = state.fieldErrors ?? {};
 
+    // React resets an uncontrolled form once its action resolves, restoring
+    // each input to its defaultValue. Pointing those defaults at the rejected
+    // submission means a validation failure leaves the typing intact instead
+    // of emptying every other field.
+    const values: Partial<PostFormValues> = state.values ?? defaultValues;
+
     const inputClass =
         "mt-1 block w-full rounded-md border border-neutral-300 px-3 py-2 text-sm " +
         "text-neutral-900 shadow-sm focus:border-neutral-900 focus:outline-none " +
@@ -70,7 +77,7 @@ export function PostForm({
                     name="title"
                     type="text"
                     required
-                    defaultValue={defaultValues.title}
+                    defaultValue={values.title}
                     placeholder="How we rebuilt our data layer"
                     className={inputClass}
                     aria-invalid={Boolean(errors.title)}
@@ -87,7 +94,7 @@ export function PostForm({
                     name="excerpt"
                     rows={2}
                     required
-                    defaultValue={defaultValues.excerpt}
+                    defaultValue={values.excerpt}
                     placeholder="One or two sentences shown in post cards."
                     className={inputClass}
                     aria-invalid={Boolean(errors.excerpt)}
@@ -104,7 +111,7 @@ export function PostForm({
                     name="content"
                     rows={12}
                     required
-                    defaultValue={defaultValues.content}
+                    defaultValue={values.content}
                     placeholder="Full post body…"
                     className={inputClass}
                     aria-invalid={Boolean(errors.content)}
@@ -119,8 +126,18 @@ export function PostForm({
                 name="image"
                 kind="post"
                 label="Cover image"
-                defaultValue={defaultValues.image}
+                defaultValue={values.image}
                 error={errors.image}
+            />
+
+            {/* ── Card thumbnail: optional, falls back to the cover ── */}
+            <ImageUploadField
+                name="thumbnailImage"
+                kind="post-thumb"
+                label="Card thumbnail (optional)"
+                defaultValue={values.thumbnailImage ?? undefined}
+                error={errors.thumbnailImage}
+                help="Shown on post cards in the listings. Leave blank to reuse the cover image."
             />
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -133,7 +150,7 @@ export function PostForm({
                         name="date"
                         type="date"
                         required
-                        defaultValue={defaultValues.date}
+                        defaultValue={values.date}
                         className={inputClass}
                         aria-invalid={Boolean(errors.date)}
                     />
@@ -147,7 +164,7 @@ export function PostForm({
                     <select
                         id="categoryId"
                         name="categoryId"
-                        defaultValue={defaultValues.categoryId ?? ""}
+                        defaultValue={values.categoryId ?? ""}
                         className={inputClass}
                     >
                         <option value="">No category</option>
@@ -169,7 +186,7 @@ export function PostForm({
                         id="accent"
                         name="accent"
                         type="text"
-                        defaultValue={defaultValues.accent ?? ""}
+                        defaultValue={values.accent ?? ""}
                         placeholder="highlighted part of the title"
                         className={inputClass}
                     />
@@ -182,7 +199,7 @@ export function PostForm({
                     <input
                         type="checkbox"
                         name="isFeatured"
-                        defaultChecked={defaultValues.isFeatured}
+                        defaultChecked={values.isFeatured}
                         className="h-4 w-4 rounded border-neutral-300"
                     />
                     Featured post
@@ -191,7 +208,7 @@ export function PostForm({
                     <input
                         type="checkbox"
                         name="isSidebar"
-                        defaultChecked={defaultValues.isSidebar}
+                        defaultChecked={values.isSidebar}
                         className="h-4 w-4 rounded border-neutral-300"
                     />
                     Show in sidebar

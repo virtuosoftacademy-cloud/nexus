@@ -31,8 +31,10 @@ export async function updatePost(
         return { error: "You must be signed in as an admin to edit posts." };
     }
 
+    // `values` always comes back so a rejection can be re-rendered with the
+    // author's edits intact instead of reverting to the stored row.
     const { values, fieldErrors } = parseAndValidatePostForm(formData);
-    if (fieldErrors || !values) return { fieldErrors };
+    if (fieldErrors) return { fieldErrors, values };
 
     try {
         await prisma.blogPost.update({
@@ -44,7 +46,10 @@ export async function updatePost(
         });
     } catch (err) {
         console.error("Failed to update post:", err);
-        return { error: "Could not update the post. Check the server logs and try again." };
+        return {
+            error: "Could not update the post. Check the server logs and try again.",
+            values,
+        };
     }
 
     revalidatePath("/view-page");

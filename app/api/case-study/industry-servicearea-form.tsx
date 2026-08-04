@@ -34,6 +34,10 @@ export function NewTaxonomyForm({
                     name="label"
                     type="text"
                     required
+                    // Keeps a rejected name on screen next to its error, but
+                    // clears once the entry is created so the box is ready
+                    // for the next one.
+                    defaultValue={state.success ? "" : state.values?.label ?? ""}
                     placeholder={placeholder}
                     className="mt-1 block w-full rounded-md border border-neutral-300 px-3 py-2 text-sm
                                focus:border-neutral-900 focus:outline-none focus:ring-1 focus:ring-neutral-900"

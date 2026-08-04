@@ -18,7 +18,7 @@ import BlogCard from "@/components/ui/BlogCard";
 import SidebarPost from "@/components/ui/SidebarPost";
 import { getBlogData } from "@/lib/blog-actions/blogActions";
 import Image from "next/image";
-import { coverOf } from "@/lib/blog-actions/blog-image";
+import { cardImageOf } from "@/lib/blog-actions/blog-image";
 import SafeImage from "@/components/ui/safeimage";
 
 export default async function Posts() {
@@ -44,7 +44,7 @@ export default async function Posts() {
                 {/* Hero image */}
                 <div className="overflow-hidden w-full">
                   <SafeImage
-                    src={coverOf(featured)}
+                    src={cardImageOf(featured)}
                     alt={featured.title}
                     width={400}
                     height={700}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Clock } from "lucide-react";
 import Image from "next/image";
 import { BlogPost } from "@/app/types/types";
-import { coverOf } from "@/lib/blog-actions/blog-image";
+import { cardImageOf } from "@/lib/blog-actions/blog-image";
 import SafeImage from "./safeimage";
 
 interface BlogCardProps {
@@ -18,7 +18,7 @@ export default function BlogCard({ post }: BlogCardProps) {
     <Link href={href} className="flex flex-col gap-3 group bg-accent p-4">
       {/* Image */}
       <div className="overflow-hidden w-full h-44">
-        <SafeImage src={coverOf(post)} alt={title} width={1200} height={675} loading="lazy"
+        <SafeImage src={cardImageOf(post)} alt={title} width={1200} height={675} loading="lazy"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>

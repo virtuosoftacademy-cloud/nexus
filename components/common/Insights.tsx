@@ -2,7 +2,7 @@
 
 import { BlogPost } from "@/app/types/types";
 import { Button } from "@/components/ui/button";
-import { coverOf } from "@/lib/blog-actions/blog-image";
+import { cardImageOf } from "@/lib/blog-actions/blog-image";
 import SafeImage from "../ui/safeimage";
 
 const GRADIENT_FROM = "hsl(172 66% 22%)";
@@ -37,7 +37,7 @@ export function InsightsSection({ posts }: BlogPostProps) {
                   background: `linear-gradient(135deg, ${GRADIENT_FROM}, ${GRADIENT_TO})`,
                 }}
               >
-                <SafeImage src={coverOf(post)} alt={post.title} width={400} height={800} className="object-cover w-full h-96" />
+                <SafeImage src={cardImageOf(post)} alt={post.title} width={400} height={800} className="object-cover w-full h-96" />
                 {/* <span
                   className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
                   style={{

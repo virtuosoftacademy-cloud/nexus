@@ -10,9 +10,18 @@
 // Type: Plain module (importable from actions and the form)
 // ============================================================================
 
+import { isRenderableImageSrc } from "@/lib/blog-actions/blog-image";
+
 export type CaseStudyFormState = {
     error?: string;
     fieldErrors?: Partial<Record<string, string>>;
+    /**
+     * What was submitted, echoed back so a rejected save can be re-rendered
+     * with the admin's own text still in place. React resets an uncontrolled
+     * form once its action resolves, so without this one missing field would
+     * blank out everything else that had been typed.
+     */
+    values?: ParsedCaseStudy;
 };
 
 export type CardRow = { title: string; description: string };
@@ -66,8 +75,11 @@ function json<T>(raw: FormDataEntryValue | null, fallback: T): T {
     }
 }
 
+// Always returns `values` — even when invalid — so the caller can hand the
+// submitted text back to the form. Callers must check `fieldErrors` before
+// writing anything to the database.
 export function parseCaseStudyForm(formData: FormData): {
-    values?: ParsedCaseStudy;
+    values: ParsedCaseStudy;
     fieldErrors?: Record<string, string>;
 } {
     const get = (k: string) => String(formData.get(k) ?? "").trim();
@@ -92,6 +104,20 @@ export function parseCaseStudyForm(formData: FormData): {
         (s) => s.label.trim() || s.href.trim()
     );
 
+    // Images go through next/image on the card, which throws on anything that
+    // isn't a path or an absolute URL — reject it here rather than on the
+    // public page. Blank thumbnail is fine; the card falls back to the hero.
+    const heroImage = get("heroImage");
+    if (heroImage && !isRenderableImageSrc(heroImage)) {
+        fieldErrors.heroImage =
+            "Hero image must be a path starting with / or a full http(s) URL.";
+    }
+    const thumbnail = get("thumbnailImage");
+    if (thumbnail && !isRenderableImageSrc(thumbnail)) {
+        fieldErrors.thumbnailImage =
+            "Card thumbnail must be a path starting with / or a full http(s) URL.";
+    }
+
     // A service with a label needs an internal href (guards javascript: etc.)
     for (const s of services) {
         if (s.href && !s.href.startsWith("/")) {
@@ -100,8 +126,6 @@ export function parseCaseStudyForm(formData: FormData): {
         }
     }
 
-    if (Object.keys(fieldErrors).length > 0) return { fieldErrors };
-
     const industryIdRaw = get("industryId");
     const serviceAreaIds = formData
         .getAll("serviceAreaIds")
@@ -109,6 +133,8 @@ export function parseCaseStudyForm(formData: FormData): {
         .filter((n) => Number.isInteger(n) && n > 0);
 
     return {
+        fieldErrors:
+            Object.keys(fieldErrors).length > 0 ? fieldErrors : undefined,
         values: {
             heroTitle: get("heroTitle"),
             heroSubtitle: get("heroSubtitle"),

@@ -1,6 +1,7 @@
 // Server data-access — a FUNCTION, not a top-level awaited value.
 import { cache } from "react";
 import { prisma } from "@/lib/prisma";
+import { isRenderableImageSrc, FALLBACK_POST_IMAGE } from "@/lib/blog-actions/blog-image";
 
 // cache() dedupes across components in the same request; the try/catch
 // degrades to an empty list instead of crashing the page (or the build's
@@ -45,7 +46,10 @@ export function toCard(row: CaseStudyCardRow): CaseStudyCardProps {
         id: row.id,
         // Prefer the card-specific thumbnail; heroImage is cropped for a
         // full-bleed banner, so it often loses its subject in a 3:2 card.
-        image: row.thumbnailImage || row.heroImage,
+        // Checked because next/image throws on a value it can't parse, and
+        // rows predating input validation may hold free text.
+        image: [row.thumbnailImage, row.heroImage].find(isRenderableImageSrc)
+            ?? FALLBACK_POST_IMAGE,
         imageAlt: row.heroTitle,
         category: row.industry?.label ?? "",
         title: row.heroTitle,

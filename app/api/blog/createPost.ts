@@ -40,8 +40,10 @@ export async function createPost(
     }
 
     // ── Validate ──────────────────────────────────────────────────
+    // `values` always comes back, so every rejection below can hand the
+    // author's own input to the form rather than letting React blank it.
     const { values, fieldErrors } = parseAndValidatePostForm(formData);
-    if (fieldErrors || !values) return { fieldErrors };
+    if (fieldErrors) return { fieldErrors, values };
 
     // ── Slug: generated from the title, must be unique ────────────
     const slug = slugify(values.title);
@@ -52,6 +54,7 @@ export async function createPost(
             fieldErrors: {
                 title: `A post with the slug "${slug}" already exists. Change the title.`,
             },
+            values,
         };
     }
 
@@ -69,7 +72,10 @@ export async function createPost(
         });
     } catch (err) {
         console.error("Failed to create post:", err);
-        return { error: "Could not save the post. Check the server logs and try again." };
+        return {
+            error: "Could not save the post. Check the server logs and try again.",
+            values,
+        };
     }
 
     // ── Refresh caches, then land on the live post ────────────────

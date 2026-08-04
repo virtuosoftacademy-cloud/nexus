@@ -27,9 +27,13 @@ function BodyText({ paragraphs }: { paragraphs?: string[] }) {
 
     return (
         <div className="mt-4 space-y-4">
-            {paragraphs.map((paragraph) => (
+            {/* Index keys: these lists are rendered once from server data and
+                never reordered or filtered, and the content itself is not
+                unique — two identical paragraphs or repeated phase names are
+                perfectly legal input, and keying on the text collides. */}
+            {paragraphs.map((paragraph, i) => (
                 <p
-                    key={paragraph}
+                    key={i}
                     className="font-heading text-sm leading-relaxed text-foreground/80 md:text-lg"
                 >
                     {paragraph}
@@ -153,8 +157,8 @@ export default function CaseStudyDetail({
                     <BodyText paragraphs={approach?.intro} />
 
                     <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-                        {approach?.cards?.map((card) => (
-                            <div key={card.title} className="border border-border p-6">
+                        {approach?.cards?.map((card, i) => (
+                            <div key={i} className="border border-border p-6">
                                 <h4 className="text-lg font-semibold text-primary">
                                     {card.title}
                                 </h4>
@@ -188,9 +192,9 @@ export default function CaseStudyDetail({
                                 </tr>
                             </thead>
                             <tbody>
-                                {timeline?.map((row) => (
+                                {timeline?.map((row, i) => (
                                     <tr
-                                        key={row.phase}
+                                        key={i}
                                         className="border-t border-primary/20 font-heading text-sm text-foreground/80 md:text-lg"
                                     >
                                         <td className="p-4">{row.phase}</td>
@@ -236,9 +240,9 @@ export default function CaseStudyDetail({
                             Solutions engagements typically follow:
                         </p>
                         <div className="mt-10 flex flex-wrap">
-                            {relatedServices?.map((service) => (
+                            {relatedServices?.map((service, i) => (
                                 <div
-                                    key={service.href}
+                                    key={i}
                                     className="group transition-all duration-900 text-white"
                                 >
                                     <Link

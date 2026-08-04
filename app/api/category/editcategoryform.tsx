@@ -48,16 +48,18 @@ export function EditCategoryForm({
 
     return (
         <form action={formAction} className="flex flex-wrap items-center gap-2">
+            {/* Fall back to the stored row, but prefer a rejected edit so the
+                attempted text survives instead of snapping back on failure. */}
             <input
                 name="label"
-                defaultValue={label}
+                defaultValue={state.values?.label ?? label}
                 required
                 placeholder="Label"
                 className={`${inputClass} w-36`}
             />
             <input
                 name="accent"
-                defaultValue={accent}
+                defaultValue={state.values?.accent ?? accent}
                 placeholder="Accent phrase"
                 className={`${inputClass} w-36`}
             />

@@ -19,6 +19,9 @@ import type {
     ServiceRow,
 } from "./helpers";
 import { Button } from "@/components/ui/button";
+// Same source the navbar uses, so admin choices and public navigation
+// can never drift apart.
+import { serviceItems } from "@/app/_constant";
 
 const initialState: CaseStudyFormState = {};
 
@@ -128,6 +131,114 @@ function RowsEditor<T extends Record<string, string>>({
     );
 }
 
+// ── Related services: pick from the real service pages ─────────────
+// Free-text links were easy to get wrong — every related service in the
+// seed pointed at a slug with no page behind it. The dropdown is fed by
+// the same serviceItems the navbar uses, so a chosen link always resolves.
+function RelatedServicesEditor({
+    rows,
+    setRows,
+    error,
+}: {
+    rows: ServiceRow[];
+    setRows: (rows: ServiceRow[]) => void;
+    error?: string;
+}) {
+    const remove = (i: number) => setRows(rows.filter((_, idx) => idx !== i));
+    const move = (i: number, dir: -1 | 1) => {
+        const j = i + dir;
+        if (j < 0 || j >= rows.length) return;
+        const next = [...rows];
+        [next[i], next[j]] = [next[j], next[i]];
+        setRows(next);
+    };
+    // Title comes from the chosen service, so the label can't drift from the page.
+    const choose = (i: number, href: string) => {
+        const item = serviceItems.find((s) => s.href === href);
+        setRows(
+            rows.map((r, idx) =>
+                idx === i ? { label: item?.title ?? r.label, href } : r
+            )
+        );
+    };
+
+    return (
+        <fieldset className="rounded-lg border border-neutral-200 p-4">
+            <legend className="px-1 text-sm font-semibold text-neutral-800">
+                Related services
+            </legend>
+            <div className="space-y-3">
+                {rows.map((row, i) => {
+                    // A link saved before this dropdown existed, or one whose page
+                    // has since gone. Kept selectable so editing doesn't drop it.
+                    const isLegacy =
+                        Boolean(row.href) &&
+                        !serviceItems.some((s) => s.href === row.href);
+
+                    return (
+                        <div key={i} className="flex items-start gap-2">
+                            <div className="flex-1">
+                                <select
+                                    value={row.href}
+                                    onChange={(e) => choose(i, e.target.value)}
+                                    className={`${inputClass} mt-0`}
+                                    aria-invalid={isLegacy || undefined}
+                                >
+                                    <option value="">Choose a service…</option>
+                                    {serviceItems.map((s) => (
+                                        <option
+                                            key={s.href}
+                                            value={s.href}
+                                            // Stop the same service being added twice.
+                                            disabled={
+                                                s.href !== row.href &&
+                                                rows.some((r) => r.href === s.href)
+                                            }
+                                        >
+                                            {s.title}
+                                        </option>
+                                    ))}
+                                    {isLegacy && (
+                                        <option value={row.href}>
+                                            {row.label || row.href} (no matching page)
+                                        </option>
+                                    )}
+                                </select>
+                                {row.href && (
+                                    <p className={hintClass}>
+                                        {isLegacy
+                                            ? `${row.href} — this link has no service page and will 404.`
+                                            : row.href}
+                                    </p>
+                                )}
+                            </div>
+                            <div className="flex shrink-0 gap-1 pt-1">
+                                <button type="button" onClick={() => move(i, -1)} title="Move up"
+                                    className="rounded px-2 py-1 text-xs text-neutral-500 hover:bg-neutral-100">↑</button>
+                                <button type="button" onClick={() => move(i, 1)} title="Move down"
+                                    className="rounded px-2 py-1 text-xs text-neutral-500 hover:bg-neutral-100">↓</button>
+                                <button type="button" onClick={() => remove(i)} title="Remove"
+                                    className="rounded px-2 py-1 text-xs text-red-600 hover:bg-red-50">✕</button>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+            <button
+                type="button"
+                onClick={() => setRows([...rows, { label: "", href: "" }])}
+                // Nothing left to pick once every service is on the list.
+                disabled={rows.length >= serviceItems.length}
+                className="mt-3 rounded-md border border-neutral-300 px-3 py-1.5 text-sm font-medium
+                           text-neutral-700 hover:bg-neutral-100 disabled:opacity-50"
+            >
+                + Add service
+            </button>
+            <FieldError message={error} />
+        </fieldset>
+    );
+}
+
 // ── Default values shape (edit page fills this from the row) ───────
 export type CaseStudyFormValues = {
     heroTitle?: string; heroSubtitle?: string; heroImage?: string;
@@ -155,6 +266,13 @@ export function CaseStudyForm({
     const [state, formAction, isPending] = useActionState(action, initialState);
     const errors = state.fieldErrors ?? {};
 
+    // React resets an uncontrolled form once its action resolves, restoring
+    // each input to its defaultValue. Pointing those defaults at the rejected
+    // submission means a validation failure leaves the typing intact instead
+    // of emptying every other field. The repeatable groups below are React
+    // state, so they survive the reset on their own.
+    const values: CaseStudyFormValues = state.values ?? defaultValues;
+
     const [cards, setCards] = useState<CardRow[]>(defaultValues.cards ?? []);
     const [timeline, setTimeline] = useState<TimelineRow[]>(defaultValues.timeline ?? []);
     const [services, setServices] = useState<ServiceRow[]>(defaultValues.services ?? []);
@@ -174,15 +292,15 @@ export function CaseStudyForm({
 
             {/* ── Hero ── */}
             <Text name="heroTitle" label="Hero title" error={errors.heroTitle}
-                defaultValue={defaultValues.heroTitle} />
+                defaultValue={values.heroTitle} />
             <Area name="heroSubtitle" label="Hero subtitle" rows={2} error={errors.heroSubtitle}
-                defaultValue={defaultValues.heroSubtitle} />
+                defaultValue={values.heroSubtitle} />
             {/* ── Hero image: upload to R2 or paste URL/path ── */}
             <ImageUploadField
                 name="heroImage"
                 kind="case-study"
                 label="Hero image"
-                defaultValue={defaultValues.heroImage}
+                defaultValue={values.heroImage}
                 error={errors.heroImage}
             />
             {/* ── Card thumbnail: optional, falls back to the hero image ── */}
@@ -190,7 +308,7 @@ export function CaseStudyForm({
                 name="thumbnailImage"
                 kind="case-study-thumb"
                 label="Card thumbnail (optional)"
-                defaultValue={defaultValues.thumbnailImage ?? undefined}
+                defaultValue={values.thumbnailImage ?? undefined}
                 error={errors.thumbnailImage}
                 help="Shown on the case study card in the listing grid. Leave blank to reuse the hero image."
             />
@@ -199,7 +317,7 @@ export function CaseStudyForm({
                 <div>
                     <label htmlFor="industryId" className={labelClass}>Industry</label>
                     <select id="industryId" name="industryId"
-                        defaultValue={defaultValues.industryId ?? ""} className={inputClass}>
+                        defaultValue={values.industryId ?? ""} className={inputClass}>
                         <option value="">No industry</option>
                         {industries.map((i) => (
                             <option key={i.id} value={i.id}>{i.label}</option>
@@ -223,7 +341,7 @@ export function CaseStudyForm({
                                     type="checkbox"
                                     name="serviceAreaIds"
                                     value={a.id}
-                                    defaultChecked={defaultValues.serviceAreaIds?.includes(a.id)}
+                                    defaultChecked={values.serviceAreaIds?.includes(a.id)}
                                     className="h-4 w-4 rounded border-neutral-300"
                                 />
                                 {a.label}
@@ -235,19 +353,19 @@ export function CaseStudyForm({
 
             {/* ── Prose sections ── */}
             <Area name="summary" label="Executive summary" rows={5} error={errors.summary}
-                defaultValue={defaultValues.summary} hint="Separate paragraphs with a blank line" />
+                defaultValue={values.summary} hint="Separate paragraphs with a blank line" />
             <Area name="situationParagraphs" label="The Situation — paragraphs" rows={5}
-                error={errors.situationParagraphs} defaultValue={defaultValues.situationParagraphs}
+                error={errors.situationParagraphs} defaultValue={values.situationParagraphs}
                 hint="Separate paragraphs with a blank line" />
             <Area name="situationQuestions" label="The Situation — questions" rows={3}
-                error={errors.situationQuestions} defaultValue={defaultValues.situationQuestions}
+                error={errors.situationQuestions} defaultValue={values.situationQuestions}
                 hint="One question per line" />
             <Area name="situationClosing" label="The Situation — closing line" rows={2} required={false}
-                defaultValue={defaultValues.situationClosing} hint="Optional" />
+                defaultValue={values.situationClosing} hint="Optional" />
             <Area name="challenge" label="The Challenge" rows={5} error={errors.challenge}
-                defaultValue={defaultValues.challenge} hint="Separate paragraphs with a blank line" />
+                defaultValue={values.challenge} hint="Separate paragraphs with a blank line" />
             <Area name="approachIntro" label="Our Approach — intro" rows={3} error={errors.approachIntro}
-                defaultValue={defaultValues.approachIntro} hint="Separate paragraphs with a blank line" />
+                defaultValue={values.approachIntro} hint="Separate paragraphs with a blank line" />
 
             <RowsEditor
                 title="Our Approach — cards"
@@ -266,18 +384,15 @@ export function CaseStudyForm({
             />
 
             <Area name="outcome" label="The Outcome" rows={5} error={errors.outcome}
-                defaultValue={defaultValues.outcome} hint="Separate paragraphs with a blank line" />
+                defaultValue={values.outcome} hint="Separate paragraphs with a blank line" />
             <Area name="keyResults" label="Key results" rows={4} error={errors.keyResults}
-                defaultValue={defaultValues.keyResults} hint="One result per line" />
+                defaultValue={values.keyResults} hint="One result per line" />
 
-            <RowsEditor
-                title="Related services"
-                rows={services} setRows={setServices}
-                empty={{ label: "", href: "" }}
-                fields={[{ key: "label", label: "Label" }, { key: "href", label: "Internal link, e.g. /services/…" }]}
-                addLabel="+ Add service"
+            <RelatedServicesEditor
+                rows={services}
+                setRows={setServices}
+                error={errors.services}
             />
-            <FieldError message={errors.services} />
 
             {/* ── Callout (optional) ── */}
             <fieldset className="rounded-lg border border-neutral-200 p-4">
@@ -286,15 +401,15 @@ export function CaseStudyForm({
                 </legend>
                 <div className="grid gap-4 sm:grid-cols-2">
                     <Text name="calloutHeading" label="Heading" required={false}
-                        defaultValue={defaultValues.calloutHeading} />
+                        defaultValue={values.calloutHeading} />
                     <Text name="calloutButtonLabel" label="Button label" required={false}
-                        defaultValue={defaultValues.calloutButtonLabel} />
+                        defaultValue={values.calloutButtonLabel} />
                     <div className="sm:col-span-2">
                         <Area name="calloutText" label="Text" rows={2} required={false}
-                            defaultValue={defaultValues.calloutText} />
+                            defaultValue={values.calloutText} />
                     </div>
                     <Text name="calloutButtonHref" label="Button link" required={false}
-                        defaultValue={defaultValues.calloutButtonHref} hint="e.g. /contact" />
+                        defaultValue={values.calloutButtonHref} hint="e.g. /contact" />
                 </div>
             </fieldset>
 

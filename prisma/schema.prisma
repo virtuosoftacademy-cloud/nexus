@@ -23,6 +23,11 @@ model BlogPost {
   accent     String
   excerpt    String        @db.Text
   image      String
+
+  /// Shown on post cards in the listings. Optional: cards fall back to
+  /// image when it's unset, so existing rows keep working.
+  thumbnailImage String?
+
   timeAgo    String
   date       String
   content    String        @db.LongText

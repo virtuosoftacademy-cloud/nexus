@@ -49,6 +49,7 @@ export default async function EditPostPage({ params }: Props) {
                     excerpt: post.excerpt,
                     content: post.content,
                     image: post.image,
+                    thumbnailImage: post.thumbnailImage,
                     accent: post.accent,
                     date: post.date,
                     categoryId: post.categoryId,

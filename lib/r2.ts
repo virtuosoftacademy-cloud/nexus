@@ -28,10 +28,15 @@ export interface R2UploadResult {
 }
 
 
-export type ImageKind = "post" | "case-study" | "case-study-thumb";
+export type ImageKind = "post" | "post-thumb" | "case-study" | "case-study-thumb";
 
 /** Every valid ImageKind, so the upload route can validate without repeating the union. */
-export const IMAGE_KINDS = ["post", "case-study", "case-study-thumb"] as const;
+export const IMAGE_KINDS = [
+    "post",
+    "post-thumb",
+    "case-study",
+    "case-study-thumb",
+] as const;
 
 export function isImageKind(value: string): value is ImageKind {
     return (IMAGE_KINDS as readonly string[]).includes(value);
@@ -82,6 +87,7 @@ export function buildR2Url(objectKey: string): string {
 export function objectKeyFor(kind: ImageKind, fileName: string): string {
     const folder = {
         post: "nexus/posts",
+        "post-thumb": "nexus/posts/thumbnails",
         "case-study": "nexus/case-studies",
         "case-study-thumb": "nexus/case-studies/thumbnails",
     }[kind];
@@ -165,6 +171,14 @@ export const IMAGE_VALIDATION: Record<
         maxDimensions: { width: 4000, height: 4000 },
         recommended: { width: 1200, height: 675 },
         note: "Post covers display at 16:9 on blog cards.",
+    },
+    "post-thumb": {
+        // Post cards render 16:9, the same shape as the cover — the point of a
+        // separate thumbnail is a tighter crop, not a different aspect ratio.
+        minDimensions: { width: 800, height: 450 },
+        maxDimensions: { width: 4000, height: 4000 },
+        recommended: { width: 1200, height: 675 },
+        note: "Card thumbnails are cropped to 16:9 in the post listings.",
     },
     "case-study": {
         minDimensions: { width: 1200, height: 600 },

@@ -14,26 +14,36 @@ import { prisma } from "@/lib/prisma";
 import { auth } from "@/auth";
 import { revalidatePath } from "next/cache";
 
-export type CategoryFormState = { error?: string; success?: string };
+/** What was typed, echoed back so a rejected save keeps it on screen. */
+export type CategoryValues = { label: string; accent: string };
+
+export type CategoryFormState = {
+    error?: string;
+    success?: string;
+    // React resets an uncontrolled form once its action resolves. Without
+    // this, a duplicate name would clear both boxes as it reported itself.
+    values?: CategoryValues;
+};
 
 export async function createCategory(
     _prevState: CategoryFormState,
     formData: FormData
 ): Promise<CategoryFormState> {
-    // Guard: only a signed-in ADMIN may manage categories.
-    const session = await auth();
-    if (session?.user?.role !== "ADMIN") {
-        return { error: "You must be signed in as an admin." };
-    }
-
     const label = String(formData.get("label") ?? "").trim();
     // Accent is a highlighted phrase shown after the label (may be empty).
     const accent = String(formData.get("accent") ?? "").trim();
+    const values: CategoryValues = { label, accent };
 
-    if (!label) return { error: "Category name is required." };
+    // Guard: only a signed-in ADMIN may manage categories.
+    const session = await auth();
+    if (session?.user?.role !== "ADMIN") {
+        return { error: "You must be signed in as an admin.", values };
+    }
+
+    if (!label) return { error: "Category name is required.", values };
 
     const existing = await prisma.blogCategory.findFirst({ where: { label } });
-    if (existing) return { error: `"${label}" already exists.` };
+    if (existing) return { error: `"${label}" already exists.`, values };
 
     await prisma.blogCategory.create({ data: { label, accent } });
 
@@ -63,7 +73,12 @@ export async function deleteCategory(formData: FormData) {
 }
 
 
-export type EditCategoryState = { error?: string; success?: boolean };
+export type EditCategoryState = {
+    error?: string;
+    success?: boolean;
+    /** Echoed back so a rejected rename keeps the attempted text. */
+    values?: CategoryValues;
+};
 
 export async function updateCategory(
     id: number,
@@ -71,14 +86,16 @@ export async function updateCategory(
     formData: FormData
 ): Promise<EditCategoryState> {
     "use server"; // omit if the file already has top-level "use server"
-    const session = await auth();
-    if (session?.user?.role !== "ADMIN") {
-        return { error: "You must be signed in as an admin." };
-    }
-
     const label = String(formData.get("label") ?? "").trim();
     const accent = String(formData.get("accent") ?? "").trim();
-    if (!label) return { error: "Label is required." };
+    const values: CategoryValues = { label, accent };
+
+    const session = await auth();
+    if (session?.user?.role !== "ADMIN") {
+        return { error: "You must be signed in as an admin.", values };
+    }
+
+    if (!label) return { error: "Label is required.", values };
 
     await prisma.blogCategory.update({ where: { id }, data: { label, accent } });
 

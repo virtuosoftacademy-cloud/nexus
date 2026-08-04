@@ -47,3 +47,6 @@ generated
 
 .vscode
 package-lock.json
+
+
+.claude

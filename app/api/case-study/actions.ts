@@ -13,7 +13,6 @@ async function requireAdmin() {
 }
 
 function childWrites(values: ReturnType<typeof parseCaseStudyForm>["values"]) {
-    if (!values) throw new Error("unreachable");
     return {
         approachCards: {
             create: values.cards.map((c, i) => ({ ...c, order: i + 1 })),
@@ -44,8 +43,10 @@ export async function createCaseStudy(
     const session = await requireAdmin();
     if (!session) return { error: "You must be signed in as an admin." };
 
+    // `values` always comes back so every early return can hand the admin's
+    // own input to the form instead of letting React blank it out.
     const { values, fieldErrors } = parseCaseStudyForm(formData);
-    if (fieldErrors || !values) return { fieldErrors };
+    if (fieldErrors) return { fieldErrors, values };
 
     const slug = slugify(values.heroTitle);
     const existing = await prisma.caseStudy.findUnique({ where: { slug } });
@@ -54,6 +55,7 @@ export async function createCaseStudy(
             fieldErrors: {
                 heroTitle: `A case study with the slug "${slug}" already exists. Change the title.`,
             },
+            values,
         };
     }
 
@@ -72,7 +74,7 @@ export async function createCaseStudy(
         });
     } catch (err) {
         console.error("Failed to create case study:", err);
-        return { error: "Could not save the case study. Check the server logs." };
+        return { error: "Could not save the case study. Check the server logs.", values };
     }
 
     refreshCaseStudies(slug);
@@ -88,7 +90,7 @@ export async function updateCaseStudy(
     if (!session) return { error: "You must be signed in as an admin." };
 
     const { values, fieldErrors } = parseCaseStudyForm(formData);
-    if (fieldErrors || !values) return { fieldErrors };
+    if (fieldErrors) return { fieldErrors, values };
 
     const { cards, timeline, services, serviceAreaIds, ...scalars } = values;
     try {
@@ -105,7 +107,7 @@ export async function updateCaseStudy(
         });
     } catch (err) {
         console.error("Failed to update case study:", err);
-        return { error: "Could not update the case study. Check the server logs." };
+        return { error: "Could not update the case study. Check the server logs.", values };
     }
 
     refreshCaseStudies(slug);
@@ -135,19 +137,28 @@ function refresh() {
     revalidatePath("/case-studies"); // labels show on public pages too
 }
 
-export type TaxonomyFormState = { error?: string; success?: string };
+export type TaxonomyFormState = {
+    error?: string;
+    success?: string;
+    // React resets an uncontrolled form once its action resolves, so without
+    // echoing this back a duplicate name would clear the box as it complained.
+    values?: { label: string };
+};
 
 export async function createIndustry(
     _prev: TaxonomyFormState,
     formData: FormData
 ): Promise<TaxonomyFormState> {
-    if (!(await requireAdmin())) return { error: "You must be signed in as an admin." };
-
     const label = String(formData.get("label") ?? "").trim();
-    if (!label) return { error: "Industry name is required." };
+    const values = { label };
+
+    if (!(await requireAdmin())) {
+        return { error: "You must be signed in as an admin.", values };
+    }
+    if (!label) return { error: "Industry name is required.", values };
 
     const existing = await prisma.industry.findUnique({ where: { label } });
-    if (existing) return { error: `"${label}" already exists.` };
+    if (existing) return { error: `"${label}" already exists.`, values };
 
     await prisma.industry.create({ data: { label } });
     refresh();
@@ -173,13 +184,16 @@ export async function createServiceArea(
     _prev: TaxonomyFormState,
     formData: FormData
 ): Promise<TaxonomyFormState> {
-    if (!(await requireAdmin())) return { error: "You must be signed in as an admin." };
-
     const label = String(formData.get("label") ?? "").trim();
-    if (!label) return { error: "Service area name is required." };
+    const values = { label };
+
+    if (!(await requireAdmin())) {
+        return { error: "You must be signed in as an admin.", values };
+    }
+    if (!label) return { error: "Service area name is required.", values };
 
     const existing = await prisma.serviceArea.findUnique({ where: { label } });
-    if (existing) return { error: `"${label}" already exists.` };
+    if (existing) return { error: `"${label}" already exists.`, values };
 
     await prisma.serviceArea.create({ data: { label } });
     refresh();

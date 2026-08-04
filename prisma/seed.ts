@@ -135,6 +135,7 @@ async function main() {
             category: "Renting",
             date: "2026-07-18",
             image: "/assets/propertyandconstruction.png",
+            thumbnailImage: "/assets/digitalsolutions.png",
             isFeatured: true,
             isSidebar: false,
             excerpt:
@@ -151,6 +152,7 @@ Before signing, confirm the deposit will be protected in a government-approved s
             category: "Renting",
             date: "2026-07-12",
             image: "/assets/financialadvisory.png",
+            thumbnailImage: "/assets/advisory.png",
             isFeatured: false,
             isSidebar: true,
             excerpt:
@@ -167,6 +169,7 @@ Our rule of thumb for clients: if a property only works when nothing goes wrong,
             category: "Renting",
             date: "2026-07-05",
             image: "/assets/vat.png",
+            thumbnailImage: "/assets/aboutcta.png",
             isFeatured: false,
             isSidebar: false,
             excerpt:
@@ -183,6 +186,7 @@ If you disagree with a deduction, don't accept a partial refund as final. Every 
             category: "Renting",
             date: "2026-06-27",
             image: "/assets/advisoryandservices.png",
+            thumbnailImage: "/assets/mission.png",
             isFeatured: false,
             isSidebar: true,
             excerpt:
@@ -203,6 +207,7 @@ Counter-offering is normal and expected. A reasonable response acknowledges the 
                 accent: p.accent,
                 excerpt: p.excerpt,
                 image: p.image,
+                thumbnailImage: p.thumbnailImage,
                 date: p.date,
                 timeAgo: computeTimeAgo(p.date),
                 content: p.content,

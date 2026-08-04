@@ -281,10 +281,11 @@ export default async function DashboardPage() {
                                 Sign-ups from the site footer
                             </p>
                         </div>
-                        <Link href="/admin/newsletter/export"
-                            className="shrink-0 rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700">
-                            Export CSV
-                        </Link>
+                        <Button>
+                            <Link href="/admin/newsletter/export">
+                                Export CSV
+                            </Link>
+                        </Button>
                     </div>
 
                     <div className="mt-5 grid grid-cols-3 gap-3">
