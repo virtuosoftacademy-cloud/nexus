@@ -27,6 +27,7 @@ import {
     FolderPlus,
     ExternalLink,
     LetterText,
+    Mail,
     UserRound,
     MonitorSmartphone,
 } from "lucide-react";
@@ -34,6 +35,7 @@ import type { ReactNode } from "react";
 
 const overviewItems = [
     { href: "/admin", label: "Dashboard", icon: Home },
+    { href: "/admin/messages", label: "Messages", icon: Mail },
     { href: "/admin/newsletter", label: "Newsletter", icon: LetterText },
 ];
 

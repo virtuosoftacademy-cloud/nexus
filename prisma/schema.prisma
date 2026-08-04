@@ -138,6 +138,22 @@ model NewsletterSubscriber {
   createdAt DateTime @default(now())
 }
 
+/// An enquiry sent from the contact page form.
+model ContactMessage {
+  id           String  @id @default(cuid())
+  name         String
+  email        String
+  /// Which service the enquiry is about, or "General enquiry".
+  interestedIn String
+  description  String  @db.Text
+
+  /// Not unique, unlike a newsletter email — the same person may write twice.
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([isRead, createdAt])
+}
+
 // ─────────────────────────── Auth.js ───────────────────────────
 
 enum Role {

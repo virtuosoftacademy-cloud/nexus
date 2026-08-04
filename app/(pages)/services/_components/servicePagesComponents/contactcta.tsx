@@ -73,7 +73,7 @@ export function ContactCta({
                         <Link href={buttonHref ?? "/contact"}>{buttonLabel}</Link>
                     </Button>
                 </div>
-
+  
                 <div className="hidden xl:block relative mt-8 h-32 w-full z-0 xl:-ml-14 md:mt-0 md:h-auto md:self-stretch md:pb-0">
                     <div className="relative h-12 w-full md:absolute md:inset-0 md:h-[calc(100%+0rem)] aspect-2/3 md:aspect-auto xl:min-h-100 overflow-hidden">
                         {image && (

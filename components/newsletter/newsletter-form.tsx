@@ -64,7 +64,7 @@ export function NewsletterForm() {
 
                 {/* Inside the form so the value is actually submitted, and so
                     the server can reject a request that skips the checkbox. */}
-                <FieldDescription className="flex gap-2 pt-2 text-background items-center">
+                <FieldDescription className="flex gap-2 pt-3 text-background items-center">
                     <Checkbox
                         id="terms"
                         name="consent"
@@ -74,7 +74,7 @@ export function NewsletterForm() {
                         aria-describedby="terms-label"
                         className="bg-background rounded-none text-sm md:text-base"
                     />
-                    <Label id="terms-label" htmlFor="terms" className="font-normal text-xs md:text-base">* I have read and understand{" "}<Link href="/privacy-policy" className="underline underline-offset-4 decoration-primary">Nexus Privacy Notice.</Link>
+                    <Label id="terms-label" htmlFor="terms" className="font-normal text-xs md:text-base whitespace-pre">* I have read and understand{" "}<Link href="/privacy-policy" className="underline underline-offset-4 decoration-primary">Nexus Privacy Notice.</Link>
                     </Label>
                 </FieldDescription>
             </form>

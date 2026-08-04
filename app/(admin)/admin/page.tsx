@@ -39,6 +39,7 @@ export default async function DashboardPage() {
         subscriberCount,
         subscribersLast30,
         latestSubscriber,
+        unreadMessages,
         pendingDevices,
     ] = await Promise.all([
         prisma.blogPost.count(),
@@ -74,6 +75,7 @@ export default async function DashboardPage() {
             orderBy: { createdAt: "desc" },
             select: { email: true, createdAt: true },
         }),
+        prisma.contactMessage.count({ where: { isRead: false } }),
         // Sign-in attempts from browsers this account hasn't trusted yet.
         prisma.device.findMany({
             where: { approved: false },
@@ -94,6 +96,28 @@ export default async function DashboardPage() {
                     Content overview across the site.
                 </p>
             </header>
+
+            {/* Unread enquiries are time-sensitive in a way content stats
+                aren't, so they sit above the cards too. */}
+            {unreadMessages > 0 && (
+                <Link
+                    href="/admin/messages"
+                    className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-lg
+                               border border-neutral-300 bg-white p-5 hover:border-neutral-400"
+                >
+                    <div>
+                        <h2 className="text-base font-semibold text-neutral-900">
+                            {unreadMessages === 1
+                                ? "1 unread enquiry"
+                                : `${unreadMessages} unread enquiries`}
+                        </h2>
+                        <p className="mt-1 text-sm text-neutral-600">
+                            Sent from the contact page form.
+                        </p>
+                    </div>
+                    <span className="text-sm font-medium text-neutral-900">Read them →</span>
+                </Link>
+            )}
 
             {/* Security notices sit above the content cards so a sign-in
                 attempt from an unknown browser can't be scrolled past. */}
