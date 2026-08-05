@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
             <FieldDescription className="flex gap-2 pt-2 text-background items-center">
               <Checkbox id="terms" className="bg-background rounded-none text-sm md:text-base" />
-              <Label htmlFor="terms" className="font-normal text-xs md:text-base">* I have read and understand<Link href="/privacy-policy" className="underline underline-offset-4 decoration-primary">Nexus Privacy Notice.</Link>
+              <Label htmlFor="terms" className="font-normal text-xs md:text-base whitespace-pre">* I have read and understand<Link href="/privacy-policy" className="underline underline-offset-4 decoration-primary">Nexus Privacy Notice.</Link>
               </Label>
             </FieldDescription>
 
