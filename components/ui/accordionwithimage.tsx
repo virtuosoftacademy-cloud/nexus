@@ -26,7 +26,7 @@ function FaqHeader({
     subtitle?: string
 }) {
     return (
-        <div className="pb-8">
+        <div className="pb-8 px-8">
             <h4 className="text-2xl md:text-4xl text-center font-semibold mb-4">
                 {titleStart} <span className="text-primary">{titleHighlight}</span>
             </h4>

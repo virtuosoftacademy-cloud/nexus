@@ -33,11 +33,11 @@ export default function Notice({
         <section className="bg-primary/5 py-10 md:py-20">
             {/* Flips via CSS direction (not order-*) so the image's fill/object-cover keeps working after the swap */}
             <div
-                className={`grid grid-cols-1 md:grid-cols-2 px-4 md:px-18 ${imagePosition === "right" ? "md:[direction:rtl]" : ""
+                className={`grid grid-cols-1 lg:grid-cols-2 px-4 sm:px-14 lg:px-18 ${imagePosition === "right" ? "md:[direction:rtl]" : ""
                     }`}
             >
                 {/* ── Image ── */}
-                <div className="relative min-h-[280px] md:min-h-[420px] md:[direction:ltr]">
+                <div className="relative min-h-[280px] hidden md:block lg:min-h-[420px] lg:[direction:ltr]">
                     <Image
                         src={image.src}
                         alt={image.alt}
@@ -48,7 +48,7 @@ export default function Notice({
                 </div>
 
                 {/* ── Content ── */}
-                <div className="flex flex-col justify-center font-heading text-sm md:text-lg px-2 py-12 md:px-14 md:py-16 md:[direction:ltr]">
+                <div className="flex flex-col justify-center font-heading text-sm md:text-lg px-2 py-12 lg:px-14 md:py-16 md:[direction:ltr]">
                     <h4 className="text-3xl md:text-4xl font-bold text-foreground font-sans">
                         {titleStart}{" "}
                         <span className="text-primary">{titleHighlight}</span>
