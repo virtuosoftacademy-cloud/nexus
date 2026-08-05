@@ -82,7 +82,7 @@ function ApproachRow({ row }: { row: ApproachRowData }) {
             />
             <ApproachText
                 row={row}
-                className="flex flex-col justify-center order-0 lg:order-0 md:px-10 pt-10 pb-10"
+                className="flex flex-col justify-center order-0 lg:order-0 lg:px-10 pt-10 pb-10"
             />
         </div>
     );
