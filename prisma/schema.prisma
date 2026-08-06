@@ -24,8 +24,9 @@ model BlogPost {
   excerpt    String        @db.Text
   image      String
 
-  /// Shown on post cards in the listings. Optional: cards fall back to
-  /// image when it's unset, so existing rows keep working.
+  /// Shown on post cards in the listings. The form requires it, but the column
+  /// stays nullable for rows created before it existed — cards fall back to
+  /// image for those.
   thumbnailImage String?
 
   timeAgo    String
@@ -64,8 +65,9 @@ model CaseStudy {
   heroSubtitle String @db.Text
   heroImage    String
 
-  /// Shown on the case study card in the listing grid. Optional: cards fall
-  /// back to heroImage when it's unset, so existing rows keep working.
+  /// Shown on the case study card in the listing grid. The form requires it,
+  /// but the column stays nullable for rows created before it existed — cards
+  /// fall back to heroImage for those.
   thumbnailImage String?
 
   industryId Int?

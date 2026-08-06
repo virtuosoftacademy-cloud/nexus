@@ -307,10 +307,10 @@ export function CaseStudyForm({
             <ImageUploadField
                 name="thumbnailImage"
                 kind="case-study-thumb"
-                label="Card thumbnail (optional)"
+                label="Card thumbnail"
                 defaultValue={values.thumbnailImage ?? undefined}
                 error={errors.thumbnailImage}
-                help="Shown on the case study card in the listing grid. Leave blank to reuse the hero image."
+                help="Shown on the case study card in the listing grid."
             />
 
             <div className="grid gap-6 sm:grid-cols-2">
@@ -352,19 +352,19 @@ export function CaseStudyForm({
             </fieldset>
 
             {/* ── Prose sections ── */}
-            <Area name="summary" label="Executive summary" rows={5} error={errors.summary}
+            <Area name="summary" label="Executive summary" rows={5} required={false} error={errors.summary}
                 defaultValue={values.summary} hint="Separate paragraphs with a blank line" />
-            <Area name="situationParagraphs" label="The Situation — paragraphs" rows={5}
+            <Area name="situationParagraphs" label="The Situation — paragraphs" rows={5} required={false}
                 error={errors.situationParagraphs} defaultValue={values.situationParagraphs}
                 hint="Separate paragraphs with a blank line" />
-            <Area name="situationQuestions" label="The Situation — questions" rows={3}
+            <Area name="situationQuestions" label="The Situation — questions" rows={3} required={false}
                 error={errors.situationQuestions} defaultValue={values.situationQuestions}
                 hint="One question per line" />
             <Area name="situationClosing" label="The Situation — closing line" rows={2} required={false}
                 defaultValue={values.situationClosing} hint="Optional" />
-            <Area name="challenge" label="The Challenge" rows={5} error={errors.challenge}
+            <Area name="challenge" label="The Challenge" rows={5} required={false} error={errors.challenge}
                 defaultValue={values.challenge} hint="Separate paragraphs with a blank line" />
-            <Area name="approachIntro" label="Our Approach — intro" rows={3} error={errors.approachIntro}
+            <Area name="approachIntro" label="Our Approach — intro" rows={3} required={false} error={errors.approachIntro}
                 defaultValue={values.approachIntro} hint="Separate paragraphs with a blank line" />
 
             <RowsEditor
@@ -383,9 +383,9 @@ export function CaseStudyForm({
                 addLabel="+ Add phase"
             />
 
-            <Area name="outcome" label="The Outcome" rows={5} error={errors.outcome}
+            <Area name="outcome" label="The Outcome" rows={5} required={false} error={errors.outcome}
                 defaultValue={values.outcome} hint="Separate paragraphs with a blank line" />
-            <Area name="keyResults" label="Key results" rows={4} error={errors.keyResults}
+            <Area name="keyResults" label="Key results" rows={4} required={false} error={errors.keyResults}
                 defaultValue={values.keyResults} hint="One result per line" />
 
             <RelatedServicesEditor
@@ -408,8 +408,11 @@ export function CaseStudyForm({
                         <Area name="calloutText" label="Text" rows={2} required={false}
                             defaultValue={values.calloutText} />
                     </div>
+                    {/* Pre-filled: the callout button almost always points at
+                        the contact page, so type nothing and it still works. */}
                     <Text name="calloutButtonHref" label="Button link" required={false}
-                        defaultValue={values.calloutButtonHref} hint="e.g. /contact" />
+                        defaultValue={values.calloutButtonHref ?? "/contact"}
+                        hint="Defaults to /contact" />
                 </div>
             </fieldset>
 

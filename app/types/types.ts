@@ -43,7 +43,7 @@ export type ParsedPostForm = {
     excerpt: string;
     content: string;
     image: string;
-    /** Optional; cards fall back to `image` when this is blank. */
+    /** Required by the form; nullable only for rows created before it existed. */
     thumbnailImage: string | null;
     accent: string;
     date: string;
@@ -83,9 +83,10 @@ export function parseAndValidatePostForm(formData: FormData): {
     else if (!isRenderableImageSrc(image))
         fieldErrors.image =
             "Image must be a path starting with / or a full http(s) URL.";
-    // Optional, but if given it has to be renderable — cards run it through
-    // next/image just like the cover.
-    if (thumbnailImage && !isRenderableImageSrc(thumbnailImage))
+    // Cards run this through next/image just like the cover, so it has to be
+    // both present and renderable.
+    if (!thumbnailImage) fieldErrors.thumbnailImage = "Card thumbnail is required.";
+    else if (!isRenderableImageSrc(thumbnailImage))
         fieldErrors.thumbnailImage =
             "Card thumbnail must be a path starting with / or a full http(s) URL.";
     if (!date) fieldErrors.date = "Publish date is required.";

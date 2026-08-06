@@ -94,153 +94,195 @@ export default function CaseStudyDetail({
             ---------------------------------------------------------------- */}
             <div className="mx-auto w-full px-6 sm:px-16 ">
 
-                <section className="py-10 md:py-14">
-                    <div className="grid border border-border md:grid-cols-2">
-                        <div className="p-8 md:border-r md:border-border">
-                            <h4 className="text-2xl font-semibold uppercase text-foreground md:text-3xl">
-                                Industry
-                            </h4>
-                            <p className="mt-3 font-heading text-lg text-foreground/70 md:text-base">
-                                {industry}
-                            </p>
+                {/* Both halves are optional, so the strip splits in two only
+                    when both are filled — otherwise the single box spans the
+                    full width and the dividing borders would sit on nothing. */}
+                {industry || serviceAreas?.length ? (
+                    <section className="py-10 md:py-14">
+                        <div
+                            className={`grid border border-border ${industry && serviceAreas?.length ? "md:grid-cols-2" : ""
+                                }`}
+                        >
+                            {industry ? (
+                                <div
+                                    className={`p-8 ${serviceAreas?.length ? "md:border-r md:border-border" : ""
+                                        }`}
+                                >
+                                    <h4 className="text-2xl font-semibold uppercase text-foreground md:text-3xl">
+                                        Industry
+                                    </h4>
+                                    <p className="mt-3 font-heading text-lg text-foreground/70 md:text-base">
+                                        {industry}
+                                    </p>
+                                </div>
+                            ) : null}
+
+                            {serviceAreas?.length ? (
+                                <div
+                                    className={`p-8 ${industry ? "border-t border-border md:border-t-0" : ""
+                                        }`}
+                                >
+                                    <h4 className="text-2xl font-semibold uppercase text-foreground md:text-3xl">
+                                        Service Areas
+                                    </h4>
+                                    <p className="mt-3 font-heading text-lg text-foreground/70 md:text-base max-w-lg">
+                                        {serviceAreas.join("  ·  ")}
+                                    </p>
+                                </div>
+                            ) : null}
                         </div>
-                        <div className="border-t border-border p-8 md:border-t-0">
-                            <h4 className="text-2xl font-semibold uppercase text-foreground md:text-3xl">
-                                Service Areas
-                            </h4>
-                            <p className="mt-3 font-heading text-lg text-foreground/70 md:text-base max-w-lg">
-                                {serviceAreas?.join("  ·  ")}
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                ) : null}
 
                 {/* ---------------------------------------------------------------
                 Executive Summary
             ---------------------------------------------------------------- */}
-                <section className="py-10 md:py-14">
-                    <SectionHeading title="Executive Summary" />
-                    <BodyText paragraphs={summary} />
-                </section>
+                {/* Every section below is conditional: only the hero is required
+                    when a case study is created, so an unfinished one would
+                    otherwise print a heading and a divider over nothing. */}
+                {summary?.length ? (
+                    <section className="py-10 md:py-14">
+                        <SectionHeading title="Executive Summary" />
+                        <BodyText paragraphs={summary} />
+                    </section>
+                ) : null}
 
                 {/* ---------------------------------------------------------------
                 The Situation — paragraphs, question list, closing line
             ---------------------------------------------------------------- */}
-                <section className="border-t border-border py-10 md:py-14">
-                    <SectionHeading title="The Situation" />
-                    <BodyText paragraphs={situation?.paragraphs} />
-                    <div className="mt-4">
-                        <ArrowList
-                            items={situation?.questions}
-                            itemsClassName="text-sm md:text-lg text-foreground/80"
-                            markerclassName="text-primary text-xl -mt-0 ml-0"
+                {situation?.paragraphs?.length ||
+                situation?.questions?.length ||
+                situation?.closing ? (
+                    <section className="border-t border-border py-10 md:py-14">
+                        <SectionHeading title="The Situation" />
+                        <BodyText paragraphs={situation?.paragraphs} />
+                        <div className="mt-4">
+                            <ArrowList
+                                items={situation?.questions}
+                                itemsClassName="text-sm md:text-lg text-foreground/80"
+                                markerclassName="text-primary text-xl -mt-0 ml-0"
+                            />
+                        </div>
+                        <BodyText
+                            paragraphs={situation?.closing ? [situation.closing] : undefined}
                         />
-                    </div>
-                    <BodyText
-                        paragraphs={situation?.closing ? [situation.closing] : undefined}
-                    />
-                </section>
+                    </section>
+                ) : null}
 
                 {/* ---------------------------------------------------------------
                 The Challenge
             ---------------------------------------------------------------- */}
-                <section className="border-t border-border py-10 md:py-14">
-                    <SectionHeading title="The Challenge" />
-                    <BodyText paragraphs={challenge} />
-                </section>
+                {challenge?.length ? (
+                    <section className="border-t border-border py-10 md:py-14">
+                        <SectionHeading title="The Challenge" />
+                        <BodyText paragraphs={challenge} />
+                    </section>
+                ) : null}
 
                 {/* ---------------------------------------------------------------
                 Our Approach — intro + 4 bordered cards
             ---------------------------------------------------------------- */}
-                <section className="border-t border-border py-10 md:py-14">
-                    <SectionHeading title="Our Approach" />
-                    <BodyText paragraphs={approach?.intro} />
+                {approach?.intro?.length || approach?.cards?.length ? (
+                    <section className="border-t border-border py-10 md:py-14">
+                        <SectionHeading title="Our Approach" />
+                        <BodyText paragraphs={approach?.intro} />
 
-                    <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-                        {approach?.cards?.map((card, i) => (
-                            <div key={i} className="border border-border p-6">
-                                <h4 className="text-lg font-semibold text-primary">
-                                    {card.title}
-                                </h4>
-                                <p className="mt-3 font-heading text-lg leading-relaxed text-foreground/80">
-                                    {card.description}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </section>
+                        <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+                            {approach?.cards?.map((card, i) => (
+                                <div key={i} className="border border-border p-6">
+                                    <h4 className="text-lg font-semibold text-primary">
+                                        {card.title}
+                                    </h4>
+                                    <p className="mt-3 font-heading text-lg leading-relaxed text-foreground/80">
+                                        {card.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                ) : null}
 
                 {/* ---------------------------------------------------------------
                 Engagement Timeline — teal-headed table
             ---------------------------------------------------------------- */}
-                <section className="border-t border-border py-10 md:py-14">
-                    <SectionHeading title="Engagement Timeline" />
-                    <p className="mt-2 font-heading text-sm text-foreground/70 md:text-lg font-semibold">
-                        Indicative phasing of the engagement.
-                    </p>
+                {timeline?.length ? (
+                    <section className="border-t border-border py-10 md:py-14">
+                        <SectionHeading title="Engagement Timeline" />
+                        <p className="mt-2 font-heading text-sm text-foreground/70 md:text-lg font-semibold">
+                            Indicative phasing of the engagement.
+                        </p>
 
-                    <div className="mt-6 overflow-x-auto">
-                        <table className="w-full border border-primary/30 text-left">
-                            <thead>
-                                <tr className="bg-primary text-primary-foreground">
-                                    <th className="p-4 text-lg font-semibold uppercase tracking-wider">
-                                        Phase
-                                    </th>
-                                    <th className="p-4 text-lg font-semibold uppercase tracking-wider">
-                                        Duration
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {timeline?.map((row, i) => (
-                                    <tr
-                                        key={i}
-                                        className="border-t border-primary/20 font-heading text-sm text-foreground/80 md:text-lg"
-                                    >
-                                        <td className="p-4">{row.phase}</td>
-                                        <td className="p-4">{row.duration}</td>
+                        <div className="mt-6 overflow-x-auto">
+                            <table className="w-full border border-primary/30 text-left">
+                                <thead>
+                                    <tr className="bg-primary text-primary-foreground">
+                                        <th className="p-4 text-lg font-semibold uppercase tracking-wider">
+                                            Phase
+                                        </th>
+                                        <th className="p-4 text-lg font-semibold uppercase tracking-wider">
+                                            Duration
+                                        </th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+                                </thead>
+                                <tbody>
+                                    {timeline.map((row, i) => (
+                                        <tr
+                                            key={i}
+                                            className="border-t border-primary/20 font-heading text-sm text-foreground/80 md:text-lg"
+                                        >
+                                            <td className="p-4">{row.phase}</td>
+                                            <td className="p-4">{row.duration}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                ) : null}
 
                 {/* ---------------------------------------------------------------
                 The Outcome
             ---------------------------------------------------------------- */}
-                <section className="border-t border-border py-10 md:py-14">
-                    <SectionHeading title="The Outcome" />
-                    <BodyText paragraphs={outcome} />
-                </section>
+                {outcome?.length ? (
+                    <section className="border-t border-border py-10 md:py-14">
+                        <SectionHeading title="The Outcome" />
+                        <BodyText paragraphs={outcome} />
+                    </section>
+                ) : null}
 
                 {/* ---------------------------------------------------------------
                 Key Results
             ---------------------------------------------------------------- */}
-                <section className="border-t border-border py-10 md:py-14">
-                    <SectionHeading title="Key Results" />
-                    <div className="mt-4">
-                        <ArrowList
-                            items={keyResults}
-                            itemsClassName="text-lg md:text-base text-foreground/80"
-                            markerclassName="text-primary text-xl -mt-0 ml-0"
-                        />
-                    </div>
-                </section>
+                {keyResults?.length ? (
+                    <section className="border-t border-border py-10 md:py-14">
+                        <SectionHeading title="Key Results" />
+                        <div className="mt-4">
+                            <ArrowList
+                                items={keyResults}
+                                itemsClassName="text-lg md:text-base text-foreground/80"
+                                markerclassName="text-primary text-xl -mt-0 ml-0"
+                            />
+                        </div>
+                    </section>
+                ) : null}
             </div>
 
             {/* ---------------------------------------------------------------
                 Related Services band + callout
             ---------------------------------------------------------------- */}
+            {/* The whole band goes when there is neither a service list nor a
+                callout, rather than leaving an empty grey stripe. */}
+            {relatedServices?.length || callout ? (
             <section className="bg-muted py-12 md:py-16">
                 <div className="mx-auto w-full px-6 sm:px-16 space-y-8 md:space-y-16">
+                    {relatedServices?.length ? (
                     <div>
                         <SectionHeading title="Related Services" />
                         <p className="mt-2 font-heading text-sm text-foreground/70 md:text-lg">
                             Solutions engagements typically follow:
                         </p>
                         <div className="mt-10 flex flex-wrap">
-                            {relatedServices?.map((service, i) => (
+                            {relatedServices.map((service, i) => (
                                 <div
                                     key={i}
                                     className="group transition-all duration-900 text-white"
@@ -256,6 +298,7 @@ export default function CaseStudyDetail({
                             ))}
                         </div>
                     </div>
+                    ) : null}
 
                     {/* Callout */}
                     {callout && (
@@ -276,6 +319,7 @@ export default function CaseStudyDetail({
                     )}
                 </div>
             </section>
+            ) : null}
         </div>
     );
 }

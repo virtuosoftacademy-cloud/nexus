@@ -53,17 +53,15 @@ export type ParsedCaseStudy = {
     services: ServiceRow[];
 };
 
+// Only the hero is mandatory — it supplies the title (and therefore the slug),
+// the strapline and the banner, so a case study cannot exist without it.
+// Everything else may be filled in later; the public page hides whatever
+// section is still empty rather than printing a bare heading.
 const REQUIRED: [key: string, label: string][] = [
     ["heroTitle", "Hero title"],
     ["heroSubtitle", "Hero subtitle"],
     ["heroImage", "Hero image"],
-    ["summary", "Executive summary"],
-    ["situationParagraphs", "Situation"],
-    ["situationQuestions", "Situation questions"],
-    ["challenge", "Challenge"],
-    ["approachIntro", "Approach intro"],
-    ["outcome", "Outcome"],
-    ["keyResults", "Key results"],
+    ["thumbnailImage", "Card thumbnail"],
 ];
 
 function json<T>(raw: FormDataEntryValue | null, fallback: T): T {

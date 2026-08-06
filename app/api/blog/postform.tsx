@@ -134,10 +134,10 @@ export function PostForm({
             <ImageUploadField
                 name="thumbnailImage"
                 kind="post-thumb"
-                label="Card thumbnail (optional)"
+                label="Card thumbnail"
                 defaultValue={values.thumbnailImage ?? undefined}
                 error={errors.thumbnailImage}
-                help="Shown on post cards in the listings. Leave blank to reuse the cover image."
+                help="Shown on post cards in the listings."
             />
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
