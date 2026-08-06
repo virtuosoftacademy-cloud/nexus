@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import type { PostFormState } from "@/app/types/types";
 import { ImageUploadField } from "@/components/upload/ImageUploadField";
+import { RichTextEditor } from "@/components/editor/RichTextEditor";
 import { Button } from "@/components/ui/button";
 
 type Category = { id: number; label: string };
@@ -102,22 +103,15 @@ export function PostForm({
                 <FieldError message={errors.excerpt} />
             </div>
 
-            <div>
-                <label htmlFor="content" className={labelClass}>
-                    Content
-                </label>
-                <textarea
-                    id="content"
-                    name="content"
-                    rows={12}
-                    required
-                    defaultValue={values.content}
-                    placeholder="Full post body…"
-                    className={inputClass}
-                    aria-invalid={Boolean(errors.content)}
-                />
-                <FieldError message={errors.content} />
-            </div>
+            {/* Rich text: writes HTML into a hidden "content" input, so the
+                action and parser keep reading the same field name. */}
+            <RichTextEditor
+                name="content"
+                label="Content"
+                defaultValue={values.content}
+                error={errors.content}
+                help="Posts written before the editor existed open as plain paragraphs and can be formatted from here."
+            />
 
             {/* ── Cover image: upload to R2 or paste a URL/path.
                   Feeds the same "image" field name, so the action and

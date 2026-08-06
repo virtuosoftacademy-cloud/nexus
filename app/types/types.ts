@@ -1,5 +1,6 @@
 
 import { isRenderableImageSrc } from "@/lib/blog-actions/blog-image";
+import { isEmptyRichText } from "@/lib/rich-text";
 
 export type PostFormState = {
     error?: string;
@@ -76,7 +77,10 @@ export function parseAndValidatePostForm(formData: FormData): {
     const fieldErrors: Record<string, string> = {};
     if (!title) fieldErrors.title = "Title is required.";
     if (!excerpt) fieldErrors.excerpt = "Excerpt is required.";
-    if (!content) fieldErrors.content = "Content is required.";
+    // isEmptyRichText, not just !content: the editor serialises an untouched
+    // document as "<p></p>", which is truthy.
+    if (!content || isEmptyRichText(content))
+        fieldErrors.content = "Content is required.";
     if (!image) fieldErrors.image = "Image URL or path is required.";
     // The paste-a-URL box accepts free text; storing it would crash next/image
     // on the public post page rather than failing here.
