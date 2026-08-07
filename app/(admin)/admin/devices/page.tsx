@@ -1,6 +1,6 @@
 import { auth } from "@/auth";
 import { listDevices, describeUserAgent, getDeviceId } from "@/lib/device";
-import { DeviceRowActions } from "./device-actions";
+import { DeviceRowActions } from "./_components/device-row-actions";
 
 export const metadata = { title: "Devices" };
 export const dynamic = "force-dynamic";

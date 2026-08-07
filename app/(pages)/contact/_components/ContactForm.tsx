@@ -2,8 +2,8 @@
 
 import { useActionState, useEffect } from "react";
 import Image from "next/image";
-import { sendContactMessage, type ContactState } from "@/app/api/contact/actions";
-import { INTEREST_OPTIONS } from "@/app/api/contact/options";
+import { sendContactMessage, type ContactState } from "@/lib/contact/actions";
+import { INTEREST_OPTIONS } from "@/lib/contact/options";
 import { showSimpleSuccess, showSimpleError } from "@/lib/toast-notifications";
 import { Button } from "@/components/ui/button";
 

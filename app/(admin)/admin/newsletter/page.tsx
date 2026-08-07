@@ -1,6 +1,6 @@
 
 import { prisma } from "@/lib/prisma";
-import { DeleteSubscriberButton } from "../../../api/newsletter/deleteButton";
+import { DeleteSubscriberButton } from "@/app/(admin)/admin/newsletter/_components/delete-subscriber-button";
 
 export const metadata = { title: "Subscribers" };
 export const dynamic = "force-dynamic";

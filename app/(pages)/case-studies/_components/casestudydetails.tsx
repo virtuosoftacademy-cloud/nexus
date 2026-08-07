@@ -3,7 +3,33 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowList } from "@/components/ui/ArrowList";
 import { SquareArrowOutUpRight } from "lucide-react";
-import { CaseStudyDetailProps } from "@/app/(admin)/admin/case-study/types";
+import { CaseStudyDetailProps } from "@/lib/case-study/types";
+import { toSafeHtml } from "@/lib/rich-text-html";
+
+// Styling for admin-authored rich text. The editor emits real HTML, so each
+// block element needs its own spacing — there is no typography plugin here.
+// Shared by every rich-text section so they cannot drift apart.
+const PROSE =
+    "mt-4 font-heading text-sm leading-relaxed text-foreground/80 md:text-lg " +
+    "[&_p]:mb-4 " +
+    "[&_h1]:mb-3 [&_h1]:text-2xl [&_h1]:font-semibold [&_h1]:text-foreground " +
+    "[&_h2]:mb-3 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-foreground " +
+    "[&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-foreground " +
+    "[&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 " +
+    "[&_ol]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6 " +
+    "[&_li]:mb-1 " +
+    "[&_blockquote]:mb-4 [&_blockquote]:border-l-4 [&_blockquote]:border-primary [&_blockquote]:pl-4 [&_blockquote]:italic " +
+    "[&_pre]:mb-4 [&_pre]:overflow-x-auto [&_pre]:rounded [&_pre]:bg-foreground [&_pre]:p-4 [&_pre]:text-sm [&_pre]:text-background " +
+    "[&_hr]:my-6 [&_hr]:border-border " +
+    "[&_img]:my-6 [&_img]:h-auto [&_img]:max-w-full " +
+    "[&_strong]:font-semibold [&_strong]:text-foreground " +
+    "[&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2";
+
+/** Renders one admin-authored rich-text block, already sanitised. */
+function RichText({ html }: { html: string }) {
+    if (!html) return null;
+    return <div className={PROSE} dangerouslySetInnerHTML={{ __html: html }} />;
+}
 
 function SectionHeading({ title }: { title: string }) {
     const [first, ...rest] = title.split(" ");
@@ -62,6 +88,11 @@ export default function CaseStudyDetail({
     relatedServices,
     callout,
 }: CaseStudyDetailProps) {
+    // Sanitised once here rather than inline, so the section guard tests the
+    // rendered output — "<p></p>" from an emptied editor must not count.
+    const summaryHtml = toSafeHtml(summary);
+    const challengeHtml = toSafeHtml(challenge);
+
     return (
         <div>
             {heroTitle && (
@@ -140,10 +171,10 @@ export default function CaseStudyDetail({
                 {/* Every section below is conditional: only the hero is required
                     when a case study is created, so an unfinished one would
                     otherwise print a heading and a divider over nothing. */}
-                {summary?.length ? (
+                {summaryHtml ? (
                     <section className="py-10 md:py-14">
                         <SectionHeading title="Executive Summary" />
-                        <BodyText paragraphs={summary} />
+                        <RichText html={summaryHtml} />
                     </section>
                 ) : null}
 
@@ -172,10 +203,10 @@ export default function CaseStudyDetail({
                 {/* ---------------------------------------------------------------
                 The Challenge
             ---------------------------------------------------------------- */}
-                {challenge?.length ? (
+                {challengeHtml ? (
                     <section className="border-t border-border py-10 md:py-14">
                         <SectionHeading title="The Challenge" />
-                        <BodyText paragraphs={challenge} />
+                        <RichText html={challengeHtml} />
                     </section>
                 ) : null}
 

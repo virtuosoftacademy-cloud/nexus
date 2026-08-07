@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import CaseStudyDetail from "../_components/casestudydetails";
 import { prisma } from "@/lib/prisma";
-import { caseStudyInclude, toDetailProps } from "@/app/(admin)/admin/case-study/types";
+import { caseStudyInclude, toDetailProps } from "@/lib/case-study/types";
 
 // Pre-render every existing case study at build time.
 export async function generateStaticParams() {

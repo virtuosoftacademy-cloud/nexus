@@ -1,7 +1,7 @@
 
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-import { DeleteCaseStudyButton } from "../../../api/case-study/DeleteCaseStudy";
+import { DeleteCaseStudyButton } from "@/app/(admin)/admin/case-study/_components/delete-case-study-button";
 import { Button } from "@/components/ui/button";
 export const metadata = { title: "Case studies" };
 export const dynamic = "force-dynamic";

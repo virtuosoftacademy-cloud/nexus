@@ -1,7 +1,7 @@
 
 import { redirect } from "next/navigation";
-import { LoginForm } from "./loginform";
-import { auth } from "@/app/api/auth/[...nextauth]/auth";
+import { LoginForm } from "./_components/login-form";
+import { auth } from "@/auth";
 
 export const metadata = { title: "Sign in" };
 

@@ -3,7 +3,7 @@
 import { getBlogData } from "@/lib/blog-actions/blogActions";
 import SidebarPost from "@/components/ui/SidebarPost";
 import { BlogPost } from "@/app/types/types";
-import { postBodyHtml } from "@/lib/blog-actions/post-body";
+import { toSafeHtml } from "@/lib/rich-text-html";
 
 interface BlogPostContentProps {
     post: BlogPost;
@@ -42,7 +42,7 @@ export default async function PostContent({ post }: BlogPostContentProps) {
                                    [&_figure]:my-6 [&_figcaption]:mt-2 [&_figcaption]:text-sm [&_figcaption]:text-foreground/50
                                    [&_strong]:font-semibold [&_strong]:text-foreground
                                    [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2"
-                        dangerouslySetInnerHTML={{ __html: postBodyHtml(content) }}
+                        dangerouslySetInnerHTML={{ __html: toSafeHtml(content) }}
                     />
 
                     {/* ══ RIGHT SIDEBAR ════════════════════════════════════════════════════ */}

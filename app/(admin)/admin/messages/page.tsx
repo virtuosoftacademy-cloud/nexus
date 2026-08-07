@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { MarkReadButton, DeleteMessageButton } from "./message-actions";
+import { MarkReadButton, DeleteMessageButton } from "./_components/message-row-actions";
 
 export const metadata = { title: "Messages" };
 export const dynamic = "force-dynamic";

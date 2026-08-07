@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
-import { ChangePasswordForm } from "./change-password-form";
+import { ChangePasswordForm } from "./_components/change-password-form";
 
 export const metadata = { title: "Profile" };
 export const dynamic = "force-dynamic";

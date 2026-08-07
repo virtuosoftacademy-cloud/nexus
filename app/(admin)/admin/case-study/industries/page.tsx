@@ -1,13 +1,13 @@
 // ============================================================================
-// File: app/(admin)/industries/page.tsx
+// Admin screen: case-study industries taxonomy.
 // Purpose: Industry management at /industries — same pattern as blog
 //          categories: add form, list with case-study counts, delete
 //          (case studies are detached to "No industry", never deleted).
 // Type: Server Component (async, force-dynamic)
 // ============================================================================
 import { prisma } from "@/lib/prisma";
-import { DeleteTaxonomyButton, NewTaxonomyForm } from "../../../../api/case-study/industry-servicearea-form";
-import { createIndustry, deleteIndustry } from "../../../../api/case-study/actions";
+import { DeleteTaxonomyButton, NewTaxonomyForm } from "@/app/(admin)/admin/case-study/_components/taxonomy-form";
+import { createIndustry, deleteIndustry } from "@/app/(admin)/admin/case-study/_actions/case-study-actions";
 
 export const metadata = { title: "Industries" };
 export const dynamic = "force-dynamic";

@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
-import { AdminSidebar } from "./_components/adminsidebar";
-import { SignOutButton } from "../auth/signin/signoutbtn";
+import { AdminSidebar } from "./_components/admin-sidebar";
+import { SignOutButton } from "../auth/signin/_components/sign-out-button";
 
 export const metadata = {
     title: { template: "%s · Admin", default: "Admin" },

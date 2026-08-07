@@ -2,8 +2,8 @@
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { updatePost } from "@/app/api/blog/updatePost";
-import { PostForm } from "@/app/api/blog/postform";
+import { updatePost } from "@/app/(admin)/admin/blog/_actions/update-post";
+import { PostForm } from "@/app/(admin)/admin/blog/_components/post-form";
 
 export const metadata = { title: "Edit post" };
 export const dynamic = "force-dynamic";

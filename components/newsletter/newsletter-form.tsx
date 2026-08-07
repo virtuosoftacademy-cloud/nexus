@@ -3,7 +3,7 @@
 import { useActionState, useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { subscribe, type NewsletterState } from "@/app/api/newsletter/actions";
+import { subscribe, type NewsletterState } from "@/lib/newsletter/actions";
 import { showSimpleSuccess, showSimpleError } from "@/lib/toast-notifications";
 import { FieldDescription } from "../ui/field";
 import { Checkbox } from "../ui/checkbox";

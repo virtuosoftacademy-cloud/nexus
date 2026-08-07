@@ -2,8 +2,8 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { toggleFeatured, toggleSidebar } from "@/lib/dashboardactions";
-import { DeletePostButton } from "@/app/api/blog/deletePost";
+import { toggleFeatured, toggleSidebar } from "./_actions/toggle-placement";
+import { DeletePostButton } from "@/app/(admin)/admin/blog/_components/delete-post-button";
 
 export const metadata = { title: "Dashboard" };
 

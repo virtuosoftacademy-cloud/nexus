@@ -1,6 +1,6 @@
-import { DeleteCategoryButton } from "@/app/api/category/deleteBtn";
-import { EditCategoryForm } from "@/app/api/category/editcategoryform";
-import { NewCategoryForm } from "@/app/api/category/newcategoryform";
+import { DeleteCategoryButton } from "@/app/(admin)/admin/blog/categories/_components/delete-category-button";
+import { EditCategoryForm } from "@/app/(admin)/admin/blog/categories/_components/edit-category-form";
+import { NewCategoryForm } from "@/app/(admin)/admin/blog/categories/_components/new-category-form";
 import { prisma } from "@/lib/prisma";
 
 export const metadata = { title: "Categories" };

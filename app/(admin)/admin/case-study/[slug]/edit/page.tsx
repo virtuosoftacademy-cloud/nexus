@@ -2,9 +2,9 @@
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { updateCaseStudy } from "../../../../../api/case-study/actions";
-import { CaseStudyForm } from "../../../../../api/case-study/casestudy-form";
-import { caseStudyInclude } from "../../types";
+import { updateCaseStudy } from "@/app/(admin)/admin/case-study/_actions/case-study-actions";
+import { CaseStudyForm } from "@/app/(admin)/admin/case-study/_components/case-study-form";
+import { caseStudyInclude } from "@/lib/case-study/types";
 
 export const metadata = { title: "Edit case study" };
 export const dynamic = "force-dynamic";
