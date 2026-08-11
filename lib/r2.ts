@@ -173,9 +173,13 @@ export const IMAGE_VALIDATION: Record<
         note: "Post covers display at 16:9 on blog cards.",
     },
     "post-thumb": {
-        // Post cards render 16:9, the same shape as the cover — the point of a
-        // separate thumbnail is a tighter crop, not a different aspect ratio.
-        minDimensions: { width: 800, height: 450 },
+        // The floor is "still legible in a card", not "ideal". A post card is
+        // ~400px wide in the grid, so 400px across is 1x — soft but usable.
+        // Height matches 16:9 at that width, so a correctly-shaped 400px image
+        // is not rejected for being short. Shape is handled by the aspect-ratio
+        // WARNING below, not by this hard block: a portrait thumbnail is a
+        // cropping decision for the admin to make, not an invalid file.
+        minDimensions: { width: 400, height: 225 },
         maxDimensions: { width: 4000, height: 4000 },
         recommended: { width: 1200, height: 675 },
         note: "Card thumbnails are cropped to 16:9 in the post listings.",
@@ -187,9 +191,9 @@ export const IMAGE_VALIDATION: Record<
         note: "Hero images render full-bleed; keep them wide but compressed — they are served as-is.",
     },
     "case-study-thumb": {
-        // The card image box is 30rem wide by 20rem tall at most, so roughly
-        // 3:2. Smaller than a hero because next/image resizes these down.
-        minDimensions: { width: 800, height: 500 },
+        // Same reasoning as post-thumb: a usability floor rather than the ideal
+        // size. The card box is ~30rem wide, so 400px across is 1x.
+        minDimensions: { width: 400, height: 225 },
         maxDimensions: { width: 4000, height: 4000 },
         recommended: { width: 1200, height: 800 },
         note: "Card thumbnails are cropped to fill a 3:2 box in the case studies grid.",
