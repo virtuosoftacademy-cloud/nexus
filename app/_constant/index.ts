@@ -75,7 +75,7 @@ export const TABS: TabConfig[] = [
     heading: "Financial Structure, \nGovernance and Advisory \nfor Growing Businesses",
     subtitle:
       "Structured accounting, defensible tax positions, and financial discipline for owner managed businesses, property groups, and construction enterprises that need more than routine compliance.",
-    cta: { label: "SPEAK TO AN ADVISER", href: "/services/uk-accounting-and-tax" },
+    cta: { label: "SPEAK TO AN ADVISER", href: "/contact" },
   },
   {
     label: "Advisory Services",
