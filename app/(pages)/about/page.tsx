@@ -39,7 +39,7 @@ function About() {
             <Principles />
             <Founder />
             <Info data={Strategy} />
-            <DeliveryAndTech />
+            {/* <DeliveryAndTech /> */}
             <Careers />
         </div>
     )

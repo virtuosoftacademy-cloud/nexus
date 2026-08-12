@@ -39,7 +39,7 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative overflow-hidden min-h-screen flex flex-col -z-40 px-8 md:px-2">
+      <section className="relative overflow-hidden min-h-screen flex flex-col  px-8 md:px-2">
 
         {/* ── Background image crossfade ── */}
         <AnimatePresence initial={false}>
@@ -95,7 +95,7 @@ export function HeroSection() {
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
                   <a
                     href={current.cta.href}
-                    className="inline-flex items-center gap-2 text-accent text-sm font-semibold tracking-widest uppercase"
+                    className="inline-flex items-center gap-2 text-accent text-sm font-semibold tracking-widest uppercase cursor-pointer"
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
                   >

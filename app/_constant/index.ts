@@ -75,7 +75,7 @@ export const TABS: TabConfig[] = [
     heading: "Financial Structure, \nGovernance and Advisory \nfor Growing Businesses",
     subtitle:
       "Structured accounting, defensible tax positions, and financial discipline for owner managed businesses, property groups, and construction enterprises that need more than routine compliance.",
-    cta: { label: "SPEAK TO AN ADVISER", href: "#" },
+    cta: { label: "SPEAK TO AN ADVISER", href: "/services/uk-accounting-and-tax" },
   },
   {
     label: "Advisory Services",
@@ -85,7 +85,7 @@ export const TABS: TabConfig[] = [
     heading: "Compliance Tells You What Happened. Advisory Tells You What to Do Next.",
     subtitle:
       "CFO level financial interpretation, governance design, and cashflow planning for founders and directors who need structured oversight without the full time overhead.",
-    cta: { label: "EXPLORE ADVISORY SERVICES", href: "#" },
+    cta: { label: "EXPLORE ADVISORY SERVICES", href: "/services/advisory-services" },
   },
   {
     label: "Systems & Solutions",
@@ -95,7 +95,7 @@ export const TABS: TabConfig[] = [
     heading: "Technology Doesn’t Fix \nPoor Financial Governance.",
     subtitle:
       "Governance led oversight for ERP implementation, platform migration, and reporting automation ensuring every system decision is driven by financial requirements, not vendor preference.",
-    cta: { label: "EXPLORE DIGITAL SOLUTIONS", href: "#" },
+    cta: { label: "EXPLORE DIGITAL SOLUTIONS", href: "/services/solutions" },
   },
   {
     label: "Property & Construction",
@@ -105,7 +105,7 @@ export const TABS: TabConfig[] = [
     heading: "Your Margins Are Under Pressure. Your Reporting Should Tell You Exactly Where.",
     subtitle:
       "Specialist accounting for SPV structures, project cost tracking, CIS compliance, VAT on construction activities, and working capital discipline built for the full financial complexity of property and construction businesses.",
-    cta: { label: "EXPLORE PROPERTY & CONSTRUCTION", href: "#" },
+    cta: { label: "EXPLORE PROPERTY & CONSTRUCTION", href: "/services/property-accounting-and-tax" },
   },
 ];
 
