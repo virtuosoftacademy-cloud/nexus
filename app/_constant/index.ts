@@ -95,7 +95,7 @@ export const TABS: TabConfig[] = [
     heading: "Technology Doesn’t Fix \nPoor Financial Governance.",
     subtitle:
       "Governance led oversight for ERP implementation, platform migration, and reporting automation ensuring every system decision is driven by financial requirements, not vendor preference.",
-    cta: { label: "EXPLORE DIGITAL SOLUTIONS", href: "/services/solutions" },
+    cta: { label: "EXPLORE DIGITAL SOLUTIONS", href: "/services/digital-and-systems-advisory" },
   },
   {
     label: "Property & Construction",
